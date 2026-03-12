@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event - Pariwisata Kabupaten Bima</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER (samakan dengan halaman lain) -->
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a class="nav__link" href="home.html">Home</a>
+      <a class="nav__link" href="destinasi.html">Destinasi</a>
+      <a class="nav__link nav__link--active" href="event.html">Event</a>
+      <a class="nav__link" href="berita.html">Berita</a>
+      <a class="nav__link" href="akomodasi.html">Akomodasi</a>
+
+      <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
+        <span>Login</span>
+        <span class="nav__login-icon">
+        <svg viewBox="0 0 24 24">
+        <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
+        <path d="M4 20a8 8 0 0 1 16 0"></path>
+        </svg>
+        </span>
+        </a>
+      </nav>
+      <button class="nav__burger" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+  </div>
+</header>
+<!-- LOGIN MODAL -->
+<div class="login-modal" id="loginModal">
+  <div class="login-box">
+    <button class="login-close" id="closeLogin">&times;</button>
+
+    <h2>Login Admin</h2>
+
+    <form id="loginForm">
+      <div class="login-group">
+        <label>Username</label>
+        <input type="text" id="username" required>
+      </div>
+
+      <div class="login-group">
+        <label>Password</label>
+        <input type="password" id="password" required>
+      </div>
+
+      <button type="submit" class="login-submit">Masuk</button>
+    </form>
+
+    <p class="login-error" id="loginError"></p>
+  </div>
+</div>
+
+<main class="event-wrap">
+  <div class="container">
+
+    <!-- search -->
+    <div class="event-search">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="M20 20l-3.5-3.5"></path>
+      </svg>
+      <input type="text" placeholder="Cari event yang berada di kabupaten bima..." />
+    </div>
+
+    <div class="dest-head">
+      <div>
+        <h2>Event</h2>
+        <p><p>Jadwal festival, agenda budaya, dan berbagai kegiatan menarik yang berlangsung di Kabupaten Bima.</p></p>
+      </div>
+    </div>
+
+    <section class="event-grid">
+      <!-- 1 -->
+      <article class="event-card">
+        <div class="event-card__img">
+          <img src="assets/event/1.jpg" alt="Event Rimpu" />
+        </div>
+        <div class="event-card__body">
+          <h3 class="event-card__title">
+            Event Rimpu: Perayaan budaya khas Bima dengan busana tradisional Rimpu.
+          </h3>
+          <p class="event-card__text">
+            Event Rimpu merupakan perayaan budaya khas Bima yang menampilkan ribuan peserta mengenakan busana tradisional Rimpu.
+            Kegiatan ini menjadi simbol identitas perempuan Bima sekaligus upaya pelestarian budaya lokal yang sarat nilai sejarah dan religius.
+          </p>
+
+          <div class="event-card__bottom">
+            <a class="btn btn--solid" href="event-rimpu.html">Lihat Detail</a>
+            <span class="event-card__date">24 – 26 April 2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="event-card">
+        <div class="event-card__img">
+          <img src="assets/event/2.jpg" alt="Tambora Menyapa Dunia" />
+        </div>
+        <div class="event-card__body">
+          <h3 class="event-card__title">
+            Tambora Menyapa Dunia: Event budaya dan sejarah Gunung Tambora.
+          </h3>
+          <p class="event-card__text">
+            Festival tahunan yang mengangkat warisan sejarah letusan Tambora, dipadukan dengan seni tradisi, pameran budaya,
+            dan atraksi lokal untuk menarik wisatawan domestik maupun mancanegara.
+          </p>
+
+          <div class="event-card__bottom">
+            <a class="btn btn--solid" href="event-tambora.html">Lihat Detail</a>
+            <span class="event-card__date">8 April 2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="event-card">
+        <div class="event-card__img">
+          <img src="assets/event/3.jpg" alt="Pacoa Jara" />
+        </div>
+        <div class="event-card__body">
+          <h3 class="event-card__title">
+            Pacoa Jara: Balap kuda tradisional khas Bima.
+          </h3>
+          <p class="event-card__text">
+            Pacoa Jara menjadi atraksi wisata budaya yang memadukan sport dan tradisi. Kegiatan ini menghadirkan joki cilik,
+            kesenian pengiring, serta kuliner khas yang meramaikan suasana.
+          </p>
+
+          <div class="event-card__bottom">
+            <a class="btn btn--solid" href="event-pacoa.html">Lihat Detail</a>
+            <span class="event-card__date">Juli 2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="event-card">
+        <div class="event-card__img">
+          <img src="assets/event/4.jpg" alt="Hari Jadi Bima" />
+        </div>
+        <div class="event-card__body">
+          <h3 class="event-card__title">
+            Hari Jadi Bima: Peringatan hari lahir Kabupaten Bima dengan nuansa adat dan budaya.
+          </h3>
+          <p class="event-card__text">
+            Hari Jadi Bima adalah momentum bersejarah untuk mengenang berdirinya Kabupaten Bima. Acara diisi upacara adat,
+            pertunjukan seni, serta kegiatan seremonial yang mencerminkan kekayaan budaya dan kebersamaan masyarakat.
+          </p>
+
+          <div class="event-card__bottom">
+            <a class="btn btn--solid" href="event-harijadi.html">Lihat Detail</a>
+            <span class="event-card__date">05 Juli 2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="event-card">
+        <div class="event-card__img">
+          <img src="assets/event/5.jpg" alt="Festival Sangiang Api" />
+        </div>
+        <div class="event-card__body">
+          <h3 class="event-card__title">
+            Festival Sangiang Api: Festival bahari dan budaya di kawasan Gunung Sangiang.
+          </h3>
+          <p class="event-card__text">
+            Festival Sangiang Api merupakan event budaya dan bahari yang digelar di kawasan Gunung Sangiang.
+            Menyuguhkan atraksi perahu layar tradisional, ritual adat, dan pertunjukan seni yang menggambarkan hubungan harmonis masyarakat dengan alam laut.
+          </p>
+
+          <div class="event-card__bottom">
+            <a class="btn btn--solid" href="event-sangiang.html">Lihat Detail</a>
+            <span class="event-card__date">27 Juli – 2 Agustus 2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="event-card">
+        <div class="event-card__img">
+          <img src="assets/event/6.jpg" alt="Festival Uma Lengge" />
+        </div>
+        <div class="event-card__body">
+          <h3 class="event-card__title">
+            Festival Uma Lengge: Perayaan budaya dan tradisi khas Wawo.
+          </h3>
+          <p class="event-card__text">
+            Festival Uma Lengge menampilkan rangkaian ritual adat, pameran kerajinan, kuliner lokal, serta pertunjukan seni tradisional.
+            Berlangsung di kawasan rumah adat Uma Lengge yang ikonik.
+          </p>
+
+          <div class="event-card__bottom">
+            <a class="btn btn--solid" href="event-lengge.html">Lihat Detail</a>
+            <span class="event-card__date">September 2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7 (card terakhir 1 kolom seperti screenshot, tapi tetap rapi dalam grid) -->
+      <article class="event-card">
+        <div class="event-card__img">
+          <img src="assets/event/7.jpg" alt="Mbojo Literation Festival" />
+        </div>
+        <div class="event-card__body">
+          <h3 class="event-card__title">
+            Mbojo Literation Festival
+          </h3>
+          <p class="event-card__text">
+            Festival literasi yang menghadirkan pameran buku, diskusi publik, talkshow, pertunjukan seni, dan kegiatan edukatif lainnya.
+            Berfokus pada penguatan budaya membaca dan kreativitas generasi muda di Bima.
+          </p>
+
+          <div class="event-card__bottom">
+            <a class="btn btn--solid" href="event-literation.html">Lihat Detail</a>
+            <span class="event-card__date">Oktober – November 2025</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER (samakan dengan sebelumnya) -->
+<footer class="footer2">
+  <div class="container footer2__grid">
+    <div class="footer2__brand">
+      <div class="footer2__logo-ring">
+        <img class="footer2__logo" src="assets/logo.png" alt="">
+      </div>
+
+      <div class="footer2__social">
+        <a href="#" class="footer2__soc" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg>
+        </a>
+        <a href="#" class="footer2__soc" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <a href="#" class="footer2__soc" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M21 8s-1-3-3-3H6C4 5 3 8 3 8s-.5 3.5 0 8c0 0 1 3 3 3h12c2 0 3-3 3-3s.5-3.5 0-8z"/><path d="M10 9.5v5l5-2.5-5-2.5z"/></svg>
+        </a>
+        <a href="#" class="footer2__soc" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"/></svg>
+        </a>
+      </div>
+    </div>
+
+     <div class="footer2__col">
+        <div class="footer2__title">Tentang</div>
+          <p class="footer2__desc">
+          Sistem Informasi Pariwisata Online adalah sistem informasi yang
+          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
+          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+          </p>
+      </div>
+
+    <div class="footer2__col">
+      <div class="footer2__title">Layanan<br>Kami</div>
+      <a class="footer2__link" href="destinasi.html">Destinasi</a>
+      <a class="footer2__link" href="event.html">Event</a>
+      <a class="footer2__link" href="berita.html">Berita</a>
+      <a class="footer2__link" href="akomodasi.html">Akomodasi</a>
+    </div>
+
+    <div class="footer2__col">
+      <div class="footer2__title">Kontak</div>
+      <div class="footer2__contact">
+        <span class="footer2__cicon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </span>
+        <span>Kantor Dinas Pariwisata<br>Kabupaten Bima<br>Nusa Tenggara Barat</span>
+      </div>
+
+      <div class="footer2__contact">
+        <span class="footer2__cicon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L9 10a16 16 0 0 0 5 5l.9-1.1a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6A2 2 0 0 1 22 16.9z"/></svg>
+        </span>
+        <span>+62 812-2404-7821</span>
+      </div>
+
+      <div class="footer2__contact">
+        <span class="footer2__cicon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
+        </span>
+        <span>info@dispar.co.id</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer2__bottom">
+    <div class="container footer2__bottom-inner">
+      <span class="footer2__copy">©</span> 2025 Pariwisata Kabupaten Bima
+    </div>
+  </div>
+</footer>
+<script>
+  const loginBtn = document.getElementById("loginBtn");
+const loginModal = document.getElementById("loginModal");
+const closeLogin = document.getElementById("closeLogin");
+const loginForm = document.getElementById("loginForm");
+const loginError = document.getElementById("loginError");
+
+loginBtn.addEventListener("click", function(e){
+  e.preventDefault();
+  loginModal.classList.add("active");
+});
+
+closeLogin.addEventListener("click", function(){
+  loginModal.classList.remove("active");
+});
+
+window.addEventListener("click", function(e){
+  if(e.target === loginModal){
+    loginModal.classList.remove("active");
+  }
+});
+
+loginForm.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // Username & password admin
+  if(username === "admin" && password === "admin123"){
+    window.location.href = "admin.html";
+  } else {
+    loginError.textContent = "Username atau password salah!";
+  }
+});
+</script>
+</body>
+</html>

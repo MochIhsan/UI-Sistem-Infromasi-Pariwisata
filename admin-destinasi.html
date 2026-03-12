@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manajemen Destinasi - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR (samakan dengan dashboard admin kamu) -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+      </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
+        </a>
+        <a class="admin-nav__item active" href="admin-destinasi.html">
+          <img class="admin-ic" src="logo/container48.svg"></img> Destinasi
+        </a>
+        <a class="admin-nav__item" href="admin-event.html">
+          <img class="admin-ic" src="logo/container76.svg"></img> Event
+        </a>
+        <a class="admin-nav__item" href="admin-berita.html">
+          <img class="admin-ic" src="logo/container78.svg"></img> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
+        </a>
+
+        <!-- Kelola Admin -->
+        <a class="admin-nav__item" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <!-- DROPDOWN -->
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT WRAP -->
+      <div class="admin-wrap admin-wrap--wide">
+
+        <!-- PAGE HEAD -->
+        <div class="adm-head">
+          <div>
+            <h1 class="adm-title">Manajemen Destinasi</h1>
+            <p class="adm-sub">Kelola daftar objek wisata dan informasi detailnya.</p>
+          </div>
+
+          <a class="adm-btn adm-btn--primary" href="tambah-destinasi.html">
+            <span class="adm-btn__plus">+</span>
+            Tambah Destinasi
+          </a>
+        </div>
+
+        <!-- TOTAL CARD -->
+        <section class="adm-card adm-total">
+          <div class="adm-total__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+              <circle cx="12" cy="9" r="2.5"></circle>
+            </svg>
+          </div>
+          <div>
+            <div class="adm-total__label">Total Destinasi</div>
+            <div class="adm-total__value">40</div>
+          </div>
+        </section>
+
+        <!-- FILTER ROW -->
+        <section class="adm-card adm-filter">
+          <div class="adm-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.5-3.5"></path>
+            </svg>
+            <input type="text" placeholder="Cari destinasi berdasarkan nama atau lokasi..." />
+          </div>
+
+          <select class="adm-select" aria-label="Kategori">
+            <option selected>Semua Kategori</option>
+            <option>Bahari</option>
+            <option>Budaya Sejarah</option>
+            <option>Alam Pegunungan</option>
+          </select>
+        </section>
+
+        <!-- TABLE -->
+        <section class="adm-card adm-table">
+          <div class="adm-table__head">
+            <div class="adm-th">ID</div>
+            <div class="adm-th">THUMBNAIL</div>
+            <div class="adm-th">NAMA DESTINASI</div>
+            <div class="adm-th">KATEGORI</div>
+            <div class="adm-th">LOKASI</div>
+            <div class="adm-th adm-th--right">AKSI</div>
+          </div>
+
+          <!-- ROWS -->
+          <div class="adm-row">
+            <div class="adm-td adm-id">#001</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/01.png" alt="Raja Ampat">
+            </div>
+            <div class="adm-td adm-name">Air Terjun Bombo Ncera</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Belo
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#002</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/02.png" alt="Candi Borobudur">
+            </div>
+            <div class="adm-td adm-name">Air Terjun Bombo Roi</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Palibelo
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#003</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/03.png" alt="Pantai Kuta">
+            </div>
+            <div class="adm-td adm-name">Air Terjun Jo Rato</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Wawo
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#004</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/04.png" alt="Gunung Bromo">
+            </div>
+            <div class="adm-td adm-name">Air Terjun Ka Owa</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Wawo
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#005</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/05.png" alt="Labuan Bajo">
+            </div>
+            <div class="adm-td adm-name">Air Terjun Kalate Mbaju</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Woha
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#006</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/06.png" alt="Raja Ampat">
+            </div>
+            <div class="adm-td adm-name">Air Terjun Oi Nca</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Wera
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#007</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/07.png" alt="Candi Borobudur">
+            </div>
+            <div class="adm-td adm-name">Air Terjun Oi Sariwu Tuda Ncua</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Monta
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#008</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/08.png" alt="Pantai Kuta">
+            </div>
+            <div class="adm-td adm-name">Bendungan Diwumoro</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Lambu
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#009</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/09.png" alt="Gunung Bromo">
+            </div>
+            <div class="adm-td adm-name">Benteng Asakota</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--green">Budaya Sejarah</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Soromandi
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="adm-row">
+            <div class="adm-td adm-id">#010</div>
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/10.png" alt="Labuan Bajo">
+            </div>
+            <div class="adm-td adm-name">Gunung Sangiang</div>
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Wera
+            </div>
+            <div class="adm-td adm-actions">
+              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+              </button>
+              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- FOOT -->
+          <div class="adm-table__foot">
+            <div class="adm-foot__text">Menampilkan 1 hingga 10 dari 40 destinasi</div>
+
+            <div class="adm-pagi">
+              <button class="adm-pagi__btn" aria-label="Prev">‹</button>
+              <button class="adm-pagi__num is-active">1</button>
+              <button class="adm-pagi__num">2</button>
+              <button class="adm-pagi__num">3</button>
+              <span class="adm-pagi__dots">…</span>
+              <button class="adm-pagi__num">5</button>
+              <button class="adm-pagi__btn" aria-label="Next">›</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

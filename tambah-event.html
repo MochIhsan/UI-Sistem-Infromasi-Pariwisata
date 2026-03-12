@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tambah Event Baru - Admin</title>
+
+  <!-- Pakai style utama yang sama seperti tambah-destinasi -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Opsional: tambahan kecil khusus event -->
+  <link rel="stylesheet" href="admin-tambah-event.css" />
+</head>
+
+<body class="admin-body">
+  <div class="admin-layout">
+    <!-- SIDEBAR (samakan) -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
+        </a>
+        <a class="admin-nav__item" href="admin-destinasi.html">
+         <img class="admin-ic" src="logo/container74.svg"> Destinasi
+        </a>
+        <a class="admin-nav__item active" href="admin-event.html">
+          <img class="admin-ic" src="logo/containerevent.svg"> Event
+        </a>
+        <a class="admin-nav__item" href="admin-berita.html">
+          <img class="admin-ic" src="logo/container78.svg"> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg">Akomodasi
+        </a>
+
+        <!-- TAMBAHAN: Kelola Admin -->
+        <a class="admin-nav__item" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg"> Kelola Admin
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR (samakan) -->
+      <header class="admin-topbar">
+        <div></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+        <!-- HEADER PAGE -->
+        <div class="td-head">
+          <div>
+            <h1 class="td-title">Tambah Event Baru</h1>
+            <p class="td-sub">Lengkapi informasi detail untuk menambahkan event baru.</p>
+          </div>
+
+          <div class="td-actions">
+            <a class="td-btn td-btn--ghost" href="admin-event.html">Batal</a>
+            <button class="td-btn td-btn--primary" id="btnSaveEvent" type="button">
+              <span class="td-ic">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h12l2 2v14H5z"></path>
+                  <path d="M8 4v6h8V4"></path>
+                  <path d="M8 20v-6h8v6"></path>
+                </svg>
+              </span>
+              Simpan Event
+            </button>
+          </div>
+        </div>
+
+        <!-- BANNER UTAMA (samakan dengan tambah-destinasi) -->
+        <section class="td-card">
+          <div class="td-card__head">
+            <span class="td-card__icon">🖼️</span>
+            <div class="td-card__ttl">Banner Utama</div>
+          </div>
+
+          <div class="td-uploader" id="bannerDrop">
+            <input id="bannerInput" type="file" accept="image/*" hidden />
+            <div class="td-uploader__inner">
+              <div class="td-uploader__cloud" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 18a4 4 0 1 1 .7-7.94A5 5 0 0 1 18.9 11 3.5 3.5 0 0 1 18 18H7z"></path>
+                  <path d="M12 7v8"></path>
+                  <path d="M9.5 9.5 12 7l2.5 2.5"></path>
+                </svg>
+              </div>
+
+              <div class="td-uploader__title">Upload Banner Event</div>
+              <div class="td-uploader__desc">
+                Seret dan lepas gambar ke sini, atau klik untuk memilih file.
+                Gunakan gambar resolusi tinggi (min. 1920×1080px).
+              </div>
+
+              <button class="td-btn td-btn--mini" type="button" id="btnPickBanner">Pilih Gambar</button>
+
+              <div class="td-uploader__preview" id="bannerPreview" aria-hidden="true"></div>
+              <div class="td-err" id="bannerErr" aria-live="polite"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GRID 2 KOLOM -->
+        <section class="td-grid2">
+          <!-- Detail Event -->
+          <div class="td-card">
+            <div class="td-card__head">
+              <span class="td-card__icon">ℹ️</span>
+              <div class="td-card__ttl">Detail Event</div>
+            </div>
+
+            <div class="td-form">
+              <div class="td-field">
+                <label class="td-label">Judul Event</label>
+                <input class="td-input" id="judulEvent" type="text" placeholder="Contoh: Tambora Menyapa Dunia" />
+                <div class="td-err" id="errJudul"></div>
+              </div>
+
+              <div class="td-row2">
+                <div class="td-field">
+                  <label class="td-label">Tanggal Event</label>
+                  <input class="td-input" id="tanggalEvent" type="date" />
+                  <div class="td-err" id="errTanggal"></div>
+                </div>
+                <div class="td-field">
+                  <label class="td-label">Harga Tiket</label>
+                  <input class="td-input" id="hargaTiket" type="text" placeholder="Contoh: Gratis / 25000" />
+                  <div class="td-err" id="errHarga"></div>
+                </div>
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Lokasi (Alamat Lengkap)</label>
+                <input class="td-input" id="alamatEvent" type="text" placeholder="Contoh: Gunung Tambora, Nusa Tenggara Barat" />
+                <div class="td-err" id="errAlamat"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lokasi Event (samakan style lokasi wisata) -->
+          <div class="td-card">
+            <div class="td-card__head">
+              <span class="td-card__icon">📍</span>
+              <div class="td-card__ttl">Lokasi Event</div>
+            </div>
+
+            <div class="td-form">
+              <div class="td-row2">
+                <div class="td-field">
+                  <label class="td-label">Latitude</label>
+                  <input class="td-input" id="latInput" type="text" value="" placeholder="-8.589" />
+                </div>
+                <div class="td-field">
+                  <label class="td-label">Longitude</label>
+                  <input class="td-input" id="lngInput" type="text" value="" placeholder="119.444" />
+                </div>
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Peta Lokasi</label>
+
+                <div class="td-mapWrap">
+                  <iframe
+                    id="mapFrame"
+                    title="Peta Lokasi"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=-8.589,119.444&z=13&output=embed">
+                  </iframe>
+
+                  <div class="td-mapOverlay" id="mapOverlay">
+                    <div class="td-mapOverlay__txt">Interactive Map Integration</div>
+                  </div>
+                </div>
+
+                <div class="td-mapHint">
+                  Ubah latitude/longitude untuk memperbarui peta.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tentang Event (editor samakan gaya) -->
+        <section class="td-card">
+          <div class="td-card__head">
+            <span class="td-card__icon">📝</span>
+            <div class="td-card__ttl">Tentang Event</div>
+          </div>
+
+          <div class="td-editor">
+            <div class="td-editor__bar">
+              <button class="td-edBtn" type="button" data-cmd="bold" title="Bold"><b>B</b></button>
+              <button class="td-edBtn" type="button" data-cmd="italic" title="Italic"><i>I</i></button>
+              <button class="td-edBtn" type="button" data-cmd="underline" title="Underline"><u>U</u></button>
+              <div class="td-edSep"></div>
+              <button class="td-edBtn" type="button" data-cmd="insertUnorderedList" title="List">•≡</button>
+              <button class="td-edBtn" type="button" data-cmd="insertOrderedList" title="Numbered">1≡</button>
+              <div class="td-edSep"></div>
+              <button class="td-edBtn" type="button" data-cmd="createLink" title="Link">🔗</button>
+            </div>
+
+            <div class="td-editor__box" id="descBox" contenteditable="true">
+              <span class="td-editor__ph">Tuliskan deskripsi lengkap tentang event ini...</span>
+            </div>
+            <div class="td-err" id="errDesc"></div>
+          </div>
+        </section>
+
+        <!-- DOKUMENTASI (Gallery samakan gaya destinasi, maks 5) -->
+        <section class="td-card">
+          <div class="td-card__head td-card__head--between">
+            <div class="td-card__headLeft">
+              <span class="td-card__icon">🖼️</span>
+              <div class="td-card__ttl">Dokumentasi (Gallery)</div>
+            </div>
+            <div class="td-badge">Maks. 5 Foto</div>
+          </div>
+
+          <div class="td-gallery" id="gallery">
+            <input id="galInput" type="file" accept="image/*" multiple hidden />
+
+            <button class="td-galSlot td-galSlot--upload" type="button" id="btnAddPhoto" aria-label="Tambah foto">
+              <div class="td-galUpload">
+                <div class="td-galUpload__ic" aria-hidden="true">⬆️</div>
+                <div class="td-galUpload__txt">UPLOAD</div>
+              </div>
+            </button>
+
+            <div class="td-galSlot td-galSlot--empty"></div>
+            <div class="td-galSlot td-galSlot--empty"></div>
+            <div class="td-galSlot td-galSlot--empty"></div>
+            <div class="td-galSlot td-galSlot--empty"></div>
+          </div>
+
+          
+          <div class="td-err" id="errGal"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- script global admin (dropdown user, logout, dsb) -->
+  <script src="admin.js"></script>
+
+  <!-- script khusus tambah event -->
+  <script src="admin-tambah-event.js"></script>
+</body>
+</html>

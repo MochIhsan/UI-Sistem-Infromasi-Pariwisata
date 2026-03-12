@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pantai Torowamba - Detail Destinasi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER (samakan dengan halaman lain) -->
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a class="nav__link" href="home.html">Home</a>
+      <a class="nav__link nav__link--active" href="destinasi.html">Destinasi</a>
+      <a class="nav__link" href="event.html">Event</a>
+      <a class="nav__link" href="berita.html">Berita</a>
+      <a class="nav__link" href="akomodasi.html">Akomodasi</a>
+
+     <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
+        <span>Login</span>
+        <span class="nav__login-icon">
+        <svg viewBox="0 0 24 24">
+        <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
+        <path d="M4 20a8 8 0 0 1 16 0"></path>
+        </svg>
+        </span>
+        </a>
+      </nav>
+      <button class="nav__burger" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+<!-- LOGIN MODAL -->
+<div class="login-modal" id="loginModal">
+  <div class="login-box">
+    <button class="login-close" id="closeLogin">&times;</button>
+
+    <h2>Login Admin</h2>
+
+    <form id="loginForm">
+      <div class="login-group">
+        <label>Username</label>
+        <input type="text" id="username" required>
+      </div>
+
+      <div class="login-group">
+        <label>Password</label>
+        <input type="password" id="password" required>
+      </div>
+
+      <button type="submit" class="login-submit">Masuk</button>
+    </form>
+
+    <p class="login-error" id="loginError"></p>
+  </div>
+</div>
+
+
+
+ <main class="detail-wrap">
+    <div class="container detail-container">
+
+      <!-- HERO IMAGE -->
+<section class="heredestinasi">
+  <div class="herodestinasi__media">
+    <img src="assets/dest/torowamba/hero.png" alt="Pantai So Santigi" />
+
+    <div class="herodestinasi__text">
+      <div class="herodestinasi__place">
+        <span class="herodestinasi__pin" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+            <circle cx="12" cy="9" r="2.5"></circle>
+          </svg>
+        </span>
+        <span>Sape</span>
+      </div>
+
+      <div class="herodestinasi__title">Pantai Torowamba</div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO CARD (TERPISAH) -->
+<section class="heroInfoCard">
+  <div class="heroInfoCard__inner">
+
+    <div class="heroInfoCard__item">
+      <span class="heroInfoCard__ic">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="8"></circle>
+          <path d="M12 8v4l3 2"></path>
+        </svg>
+      </span>
+      <div>
+        <div class="heroInfoCard__label">JAM OPERASIONAL</div>
+        <div class="heroInfoCard__value">-</div>
+      </div>
+    </div>
+
+    <div class="heroInfoCard__item">
+      <span class="heroInfoCard__ic">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 7h10v10H7z"></path>
+          <path d="M9 9h6"></path>
+          <path d="M9 12h6"></path>
+          <path d="M9 15h4"></path>
+        </svg>
+      </span>
+      <div>
+        <div class="heroInfoCard__label">TIKET MASUK</div>
+        <div class="heroInfoCard__value">Rp - / Orang</div>
+      </div>
+    </div>
+
+    <div class="heroInfoCard__item">
+  <span class="heroInfoCard__ic">
+    <svg viewBox="0 0 24 24">
+      <path d="M3 13l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5"></path>
+      <path d="M5 13h14"></path>
+      <circle cx="7" cy="17" r="2"></circle>
+      <circle cx="17" cy="17" r="2"></circle>
+    </svg>
+  </span>
+      <div>
+        <div class="heroInfoCard__label">AKSES</div>
+        <div class="heroInfoCard__value">Mobil & Motor</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- TENTANG -->
+    <section class="destdetail__section">
+      <h2 class="destdetail__h2">Tentang Pantai Torowamba</h2>
+      <p class="destdetail__p">
+Pantai Torowamba yang berada di Kecamatan Sape, Kabupaten Bima, Nusa Tenggara Barat, merupakan salah satu destinasi wisata bahari yang menawarkan panorama alam pesisir yang masih alami dan menawan. Lokasinya berada di wilayah timur Kabupaten Bima dan dapat diakses melalui jalur darat dari pusat Kecamatan Sape. Suasana di pantai ini relatif tenang dan jauh dari keramaian, sehingga cocok bagi pengunjung yang ingin menikmati keindahan alam dengan lebih santai.
+      <p class="destdetail__p">
+Pantai Torowamba memiliki karakteristik garis pantai yang cukup panjang dengan perpaduan pasir dan bebatuan di beberapa bagian. Air lautnya terlihat jernih dengan warna biru yang indah saat cuaca cerah. Karena menghadap ke laut lepas, ombak di pantai ini pada waktu tertentu bisa cukup kuat, namun justru menambah kesan alami dan eksotis. Pemandangan perbukitan di sekitar kawasan pantai juga menjadi latar yang mempercantik panorama secara keseluruhan.
+      <p class="destdetail__p">
+Selain sebagai tempat rekreasi, Pantai Torowamba dimanfaatkan masyarakat sekitar untuk aktivitas memancing dan berkumpul bersama keluarga. Keindahan alamnya yang masih terjaga menjadikan pantai ini memiliki potensi besar untuk dikembangkan sebagai salah satu destinasi wisata unggulan di wilayah Sape. Dengan pengelolaan yang baik dan tetap menjaga kelestarian lingkungan, Pantai Torowamba dapat menjadi daya tarik wisata bahari yang semakin dikenal luas di Kabupaten Bima.
+    </section>
+
+    <!-- DOKUMENTASI -->
+    <section class="destdetail__section">
+      <h2 class="destdetail__h2">Dokumentasi</h2>
+
+      <div class="destdetail__gallery" id="destinasiGallery">
+        <button class="destdetail__thumb" type="button" data-full="assets/dest/torowamba/1.png">
+          <img src="assets/dest/torowamba/1.png" alt="Dokumentasi 1">
+        </button>
+        <button class="destdetail__thumb" type="button" data-full="assets/dest/torowamba/2.png">
+          <img src="assets/dest/torowamba/2.png" alt="Dokumentasi 2">
+        </button>
+        <button class="destdetail__thumb" type="button" data-full="assets/dest/torowamba/3.png">
+          <img src="assets/dest/torowamba/3.png" alt="Dokumentasi 3">
+        </button>
+        <button class="destdetail__thumb" type="button" data-full="assets/dest/torowamba/4.png">
+          <img src="assets/dest/torowamba/4.png" alt="Dokumentasi 4">
+        </button>
+        <button class="destdetail__thumb" type="button" data-full="assets/dest/torowamba/5.png">
+          <img src="assets/dest/torowamba/5.png" alt="Dokumentasi 5">
+        </button>
+      </div>
+    </section>
+
+    <!-- FASILITAS -->
+    <section class="destdetail__section">
+      <h2 class="destdetail__h2">Fasilitas</h2>
+
+      <div class="destdetail__facilityGrid">
+        <div class="destdetail__facility">
+          <span class="destdetail__facilityIc" aria-hidden="true">🧻</span>
+          <div>
+            <div class="destdetail__facilityName">Toilet</div>
+            <div class="destdetail__facilitySub">Tersedia</div>
+          </div>
+        </div>
+
+        <div class="destdetail__facility">
+          <span class="destdetail__facilityIc" aria-hidden="true">🍽️</span>
+          <div>
+            <div class="destdetail__facilityName">Tempat Makan</div>
+            <div class="destdetail__facilitySub">Warung lokal</div>
+          </div>
+        </div>
+
+        <div class="destdetail__facility">
+          <span class="destdetail__facilityIc" aria-hidden="true">🅿️</span>
+          <div>
+            <div class="destdetail__facilityName">Parkir</div>
+            <div class="destdetail__facilitySub">Motor & mobil</div>
+          </div>
+        </div>
+
+        <div class="destdetail__facility">
+          <span class="destdetail__facilityIc" aria-hidden="true">📸</span>
+          <div>
+            <div class="destdetail__facilityName">Spot Foto</div>
+            <div class="destdetail__facilitySub">View Laut</div>
+          </div>
+        </div>
+
+        <div class="destdetail__facility">
+          <span class="destdetail__facilityIc" aria-hidden="true">🛟</span>
+          <div>
+            <div class="destdetail__facilityName">Keamanan</div>
+            <div class="destdetail__facilitySub">Area aman</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOKASI -->
+    <section class="destdetail__section">
+      <h2 class="destdetail__h2">Lokasi</h2>
+
+      <div class="destdetail__map">
+        <!-- Kamu boleh ganti link embed sesuai lokasi -->
+        <iframe
+          title="Lokasi Pantai Lariti"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127524.45459863907!2d119.0555351039093!3d-8.405770505903954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db5bd50db05d1f9%3A0x4ab266bf9e6cc15f!2spantai%20Torowamba!5e0!3m2!1sid!2sid!4v1771924932232!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+       </iframe>
+      </div>
+    </section>
+
+    <!-- RATING & ULASAN -->
+    <!-- RINGKASAN & ULASAN  -->
+<section class="destdetail__section">
+  <div class="rev-card">
+
+    <!-- HEAD: nilai + bintang + bars -->
+    <div class="rev-head">
+      <div class="rev-score">
+        <div class="rev-score__num">4.9</div>
+        <div>
+          <div class="rev-score__label">Ringkasan ulasan</div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="rev-bars">
+        <div class="rev-bar">
+          <div>5</div>
+          <div class="rev-bar__track"><div class="rev-bar__fill" style="width:92%"></div></div>
+        </div>
+        <div class="rev-bar">
+          <div>4</div>
+          <div class="rev-bar__track"><div class="rev-bar__fill" style="width:70%"></div></div>
+        </div>
+        <div class="rev-bar">
+          <div>3</div>
+          <div class="rev-bar__track"><div class="rev-bar__fill" style="width:25%"></div></div>
+        </div>
+        <div class="rev-bar">
+          <div>2</div>
+          <div class="rev-bar__track"><div class="rev-bar__fill" style="width:10%"></div></div>
+        </div>
+        <div class="rev-bar">
+          <div>1</div>
+          <div class="rev-bar__track"><div class="rev-bar__fill" style="width:6%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="rev-form">
+      <div class="rev-form__label">Beri rating & ulasan</div>
+
+      <div class="rev-rate">
+        <div class="rev-rate__avatar">A</div>
+
+        <!-- bintang (tampilan saja, bisa kamu bikin interaktif pakai JS) -->
+        <div class="rev-rate__stars is-set" aria-label="rating">
+          <button class="rev-starBtn" type="button" aria-label="1">★</button>
+          <button class="rev-starBtn" type="button" aria-label="2">★</button>
+          <button class="rev-starBtn" type="button" aria-label="3">★</button>
+          <button class="rev-starBtn" type="button" aria-label="4">★</button>
+          <button class="rev-starBtn" type="button" aria-label="5">★</button>
+        </div>
+      </div>
+
+      <textarea class="rev-textarea" placeholder="Tambahkan ulasan..."></textarea>
+      <button class="rev-submit" type="button">Posting</button>
+    </div>
+
+    <!-- LIST ULASAN -->
+    <div class="rev-list">
+      <article class="rev-item">
+        <div class="rev-item__top">
+          <div class="rev-item__avatar">AP</div>
+          <div class="rev-item__name">
+            <div style="font-weight:900;color:#0f172a;">Arif Pratama</div>
+            <div class="rev-item__stars">★★★★★</div>
+          </div>
+          <button class="rev-like" type="button" aria-label="Suka">♡</button>
+        </div>
+        <div class="rev-item__text">
+          Pelayanan oke, lokasi dekat pantai. Kamar bersih dan nyaman.
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+  </div>
+</main>
+
+<!-- FOOTER (samakan seperti sebelumnya) -->
+<footer class="footer2">
+  <div class="container footer2__grid">
+    <div class="footer2__brand">
+      <div class="footer2__logo-ring">
+        <img class="footer2__logo" src="assets/logo.png" alt="">
+      </div>
+
+      <div class="footer2__social">
+        <a href="#" class="footer2__soc" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg>
+        </a>
+        <a href="#" class="footer2__soc" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <a href="#" class="footer2__soc" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M21 8s-1-3-3-3H6C4 5 3 8 3 8s-.5 3.5 0 8c0 0 1 3 3 3h12c2 0 3-3 3-3s.5-3.5 0-8z"/><path d="M10 9.5v5l5-2.5-5-2.5z"/></svg>
+        </a>
+        <a href="#" class="footer2__soc" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"/></svg>
+        </a>
+      </div>
+    </div>
+
+     <div class="footer2__col">
+        <div class="footer2__title">Tentang</div>
+          <p class="footer2__desc">
+          Sistem Informasi Pariwisata Online adalah sistem informasi yang
+          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
+          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+          </p>
+      </div>
+
+    <div class="footer2__col">
+      <div class="footer2__title">Layanan<br>Kami</div>
+      <a class="footer2__link" href="destinasi.html">Destinasi</a>
+      <a class="footer2__link" href="event.html">Event</a>
+      <a class="footer2__link" href="berita.html">Berita</a>
+      <a class="footer2__link" href="akomodasi.html">Akomodasi</a>
+    </div>
+
+    <div class="footer2__col">
+      <div class="footer2__title">Kontak</div>
+      <div class="footer2__contact">
+        <span class="footer2__cicon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </span>
+        <span>Kantor Dinas Pariwisata<br>Kabupaten Bima<br>Nusa Tenggara Barat</span>
+      </div>
+
+      <div class="footer2__contact">
+        <span class="footer2__cicon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L9 10a16 16 0 0 0 5 5l.9-1.1a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6A2 2 0 0 1 22 16.9z"/></svg>
+        </span>
+        <span>+62 812-2404-7821</span>
+      </div>
+
+      <div class="footer2__contact">
+        <span class="footer2__cicon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
+        </span>
+        <span>info@dispar.co.id</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer2__bottom">
+    <div class="container footer2__bottom-inner">
+      <span class="footer2__copy">©</span> 2025 Pariwisata Kabupaten Bima
+    </div>
+  </div>
+</footer>
+
+<!-- Modal gambar -->
+<div class="destdetail__modal" id="imgModal" aria-hidden="true">
+  <button class="destdetail__modalClose" type="button" id="imgModalClose" aria-label="Tutup">×</button>
+  <img class="destdetail__modalImg" id="imgModalImg" alt="Preview Dokumentasi">
+</div>
+
+<script src="destinasi.js"></script>
+<script>
+const loginBtn = document.getElementById("loginBtn");
+const loginModal = document.getElementById("loginModal");
+const closeLogin = document.getElementById("closeLogin");
+const loginForm = document.getElementById("loginForm");
+const loginError = document.getElementById("loginError");
+
+loginBtn.addEventListener("click", function(e){
+  e.preventDefault();
+  loginModal.classList.add("active");
+});
+
+closeLogin.addEventListener("click", function(){
+  loginModal.classList.remove("active");
+});
+
+window.addEventListener("click", function(e){
+  if(e.target === loginModal){
+    loginModal.classList.remove("active");
+  }
+});
+
+loginForm.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // Username & password admin
+  if(username === "admin" && password === "admin123"){
+    window.location.href = "admin.html";
+  } else {
+    loginError.textContent = "Username atau password salah!";
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manajemen Event - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR (samakan dengan dashboard admin kamu) -->
+     <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+      </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
+        </a>
+        <a class="admin-nav__item" href="admin-destinasi.html">
+         <img class="admin-ic" src="logo/container74.svg"> Destinasi
+        </a>
+        <a class="admin-nav__item active" href="admin-event.html">
+          <img class="admin-ic" src="logo/containerevent.svg"> Event
+        </a>
+        <a class="admin-nav__item" href="admin-berita.html">
+          <img class="admin-ic" src="logo/container78.svg"> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg">Akomodasi
+        </a>
+
+        <!-- TAMBAHAN: Kelola Admin -->
+        <a class="admin-nav__item" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg"> Kelola Admin
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <!-- DROPDOWN -->
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+
+        <!-- HEAD -->
+        <div class="adm-head">
+          <div>
+            <h1 class="adm-title">Manajemen Event</h1>
+            <p class="adm-sub">Kelola daftar acara pariwisata daerah</p>
+          </div>
+
+          <a class="adm-btn adm-btn--primary" href="tambah-event.html">
+            <span class="adm-btn__plus">+</span>
+            Tambah Event
+          </a>
+        </div>
+
+        <!-- CARD TABLE WRAP -->
+        <section class="adm-card evt-card">
+          <!-- TOOLBAR: Search + kategori + filter + PAGINATION DIPINDAH KE ATAS -->
+          <div class="newsadm-toolbar newsadm-toolbar--oneRow">
+  <div class="newsadm-search">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="M20 20l-3.5-3.5"></path>
+    </svg>
+    <input type="text" placeholder="Cari event..." />
+  </div>
+
+  <select class="adm-select adm-select--katalog" aria-label="Kategori">
+    <option selected>Semua Kategori</option>
+    <option>Akan Datang</option>
+    <option>Berlangsung</option>
+    <option>Selesai</option>
+  </select>
+</div>
+
+          <!-- table -->
+          <div class="evt-table">
+            <div class="evt-thead">
+              <div class="evt-th">ID</div>
+              <div class="evt-th">POSTER</div>
+              <div class="evt-th">NAMA EVENT</div>
+              <div class="evt-th">TANGGAL</div>
+              <div class="evt-th">LOKASI</div>
+              <div class="evt-th">STATUS</div>
+              <div class="evt-th evt-th--right">AKSI</div>
+            </div>
+
+            <!-- ROW 1 -->
+            <div class="evt-row">
+              <div class="evt-td evt-id">#EV-001</div>
+              <div class="evt-td">
+                <img class="evt-poster" src="assets/event/1.jpg" alt="Poster Event">
+              </div>
+              <div class="evt-td evt-name">
+                <div class="evt-name__title">Festival Jazz Pantai</div>
+                <div class="evt-name__sub">Musik &amp; Budaya</div>
+              </div>
+              <div class="evt-td evt-date">24 Okt 2024</div>
+              <div class="evt-td evt-loc">Pantai Kuta, Bali</div>
+              <div class="evt-td">
+                <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
+              </div>
+              <div class="evt-td evt-actions">
+                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- ROW 2 -->
+            <div class="evt-row">
+              <div class="evt-td evt-id">#EV-002</div>
+              <div class="evt-td">
+                <img class="evt-poster" src="assets/event/2.jpg" alt="Poster Event">
+              </div>
+              <div class="evt-td evt-name">
+                <div class="evt-name__title">Pameran Batik Nasional</div>
+                <div class="evt-name__sub">Pameran Seni</div>
+              </div>
+              <div class="evt-td evt-date">12 - 15 Agu 2024</div>
+              <div class="evt-td evt-loc">JCC Senayan, Jakarta</div>
+              <div class="evt-td">
+                <span class="evt-badge evt-badge--on">Berlangsung</span>
+              </div>
+              <div class="evt-td evt-actions">
+                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- ROW 3 -->
+            <div class="evt-row">
+              <div class="evt-td evt-id">#EV-003</div>
+              <div class="evt-td">
+                <img class="evt-poster" src="assets/event/3.jpg" alt="Poster Event">
+              </div>
+              <div class="evt-td evt-name">
+                <div class="evt-name__title">Lari Lintas Alam Bromo</div>
+                <div class="evt-name__sub">Olahraga</div>
+              </div>
+              <div class="evt-td evt-date">05 Jul 2024</div>
+              <div class="evt-td evt-loc">TN Bromo, Probolinggo</div>
+              <div class="evt-td">
+                <span class="evt-badge evt-badge--done">Selesai</span>
+              </div>
+              <div class="evt-td evt-actions">
+                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- ROW 4 -->
+            <div class="evt-row">
+              <div class="evt-td evt-id">#EV-004</div>
+              <div class="evt-td">
+                <img class="evt-poster" src="assets/event/4.jpg" alt="Poster Event">
+              </div>
+              <div class="evt-td evt-name">
+                <div class="evt-name__title">Jakarta Night Carnival</div>
+                <div class="evt-name__sub">Festival Kota</div>
+              </div>
+              <div class="evt-td evt-date">10 Nov 2024</div>
+              <div class="evt-td evt-loc">Monas, Jakarta Pusat</div>
+              <div class="evt-td">
+                <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
+              </div>
+              <div class="evt-td evt-actions">
+                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- ROW 5 -->
+            <div class="evt-row">
+              <div class="evt-td evt-id">#EV-005</div>
+              <div class="evt-td">
+                <img class="evt-poster" src="assets/event/5.jpg" alt="Poster Event">
+              </div>
+              <div class="evt-td evt-name">
+                <div class="evt-name__title">Pesta Kuliner Nusantara</div>
+                <div class="evt-name__sub">Kuliner</div>
+              </div>
+              <div class="evt-td evt-date">20 - 22 Sep 2024</div>
+              <div class="evt-td evt-loc">Alun-Alun Bandung</div>
+              <div class="evt-td">
+                <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
+              </div>
+              <div class="evt-td evt-actions">
+                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- FOOT -->
+          <div class="evt-foot">
+            <div class="evt-foot__text">Menampilkan 1-5 dari 124 event</div>
+
+            <div class="evt-pagi">
+              <button class="evt-pagi__btn" aria-label="Prev">‹</button>
+              <button class="evt-pagi__num is-active">1</button>
+              <button class="evt-pagi__num">2</button>
+              <button class="evt-pagi__num">3</button>
+              <span class="evt-pagi__dots">…</span>
+              <button class="evt-pagi__num">25</button>
+              <button class="evt-pagi__btn" aria-label="Next">›</button>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

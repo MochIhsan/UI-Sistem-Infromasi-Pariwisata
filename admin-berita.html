@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manajemen Berita - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR (samakan dengan dashboard admin kamu) -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+      </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
+        </a>
+        <a class="admin-nav__item" href="admin-destinasi.html">
+          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
+        </a>
+        <a class="admin-nav__item" href="admin-event.html">
+          <img class="admin-ic" src="logo/container76.svg"></img> Event
+        </a>
+        <a class="admin-nav__item active" href="admin-berita.html">
+          <img class="admin-ic" src="logo/containerberita.svg"> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
+        </a>
+
+        <!-- TAMBAHAN: Kelola Admin -->
+        <a class="admin-nav__item" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
+       
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <!-- DROPDOWN -->
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+        <!-- HEAD -->
+        <div class="adm-head">
+          <div>
+            <h1 class="adm-title">Manajemen Berita</h1>
+            <p class="adm-sub">Kelola semua artikel, berita, dan tips pariwisata dalam satu panel.</p>
+          </div>
+
+          <a class="adm-btn adm-btn--primary" href="tulis-berita.html">
+            <span class="adm-btn__plus">+</span>
+            Tulis Berita
+          </a>
+        </div>
+        <!-- STATS CARDS -->
+        <section class="newsadm-stats">
+          <div class="newsadm-stat">
+            <div class="newsadm-stat__icon" aria-hidden="true">
+              <img src="logo/container0.svg">
+            </div>
+            <div>
+              <div class="newsadm-stat__label">Total Berita</div>
+              <div class="newsadm-stat__value">10</div>
+            </div>
+          </div>
+
+          <div class="newsadm-stat">
+            <div class="newsadm-stat__icon1 newsadm-stat__icon--green" aria-hidden="true">
+              <img src="logo/container4.svg">
+            </div>
+            <div>
+              <div class="newsadm-stat__label">Pembaca Bulan Ini</div>
+              <div class="newsadm-stat__value">12,402</div>
+            </div>
+          </div>
+
+          <div class="newsadm-stat">
+            <div class="newsadm-stat__icon newsadm-stat__icon--yellow" aria-hidden="true">
+              <img src="logo/container8.svg">
+            </div>
+            <div>
+              <div class="newsadm-stat__label">Draft Berita</div>
+              <div class="newsadm-stat__value">7</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CARD -->
+        <section class="adm-card newsadm-card">
+
+          <!-- TOOLBAR: Search + kategori + filter + PAGINATION DIPINDAH KE ATAS -->
+          <div class="newsadm-toolbar newsadm-toolbar--oneRow">
+  <div class="newsadm-search">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="M20 20l-3.5-3.5"></path>
+    </svg>
+    <input type="text" placeholder="Cari judul berita..." />
+  </div>
+
+  <select class="adm-select adm-select--katalog" aria-label="Kategori">
+    <option selected>Semua Kategori</option>
+    <option>Promotion</option>
+    <option>News</option>
+    <option>Tips</option>
+  </select>
+</div>
+
+          <!-- TABLE -->
+          <div class="newsadm-table">
+            <div class="newsadm-thead">
+              <div class="newsadm-th">ID</div>
+              <div class="newsadm-th">THUMBNAIL</div>
+              <div class="newsadm-th">JUDUL<br>BERITA</div>
+              <div class="newsadm-th">KATEGORI</div>
+              <div class="newsadm-th">PENULIS</div>
+              <div class="newsadm-th">TANGGAL</div>
+              <div class="newsadm-th">DILIHAT</div>
+              <div class="newsadm-th newsadm-th--right">AKSI</div>
+            </div>
+
+            <!-- row 1 -->
+            <div class="newsadm-row">
+              <div class="newsadm-td newsadm-id">#4212</div>
+              <div class="newsadm-td">
+                <img class="newsadm-thumb" src="assets/berita/1.jpg" alt="Thumbnail">
+              </div>
+              <div class="newsadm-td newsadm-title">
+                <div class="newsadm-title__txt">10 Destina...</div>
+              </div>
+              <div class="newsadm-td">
+                <span class="newsadm-badge newsadm-badge--tips">Tips</span>
+              </div>
+              <div class="newsadm-td newsadm-author">
+                <div>Aris</div><div class="newsadm-muted">Munandar</div>
+              </div>
+              <div class="newsadm-td newsadm-date">12 Okt<br>2023</div>
+              <div class="newsadm-td newsadm-view">
+                <span class="newsadm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                1,240
+              </div>
+              <div class="newsadm-td newsadm-actions">
+                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- row 2 -->
+            <div class="newsadm-row">
+              <div class="newsadm-td newsadm-id">#4213</div>
+              <div class="newsadm-td">
+                <img class="newsadm-thumb" src="assets/berita/2.jpg" alt="Thumbnail">
+              </div>
+              <div class="newsadm-td newsadm-title">
+                <div class="newsadm-title__txt">Update...</div>
+              </div>
+              <div class="newsadm-td">
+                <span class="newsadm-badge newsadm-badge--news">News</span>
+              </div>
+              <div class="newsadm-td newsadm-author">
+                <div>Siti</div><div class="newsadm-muted">Aminah</div>
+              </div>
+              <div class="newsadm-td newsadm-date">10 Okt<br>2023</div>
+              <div class="newsadm-td newsadm-view">
+                <span class="newsadm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                856
+              </div>
+              <div class="newsadm-td newsadm-actions">
+                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- row 3 -->
+            <div class="newsadm-row">
+              <div class="newsadm-td newsadm-id">#4214</div>
+              <div class="newsadm-td">
+                <img class="newsadm-thumb" src="assets/berita/3.jpg" alt="Thumbnail">
+              </div>
+              <div class="newsadm-td newsadm-title">
+                <div class="newsadm-title__txt">Promo Akh...</div>
+              </div>
+              <div class="newsadm-td">
+                <span class="newsadm-badge newsadm-badge--promo">Promotion</span>
+              </div>
+              <div class="newsadm-td newsadm-author">
+                <div>Marketing</div><div class="newsadm-muted">Team</div>
+              </div>
+              <div class="newsadm-td newsadm-date">08 Okt<br>2023</div>
+              <div class="newsadm-td newsadm-view">
+                <span class="newsadm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                3,412
+              </div>
+              <div class="newsadm-td newsadm-actions">
+                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- row 4 -->
+            <div class="newsadm-row">
+              <div class="newsadm-td newsadm-id">#4215</div>
+              <div class="newsadm-td">
+                <img class="newsadm-thumb" src="assets/berita/4.jpg" alt="Thumbnail">
+              </div>
+              <div class="newsadm-td newsadm-title">
+                <div class="newsadm-title__txt">Jalur...</div>
+              </div>
+              <div class="newsadm-td">
+                <span class="newsadm-badge newsadm-badge--news">News</span>
+              </div>
+              <div class="newsadm-td newsadm-author">
+                <div>Aris</div><div class="newsadm-muted">Munandar</div>
+              </div>
+              <div class="newsadm-td newsadm-date">05 Okt<br>2023</div>
+              <div class="newsadm-td newsadm-view">
+                <span class="newsadm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                1,102
+              </div>
+              <div class="newsadm-td newsadm-actions">
+                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- row 5 -->
+            <div class="newsadm-row">
+              <div class="newsadm-td newsadm-id">#4216</div>
+              <div class="newsadm-td">
+                <img class="newsadm-thumb" src="assets/berita/5.jpg" alt="Thumbnail">
+              </div>
+              <div class="newsadm-td newsadm-title">
+                <div class="newsadm-title__txt">Tips Memil...</div>
+              </div>
+              <div class="newsadm-td">
+                <span class="newsadm-badge newsadm-badge--tips">Tips</span>
+              </div>
+              <div class="newsadm-td newsadm-author">
+                <div>Siti</div><div class="newsadm-muted">Aminah</div>
+              </div>
+              <div class="newsadm-td newsadm-date">01 Okt<br>2023</div>
+              <div class="newsadm-td newsadm-view">
+                <span class="newsadm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                2,780
+              </div>
+              <div class="newsadm-td newsadm-actions">
+                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- FOOT NOTE (tanpa pagination di bawah) -->
+          <div class="newsadm-bottom">
+  <div class="newsadm-footnote">
+    Menampilkan 1 sampai 5 dari 24 berita
+  </div>
+
+  <div class="newsadm-pagi newsadm-pagi--bottom">
+    <button class="newsadm-pagi__btn" aria-label="Prev">‹</button>
+    <button class="newsadm-pagi__num is-active">1</button>
+    <button class="newsadm-pagi__num">2</button>
+    <button class="newsadm-pagi__num">3</button>
+    <span class="newsadm-pagi__dots">…</span>
+    <button class="newsadm-pagi__num">5</button>
+    <button class="newsadm-pagi__btn" aria-label="Next">›</button>
+  </div>
+</div>
+        </section>
+
+      
+
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

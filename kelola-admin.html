@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kelola Admin - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html"><img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard</a>
+        <a class="admin-nav__item" href="admin-destinasi.html"><img class="admin-ic" src="logo/container74.svg"> Destinasi</a>
+        <a class="admin-nav__item" href="admin-event.html"><img class="admin-ic" src="logo/container76.svg"></span> Event</a>
+        <a class="admin-nav__item" href="admin-berita.html"> <img class="admin-ic" src="logo/container78.svg"></span> Berita</a>
+        <a class="admin-nav__item" href="admin-akomodasi.html"><img class="admin-ic" src="logo/container80.svg"> Akomodasi</a>
+
+        <a class="admin-nav__item active" href="kelola-admin.html"><img class="admin-ic" src="logo/containerkelola.svg"> Kelola Admin</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+        <!-- HEAD -->
+        <div class="adm-head">
+          <div>
+            <h1 class="adm-title">Kelola Admin</h1>
+            <p class="adm-sub">Manajemen akses dan daftar administrator sistem.</p>
+          </div>
+
+          <a class="adm-btn adm-btn--primary" href="tambah-admin.html">
+            <span class="adm-btn__plus">+</span>
+            Tambah Admin
+          </a>
+        </div>
+
+        <!-- CARD -->
+        <section class="adm-card adminm-card">
+          <!-- TABLE -->
+          <div class="adminm-table">
+            <div class="adminm-thead">
+              <div class="adminm-th">NAMA ADMIN</div>
+              <div class="adminm-th">USERNAME</div>
+              <div class="adminm-th">EMAIL</div>
+              <div class="adminm-th">STATUS</div>
+              <div class="adminm-th adminm-th--right">AKSI</div>
+            </div>
+
+            <!-- ROW 1 -->
+            <div class="adminm-row">
+              <div class="adminm-td adminm-namecell">
+                <span class="adminm-ava">AU</span>
+                <span class="adminm-name">Admin Utama</span>
+              </div>
+              <div class="adminm-td adminm-muted">admin_super</div>
+              <div class="adminm-td adminm-muted">admin@tourism.com</div>
+              <div class="adminm-td">
+                <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+              </div>
+              <div class="adminm-td adminm-actions">
+                <button class="adminm-act" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+
+                <button class="adminm-act" title="Reset Password" aria-label="Reset Password">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5a7 7 0 1 1-6.3 4"></path>
+                    <path d="M6 9H3V6"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                  </svg>
+                </button>
+
+                <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- ROW 2 -->
+            <div class="adminm-row">
+              <div class="adminm-td adminm-namecell">
+                <span class="adminm-ava">RD</span>
+                <span class="adminm-name">Riana Destin</span>
+              </div>
+              <div class="adminm-td adminm-muted">riana_editor</div>
+              <div class="adminm-td adminm-muted">riana@tourism.com</div>
+              <!--<div class="adminm-td">
+                <span class="adminm-badge adminm-badge--role adminm-badge--role2">EDITOR</span>
+              </div> -->
+              <div class="adminm-td">
+                <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+              </div>
+              <div class="adminm-td adminm-actions">
+                <button class="adminm-act" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+
+                <button class="adminm-act" title="Reset Password" aria-label="Reset Password">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5a7 7 0 1 1-6.3 4"></path>
+                    <path d="M6 9H3V6"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                  </svg>
+                </button>
+
+                <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- ROW 3 -->
+            <div class="adminm-row">
+              <div class="adminm-td adminm-namecell">
+                <span class="adminm-ava">BP</span>
+                <span class="adminm-name">Budi Pratama</span>
+              </div>
+              <div class="adminm-td adminm-muted">budi_pratama</div>
+              <div class="adminm-td adminm-muted">budi@tourism.com</div>
+            <!--  <div class="adminm-td">
+                <span class="adminm-badge adminm-badge--role adminm-badge--role2">EDITOR</span>
+              </div> -->
+              <div class="adminm-td">
+                <span class="adminm-status adminm-status--inactive"><span class="adminm-dot"></span> Inactive</span>
+              </div>
+              <div class="adminm-td adminm-actions">
+                <button class="adminm-act" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </button>
+
+                <button class="adminm-act" title="Reset Password" aria-label="Reset Password">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5a7 7 0 1 1-6.3 4"></path>
+                    <path d="M6 9H3V6"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 17h.01"></path>
+                  </svg>
+                </button>
+
+                <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM -->
+          <div class="adminm-bottom">
+            <div class="adminm-footnote">Showing 3 of 3 results</div>
+
+            <div class="adminm-pagi">
+              <button class="adminm-pagi__btn" aria-label="Prev">‹</button>
+              <button class="adminm-pagi__num is-active">1</button>
+              <button class="adminm-pagi__btn" aria-label="Next">›</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

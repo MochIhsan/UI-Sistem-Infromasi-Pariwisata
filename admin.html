@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard - Pariwisata Kabupaten Bima</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+      </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item active" href="admin.html">
+          <img class="admin-ic" src="logo/container72.svg"></img> Dashboard
+        </a>
+        <a class="admin-nav__item" href="admin-destinasi.html">
+          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
+        </a>
+        <a class="admin-nav__item" href="admin-event.html">
+          <img class="admin-ic" src="logo/container76.svg"></img> Event
+        </a>
+        <a class="admin-nav__item" href="admin-berita.html">
+          <img class="admin-ic" src="logo/container78.svg"></img> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
+        </a>
+
+        <!-- TAMBAHAN: Kelola Admin -->
+        <a class="admin-nav__item" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR  -->
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <!-- DROPDOWN -->
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <section class="admin-wrap">
+        <div class="admin-head">
+          <div>
+            <h1 class="admin-h1">Dashboard Overview</h1>
+            <p class="admin-sub">Welcome back, here's what's happening today.</p>
+          </div>
+        </div>
+
+        <!-- STATS -->
+        <section class="admin-stats">
+          <article class="stat-card">
+            <div class="stat-top">
+              <div>
+                <div class="stat-label">Total Destinasi</div>
+                <div class="stat-value">40</div>
+              </div>
+              <div class="stat-icon">
+                <img src="logo/container46.svg">
+              </div>
+            </div>
+            <div class="stat-foot up">+12% vs last month</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <div>
+                <div class="stat-label">Total Event</div>
+                <div class="stat-value">10</div>
+              </div>
+               <div class="stat-icon1">
+                <img src="logo/container51.svg">
+              </div>
+            </div>
+            <div class="stat-foot warn">Steady this month</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <div>
+                <div class="stat-label">Total Berita</div>
+                <div class="stat-value">10</div>
+              </div>
+               <div class="stat-icon1">
+                <img src="logo/container56.svg">
+              </div>
+            </div>
+            <div class="stat-foot up">+5% vs last month</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <div>
+                <div class="stat-label">Akomodasi</div>
+                <div class="stat-value">7</div>
+              </div>
+               <div class="stat-icon1">
+                <img src="logo/container61.svg">
+              </div>
+            </div>
+            <div class="stat-foot down">-2% vs last month</div>
+          </article>
+        </section>
+
+        <!-- CHARTS -->
+        <section class="admin-panels">
+          <article class="panel panel--wide">
+            <div class="panel-head">
+            <h3 class="panel-title">Visitor Statistics</h3>
+
+            <div class="panel-filter">
+                <label class="panel-filter__label" for="rangeSelect">Periode</label>
+                <select id="rangeSelect" class="panel-filter__select">
+                <option value="6" selected>Last 6 Months</option>
+                <option value="12">Last 12 Months</option>
+                </select>
+            </div>
+            </div>
+
+            <!-- bar chart dummy -->
+            <div class="bars" id="barsWrap"></div>
+              
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <h3 class="panel-title">Popular Categories</h3>
+            </div>
+
+            <!-- donut dummy -->
+            <div class="donut-wrap">
+              <div class="donut">
+                <div class="donut-center">
+                  <div class="donut-num">67</div>
+                  <div class="donut-sub">ITEMS</div>
+                </div>
+              </div>
+
+              <div class="donut-legend">
+                <div class="lg">
+                  <span class="dot b"></span>
+                  <span class="lg-name">Destinasi</span>
+                  <span class="lg-val">73%</span>
+                </div>
+                <div class="lg">
+                  <span class="dot o"></span>
+                  <span class="lg-name">Event</span>
+                  <span class="lg-val">10%</span>
+                </div>
+                <div class="lg">
+                  <span class="dot g"></span>
+                  <span class="lg-name">Berita</span>
+                  <span class="lg-val">10%</span>
+                </div>
+                <div class="lg">
+                  <span class="dot v"></span>
+                  <span class="lg-name">Akomodasi</span>
+                  <span class="lg-val">7%</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- TABLE -->
+        <section class="panel panel--table">
+          <div class="panel-head">
+            <h3 class="panel-title">Recent Activity</h3>
+            <a class="panel-link" href="#">View All</a>
+          </div>
+
+          <div class="table">
+            <div class="tr th">
+              <div>ACTIVITY NAME</div>
+              <div>CATEGORY</div>
+              <div>TIMESTAMP</div>
+              <div>STATUS</div>
+              <div>ACTION</div>
+            </div>
+
+            <div class="tr">
+              <div class="td-title2"><span class="ticon plus">+</span> New Destination Added: Pantai Lariti</div>
+              <div>Destinasi</div>
+              <div>2 mins ago</div>
+              <div><span class="badge ok">Published</span></div>
+              <div class="actions">
+                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">
+                    ✎
+                </button>
+                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">
+                    🗑
+                </button>
+                </div>
+            </div>
+
+            <div class="tr">
+              <div class="td-title2"><span class="ticon edit">✎</span> Event Updated: Bau Nyale 2024</div>
+              <div>Event</div>
+              <div>45 mins ago</div>
+              <div><span class="badge info">Updated</span></div>
+              <div class="actions">
+                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">
+                    ✎
+                </button>
+                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">
+                    🗑
+                </button>
+                </div>
+            </div>
+
+            <div class="tr">
+              <div class="td-title2"><span class="ticon warn">!</span> Berita Draft: Tips Wisata Bima</div>
+              <div>Berita</div>
+              <div>2 hours ago</div>
+              <div><span class="badge warn">Draft</span></div>
+              <div class="actions">
+                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">
+                    ✎
+                </button>
+                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">
+                    🗑
+                </button>
+                </div>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

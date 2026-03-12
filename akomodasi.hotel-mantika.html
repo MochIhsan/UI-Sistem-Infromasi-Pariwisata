@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Akomodasi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a class="nav__link" href="home.html">Home</a>
+      <a class="nav__link" href="destinasi.html">Destinasi</a>
+      <a class="nav__link" href="event.html">Event</a>
+      <a class="nav__link" href="berita.html">Berita</a>
+      <a class="nav__link nav__link--active" href="akomodasi.html">Akomodasi</a>
+      <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
+        <span>Login</span>
+        <span class="nav__login-icon">
+        <svg viewBox="0 0 24 24">
+        <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
+        <path d="M4 20a8 8 0 0 1 16 0"></path>
+        </svg>
+        </span>
+        </a>
+      </nav>
+      <button class="nav__burger" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+<!-- LOGIN MODAL -->
+<div class="login-modal" id="loginModal">
+  <div class="login-box">
+    <button class="login-close" id="closeLogin">&times;</button>
+
+    <h2>Login Admin</h2>
+
+    <form id="loginForm">
+      <div class="login-group">
+        <label>Username</label>
+        <input type="text" id="username" required>
+      </div>
+
+      <div class="login-group">
+        <label>Password</label>
+        <input type="password" id="password" required>
+      </div>
+
+      <button type="submit" class="login-submit">Masuk</button>
+    </form>
+
+    <p class="login-error" id="loginError"></p>
+  </div>
+</div>
+
+<main class="accd">
+  <div class="container accd__container">
+
+    <!-- =========================
+         GALERI FOTO (seperti gambar)
+         ========================= -->
+    <section class="accd-gal reveal">
+      <button class="accd-gal__main accd-imgBtn" data-full="assets/akomodasi/mantika/1.png" aria-label="Buka foto utama">
+        <img src="assets/akomodasi/mantika/1.png" alt="Foto utama" />
+      </button>
+
+      <div class="accd-gal__side">
+        <button class="accd-gal__thumb accd-imgBtn" data-full="assets/akomodasi/mantika/2.png" aria-label="Buka foto 2">
+          <img src="assets/akomodasi/mantika/2.png" alt="Foto 2" />
+        </button>
+
+        <button class="accd-gal__thumb accd-imgBtn" data-full="assets/akomodasi/mantika/3.png" aria-label="Buka foto 3">
+          <img src="assets/akomodasi/mantika/3.png" alt="Foto 3" />
+        </button>
+
+        <button class="accd-gal__thumb accd-imgBtn" data-full="assets/akomodasi/mantika/4.png" aria-label="Buka foto 4">
+          <img src="assets/akomodasi/mantika/4.png" alt="Foto 4" />
+        </button>
+
+        <button class="accd-gal__thumb accd-gal__thumb--more" id="openAllPhotos" aria-label="Lihat semua foto">
+          <img src="assets/akomodasi/mantika/5.png" alt="Foto 5" />
+          <span class="accd-gal__more">Lihat Semua Foto</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================
+         INFO: kiri judul, kanan harga+jaminan
+         ========================= -->
+    <section class="accd-head reveal">
+      <!-- kiri -->
+      <div class="accd-head__left">
+        <div class="accd-miniTag">
+          <span class="accd-miniTag__pill">HOTEL</span>
+          <span class="accd-miniTag__stars" aria-label="bintang">
+            <span>★</span><span>★</span><span>★</span><span class="dim">★</span><span class="dim">★</span>
+          </span>
+        </div>
+
+        <h1 class="accd-name">HOTEL MANTIKA</h1>
+
+        <div class="accd-subLoc">
+          <span class="accd-subLoc__ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+              <circle cx="12" cy="9" r="2.5"></circle>
+            </svg>
+          </span>
+          Pelabuhan Sape, Bima, Nusa Tenggara Barat
+        </div>
+
+        <div class="accd-divider"></div>
+
+        <h2 class="accd-h2">Fasilitas Utama</h2>
+
+        <div class="accd-fac">
+          <div class="accd-fac__item">
+            <span class="accd-fac__ic" aria-hidden="true">
+              <!-- WiFi -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 9c4.5-4 9.5-4 14 0"></path>
+                <path d="M8 12c3-2.6 5-2.6 8 0"></path>
+                <path d="M11 15c1-.8 1-.8 2 0"></path>
+                <circle cx="12" cy="18" r="1"></circle>
+              </svg>
+            </span>
+            <span>Free Wi-Fi</span>
+          </div>
+
+          <div class="accd-fac__item">
+            <span class="accd-fac__ic" aria-hidden="true">
+              <!-- AC -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 8h16"></path>
+                <path d="M6 8v4"></path>
+                <path d="M18 8v4"></path>
+                <path d="M7 14c2 2 8 2 10 0"></path>
+              </svg>
+            </span>
+            <span>AC Kamar</span>
+          </div>
+
+          <div class="accd-fac__item">
+            <span class="accd-fac__ic" aria-hidden="true">
+              <!-- Pool -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 21c3-3 5-3 8 0 3 3 5 3 8 0"></path>
+                <path d="M4 17c3-3 5-3 8 0 3 3 5 3 8 0"></path>
+                <path d="M8 4v8"></path>
+                <path d="M16 4v8"></path>
+              </svg>
+            </span>
+            <span>Kolam Renang</span>
+          </div>
+
+          <div class="accd-fac__item">
+            <span class="accd-fac__ic" aria-hidden="true">
+              <!-- Restaurant -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2v10"></path>
+                <path d="M10 2v10"></path>
+                <path d="M6 7h4"></path>
+                <path d="M14 2v8c0 1 1 2 2 2s2-1 2-2V2"></path>
+                <path d="M6 12v10"></path>
+                <path d="M10 12v10"></path>
+                <path d="M16 12v10"></path>
+              </svg>
+            </span>
+            <span>Restoran</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- kanan -->
+      <aside class="accd-head__right">
+        <div class="accd-priceBox">
+          <div class="accd-priceBox__label">Mulai dari</div>
+          <div class="accd-priceBox__row">
+            <div class="accd-priceBox__price">IDR 300.000</div>
+            <div class="accd-priceBox__per">/ malam</div>
+          </div>
+        </div>
+
+        <div class="accd-bestBox">
+          <div class="accd-bestBox__top">
+            <span class="accd-bestBox__ic" aria-hidden="true">
+              <!-- check circle -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M8 12l2.5 2.5L16 9"></path>
+              </svg>
+            </span>
+            <div class="accd-bestBox__title">Jaminan Harga Terbaik</div>
+          </div>
+          <div class="accd-bestBox__text">
+            Kami menjamin Anda mendapatkan harga terendah untuk pemesanan melalui platform resmi kami.
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- =========================
+         LOKASI
+         ========================= -->
+    <section class="accd-sec reveal">
+      <h2 class="accd-h2">Lokasi</h2>
+      <div class="accd-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1972.6143210373627!2d119.01909191118872!3d-8.574001179504979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db598ecf1a117c3%3A0x78301c208491aeab!2sHotel%20Mantika!5e0!3m2!1sen!2sid!4v1771777017183!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Peta lokasi"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- =========================
+         DESTINASI SEKITAR (kecil seperti contoh)
+         ========================= -->
+    <section class="accd-sec reveal">
+      <h2 class="accd-h2">Destinasi Sekitar</h2>
+
+      <div class="accd-near2">
+        <a class="accd-near2__card" href="lariti.html">
+          <img class="accd-near2__img" src="assets/dest/lariti/1.png" alt="Pantai Lariti">
+          <div class="accd-near2__body">
+            <div class="accd-near2__title">Pantai Lariti</div>
+            <div class="accd-near2__meta">
+              <span class="accd-near2__dist">2.3 km dari hotel</span>
+              <span class="accd-near2__rate">★ 4.8 <span class="muted">(120 Ulasan)</span></span>
+            </div>
+          </div>
+        </a>
+
+        <a class="accd-near2__card" href="#">
+          <img class="accd-near2__img" src="assets/dest/pink/1.png" alt="Bukit Matompi">
+          <div class="accd-near2__body">
+            <div class="accd-near2__title">Bukit Matompi</div>
+            <div class="accd-near2__meta">
+              <span class="accd-near2__dist">5.0 km dari hotel</span>
+              <span class="accd-near2__rate">★ 4.5 <span class="muted">(85 Ulasan)</span></span>
+            </div>
+          </div>
+        </a>
+
+        <a class="accd-near2__card" href="#">
+          <img class="accd-near2__img" src="assets/dest/pink/1.png" alt="Bukit Matompi">
+          <div class="accd-near2__body">
+            <div class="accd-near2__title">Bukit Matompi</div>
+            <div class="accd-near2__meta">
+              <span class="accd-near2__dist">5.0 km dari hotel</span>
+              <span class="accd-near2__rate">★ 4.5 <span class="muted">(85 Ulasan)</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================
+         KEBIJAKAN (samakan gambar)
+         ========================= -->
+    <section class="accd-sec reveal">
+      <div class="accd-policy2">
+        <h3 class="accd-policy2__title">Kebijakan Penginapan</h3>
+
+        <div class="accd-policy2__grid">
+          <!-- kiri -->
+          <div class="accd-policy2__col">
+            <div class="accd-policy2__h">
+              <span class="accd-policy2__ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 7v5l3 2"></path>
+                </svg>
+              </span>
+              Check-in / Check-out
+            </div>
+
+            <div class="accd-policy2__rows">
+              <div class="accd-policy2__row">
+                <span class="lbl">Check-in</span>
+                <span class="val">14.00 WITA</span>
+              </div>
+              <div class="accd-policy2__row">
+                <span class="lbl">Check-out</span>
+                <span class="val">12.00 WITA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- kanan -->
+          <div class="accd-policy2__col">
+            <div class="accd-policy2__h">
+              <span class="accd-policy2__ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 4h14v16H5z"></path>
+                  <path d="M8 8h8"></path>
+                  <path d="M8 12h8"></path>
+                  <path d="M8 16h6"></path>
+                </svg>
+              </span>
+              Peraturan Umum
+            </div>
+
+            <ul class="accd-policy2__list">
+              <li class="x">Dilarang membawa alkohol (kamar)</li>
+              <li class="x">Tidak diperbolehkan membawa hewan peliharaan</li>
+              <li class="ok">Anak-anak diperbolehkan menginap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ULASAN: pakai komponen yang sama dengan destinasi (kalau sudah ada di halaman destinasi kamu) -->
+    <section class="accd-sec reveal">
+      <div class="rev-card">
+        <div class="rev-head">
+          <div class="rev-score">
+            <div class="rev-score__num">4.9</div>
+            <div class="rev-score__meta">
+              <div class="rev-score__label">Ringkasan ulasan</div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="rev-bars">
+            <div class="rev-bar"><span>5</span><div class="rev-bar__track"><div class="rev-bar__fill" style="width:92%"></div></div></div>
+            <div class="rev-bar"><span>4</span><div class="rev-bar__track"><div class="rev-bar__fill" style="width:70%"></div></div></div>
+            <div class="rev-bar"><span>3</span><div class="rev-bar__track"><div class="rev-bar__fill" style="width:25%"></div></div></div>
+            <div class="rev-bar"><span>2</span><div class="rev-bar__track"><div class="rev-bar__fill" style="width:10%"></div></div></div>
+            <div class="rev-bar"><span>1</span><div class="rev-bar__track"><div class="rev-bar__fill" style="width:6%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="rev-form">
+          <div class="rev-form__label">Beri rating & ulasan</div>
+
+          <div class="rev-rate">
+            <div class="rev-rate__avatar">A</div>
+            <div class="rev-rate__stars" data-rating="0" id="revStars">
+              <button type="button" class="rev-starBtn" data-val="1">☆</button>
+              <button type="button" class="rev-starBtn" data-val="2">☆</button>
+              <button type="button" class="rev-starBtn" data-val="3">☆</button>
+              <button type="button" class="rev-starBtn" data-val="4">☆</button>
+              <button type="button" class="rev-starBtn" data-val="5">☆</button>
+            </div>
+          </div>
+
+          <textarea class="rev-textarea" placeholder="Tambahkan ulasan..."></textarea>
+          <button class="rev-submit" type="button">Posting</button>
+        </div>
+
+        <div class="rev-list">
+          <div class="rev-item">
+            <div class="rev-item__top">
+              <div class="rev-item__avatar">AP</div>
+              <div class="rev-item__name">
+                <div><b>Arif Pratama</b></div>
+                <div class="rev-item__stars">★★★★★</div>
+              </div>
+              <button class="rev-like" type="button">♡</button>
+            </div>
+            <div class="rev-item__text">
+              Pelayanan oke, lokasi dekat pantai. Kamar bersih dan nyaman.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lbClose" aria-label="Tutup">×</button>
+  <img class="lightbox__img" id="lbImg" alt="Foto" />
+</div>
+
+<!-- FOOTER (sama seperti sebelumnya) -->
+  <footer class="footer2">
+    <div class="container footer2__grid">
+      <div class="footer2__brand">
+        <div class="footer2__logo-ring">
+          <img class="footer2__logo" src="assets/logo.png" alt="">
+        </div>
+
+        <div class="footer2__social">
+          <a href="#" class="footer2__soc" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg>
+          </a>
+          <a href="#" class="footer2__soc" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+          <a href="#" class="footer2__soc" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M21 8s-1-3-3-3H6C4 5 3 8 3 8s-.5 3.5 0 8c0 0 1 3 3 3h12c2 0 3-3 3-3s.5-3.5 0-8z"/><path d="M10 9.5v5l5-2.5-5-2.5z"/></svg>
+          </a>
+          <a href="#" class="footer2__soc" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+       <div class="footer2__col">
+        <<div class="footer2__title">Tentang</div>
+          <p class="footer2__desc">
+          Sistem Informasi Pariwisata Online adalah sistem informasi yang
+          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
+          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+          </p>
+      </div>
+
+      <div class="footer2__col">
+        <div class="footer2__title">Tentang</div>
+          <p class="footer2__desc">
+          Sistem Informasi Pariwisata Online adalah sistem informasi yang
+          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
+          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+          </p>
+      </div>
+
+      <div class="footer2__col">
+        <div class="footer2__title">Kontak</div>
+        <div class="footer2__contact">
+          <span class="footer2__cicon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </span>
+          <span>Kantor Dinas Pariwisata<br>Kabupaten Bima<br>Nusa Tenggara Barat</span>
+        </div>
+
+        <div class="footer2__contact">
+          <span class="footer2__cicon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L9 10a16 16 0 0 0 5 5l.9-1.1a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6A2 2 0 0 1 22 16.9z"/></svg>
+          </span>
+          <span>+62 812-2404-7821</span>
+        </div>
+
+        <div class="footer2__contact">
+          <span class="footer2__cicon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
+          </span>
+          <span>info@dispar.co.id</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer2__bottom">
+      <div class="container footer2__bottom-inner">
+        <span class="footer2__copy">©</span> 2025 Pariwisata Kabupaten Bima
+      </div>
+    </div>
+  </footer>
+
+  <div class="gallery-popup" id="galleryPopup">
+  <div class="gallery-popup__inner">
+    <button class="gallery-popup__close" id="galleryClose">✕</button>
+    <div class="gallery-popup__grid" id="galleryGrid"></div>
+  </div>
+</div>
+<script src="detail-page.js"></script>
+<script>
+const loginBtn = document.getElementById("loginBtn");
+const loginModal = document.getElementById("loginModal");
+const closeLogin = document.getElementById("closeLogin");
+const loginForm = document.getElementById("loginForm");
+const loginError = document.getElementById("loginError");
+
+loginBtn.addEventListener("click", function(e){
+  e.preventDefault();
+  loginModal.classList.add("active");
+});
+
+closeLogin.addEventListener("click", function(){
+  loginModal.classList.remove("active");
+});
+
+window.addEventListener("click", function(e){
+  if(e.target === loginModal){
+    loginModal.classList.remove("active");
+  }
+});
+
+loginForm.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // Username & password admin
+  if(username === "admin" && password === "admin123"){
+    window.location.href = "admin.html";
+  } else {
+    loginError.textContent = "Username atau password salah!";
+  }
+});
+</script>
+</body>
+</html>

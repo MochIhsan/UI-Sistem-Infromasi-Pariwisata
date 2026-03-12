@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tambah Admin Baru</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="admin-body">
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html"><img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard</a>
+        <a class="admin-nav__item" href="admin-destinasi.html"><img class="admin-ic" src="logo/container74.svg"> Destinasi</a>
+        <a class="admin-nav__item" href="admin-event.html"><img class="admin-ic" src="logo/container76.svg"></span> Event</a>
+        <a class="admin-nav__item" href="admin-berita.html"> <img class="admin-ic" src="logo/container78.svg"></span> Berita</a>
+        <a class="admin-nav__item" href="admin-akomodasi.html"><img class="admin-ic" src="logo/container80.svg"> Akomodasi</a>
+
+        <a class="admin-nav__item active" href="kelola-admin.html"><img class="admin-ic" src="logo/containerkelola.svg"> Kelola Admin</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div></div>
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+        <!-- HEADER PAGE -->
+        <div class="ta-head">
+          <h1 class="ta-title">Tambah Admin Baru</h1>
+
+          <div class="ta-actions">
+            <a class="ta-btn ta-btn--ghost" href="kelola-admin.html">Batal</a>
+            <button class="ta-btn ta-btn--primary" id="btnSaveAdmin" type="button">
+              Simpan Admin
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD FORM -->
+        <section class="ta-card">
+          <!-- INFORMASI AKUN -->
+          <div class="ta-sec">
+            <div class="ta-sec__head">
+              <span class="ta-sec__icon" aria-hidden="true">
+  <!-- user icon -->
+  <svg viewBox="0 0 24 24" class="ta-ico">
+    <path d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"></path>
+  </svg>
+</span>
+              <div class="ta-sec__ttl">INFORMASI AKUN</div>
+            </div>
+
+            <div class="ta-form">
+              <div class="ta-field">
+                <label class="ta-label" for="namaLengkap">Nama Lengkap</label>
+                <input class="ta-input" id="namaLengkap" type="text" placeholder="Masukkan nama lengkap admin" />
+                <div class="ta-err" id="errNama"></div>
+              </div>
+
+              <div class="ta-row2">
+                <div class="ta-field">
+                  <label class="ta-label" for="username">Username</label>
+                  <input class="ta-input" id="username" type="text" placeholder="Contoh: admin_utama" />
+                  <div class="ta-err" id="errUsername"></div>
+                </div>
+
+                <div class="ta-field">
+                  <label class="ta-label" for="email">Email</label>
+                  <input class="ta-input" id="email" type="email" placeholder="admin@example.com" />
+                  <div class="ta-err" id="errEmail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ta-divider"></div>
+
+          <!-- KEAMANAN -->
+          <div class="ta-sec">
+            <div class="ta-sec__head">
+              <span class="ta-sec__icon" aria-hidden="true">
+  <!-- shield icon -->
+  <svg viewBox="0 0 24 24" class="ta-ico">
+    <path d="M12 2 4 5v6c0 5.55 3.84 10.74 8 11 4.16-.26 8-5.45 8-11V5l-8-3Zm0 10.5 4-4 1.4 1.4L12 15.3 8.6 11.9 10 10.5l2 2Z"></path>
+  </svg>
+</span>
+              <div class="ta-sec__ttl">KEAMANAN</div>
+            </div>
+
+            <div class="ta-form">
+              <div class="ta-row2">
+                <div class="ta-field">
+                  <label class="ta-label" for="password">Password</label>
+                  <div class="ta-inputWrap">
+  <input class="ta-input ta-input--withIcon" id="password" type="password" placeholder="••••••••" />
+  <button class="ta-eye" type="button" data-toggle="password" aria-label="Tampilkan password">
+    <svg viewBox="0 0 24 24" class="ta-ico">
+      <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7Zm0 11a4 4 0 1 1 4-4 4 4 0 0 1-4 4Zm0-6a2 2 0 1 0 2 2 2 2 0 0 0-2-2Z"></path>
+    </svg>
+  </button>
+</div>
+                  <div class="ta-err" id="errPass"></div>
+                </div>
+
+                <div class="ta-field">
+                  <label class="ta-label" for="confirmPassword">Konfirmasi Password</label>
+                    <div class="ta-inputWrap">
+  <input class="ta-input ta-input--withIcon" id="confirmPassword" type="password" placeholder="••••••••" />
+  <button class="ta-eye" type="button" data-toggle="confirmPassword" aria-label="Tampilkan password">
+    <svg viewBox="0 0 24 24" class="ta-ico">
+      <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7Zm0 11a4 4 0 1 1 4-4 4 4 0 0 1-4 4Zm0-6a2 2 0 1 0 2 2 2 2 0 0 0-2-2Z"></path>
+    </svg>
+  </button>
+</div>
+                  <div class="ta-err" id="errConfirm"></div>
+                </div>
+              </div>
+
+              <div class="ta-status">
+                <div class="ta-status__txt">
+                  <div class="ta-status__title">Status Akun</div>
+                  <div class="ta-status__sub">Tentukan apakah akun ini langsung aktif setelah dibuat.</div>
+                </div>
+
+                <div class="ta-status__right">
+                  <label class="ta-switch">
+                    <input id="isActive" type="checkbox" checked />
+                    <span class="ta-switch__track"></span>
+                  </label>
+                  <span class="ta-status__label" id="activeLabel">Aktif</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+  <script src="tambah-admin.js"></script>
+</body>
+</html>

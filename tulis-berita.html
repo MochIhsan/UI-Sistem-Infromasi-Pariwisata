@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tulis Berita Baru - Admin</title>
+
+  <!-- PAKAI CSS UTAMA KAMU -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- TAMBAHAN KHUSUS HALAMAN INI -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="admin-body">
+  <div class="admin-layout">
+    <!-- SIDEBAR (samakan dengan sidebar admin kamu) -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+       <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
+        </a>
+        <a class="admin-nav__item" href="admin-destinasi.html">
+          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
+        </a>
+        <a class="admin-nav__item" href="admin-event.html">
+          <img class="admin-ic" src="logo/container76.svg"></img> Event
+        </a>
+        <a class="admin-nav__item active" href="admin-berita.html">
+          <img class="admin-ic" src="logo/containerberita.svg"> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
+        </a>
+
+        <!-- TAMBAHAN: Kelola Admin -->
+        <a class="admin-nav__item" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
+       
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item">Profil</a>
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+        <!-- HEADER PAGE -->
+        <div class="wb-head">
+          <div class="wb-head__left">
+            <div>
+              <h1 class="wb-title">Tulis Berita Baru</h1>
+              <div class="wb-bread">Manajemen Berita &nbsp; / &nbsp; <b>Tulis Berita</b></div>
+            </div>
+          </div>
+
+          <div class="wb-actions">
+            <button class="wb-btn wb-btn--ghost" id="btnDraft" type="button">Simpan Draft</button>
+            <button class="wb-btn wb-btn--primary" id="btnPublish" type="button">
+              <span class="wb-btn__ic"></span> Terbitkan Berita
+            </button>
+          </div>
+        </div>
+
+        <!-- LAYOUT -->
+        <div class="wb-grid">
+          <!-- LEFT: FORM -->
+          <section class="wb-left">
+            <!-- Judul -->
+            <div class="wb-card">
+              <label class="wb-label" for="judul">Judul Berita</label>
+              <input id="judul" class="wb-input wb-input--title"
+                type="text"
+                placeholder="Contoh: Sidak Diparda, Bupati dan Wakil Bupati Bima Tegaskan Komitmen..."
+              />
+            </div>
+
+            <!-- Banner Utama Berita -->
+<div class="wb-card">
+  <div class="wb-labelRow">
+    <label class="wb-label">Banner Utama Berita</label>
+  </div>
+
+  <!-- pakai komponen upload versi destinasi -->
+  <div class="upbox" id="bannerDrop" tabindex="0" role="button" aria-label="Upload banner berita">
+    <input id="bannerInput" class="upbox__input" type="file" accept="image/*" />
+
+    <!-- STATE: kosong -->
+    <div class="upbox__empty" id="bannerEmpty">
+      <div class="upbox__icon">
+        <!-- icon cloud/upload -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 18h10a4 4 0 0 0 .6-8A5.5 5.5 0 0 0 7 9.7 3.5 3.5 0 0 0 7 18z"></path>
+          <path d="M12 12v6"></path>
+          <path d="M9.5 14.5 12 12l2.5 2.5"></path>
+        </svg>
+      </div>
+      <div class="upbox__title">Upload Banner Berita</div>
+      <div class="upbox__hint">
+        Seret dan lepas gambar ke sini, atau klik untuk memilih file.
+        <br />
+        Gunakan gambar resolusi tinggi (min. 1200×675px).
+      </div>
+    </div>
+
+    <!-- STATE: preview -->
+    <div class="upbox__preview" id="bannerPreview" hidden>
+      <img id="bannerImg" alt="Preview banner berita" />
+      <button class="upbox__remove" id="bannerRemove" type="button">Hapus</button>
+    </div>
+  </div>
+</div>
+
+            <!-- Konten -->
+            <div class="wb-card">
+              <label class="wb-label">Konten Berita</label>
+
+              <div class="wb-editor">
+                <div class="wb-toolbar" role="toolbar" aria-label="Toolbar editor">
+                  <button class="wb-tool" type="button" data-cmd="bold" title="Bold"><b>B</b></button>
+                  <button class="wb-tool" type="button" data-cmd="italic" title="Italic"><i>I</i></button>
+                  <button class="wb-tool" type="button" data-cmd="underline" title="Underline"><u>U</u></button>
+                  <span class="wb-toolSep"></span>
+                  <button class="wb-tool" type="button" data-cmd="insertUnorderedList" title="Bullet">•≡</button>
+                  <button class="wb-tool" type="button" data-cmd="insertOrderedList" title="Number">1≡</button>
+                  <span class="wb-toolSep"></span>
+                  <button class="wb-tool" type="button" data-link title="Link">🔗</button>
+                  <button class="wb-tool" type="button" data-cmd="formatBlock" data-arg="blockquote" title="Quote">❝</button>
+                </div>
+
+                <div
+                  id="editor"
+                  class="wb-editorArea"
+                  contenteditable="true"
+                  spellcheck="true"
+                  data-placeholder="Mulai tulis konten berita Anda di sini..."
+                ></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- RIGHT: SIDEPANEL -->
+          <aside class="wb-right">
+            <!-- Metadata -->
+            <div class="wb-card wb-card--side">
+              <div class="wb-sideTitle">
+                <span class="wb-sideTitle__ic">ⓘ</span>
+                Informasi Metadata
+              </div>
+
+              <div class="wb-field">
+                <label class="wb-label" for="penulis">Penulis</label>
+                <div class="wb-inputIcon">
+                  <span class="wb-inputIcon__ic">👤</span>
+                  <input id="penulis" class="wb-input" type="text" value="Budi Santoso" />
+                </div>
+              </div>
+
+              <div class="wb-field">
+                <label class="wb-label" for="kategori">Kategori</label>
+                <select id="kategori" class="wb-select">
+                  <option>Berita Terkini</option>
+                  <option>Tips Wisata</option>
+                  <option>Event</option>
+                  <option>Promosi</option>
+                </select>
+              </div>
+
+              <div class="wb-field">
+                <label class="wb-label" for="tgl">Tanggal Publikasi</label>
+                <div class="wb-inputIcon">
+                  <span class="wb-inputIcon__ic">📅</span>
+                  <input id="tgl" class="wb-input" type="date" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="wb-card wb-card--side">
+              <div class="wb-sideTitle">
+                <span class="wb-sideTitle__ic">🏷️</span>
+                Label / Tags
+              </div>
+
+              <div class="wb-tags" id="tagsWrap">
+                <!-- chips muncul di sini -->
+              </div>
+
+              <input
+                id="tagInput"
+                class="wb-input"
+                type="text"
+                placeholder="Tambah tag..."
+                autocomplete="off"
+              />
+              <div class="wb-help">
+                Tekan Enter atau gunakan koma untuk memisahkan tag.
+              </div>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- dropdown admin (kalau admin.js kamu sudah handle, ini boleh tetap) -->
+  <script src="admin.js"></script>
+  <script src="tulis-berita.js"></script>
+</body>
+</html>
