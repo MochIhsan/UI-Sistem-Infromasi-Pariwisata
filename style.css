@@ -1216,11 +1216,49 @@ body:not(.admin-body){
 .page-btn.is-active svg{ stroke:#fff; }
 
 @media (max-width: 980px){
-  .dest-grid{ grid-template-columns:repeat(2, 1fr); }
+  .dest-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
 }
+
 @media (max-width: 620px){
-  .dest-grid{ grid-template-columns:1fr; }
-  .dest-head{ flex-direction:column; align-items:flex-start; }
+  .dest-grid{
+    grid-template-columns: repeat(2, 1fr); /* tetap 2 kolom di mobile */
+    gap: 12px;
+  }
+
+  .dest-head{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dest-card{
+    border-radius: 12px;
+  }
+
+  .dest-card__media{
+    height: 120px;
+  }
+
+  .dest-card__body{
+    padding: 10px 10px 12px;
+  }
+
+  .dest-card__title{
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .dest-card__meta{
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .dest-tag{
+    font-size: 8px;
+    padding: 4px 7px;
+  }
 }
 /* =========================
    FOOTER 
@@ -2187,7 +2225,7 @@ body:not(.admin-body){
 .donut{
   width:130px; height:130px;
   border-radius:50%;
-  background: conic-gradient(#0f79ff 0 73%, #f59e0b 73% 83%, #e6ecf2 83% 93%,  #3458e7 93% 100%);
+  background: conic-gradient(#0b4ed7 0 73%, #1f6fff 73% 83%, #6fa8ff 83% 93%,  #cfe3ff 93% 100%);
   display:grid;
   place-items:center;
   margin:0 auto;
@@ -2216,9 +2254,9 @@ body:not(.admin-body){
 .lg-name{ flex:1; }
 .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:8px; }
 .dot.b{ background:#0f79ff; }
-.dot.o{ background:#f59e0b; }
-.dot.g{ background:#c7d2fe; }
-.dot.v{ background:#3458e7; }
+.dot.o{ background: #1f6fff; }
+.dot.g{ background:#6fa8ff; }
+.dot.v{ background:#cfe3ff; }
 
 /* table */
 .panel--table{ margin-top:12px; }
@@ -5896,9 +5934,9 @@ body:not(.admin-body){
   box-shadow: 0 10px 22px rgba(17,24,39,0.06);
 }
 .td-btn--primary{
-  background:#0b2c6c;
+  background:#1677ff;
   color:#fff;
-  border-color:#0b2c6c;
+  border-color:#1677ff;
 }
 .td-btn--ghost{
   background:#fff;
@@ -7442,9 +7480,10 @@ body{
 .ta-head{
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:flex-start;
   gap:16px;
   margin: 8px 0 16px;
+  width:100%;
 }
 .ta-title{
   margin:0;
@@ -7452,8 +7491,12 @@ body{
   font-weight:800;
   color:#0f172a;
 }
-.ta-actions{ display:flex; gap:12px; align-items:center; }
-
+.ta-actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-shrink:0;
+}
 .ta-btn{
   border:1px solid transparent;
   border-radius:10px;
@@ -7481,12 +7524,13 @@ body{
 
 /* Outer card */
 .ta-card{
+  width:100%;
+  max-width:none; /* hapus batas 980px */
   background:#fff;
   border:1px solid #e6edf5;
   border-radius:14px;
   box-shadow: 0 10px 24px rgba(2,6,23,.05);
-  padding:20px;
-  max-width: 980px;
+  padding:24px;
 }
 
 /* section header */
