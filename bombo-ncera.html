@@ -15,7 +15,7 @@
       <img class="brand__logo" src="assets/logo.png" alt="Logo" />
     </a>
 
-    <nav class="nav__links">
+    <nav class="nav__links" id="mobileMenu" aria-label="Navigasi utama">
       <a class="nav__link" href="index.html">Home</a>
       <a class="nav__link nav__link--active" href="destinasi.html">Destinasi</a>
       <a class="nav__link" href="event.html">Event</a>
@@ -32,7 +32,7 @@
         </span>
         </a>
       </nav>
-      <button class="nav__burger" aria-label="Buka menu">
+      <button class="nav__burger" id="navToggle" aria-label="Buka menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -436,6 +436,53 @@ loginForm.addEventListener("submit", function(e){
     loginError.textContent = "Username atau password salah!";
   }
 });
+</script>
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      navToggle.classList.toggle("is-active");
+      mobileMenu.classList.toggle("is-open");
+      document.body.classList.toggle("nav-open");
+
+      const expanded = navToggle.classList.contains("is-active");
+      navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+    });
+
+    // klik di luar menu = tutup
+    document.addEventListener("click", (e) => {
+      if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        navToggle.classList.remove("is-active");
+        mobileMenu.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // klik salah satu link = tutup
+    mobileMenu.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", () => {
+        navToggle.classList.remove("is-active");
+        mobileMenu.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // jika balik ke desktop, reset menu
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navToggle.classList.remove("is-active");
+        mobileMenu.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
 </script>
 </body>
 </html>

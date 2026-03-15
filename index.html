@@ -14,34 +14,39 @@
 
 <body>
 
+ 
   <!-- Topbar -->
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
-      </div>
+<header class="header">
+  <div class="container nav">
+    <div class="brand">
+      <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+    </div>
 
-      <nav class="nav__links" aria-label="Navigasi utama">
-        <a class="nav__link nav__link--active" href="index.html">Home</a>
-        <a class="nav__link" href="destinasi.html">Destinasi</a>
-        <a class="nav__link" href="event.html">Event</a>
-        <a class="nav__link" href="berita.html">Berita</a>
-        <a class="nav__link" href="akomodasi.html">Akomodasi</a>
-        <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
+    <nav class="nav__links" id="mobileMenu" aria-label="Navigasi utama">
+      <a class="nav__link nav__link--active" href="index.html">Home</a>
+      <a class="nav__link" href="destinasi.html">Destinasi</a>
+      <a class="nav__link" href="event.html">Event</a>
+      <a class="nav__link" href="berita.html">Berita</a>
+      <a class="nav__link" href="akomodasi.html">Akomodasi</a>
+      <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
         <span>Login</span>
         <span class="nav__login-icon">
-        <svg viewBox="0 0 24 24">
-        <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
-        <path d="M4 20a8 8 0 0 1 16 0"></path>
-        </svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
+            <path d="M4 20a8 8 0 0 1 16 0"></path>
+          </svg>
         </span>
-        </a>
-      </nav>
-      <button class="nav__burger" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+      </a>
+    </nav>
+
+    <button class="nav__burger" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
 <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
@@ -66,6 +71,7 @@
     <p class="login-error" id="loginError"></p>
   </div>
 </div>
+
   <!-- Hero -->
   <!--<section class="hero2">
   <div class="hero2__overlay"></div>
@@ -180,74 +186,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Hal Penting 
-  <section class="info">
-  <div class="container">
-    <h2 class="info__title">Hal Penting</h2>
-    <p class="info__subtitle">yang perlu diketahui untuk berlibur di<br/>Kabupaten Bima</p>
-
-    <div class="info__grid">
-      <article class="info__item">
-        <div class="info__heading">MAU KEMANA?</div>
-
-         ICON (SVG outline seperti gambar) 
-        <div class="info__icon">
-          <svg viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M8 14h18v40L8 50V14z" />
-            <path d="M26 14h30v36H26" />
-            <path d="M40 26c0-4 3-7 7-7s7 3 7 7c0 6-7 14-7 14s-7-8-7-14z"/>
-            <circle cx="47" cy="26" r="2.5" />
-          </svg>
-        </div>
-
-        <p class="info__desc">
-          Kabupaten Bima memiliki berbagai destinasi unggulan seperti Pantai Lawata, Pantai Wane, Pulau Kelapa,
-          Gunung Tambora, Air Terjun Oi Marai, hingga Savana Doro Ncanga. Setiap destinasi dilengkapi informasi lokasi,
-          deskripsi, dan daya tarik utama.
-        </p>
-      </article>
-
-      <article class="info__item">
-        <div class="info__heading">MAU NGAPAIN AJA?</div>
-
-        <div class="info__icon">
-          <svg viewBox="0 0 64 64" aria-hidden="true">
-            <circle cx="40" cy="14" r="6" />
-            <path d="M26 30l10-6 8 6" />
-            <path d="M22 52l8-18 8 6 10 12" />
-            <path d="M12 38h14" />
-          </svg>
-        </div>
-
-        <p class="info__desc">
-          Wisatawan dapat menikmati berbagai aktivitas seperti snorkeling, hiking, wisata budaya, eksplorasi desa adat,
-          hingga wisata kuliner khas Bima. Informasi aktivitas disajikan untuk membantu wisatawan merencanakan perjalanan
-          sesuai minat.
-        </p>
-      </article>
-
-      <article class="info__item">
-        <div class="info__heading">AYO RENCANAKAN<br/>LIBURANMU</div>
-
-        <div class="info__icon">
-          <svg viewBox="0 0 64 64" aria-hidden="true">
-            <rect x="12" y="16" width="40" height="38" rx="6" />
-            <path d="M20 12v8M44 12v8" />
-            <path d="M12 26h40" />
-            <circle cx="44" cy="42" r="8" />
-            <path d="M44 38v5l3 2" />
-          </svg>
-        </div>
-
-        <p class="info__desc">
-          Sistem Informasi Pariwisata Kabupaten Bima menyediakan fitur perencanaan perjalanan yang mencakup rekomendasi
-          destinasi, akomodasi, serta jasa wisata lokal untuk mendukung pariwisata berkelanjutan.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>-->
 
 <!---- Hal Penting-->
 <section class="info info--clean">
@@ -663,12 +601,15 @@ document.querySelectorAll(".popular2 .wcard, .cards .post-card, .infocard, .expl
 </script>
 <script>
   const navToggle = document.getElementById("navToggle");
-  const navMenu = document.getElementById("navMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-  if (navToggle && navMenu) {
-    navToggle.addEventListener("click", () => {
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+
       navToggle.classList.toggle("is-active");
-      navMenu.classList.toggle("is-open");
+      mobileMenu.classList.toggle("is-open");
+      document.body.classList.toggle("nav-open");
 
       const expanded = navToggle.classList.contains("is-active");
       navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
@@ -676,22 +617,35 @@ document.querySelectorAll(".popular2 .wcard, .cards .post-card, .infocard, .expl
 
     // klik di luar menu = tutup
     document.addEventListener("click", (e) => {
-      if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
         navToggle.classList.remove("is-active");
-        navMenu.classList.remove("is-open");
+        mobileMenu.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
         navToggle.setAttribute("aria-expanded", "false");
       }
     });
 
-    // kalau layar dibesarkan lagi ke desktop, reset menu
+    // klik salah satu link = tutup
+    mobileMenu.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", () => {
+        navToggle.classList.remove("is-active");
+        mobileMenu.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // jika balik ke desktop, reset menu
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         navToggle.classList.remove("is-active");
-        navMenu.classList.remove("is-open");
+        mobileMenu.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
         navToggle.setAttribute("aria-expanded", "false");
       }
     });
   }
 </script>
+
 </body>
 </html>
