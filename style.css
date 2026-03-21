@@ -4305,9 +4305,10 @@ body:not(.admin-body){
     font-weight: 700;
     line-height: 1.2;
   }
+
 /* INFO CARD - SUPER COMPACT */
 .heroInfoCard{
-  margin-top:6px;
+  margin-top:10px;
   padding:4px 6px;
   border-radius:12px;
   box-shadow:0 3px 8px rgba(15,23,42,.06);
@@ -4628,9 +4629,10 @@ body:not(.admin-body){
   gap: 20px;
   background: #fff;
   border-radius: 18px;
-  padding: 22px 30px;
+  padding: 14px 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
   margin-bottom: 40px;
+  max-width: 1000px;
 }
 
 .heroInfoCard__item {
@@ -4641,8 +4643,8 @@ body:not(.admin-body){
 }
 
 .heroInfoCard__ic {
-  width: 52px;
-  height: 52px;
+  width: 30px;
+  height: 30px;
   border-radius: 14px;
   background: #eaf1ff;
   display: flex;
@@ -4651,22 +4653,22 @@ body:not(.admin-body){
 }
 
 .heroInfoCard__ic svg {
-  width: 26px;
-  height: 26px;
+  width: 15px;
+  height: 15px;
   stroke: #1e4ed8;
   stroke-width: 2;
   fill: none;
 }
 
 .heroInfoCard__label {
-  font-size: 13px;
+  font-size: 10px;
   color: #8b98a9;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 .heroInfoCard__value {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 600;
   color: #1f2937;
 }
@@ -8718,4 +8720,75 @@ body{
     font-weight:800;
     box-shadow:0 8px 18px rgba(17,24,39,.10);
   }
+}
+
+.heroInfoCard__inner{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+.heroInfoCard__item{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.heroInfoCard__label{
+  font-size: 12px;
+  color: #8a8f98;
+  letter-spacing: .5px;
+}
+
+.heroInfoCard__value{
+  font-size: 14px;
+  font-weight: 600;
+}
+@media (max-width: 768px){
+
+  .heroInfoCard__inner{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .heroInfoCard__inner{
+    grid-template-columns: 1fr;
+  }
+
+}
+.heroInfoCard{
+  padding: 20px 28px;
+}
+.heroInfoCard__inner{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px,1fr));
+  gap: 20px;
+  align-items: center;
+}
+@media (max-width:768px){
+
+  .heroInfoCard__inner{
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 6px;
+  }
+
+  .heroInfoCard__item{
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+
+}
+.heroInfoCard__inner::-webkit-scrollbar{
+  height:4px;
+}
+
+.heroInfoCard__inner::-webkit-scrollbar-thumb{
+  background:#d0d5dd;
+  border-radius:10px;
 }
