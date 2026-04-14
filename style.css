@@ -9430,3 +9430,331 @@ margin-top:10px;
     grid-template-columns:1fr;
   }
 }
+/* status badge seperti gambar */
+.adminm-status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+}
+
+.adminm-status--active{
+  background:#e9f7ef;
+  color:#16a34a;
+}
+
+.adminm-dot{
+  width:6px;
+  height:6px;
+  background:#16a34a;
+  border-radius:50%;
+}
+/* header dalam card */
+.adminm-cardhead{
+  padding:14px 16px 10px;
+  border-bottom:1px solid #eef3f8;
+}
+
+.adminm-title{
+  margin:0;
+  font-size:16px;
+  font-weight:800;
+  color:#15253a;
+}
+
+.adminm-sub{
+  margin:4px 0 0;
+  font-size:12px;
+  color:#8aa0b6;
+}
+/* ===== KELOLA ULASAN ===== */
+.ulasan-wrap{
+  max-width: none;
+}
+
+.ulasan-head{
+  margin-bottom: 24px;
+}
+
+.ulasan-title{
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #15253a;
+}
+
+.ulasan-sub{
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #5f6f85;
+}
+
+.ulasan-filters{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.ulasan-filter-card{
+  background: #f8fafc;
+  border: 1px solid #eef3f8;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.ulasan-label{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #718096;
+  letter-spacing: .4px;
+}
+
+.ulasan-search{
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #eef3f8;
+  border-radius: 12px;
+  padding: 0 14px;
+}
+
+.ulasan-search svg{
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #94a3b8;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+}
+
+.ulasan-search input{
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #334155;
+}
+
+.ulasan-select-wrap{
+  position: relative;
+}
+
+.ulasan-select{
+  width: 100%;
+  height: 48px;
+  border: 1px solid #eef3f8;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0 16px;
+  font-size: 14px;
+  color: #334155;
+  outline: none;
+}
+
+.ulasan-card{
+  background: #fff;
+  border: 1px solid #eef3f8;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.ulasan-table{
+  width: 100%;
+}
+
+.ulasan-thead,
+.ulasan-row{
+  display: grid;
+  grid-template-columns: 1.15fr 1fr .8fr 1.9fr .8fr .45fr;
+  align-items: center;
+}
+
+.ulasan-thead{
+  background: #f8fafc;
+}
+
+.ulasan-th{
+  padding: 18px 24px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #718096;
+  letter-spacing: .8px;
+}
+
+.ulasan-th--center{
+  text-align: center;
+}
+
+.ulasan-row{
+  border-top: 1px solid #eef3f8;
+}
+
+.ulasan-td{
+  padding: 26px 24px;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.ulasan-user strong{
+  font-size: 14px;
+  line-height: 1.35;
+  color: #475569;
+}
+
+.ulasan-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ulasan-badge--blue{
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.ulasan-badge--purple{
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.ulasan-badge--orange{
+  background: #fff1e8;
+  color: #ea580c;
+}
+
+.ulasan-stars{
+  color: #f4b400;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.ulasan-comment{
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+.ulasan-date{
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.ulasan-aksi{
+  display: flex;
+  justify-content: center;
+}
+
+.ulasan-delete{
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.ulasan-delete svg{
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ulasan-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #eef3f8;
+}
+
+.ulasan-footnote{
+  font-size: 14px;
+  color: #64748b;
+}
+
+.ulasan-pagination{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ulasan-page-btn,
+.ulasan-page-num{
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+}
+
+.ulasan-page-num.is-active{
+  background: #0f79ff;
+  color: #fff;
+  box-shadow: 0 10px 18px rgba(15,121,255,.18);
+}
+
+.ulasan-page-dots{
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+@media (max-width: 1100px){
+  .ulasan-filters{
+    grid-template-columns: 1fr;
+  }
+
+  .ulasan-thead,
+  .ulasan-row{
+    grid-template-columns: 1fr;
+  }
+
+  .ulasan-th{
+    display: none;
+  }
+
+  .ulasan-td{
+    padding: 12px 18px;
+  }
+
+  .ulasan-bottom{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+/* default (menu tidak aktif = abu) */
+.admin-nav__item .admin-ic{
+  width:18px;
+  height:18px;
+  filter: brightness(0) invert(70%);
+}
+
+/* saat aktif (biru background = icon putih) */
+.admin-nav__item.active .admin-ic{
+  filter: brightness(0) invert(100%);
+}

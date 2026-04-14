@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard - Pariwisata Kabupaten Bima</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+      </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/container72.svg"></img> Dashboard
+        </a>
+        <a class="admin-nav__item" href="admin-destinasi.html">
+          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
+        </a>
+        <a class="admin-nav__item" href="admin-event.html">
+          <img class="admin-ic" src="logo/container76.svg"></img> Event
+        </a>
+        <a class="admin-nav__item" href="admin-berita.html">
+          <img class="admin-ic" src="logo/container78.svg"></img> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
+        </a>
+        <a class="admin-nav__item" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
+        </a>
+        <a class="admin-nav__item active" href="kelola-user.html">
+          <img class="admin-ic" src="logo/user.svg"></img> Kelola User
+        </a>
+        <a class="admin-nav__item" href="kelola-ulasan.html">
+          <img class="admin-ic" src="logo/ulasan.svg"></img> Kelola Ulasan
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Admin User</div>
+              <div class="admin-user__role">Super Admin</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <!--<a href="profile-admin.html" class="admin-dd__item">Profil</a> -->
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+        <!-- HEAD -->
+        <div class="adm-head">
+          <div>
+            <h1 class="adm-title">Kelola User</h1>
+            <p class="adm-sub">Manajemen akses dan daftar user sistem.</p>
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+       <section class="adm-card adminm-card">
+
+  <div class="adminm-table">
+    <div class="adminm-thead">
+      <div class="adminm-th">USERNAME</div>
+      <div class="adminm-th">STATUS</div>
+      <div class="adminm-th adminm-th--right">AKSI</div>
+    </div>
+
+    <div class="adminm-row">
+      <div class="adminm-td adminm-namecell">
+        <span class="adminm-name">Ramasdhani</span>
+      </div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active">
+          <span class="adminm-dot"></span> Active
+        </span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 7h16"></path>
+            <path d="M10 11v6"></path>
+            <path d="M14 11v6"></path>
+            <path d="M6 7l1 14h10l1-14"></path>
+            <path d="M9 7V4h6v3"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row">
+      <div class="adminm-td adminm-muted">riana_editor</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active">
+          <span class="adminm-dot"></span> Active
+        </span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 7h16"></path>
+            <path d="M10 11v6"></path>
+            <path d="M14 11v6"></path>
+            <path d="M6 7l1 14h10l1-14"></path>
+            <path d="M9 7V4h6v3"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row">
+      <div class="adminm-td adminm-muted">budi_pratama</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active">
+          <span class="adminm-dot"></span> Active
+        </span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 7h16"></path>
+            <path d="M10 11v6"></path>
+            <path d="M14 11v6"></path>
+            <path d="M6 7l1 14h10l1-14"></path>
+            <path d="M9 7V4h6v3"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="adminm-bottom">
+    <div class="adminm-footnote">Showing 3 of 3 results</div>
+
+    <div class="adminm-pagi">
+      <button class="adminm-pagi__btn" aria-label="Prev">‹</button>
+      <button class="adminm-pagi__num is-active">1</button>
+      <button class="adminm-pagi__btn" aria-label="Next">›</button>
+    </div>
+  </div>
+</section>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
