@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil Admin - Pariwisata Kabupaten Bima</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/container72.svg" alt=""> Dashboard
+        </a>
+        <a class="admin-nav__item" href="admin-destinasi.html">
+          <img class="admin-ic" src="logo/container74.svg" alt=""> Destinasi
+        </a>
+        <a class="admin-nav__item" href="admin-event.html">
+          <img class="admin-ic" src="logo/container76.svg" alt=""> Event
+        </a>
+        <a class="admin-nav__item" href="admin-berita.html">
+          <img class="admin-ic" src="logo/container78.svg" alt=""> Berita
+        </a>
+        <a class="admin-nav__item" href="admin-akomodasi.html">
+          <img class="admin-ic" src="logo/container80.svg" alt=""> Akomodasi
+        </a>
+        <a class="admin-nav__item active" href="kelola-admin.html">
+          <img class="admin-ic" src="logo/container82.svg" alt=""> Kelola Admin
+        </a>
+      
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div></div>
+
+        <div class="admin-user" id="adminUser">
+          <div class="admin-user__text">
+            <div class="admin-user__name">Admin User</div>
+            <div class="admin-user__role">Super Admin</div>
+          </div>
+
+          <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+            <span>👤</span>
+          </button>
+
+          <div class="admin-dd" id="adminDd">
+            <a href="profile-admin.html" class="admin-dd__item">Profil</a>
+            <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="admin-wrap">
+  <div class="admin-head">
+    <div>
+      <h1 class="admin-h1">Profil Admin</h1>
+      <p class="admin-sub">Kelola informasi akun admin dan keamanan akun Anda.</p>
+    </div>
+  </div>
+
+  <div class="prof-layout">
+    <!-- KIRI -->
+    <aside class="prof-summary">
+      <div class="prof-summary__top">
+        <div class="prof-avatar">👤</div>
+        <h2 class="prof-name">Admin User</h2>
+        <p class="prof-role">Super Admin</p>
+        <span class="prof-badge">Akun Aktif</span>
+      </div>
+
+      <div class="prof-summary__info">
+        <div class="prof-info-item">
+          <span class="prof-info-label">Email</span>
+          <strong class="prof-info-value">admin@tourbima.id</strong>
+        </div>
+
+       <!--  <div class="prof-info-item">
+          <span class="prof-info-label">No. Telepon</span>
+          <strong class="prof-info-value">0812-3456-7890</strong>
+        </div> -->
+
+        <div class="prof-info-item">
+          <span class="prof-info-label">Terakhir Login</span>
+          <strong class="prof-info-value">14 April 2026, 10:30 WITA</strong>
+        </div>
+
+       <!--  <div class="prof-info-item">
+          <span class="prof-info-label">Role</span>
+          <strong class="prof-info-value">Super Admin</strong> 
+        </div> -->
+      </div>
+    </aside>
+
+    <!-- KANAN -->
+    <div class="prof-content">
+      <section class="prof-card">
+        <div class="prof-card__head">
+          <h2 class="prof-card__title">Informasi Profil</h2>
+          <p class="prof-card__desc">Perbarui data akun admin yang tampil di sistem.</p>
+        </div>
+
+        <form>
+          <div class="prof-form-grid">
+            <div class="prof-field">
+              <label for="namaLengkap">Nama Lengkap</label>
+              <input type="text" id="namaLengkap" value="Admin User" />
+            </div>
+
+            <div class="prof-field">
+              <label for="username">Username</label>
+              <input type="text" id="username" value="adminuser" />
+            </div>
+
+            <div class="prof-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" value="admin@tourbima.id" />
+            </div>
+
+            <!-- <div class="prof-field">
+              <label for="telepon">No. Telepon</label>
+              <input type="text" id="telepon" value="0812-3456-7890" />
+            </div> -->
+
+            <!-- <div class="prof-field prof-field--full">
+              <label for="alamat">Alamat</label>
+              <textarea id="alamat">Kabupaten Bima, Nusa Tenggara Barat</textarea>
+            </div> -->
+
+            <!-- <div class="prof-field prof-field--full">
+              <label for="bio">Bio Singkat</label>
+              <textarea id="bio">Admin utama untuk pengelolaan data destinasi, event, berita, dan akomodasi wisata Kabupaten Bima.</textarea>
+            </div>
+          </div> -->
+
+          <div class="prof-actions">
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
+          </div>
+        </form>
+      </section>
+
+      <section class="prof-card">
+        <div class="prof-card__head">
+          <h2 class="prof-card__title">Keamanan Akun</h2>
+          <p class="prof-card__desc">Ubah password akun untuk menjaga keamanan akses admin.</p>
+        </div>
+
+        <form>
+          <div class="prof-form-grid">
+            <div class="prof-field prof-field--full">
+              <label for="passwordLama">Password Lama</label>
+              <input type="password" id="passwordLama" placeholder="Ramadhani" />
+            </div>
+
+            <div class="prof-field">
+              <label for="passwordBaru">Password Baru</label>
+              <input type="password" id="passwordBaru" placeholder="Masukkan password baru" />
+            </div>
+
+            <div class="prof-field">
+              <label for="konfirmasiPassword">Konfirmasi Password Baru</label>
+              <input type="password" id="konfirmasiPassword" placeholder="Ulangi password baru" />
+            </div>
+          </div>
+
+          <div class="prof-actions">
+            <button type="submit" class="btn btn-primary">Ubah Password</button>
+            <a href="kelola-admin.html" class="btn btn-secondary">Kembali ke Dashboard</a>
+            <!-- <button type="button" class="btn btn-danger" id="logoutBtn2">Logout</button> -->
+          </div>
+        </form>
+
+        <!-- <div class="prof-note">
+          Pastikan email dan nomor telepon selalu aktif agar akun admin tetap aman dan mudah dipulihkan bila diperlukan.
+        </div> -->
+      </section>
+    </div>
+  </div>
+</section>
+      
+    </main>
+  </div>
+
+  <script>
+    const adminUserBtn = document.getElementById('adminUserBtn');
+    const adminDd = document.getElementById('adminDd');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const logoutBtn2 = document.getElementById('logoutBtn2');
+
+    if (adminUserBtn && adminDd) {
+      adminUserBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        adminDd.classList.toggle('show');
+      });
+
+      document.addEventListener('click', function(e){
+        if (!adminDd.contains(e.target) && !adminUserBtn.contains(e.target)) {
+          adminDd.classList.remove('show');
+        }
+      });
+    }
+
+    function doLogout(){
+      const yakin = confirm('Apakah Anda yakin ingin logout?');
+      if (yakin) {
+        window.location.href = 'login.html';
+      }
+    }
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        doLogout();
+      });
+    }
+
+    if (logoutBtn2) {
+      logoutBtn2.addEventListener('click', function(){
+        doLogout();
+      });
+    }
+  </script>
+</body>
+</html>

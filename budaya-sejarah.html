@@ -24,24 +24,27 @@
       <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
         <span>Login</span>
         <span class="nav__login-icon">
-        <svg viewBox="0 0 24 24">
-        <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
-        <path d="M4 20a8 8 0 0 1 16 0"></path>
-        </svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
+            <path d="M4 20a8 8 0 0 1 16 0"></path>
+          </svg>
         </span>
-        </a>
-      </nav>
-      <button class="nav__burger" id="navToggle" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
+      </a>
+    </nav>
+
+    <button class="nav__burger" id="navToggle" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
-<!-- LOGIN MODAL -->
+
+
+  <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <button class="login-close" id="closeLogin">&times;</button>
 
-    <h2>Login Admin</h2>
+    <h2>Login Admin / User</h2>
 
     <form id="loginForm">
       <div class="login-group">
@@ -58,7 +61,14 @@
     </form>
 
     <p class="login-error" id="loginError"></p>
+
+    <!-- register user -->
+    <p class="login-register-text">
+      Belum punya akun user?
+      <a href="register.html" class="login-register-link">Register</a>
+    </p>
   </div>
+</div>
 </div>
 
 <main class="dest-wrap">
@@ -70,7 +80,7 @@
           <circle cx="11" cy="11" r="7"></circle>
           <path d="M20 20l-3.5-3.5"></path>
         </svg>
-        <input type="text" placeholder="Cari destinasi impianmu..." />
+        <input type="text" id="searchBudaya" placeholder="Cari destinasi impianmu..." />
       </div>
 
       <div class="dest-tabs">
@@ -82,6 +92,10 @@
       </div>
     </div>
 
+    <p id="emptyBudayaMessage" style="display:none; margin-top:10px; color:#6b7280;">
+      Destinasi budaya dan sejarah tidak ditemukan.
+    </p>
+
     <div class="dest-head">
       <div>
         <h2>Budaya dan Sejarah</h2>
@@ -92,18 +106,17 @@
 
     <section class="dest-grid">
       <a class="dest-card" href="benteng-asakota.html"><div class="dest-card__media"><img src="assets/dest/09.png" alt="Benteng Asakota"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Benteng Asakota</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Soromandi</span></div></div></a>
-      <a class="dest-card" href="adat-sambori.html"><div class="dest-card__media"><img src="assets/dest/13.png" alt="Uma Lengge"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Kampung Adat Sambori</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Lambitu</span></div></div></a>
-      <a class="dest-card" href="karombo.html"><div class="dest-card__media"><img src="assets/dest/14.png" alt="Istana Asi Mbojo"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Karombo Wera</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Wera</span></div></div></a>
-      <a class="dest-card" href="monumen-ngali.html"><div class="dest-card__media"><img src="assets/dest/16.png" alt="Museum Bima"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Monumen Perang Ngali</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Belo</span></div></div></a>
-      <a class="dest-card" href="pacoa-jara.html"><div class="dest-card__media"><img src="assets/dest/18.png" alt="Masjid Sultan"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Pacoa Jara</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Panda</span></div></div></a>
-      <a class="dest-card" href="uma-lengge.html"><div class="dest-card__media"><img src="assets/dest/38.png" alt="Benteng Asakota"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Uma Lengge</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Wawo</span></div></div></a>
-      <a class="dest-card" href="wadu-paa.html"><div class="dest-card__media"><img src="assets/dest/39.png" alt="Desa Adat Wawo"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Wadu Pa'a</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Soromanid</span></div></div></a>
+      <a class="dest-card" href="adat-sambori.html"><div class="dest-card__media"><img src="assets/dest/13.png" alt="Kampung Adat Sambori"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Kampung Adat Sambori</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Lambitu</span></div></div></a>
+      <a class="dest-card" href="karombo.html"><div class="dest-card__media"><img src="assets/dest/14.png" alt="Karombo Wera"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Karombo Wera</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Wera</span></div></div></a>
+      <a class="dest-card" href="monumen-ngali.html"><div class="dest-card__media"><img src="assets/dest/16.png" alt="Monumen Perang Ngali"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Monumen Perang Ngali</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Belo</span></div></div></a>
+      <a class="dest-card" href="pacoa-jara.html"><div class="dest-card__media"><img src="assets/dest/18.png" alt="Pacoa Jara"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Pacoa Jara</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Panda</span></div></div></a>
+      <a class="dest-card" href="uma-lengge.html"><div class="dest-card__media"><img src="assets/dest/38.png" alt="Uma Lengge"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Uma Lengge</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Wawo</span></div></div></a>
+      <a class="dest-card" href="wadu-paa.html"><div class="dest-card__media"><img src="assets/dest/39.png" alt="Wadu Pa'a"><span class="dest-tag">BUDAYA & SEJARAH</span></div><div class="dest-card__body"><h3 class="dest-card__title">Wadu Pa'a</h3><div class="dest-card__meta"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Soromandi</span></div></div></a>
     </section>
 
   </div>
 </main>
 
-<!-- FOOTER (pakai footer2 yang sudah kamu buat sebelumnya) -->
 <footer class="footer2">
   <div class="container footer2__grid">
     <div class="footer2__brand">
@@ -118,14 +131,14 @@
       </div>
     </div>
 
-     <div class="footer2__col">
+    <div class="footer2__col">
       <div class="footer2__title">Tentang</div>
-          <p class="footer2__desc">
-          Sistem Informasi Pariwisata Online adalah sistem informasi yang
-          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
-          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
-          </p>
-      </div>
+      <p class="footer2__desc">
+        Sistem Informasi Pariwisata Online adalah sistem informasi yang
+        menampilkan daftar info pariwisata di Kabupaten Bima meliputi
+        informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+      </p>
+    </div>
 
     <div class="footer2__col">
       <div class="footer2__title">Layanan<br>Kami</div>
@@ -158,42 +171,43 @@
     </div>
   </div>
 </footer>
+
 <script>
   const loginBtn = document.getElementById("loginBtn");
-const loginModal = document.getElementById("loginModal");
-const closeLogin = document.getElementById("closeLogin");
-const loginForm = document.getElementById("loginForm");
-const loginError = document.getElementById("loginError");
+  const loginModal = document.getElementById("loginModal");
+  const closeLogin = document.getElementById("closeLogin");
+  const loginForm = document.getElementById("loginForm");
+  const loginError = document.getElementById("loginError");
 
-loginBtn.addEventListener("click", function(e){
-  e.preventDefault();
-  loginModal.classList.add("active");
-});
+  loginBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    loginModal.classList.add("active");
+  });
 
-closeLogin.addEventListener("click", function(){
-  loginModal.classList.remove("active");
-});
-
-window.addEventListener("click", function(e){
-  if(e.target === loginModal){
+  closeLogin.addEventListener("click", function(){
     loginModal.classList.remove("active");
-  }
-});
+  });
 
-loginForm.addEventListener("submit", function(e){
-  e.preventDefault();
+  window.addEventListener("click", function(e){
+    if(e.target === loginModal){
+      loginModal.classList.remove("active");
+    }
+  });
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  loginForm.addEventListener("submit", function(e){
+    e.preventDefault();
 
-  // Username & password admin
-  if(username === "admin" && password === "admin123"){
-    window.location.href = "admin.html";
-  } else {
-    loginError.textContent = "Username atau password salah!";
-  }
-});
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if(username === "admin" && password === "admin123"){
+      window.location.href = "admin.html";
+    } else {
+      loginError.textContent = "Username atau password salah!";
+    }
+  });
 </script>
+
 <script>
   const navToggle = document.getElementById("navToggle");
   const mobileMenu = document.getElementById("mobileMenu");
@@ -210,7 +224,6 @@ loginForm.addEventListener("submit", function(e){
       navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
     });
 
-    // klik di luar menu = tutup
     document.addEventListener("click", (e) => {
       if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
         navToggle.classList.remove("is-active");
@@ -220,7 +233,6 @@ loginForm.addEventListener("submit", function(e){
       }
     });
 
-    // klik salah satu link = tutup
     mobileMenu.querySelectorAll(".nav__link").forEach((link) => {
       link.addEventListener("click", () => {
         navToggle.classList.remove("is-active");
@@ -230,7 +242,6 @@ loginForm.addEventListener("submit", function(e){
       });
     });
 
-    // jika balik ke desktop, reset menu
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         navToggle.classList.remove("is-active");
@@ -241,5 +252,48 @@ loginForm.addEventListener("submit", function(e){
     });
   }
 </script>
+
+<script>
+  const searchBudaya = document.getElementById("searchBudaya");
+  const budayaCards = document.querySelectorAll(".dest-card");
+  const emptyBudayaMessage = document.getElementById("emptyBudayaMessage");
+
+  function filterBudaya() {
+    const keyword = searchBudaya.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    budayaCards.forEach((card) => {
+      const title = card.querySelector(".dest-card__title")?.textContent.toLowerCase() || "";
+      const location = card.querySelector(".dest-card__meta span")?.textContent.toLowerCase() || "";
+      const imageAlt = card.querySelector("img")?.alt.toLowerCase() || "";
+      const tag = card.querySelector(".dest-tag")?.textContent.toLowerCase() || "";
+
+      const isMatch =
+        title.includes(keyword) ||
+        location.includes(keyword) ||
+        imageAlt.includes(keyword) ||
+        tag.includes(keyword);
+
+      if (isMatch) {
+        card.style.display = "block";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    emptyBudayaMessage.style.display =
+      visibleCount === 0 && keyword !== "" ? "block" : "none";
+  }
+
+  searchBudaya.addEventListener("input", filterBudaya);
+  searchBudaya.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      filterBudaya();
+    }
+  });
+</script>
+
 </body>
 </html>

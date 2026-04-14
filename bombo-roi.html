@@ -37,12 +37,13 @@
       </button>
     </div>
   </header>
+  
 <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <button class="login-close" id="closeLogin">&times;</button>
 
-    <h2>Login Admin</h2>
+    <h2>Login Admin / User</h2>
 
     <form id="loginForm">
       <div class="login-group">
@@ -59,10 +60,14 @@
     </form>
 
     <p class="login-error" id="loginError"></p>
+
+    <!-- register user -->
+    <p class="login-register-text">
+      Belum punya akun user?
+      <a href="register.html" class="login-register-link">Register</a>
+    </p>
   </div>
 </div>
-
-
 
  <main class="detail-wrap">
     <div class="container detail-container">
@@ -250,7 +255,7 @@
     </section>
 
     <!-- RATING & ULASAN -->
-    <!-- RINGKASAN & ULASAN  -->
+
 <section class="destdetail__section">
   <div class="rev-card">
 
@@ -288,26 +293,30 @@
       </div>
     </div>
 
-    <!-- FORM -->
+     <!-- FORM -->
     <div class="rev-form">
-      <div class="rev-form__label">Beri rating & ulasan</div>
+  <div class="rev-form__label">Beri rating & ulasan</div>
 
-      <div class="rev-rate">
-        <div class="rev-rate__avatar">A</div>
+  <div class="rev-rate">
+  
 
-        <!-- bintang (tampilan saja, bisa kamu bikin interaktif pakai JS) -->
-        <div class="rev-rate__stars is-set" aria-label="rating">
-          <button class="rev-starBtn" type="button" aria-label="1">★</button>
-          <button class="rev-starBtn" type="button" aria-label="2">★</button>
-          <button class="rev-starBtn" type="button" aria-label="3">★</button>
-          <button class="rev-starBtn" type="button" aria-label="4">★</button>
-          <button class="rev-starBtn" type="button" aria-label="5">★</button>
-        </div>
-      </div>
-
-      <textarea class="rev-textarea" placeholder="Tambahkan ulasan..."></textarea>
-      <button class="rev-submit" type="button">Posting</button>
+    <div class="rev-rate__stars" data-rating="0" id="revStars">
+      <button type="button" class="rev-starBtn" data-val="1">☆</button>
+      <button type="button" class="rev-starBtn" data-val="2">☆</button>
+      <button type="button" class="rev-starBtn" data-val="3">☆</button>
+      <button type="button" class="rev-starBtn" data-val="4">☆</button>
+      <button type="button" class="rev-starBtn" data-val="5">☆</button>
     </div>
+  </div>
+
+  <textarea
+    class="rev-textarea"
+    id="reviewText"
+    placeholder="Tambahkan ulasan..."
+  ></textarea>
+
+  <button class="rev-submit" type="button" id="reviewSubmitBtn">Posting</button>
+</div>
 
     <!-- LIST ULASAN -->
     <div class="rev-list">
@@ -412,6 +421,7 @@
 </div>
 
 <script src="destinasi.js"></script>
+<script src="detail-page.js"></script>
 <script>
 const loginBtn = document.getElementById("loginBtn");
 const loginModal = document.getElementById("loginModal");
@@ -440,12 +450,33 @@ loginForm.addEventListener("submit", function(e){
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  // Username & password admin
-  if(username === "admin" && password === "admin123"){
-    window.location.href = "admin.html";
-  } else {
-    loginError.textContent = "Username atau password salah!";
-  }
+  // ambil data user dari localStorage
+const registeredUser = localStorage.getItem("registeredUser");
+const registeredPass = localStorage.getItem("registeredPass");
+
+// login admin
+if(username === "admin" && password === "admin123"){
+  window.location.href = "admin.html";
+} 
+// login user (hasil register)
+else if(username === registeredUser && password === registeredPass){
+  loginError.style.color = "green";
+  loginError.textContent = "Login user berhasil!";
+
+  // simpan status login
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("loggedInUser", username);
+
+  // redirect ke halaman user
+  setTimeout(() => {
+    window.location.href = "user.html";
+  }, 1000);
+}
+// jika salah
+else {
+  loginError.style.color = "red";
+  loginError.textContent = "Username atau password salah!";
+}
 });
 </script>
 <script>
@@ -492,6 +523,38 @@ loginForm.addEventListener("submit", function(e){
         document.body.classList.remove("nav-open");
         navToggle.setAttribute("aria-expanded", "false");
       }
+    });
+  }
+</script>
+<script>
+  const reviewSubmitBtn = document.getElementById("reviewSubmitBtn");
+  const reviewText = document.getElementById("reviewText");
+  const revStars = document.getElementById("revStars");
+
+  if (reviewSubmitBtn) {
+    reviewSubmitBtn.addEventListener("click", function () {
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+      const selectedRating = Number(revStars?.dataset.rating || 0);
+      const reviewValue = reviewText?.value.trim() || "";
+
+      if (!isLoggedIn) {
+        loginModal.classList.add("active");
+        loginError.style.color = "red";
+        loginError.textContent = "Silakan login terlebih dahulu untuk mengirim rating dan ulasan.";
+        return;
+      }
+
+      if (selectedRating === 0) {
+        alert("Silakan pilih rating terlebih dahulu.");
+        return;
+      }
+
+      if (reviewValue === "") {
+        alert("Silakan isi ulasan terlebih dahulu.");
+        return;
+      }
+
+      alert("Ulasan berhasil dikirim.");
     });
   }
 </script>

@@ -37,12 +37,12 @@
       </button>
   </div>
 </header>
-<!-- LOGIN MODAL -->
+  <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <button class="login-close" id="closeLogin">&times;</button>
 
-    <h2>Login Admin</h2>
+    <h2>Login Admin / User</h2>
 
     <form id="loginForm">
       <div class="login-group">
@@ -59,6 +59,12 @@
     </form>
 
     <p class="login-error" id="loginError"></p>
+
+    <!-- register user -->
+    <p class="login-register-text">
+      Belum punya akun user?
+      <a href="register.html" class="login-register-link">Register</a>
+    </p>
   </div>
 </div>
 
@@ -66,6 +72,7 @@
   <div class="container">
 
     <!-- search -->
+     <!--
     <div class="event-search">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="11" cy="11" r="7"></circle>
@@ -73,7 +80,22 @@
       </svg>
       <input type="text" placeholder="Cari event yang berada di kabupaten bima..." />
     </div>
+-->
+    <div class="event-search">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="11" cy="11" r="7"></circle>
+    <path d="M20 20l-3.5-3.5"></path>
+  </svg>
+  <input
+    type="text"
+    id="searchEvent"
+    placeholder="Cari event yang berada di kabupaten bima..."
+  />
+</div>
 
+<p id="emptyEventMessage" style="display:none; margin-top:10px; color:#6b7280;">
+  Event tidak ditemukan.
+</p>
     <div class="dest-head">
       <div>
         <h2>Event</h2>
@@ -387,6 +409,49 @@ loginForm.addEventListener("submit", function(e){
       }
     });
   }
+</script>
+<script>
+  const searchEvent = document.getElementById("searchEvent");
+  const eventCards = document.querySelectorAll(".event-card");
+  const emptyEventMessage = document.getElementById("emptyEventMessage");
+
+  function filterEvents() {
+    const keyword = searchEvent.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    eventCards.forEach((card) => {
+      const title = card.querySelector(".event-card__title")?.textContent.toLowerCase() || "";
+      const text = card.querySelector(".event-card__text")?.textContent.toLowerCase() || "";
+      const imageAlt = card.querySelector("img")?.alt.toLowerCase() || "";
+
+      const isMatch =
+        title.includes(keyword) ||
+        text.includes(keyword) ||
+        imageAlt.includes(keyword);
+
+      if (isMatch) {
+        card.style.display = "flex";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (visibleCount === 0) {
+      emptyEventMessage.style.display = "block";
+    } else {
+      emptyEventMessage.style.display = "none";
+    }
+  }
+
+  searchEvent.addEventListener("input", filterEvents);
+
+  searchEvent.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      filterEvents();
+    }
+  });
 </script>
 </body>
 </html>

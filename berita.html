@@ -21,27 +21,28 @@
       <a class="nav__link nav__link--active" href="berita.html">Berita</a>
       <a class="nav__link" href="akomodasi.html">Akomodasi</a>
 
-     <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
+      <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
         <span>Login</span>
         <span class="nav__login-icon">
-        <svg viewBox="0 0 24 24">
-        <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
-        <path d="M4 20a8 8 0 0 1 16 0"></path>
-        </svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
+            <path d="M4 20a8 8 0 0 1 16 0"></path>
+          </svg>
         </span>
-        </a>
-      </nav>
-      <button class="nav__burger" id="navToggle" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
+      </a>
+    </nav>
+
+    <button class="nav__burger" id="navToggle" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
-<!-- LOGIN MODAL -->
+  <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <button class="login-close" id="closeLogin">&times;</button>
 
-    <h2>Login Admin</h2>
+    <h2>Login Admin / User</h2>
 
     <form id="loginForm">
       <div class="login-group">
@@ -58,25 +59,39 @@
     </form>
 
     <p class="login-error" id="loginError"></p>
+
+    <!-- register user -->
+    <p class="login-register-text">
+      Belum punya akun user?
+      <a href="register.html" class="login-register-link">Register</a>
+    </p>
   </div>
 </div>
 
 <main class="news-wrap">
   <div class="container">
 
-    <!-- search -->
+    <!-- SEARCH -->
     <div class="news-search">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="11" cy="11" r="7"></circle>
         <path d="M20 20l-3.5-3.5"></path>
       </svg>
-      <input type="text" placeholder="Cari berita harian tentang wisata di..." />
+      <input
+        type="text"
+        id="searchNews"
+        placeholder="Cari berita harian tentang wisata di..."
+      />
     </div>
+
+    <p id="emptyNewsMessage" style="display:none; margin-top:10px; color:#6b7280;">
+      Berita tidak ditemukan.
+    </p>
 
     <div class="dest-head">
       <div>
         <h2>Berita</h2>
-        <p><p>Berita dan informasi terkini mengenai pariwisata, budaya, serta kegiatan wisata di Kabupaten Bima.</p></p>
+        <p>Berita dan informasi terkini mengenai pariwisata, budaya, serta kegiatan wisata di Kabupaten Bima.</p>
       </div>
     </div>
 
@@ -90,7 +105,7 @@
           <h3 class="news-card__title">
             Sidak Diparda, Bupati dan Wakil Bupati Bima Tegaskan Komitmen Membangun Pariwisata sebagai Pilar Ekonomi Daerah
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-1.html">Lihat Detail</a>
             <span class="news-card__date">21 Januari 2026</span>
@@ -107,7 +122,7 @@
           <h3 class="news-card__title">
             Pesona Pantai Rontu di Bima NTB: Lokasi, Daya Tarik, Tips Berwisata
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-2.html">Lihat Detail</a>
             <span class="news-card__date">15 September 2025</span>
@@ -124,7 +139,7 @@
           <h3 class="news-card__title">
             Malam penutupan FSA 2025 'pecah', dihibur artis ibukota dan lokal Bima
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-3.html">Lihat Detail</a>
             <span class="news-card__date">04 Agustus 2025</span>
@@ -141,7 +156,7 @@
           <h3 class="news-card__title">
             Pawai Rimpu dan Doa Dana Serentak Awali Peringatan Hari Jadi Bima 2025
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-4.html">Lihat Detail</a>
             <span class="news-card__date">17 Juni 2025</span>
@@ -158,7 +173,7 @@
           <h3 class="news-card__title">
             Bupati Bima Pastikan Dukung Event Festival Sangiang Api 2025
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-5.html">Lihat Detail</a>
             <span class="news-card__date">03 Mei 2025</span>
@@ -175,7 +190,7 @@
           <h3 class="news-card__title">
             Menikmati Pesona Laut Terbelah Pantai Lariti di Bima
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-6.html">Lihat Detail</a>
             <span class="news-card__date">07 Juli 2024</span>
@@ -192,7 +207,7 @@
           <h3 class="news-card__title">
             Moeldoko: Bima, Potensi Wisata yang Terlindungi
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-7.html">Lihat Detail</a>
             <span class="news-card__date">25 Mei 2024</span>
@@ -209,7 +224,7 @@
           <h3 class="news-card__title">
             Pantai di Bima Ini Indah, tapi Sayang Akses Jalannya Rusak Parah
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-8.html">Lihat Detail</a>
             <span class="news-card__date">28 Februari 2024</span>
@@ -226,7 +241,7 @@
           <h3 class="news-card__title">
             Indahnya Pantai Baku, Surga Tersembunyi di Ujung Timur Bima
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-9.html">Lihat Detail</a>
             <span class="news-card__date">31 Oktober 2023</span>
@@ -243,7 +258,7 @@
           <h3 class="news-card__title">
             Misteri Nusa Nipa di Bima, Pulau Penuh Ular Jelmaan Manusia
           </h3>
-        <div class="post-card__bottom post-card__bottom--line"></div>
+          <div class="post-card__bottom post-card__bottom--line"></div>
           <div class="news-card__bottom">
             <a class="btn btn--solid" href="berita-10.html">Lihat Detail</a>
             <span class="news-card__date">31 Agustus 2023</span>
@@ -255,7 +270,6 @@
   </div>
 </main>
 
-<!-- FOOTER sama seperti sebelumnya -->
 <footer class="footer2">
   <div class="container footer2__grid">
     <div class="footer2__brand">
@@ -279,14 +293,14 @@
       </div>
     </div>
 
-     <div class="footer2__col">
-        <div class="footer2__title">Tentang</div>
-          <p class="footer2__desc">
-          Sistem Informasi Pariwisata Online adalah sistem informasi yang
-          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
-          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
-          </p>
-      </div>
+    <div class="footer2__col">
+      <div class="footer2__title">Tentang</div>
+      <p class="footer2__desc">
+        Sistem Informasi Pariwisata Online adalah sistem informasi yang
+        menampilkan daftar info pariwisata di Kabupaten Bima meliputi
+        informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+      </p>
+    </div>
 
     <div class="footer2__col">
       <div class="footer2__title">Layanan<br>Kami</div>
@@ -327,41 +341,41 @@
     </div>
   </div>
 </footer>
+
 <script>
   const loginBtn = document.getElementById("loginBtn");
-const loginModal = document.getElementById("loginModal");
-const closeLogin = document.getElementById("closeLogin");
-const loginForm = document.getElementById("loginForm");
-const loginError = document.getElementById("loginError");
+  const loginModal = document.getElementById("loginModal");
+  const closeLogin = document.getElementById("closeLogin");
+  const loginForm = document.getElementById("loginForm");
+  const loginError = document.getElementById("loginError");
 
-loginBtn.addEventListener("click", function(e){
-  e.preventDefault();
-  loginModal.classList.add("active");
-});
+  loginBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    loginModal.classList.add("active");
+  });
 
-closeLogin.addEventListener("click", function(){
-  loginModal.classList.remove("active");
-});
-
-window.addEventListener("click", function(e){
-  if(e.target === loginModal){
+  closeLogin.addEventListener("click", function(){
     loginModal.classList.remove("active");
-  }
-});
+  });
 
-loginForm.addEventListener("submit", function(e){
-  e.preventDefault();
+  window.addEventListener("click", function(e){
+    if(e.target === loginModal){
+      loginModal.classList.remove("active");
+    }
+  });
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  loginForm.addEventListener("submit", function(e){
+    e.preventDefault();
 
-  // Username & password admin
-  if(username === "admin" && password === "admin123"){
-    window.location.href = "admin.html";
-  } else {
-    loginError.textContent = "Username atau password salah!";
-  }
-});
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if(username === "admin" && password === "admin123"){
+      window.location.href = "admin.html";
+    } else {
+      loginError.textContent = "Username atau password salah!";
+    }
+  });
 </script>
 
 <script>
@@ -380,7 +394,6 @@ loginForm.addEventListener("submit", function(e){
       navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
     });
 
-    // klik di luar menu = tutup
     document.addEventListener("click", (e) => {
       if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
         navToggle.classList.remove("is-active");
@@ -390,7 +403,6 @@ loginForm.addEventListener("submit", function(e){
       }
     });
 
-    // klik salah satu link = tutup
     mobileMenu.querySelectorAll(".nav__link").forEach((link) => {
       link.addEventListener("click", () => {
         navToggle.classList.remove("is-active");
@@ -400,7 +412,6 @@ loginForm.addEventListener("submit", function(e){
       });
     });
 
-    // jika balik ke desktop, reset menu
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         navToggle.classList.remove("is-active");
@@ -411,5 +422,50 @@ loginForm.addEventListener("submit", function(e){
     });
   }
 </script>
+
+<script>
+  const searchNews = document.getElementById("searchNews");
+  const newsCards = document.querySelectorAll(".news-card");
+  const emptyNewsMessage = document.getElementById("emptyNewsMessage");
+
+  function filterNews() {
+    const keyword = searchNews.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    newsCards.forEach((card) => {
+      const title = card.querySelector(".news-card__title")?.textContent.toLowerCase() || "";
+      const imageAlt = card.querySelector("img")?.alt.toLowerCase() || "";
+      const date = card.querySelector(".news-card__date")?.textContent.toLowerCase() || "";
+
+      const isMatch =
+        title.includes(keyword) ||
+        imageAlt.includes(keyword) ||
+        date.includes(keyword);
+
+      if (isMatch) {
+        card.style.display = "flex";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (visibleCount === 0 && keyword !== "") {
+      emptyNewsMessage.style.display = "block";
+    } else {
+      emptyNewsMessage.style.display = "none";
+    }
+  }
+
+  searchNews.addEventListener("input", filterNews);
+
+  searchNews.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      filterNews();
+    }
+  });
+</script>
+
 </body>
 </html>

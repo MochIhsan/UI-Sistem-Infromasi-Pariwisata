@@ -37,12 +37,13 @@
       </button>
     </div>
   </header>
-<!-- LOGIN MODAL -->
+
+  <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <button class="login-close" id="closeLogin">&times;</button>
 
-    <h2>Login Admin</h2>
+    <h2>Login Admin / User</h2>
 
     <form id="loginForm">
       <div class="login-group">
@@ -59,6 +60,12 @@
     </form>
 
     <p class="login-error" id="loginError"></p>
+
+    <!-- register user -->
+    <p class="login-register-text">
+      Belum punya akun user?
+      <a href="register.html" class="login-register-link">Register</a>
+    </p>
   </div>
 </div>
 
@@ -251,77 +258,68 @@ Selain potensi wisata bahari, Pulau Bajo juga memiliki nilai budaya yang kuat. T
     </div>
     </section>
 
-    <!-- RATING & ULASAN -->
-    <section class="destdetail__section destdetail__reviewCard">
-      <div class="destdetail__reviewTop">
-        <div>
-          <div class="destdetail__reviewTitle">Ringkasan Ulasan</div>
-          <div class="destdetail__reviewScore">
-            <span class="destdetail__reviewNum" id="avgRating">4.9</span>
-            <span class="destdetail__reviewStars" aria-label="Rating 4.9 dari 5">
-              ★★★★★
-            </span>
-          </div>
-          <div class="destdetail__reviewMuted">Beri rating & ulasan</div>
-        </div>
 
-        <div class="destdetail__reviewBarWrap">
-          <div class="destdetail__reviewBar">
-            <span style="width: 92%"></span>
-          </div>
-          <div class="destdetail__reviewBarHint">Berdasarkan ulasan pengguna</div>
-        </div>
-      </div>
-
-      <form class="destdetail__reviewForm" id="reviewForm">
-        <div class="destdetail__starsInput" aria-label="Pilih rating">
-          <input type="radio" name="rate" id="r5" value="5" checked>
-          <label for="r5" title="5">★</label>
-          <input type="radio" name="rate" id="r4" value="4">
-          <label for="r4" title="4">★</label>
-          <input type="radio" name="rate" id="r3" value="3">
-          <label for="r3" title="3">★</label>
-          <input type="radio" name="rate" id="r2" value="2">
-          <label for="r2" title="2">★</label>
-          <input type="radio" name="rate" id="r1" value="1">
-          <label for="r1" title="1">★</label>
-        </div>
-
-        <div class="destdetail__reviewInputs">
-          <input class="destdetail__input" type="text" id="reviewName" placeholder="Nama" required />
-          <textarea class="destdetail__textarea" id="reviewText" rows="3" placeholder="Tulis ulasan..." required></textarea>
-        </div>
-
-        <button class="btn btn--solid destdetail__submit" type="submit">Posting</button>
-      </form>
-
-      <div class="destdetail__reviewList" id="reviewList">
-        <!-- contoh ulasan -->
-        <article class="destdetail__reviewItem">
-          <div class="destdetail__reviewAvatar">A</div>
-          <div class="destdetail__reviewBody">
-            <div class="destdetail__reviewHead">
-              <div class="destdetail__reviewName">Anil Harmona</div>
-              <div class="destdetail__reviewMiniStars">★★★★★</div>
+    <section class="destdetail__section">
+      <div class="rev-card">
+        <div class="rev-head">
+          <div class="rev-score">
+            <div class="rev-score__num">4.9</div>
+            <div>
+              <div class="rev-score__label">Ringkasan ulasan</div>
+              <div class="rev-stars">★★★★★</div>
             </div>
-            <p class="destdetail__reviewText">
-              Pemandangannya bagus, jalur pasir saat surut unik sekali!
-            </p>
           </div>
-        </article>
 
-        <article class="destdetail__reviewItem">
-          <div class="destdetail__reviewAvatar">S</div>
-          <div class="destdetail__reviewBody">
-            <div class="destdetail__reviewHead">
-              <div class="destdetail__reviewName">Siti Tifahnovi</div>
-              <div class="destdetail__reviewMiniStars">★★★★★</div>
-            </div>
-            <p class="destdetail__reviewText">
-              Sunsetnya cantik, akses mudah. Recommended untuk keluarga.
-            </p>
+          <div class="rev-bars">
+            <div class="rev-bar"><div>5</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:92%"></div></div></div>
+            <div class="rev-bar"><div>4</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:70%"></div></div></div>
+            <div class="rev-bar"><div>3</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:25%"></div></div></div>
+            <div class="rev-bar"><div>2</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:10%"></div></div></div>
+            <div class="rev-bar"><div>1</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:6%"></div></div></div>
           </div>
-        </article>
+        </div>
+
+        <div class="rev-form">
+          <div class="rev-form__label">Beri rating & ulasan</div>
+
+          <div class="rev-rate">
+            <div class="rev-rate__stars" data-rating="0" id="revStars">
+              <button type="button" class="rev-starBtn" data-val="1">☆</button>
+              <button type="button" class="rev-starBtn" data-val="2">☆</button>
+              <button type="button" class="rev-starBtn" data-val="3">☆</button>
+              <button type="button" class="rev-starBtn" data-val="4">☆</button>
+              <button type="button" class="rev-starBtn" data-val="5">☆</button>
+            </div>
+          </div>
+
+          <p id="guestRatingInfo" style="margin:6px 0 10px; font-size:12px; color:#64748b;">
+            Belum ada rating dipilih
+          </p>
+
+          <textarea
+            class="rev-textarea"
+            id="reviewText"
+            placeholder="Tambahkan ulasan..."
+          ></textarea>
+
+          <button class="rev-submit" type="button" id="reviewSubmitBtn">Posting</button>
+        </div>
+
+        <div class="rev-list">
+          <article class="rev-item">
+            <div class="rev-item__top">
+              <div class="rev-item__avatar">AP</div>
+              <div class="rev-item__name">
+                <div style="font-weight:900;color:#0f172a;">Arif Pratama</div>
+                <div class="rev-item__stars">★★★★★</div>
+              </div>
+              <button class="rev-like" type="button" aria-label="Suka">♡</button>
+            </div>
+            <div class="rev-item__text">
+              Pelayanan oke, lokasi dekat pantai. Kamar bersih dan nyaman.
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -407,7 +405,9 @@ Selain potensi wisata bahari, Pulau Bajo juga memiliki nilai budaya yang kuat. T
   <img class="destdetail__modalImg" id="imgModalImg" alt="Preview Dokumentasi">
 </div>
 
+
 <script src="destinasi.js"></script>
+<script src="detail-page.js"></script>
 <script>
 const loginBtn = document.getElementById("loginBtn");
 const loginModal = document.getElementById("loginModal");
@@ -436,15 +436,35 @@ loginForm.addEventListener("submit", function(e){
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  // Username & password admin
-  if(username === "admin" && password === "admin123"){
-    window.location.href = "admin.html";
-  } else {
-    loginError.textContent = "Username atau password salah!";
-  }
+  // ambil data user dari localStorage
+const registeredUser = localStorage.getItem("registeredUser");
+const registeredPass = localStorage.getItem("registeredPass");
+
+// login admin
+if(username === "admin" && password === "admin123"){
+  window.location.href = "admin.html";
+} 
+// login user (hasil register)
+else if(username === registeredUser && password === registeredPass){
+  loginError.style.color = "green";
+  loginError.textContent = "Login user berhasil!";
+
+  // simpan status login
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("loggedInUser", username);
+
+  // redirect ke halaman user
+  setTimeout(() => {
+    window.location.href = "user.html";
+  }, 1000);
+}
+// jika salah
+else {
+  loginError.style.color = "red";
+  loginError.textContent = "Username atau password salah!";
+}
 });
 </script>
-
 <script>
   const navToggle = document.getElementById("navToggle");
   const mobileMenu = document.getElementById("mobileMenu");
@@ -492,5 +512,39 @@ loginForm.addEventListener("submit", function(e){
     });
   }
 </script>
+<script>
+  const reviewSubmitBtn = document.getElementById("reviewSubmitBtn");
+  const reviewText = document.getElementById("reviewText");
+  const revStars = document.getElementById("revStars");
+
+  if (reviewSubmitBtn) {
+    reviewSubmitBtn.addEventListener("click", function () {
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+      const selectedRating = Number(revStars?.dataset.rating || 0);
+      const reviewValue = reviewText?.value.trim() || "";
+
+      if (!isLoggedIn) {
+        loginModal.classList.add("active");
+        loginError.style.color = "red";
+        loginError.textContent = "Silakan login terlebih dahulu untuk mengirim rating dan ulasan.";
+        return;
+      }
+
+      if (selectedRating === 0) {
+        alert("Silakan pilih rating terlebih dahulu.");
+        return;
+      }
+
+      if (reviewValue === "") {
+        alert("Silakan isi ulasan terlebih dahulu.");
+        return;
+      }
+
+      alert("Ulasan berhasil dikirim.");
+    });
+  }
+</script>
+
 </body>
 </html>
+

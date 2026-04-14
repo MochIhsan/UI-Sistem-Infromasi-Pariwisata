@@ -37,12 +37,13 @@
       </button>
     </div>
   </header>
-<!-- LOGIN MODAL -->
+  
+  <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <button class="login-close" id="closeLogin">&times;</button>
 
-    <h2>Login Admin</h2>
+    <h2>Login Admin / User</h2>
 
     <form id="loginForm">
       <div class="login-group">
@@ -59,9 +60,14 @@
     </form>
 
     <p class="login-error" id="loginError"></p>
+
+    <!-- register user -->
+    <p class="login-register-text">
+      Belum punya akun user?
+      <a href="register.html" class="login-register-link">Register</a>
+    </p>
   </div>
 </div>
-
 
 
   <!-- MAIN -->
@@ -204,6 +210,69 @@
          <button class="nwd-navBtn" type="button" data-dir="right" aria-label="Geser kanan">›</button>
         </div>
       </section>
+       <section class="destdetail__section">
+      <div class="rev-card">
+        <div class="rev-head">
+          <div class="rev-score">
+            <div class="rev-score__num">4.9</div>
+            <div>
+              <div class="rev-score__label">Ringkasan ulasan</div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="rev-bars">
+            <div class="rev-bar"><div>5</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:92%"></div></div></div>
+            <div class="rev-bar"><div>4</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:70%"></div></div></div>
+            <div class="rev-bar"><div>3</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:25%"></div></div></div>
+            <div class="rev-bar"><div>2</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:10%"></div></div></div>
+            <div class="rev-bar"><div>1</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:6%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="rev-form">
+          <div class="rev-form__label">Beri rating & ulasan</div>
+
+          <div class="rev-rate">
+            <div class="rev-rate__stars" data-rating="0" id="revStars">
+              <button type="button" class="rev-starBtn" data-val="1">☆</button>
+              <button type="button" class="rev-starBtn" data-val="2">☆</button>
+              <button type="button" class="rev-starBtn" data-val="3">☆</button>
+              <button type="button" class="rev-starBtn" data-val="4">☆</button>
+              <button type="button" class="rev-starBtn" data-val="5">☆</button>
+            </div>
+          </div>
+
+          <p id="guestRatingInfo" style="margin:6px 0 10px; font-size:12px; color:#64748b;">
+            Belum ada rating dipilih
+          </p>
+
+          <textarea
+            class="rev-textarea"
+            id="reviewText"
+            placeholder="Tambahkan ulasan..."
+          ></textarea>
+
+          <button class="rev-submit" type="button" id="reviewSubmitBtn">Posting</button>
+        </div>
+
+        <div class="rev-list">
+          <article class="rev-item">
+            <div class="rev-item__top">
+              <div class="rev-item__avatar">AP</div>
+              <div class="rev-item__name">
+                <div style="font-weight:900;color:#0f172a;">Arif Pratama</div>
+                <div class="rev-item__stars">★★★★★</div>
+              </div>
+              <button class="rev-like" type="button" aria-label="Suka">♡</button>
+            </div>
+            <div class="rev-item__text">
+              Pelayanan oke, lokasi dekat pantai. Kamar bersih dan nyaman.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     </div>
   </main>
@@ -281,6 +350,7 @@
     </div>
   </footer>
 
+  <script src="detail-page.js"></script>
   <script src="berita-detail.js"></script>
   <script>
 const loginBtn = document.getElementById("loginBtn");

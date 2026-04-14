@@ -37,12 +37,14 @@
       </button>
     </div>
   </header>
+
 <!-- LOGIN MODAL -->
+
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <button class="login-close" id="closeLogin">&times;</button>
 
-    <h2>Login Admin</h2>
+    <h2>Login Admin / User</h2>
 
     <form id="loginForm">
       <div class="login-group">
@@ -59,8 +61,14 @@
     </form>
 
     <p class="login-error" id="loginError"></p>
+
+    <p class="login-register-text">
+      Belum punya akun user?
+      <a href="register.html" class="login-register-link">Register</a>
+    </p>
   </div>
 </div>
+
 
   <!-- MAIN -->
   <main class="nwd">
@@ -197,6 +205,73 @@
          <button class="nwd-navBtn" type="button" data-dir="right" aria-label="Geser kanan">›</button>
         </div>
       </section>
+      
+      
+
+    <section class="destdetail__section">
+      <div class="rev-card">
+        <div class="rev-head">
+          <div class="rev-score">
+            <div class="rev-score__num">4.9</div>
+            <div>
+              <div class="rev-score__label">Ringkasan ulasan</div>
+              <div class="rev-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="rev-bars">
+            <div class="rev-bar"><div>5</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:92%"></div></div></div>
+            <div class="rev-bar"><div>4</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:70%"></div></div></div>
+            <div class="rev-bar"><div>3</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:25%"></div></div></div>
+            <div class="rev-bar"><div>2</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:10%"></div></div></div>
+            <div class="rev-bar"><div>1</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:6%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="rev-form">
+          <div class="rev-form__label">Beri rating & ulasan</div>
+
+          <div class="rev-rate">
+            <div class="rev-rate__stars" data-rating="0" id="revStars">
+              <button type="button" class="rev-starBtn" data-val="1">☆</button>
+              <button type="button" class="rev-starBtn" data-val="2">☆</button>
+              <button type="button" class="rev-starBtn" data-val="3">☆</button>
+              <button type="button" class="rev-starBtn" data-val="4">☆</button>
+              <button type="button" class="rev-starBtn" data-val="5">☆</button>
+            </div>
+          </div>
+
+          <p id="guestRatingInfo" style="margin:6px 0 10px; font-size:12px; color:#64748b;">
+            Belum ada rating dipilih
+          </p>
+
+          <textarea
+            class="rev-textarea"
+            id="reviewText"
+            placeholder="Tambahkan ulasan..."
+          ></textarea>
+
+          <button class="rev-submit" type="button" id="reviewSubmitBtn">Posting</button>
+        </div>
+
+        <div class="rev-list">
+          <article class="rev-item">
+            <div class="rev-item__top">
+              <div class="rev-item__avatar">AP</div>
+              <div class="rev-item__name">
+                <div style="font-weight:900;color:#0f172a;">Arif Pratama</div>
+                <div class="rev-item__stars">★★★★★</div>
+              </div>
+              <button class="rev-like" type="button" aria-label="Suka">♡</button>
+            </div>
+            <div class="rev-item__text">
+              Pelayanan oke, lokasi dekat pantai. Kamar bersih dan nyaman.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
 
     </div>
   </main>
@@ -275,42 +350,77 @@
   </footer>
 
   <script src="berita-detail.js"></script>
-  <script>
-const loginBtn = document.getElementById("loginBtn");
-const loginModal = document.getElementById("loginModal");
-const closeLogin = document.getElementById("closeLogin");
-const loginForm = document.getElementById("loginForm");
-const loginError = document.getElementById("loginError");
+  <script src="detail-page.js"></script>
+ 
+<script>
+  const loginBtn = document.getElementById("loginBtn");
+  const loginModal = document.getElementById("loginModal");
+  const closeLogin = document.getElementById("closeLogin");
+  const loginForm = document.getElementById("loginForm");
+  const loginError = document.getElementById("loginError");
 
-loginBtn.addEventListener("click", function(e){
-  e.preventDefault();
-  loginModal.classList.add("active");
-});
-
-closeLogin.addEventListener("click", function(){
-  loginModal.classList.remove("active");
-});
-
-window.addEventListener("click", function(e){
-  if(e.target === loginModal){
-    loginModal.classList.remove("active");
+  if (loginBtn) {
+    loginBtn.addEventListener("click", function(e){
+      e.preventDefault();
+      loginModal.classList.add("active");
+      loginError.textContent = "";
+    });
   }
-});
 
-loginForm.addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-
-  // Username & password admin
-  if(username === "admin" && password === "admin123"){
-    window.location.href = "admin.html";
-  } else {
-    loginError.textContent = "Username atau password salah!";
+  if (closeLogin) {
+    closeLogin.addEventListener("click", function(){
+      loginModal.classList.remove("active");
+      loginError.textContent = "";
+    });
   }
-});
+
+  window.addEventListener("click", function(e){
+    if(e.target === loginModal){
+      loginModal.classList.remove("active");
+      loginError.textContent = "";
+    }
+  });
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const registeredUser = localStorage.getItem("registeredUser");
+      const registeredPass = localStorage.getItem("registeredPass");
+
+      loginError.textContent = "";
+
+      if(username === "admin" && password === "admin123"){
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("loggedInUser", username);
+        sessionStorage.setItem("userRole", "admin");
+        window.location.href = "admin.html";
+        return;
+      }
+
+      if(username === registeredUser && password === registeredPass){
+        loginError.style.color = "green";
+        loginError.textContent = "Login user berhasil!";
+
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("loggedInUser", username);
+        sessionStorage.setItem("userRole", "user");
+
+        setTimeout(() => {
+          window.location.href = "berita-user.html";
+        }, 800);
+        return;
+      }
+
+      loginError.style.color = "red";
+      loginError.textContent = "Username atau password salah!";
+    });
+  }
 </script>
+
 
 <script>
   const navToggle = document.getElementById("navToggle");
@@ -359,5 +469,87 @@ loginForm.addEventListener("submit", function(e){
     });
   }
 </script>
+
+<script>
+  const guestStarsWrap = document.getElementById("revStars");
+  const guestStars = guestStarsWrap ? guestStarsWrap.querySelectorAll(".rev-starBtn") : [];
+  const guestRatingInfo = document.getElementById("guestRatingInfo");
+
+  function paintGuestStars(rating) {
+    guestStars.forEach((star) => {
+      const value = Number(star.dataset.val);
+      star.textContent = value <= rating ? "★" : "☆";
+    });
+  }
+
+  function setGuestRatingLabel(rating) {
+    guestRatingInfo.textContent = rating > 0
+      ? `Anda memilih ${rating} bintang`
+      : "Belum ada rating dipilih";
+  }
+
+  if (guestStarsWrap) {
+    guestStars.forEach((star) => {
+      star.addEventListener("mouseenter", function () {
+        paintGuestStars(Number(this.dataset.val));
+      });
+
+      star.addEventListener("click", function () {
+        const rating = Number(this.dataset.val);
+        guestStarsWrap.dataset.rating = rating;
+        paintGuestStars(rating);
+        setGuestRatingLabel(rating);
+      });
+    });
+
+    guestStarsWrap.addEventListener("mouseleave", function () {
+      paintGuestStars(Number(guestStarsWrap.dataset.rating || 0));
+    });
+  }
+
+  const reviewSubmitBtn = document.getElementById("reviewSubmitBtn");
+  const reviewText = document.getElementById("reviewText");
+
+  if (reviewSubmitBtn) {
+    reviewSubmitBtn.addEventListener("click", function () {
+      const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+      const loggedInUser = sessionStorage.getItem("loggedInUser");
+      const userRole = sessionStorage.getItem("userRole");
+
+      const selectedRating = Number(guestStarsWrap?.dataset.rating || 0);
+      const reviewValue = reviewText?.value.trim() || "";
+
+      if (isLoggedIn !== "true" || !loggedInUser || userRole !== "user") {
+        loginModal.classList.add("active");
+        loginError.style.color = "red";
+        loginError.textContent = "Silakan login terlebih dahulu untuk mengirim rating dan ulasan.";
+        return;
+      }
+
+      if (selectedRating === 0) {
+        alert("Silakan pilih rating terlebih dahulu.");
+        return;
+      }
+
+      if (reviewValue === "") {
+        alert("Silakan isi ulasan terlebih dahulu.");
+        return;
+      }
+
+      window.location.href = "user.html";
+    });
+  }
+</script>
+
+<script>
+  document.addEventListener("click", function (e) {
+    const likeBtn = e.target.closest(".rev-like");
+    if (!likeBtn) return;
+    likeBtn.classList.toggle("is-liked");
+    likeBtn.textContent = likeBtn.classList.contains("is-liked") ? "♥" : "♡";
+  });
+</script>
+
+
 </body>
 </html>

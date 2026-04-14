@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Detail Event - Event Rimpu</title>
+  <title>Event Rimpu - Detail Event</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,60 +16,33 @@
 
     <nav class="nav__links" id="mobileMenu" aria-label="Navigasi utama">
       <a class="nav__link" href="index.html">Home</a>
-      <a class="nav__link" href="destinasi.html">Destinasi</a>
-      <a class="nav__link nav__link--active" href="event.html">Event</a>
+      <a class="nav__link nav__link--active" href="destinasi.html">Destinasi</a>
+      <a class="nav__link" href="event.html">Event</a>
       <a class="nav__link" href="berita.html">Berita</a>
       <a class="nav__link" href="akomodasi.html">Akomodasi</a>
 
-      <a href="#" class="nav__link nav__link--login nav__link--loginBlue" id="loginBtn">
-        <span>Login</span>
-        <span class="nav__login-icon">
-        <svg viewBox="0 0 24 24">
-        <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
-        <path d="M4 20a8 8 0 0 1 16 0"></path>
-        </svg>
-        </span>
-        </a>
-      </nav>
-      <button class="nav__burger" id="navToggle" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-  
-<!-- LOGIN MODAL -->
+      <div class="user-menu" id="userMenu">
+        <button class="user-menu__btn" id="userMenuBtn" type="button">
+          <span id="navUsername">User</span>
+          <span class="nav__login-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>
+              <path d="M4 20a8 8 0 0 1 16 0"></path>
+            </svg>
+          </span>
+        </button>
 
-<div class="login-modal" id="loginModal">
-  <div class="login-box">
-    <button class="login-close" id="closeLogin">&times;</button>
-
-    <h2>Login Admin / User</h2>
-
-    <form id="loginForm">
-      <div class="login-group">
-        <label>Username</label>
-        <input type="text" id="username" required>
+        <div class="user-menu__dropdown" id="userDropdown">
+          <button type="button" id="logoutBtn" class="user-menu__item">Logout</button>
+        </div>
       </div>
+    </nav>
 
-      <div class="login-group">
-        <label>Password</label>
-        <input type="password" id="password" required>
-      </div>
-
-      <button type="submit" class="login-submit">Masuk</button>
-    </form>
-
-    <p class="login-error" id="loginError"></p>
-
-    <p class="login-register-text">
-      Belum punya akun user?
-      <a href="register.html" class="login-register-link">Register</a>
-    </p>
+    <button class="nav__burger" id="navToggle" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</div>
-
-
-
+</header>
 <main class="evd">
   <div class="container evd__container">
 
@@ -208,9 +181,9 @@
         </a>
       </div>
     </section>
-    
     <section class="destdetail__section">
       <div class="rev-card">
+
         <div class="rev-head">
           <div class="rev-score">
             <div class="rev-score__num">4.9</div>
@@ -221,11 +194,26 @@
           </div>
 
           <div class="rev-bars">
-            <div class="rev-bar"><div>5</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:92%"></div></div></div>
-            <div class="rev-bar"><div>4</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:70%"></div></div></div>
-            <div class="rev-bar"><div>3</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:25%"></div></div></div>
-            <div class="rev-bar"><div>2</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:10%"></div></div></div>
-            <div class="rev-bar"><div>1</div><div class="rev-bar__track"><div class="rev-bar__fill" style="width:6%"></div></div></div>
+            <div class="rev-bar">
+              <div>5</div>
+              <div class="rev-bar__track"><div class="rev-bar__fill" style="width:92%"></div></div>
+            </div>
+            <div class="rev-bar">
+              <div>4</div>
+              <div class="rev-bar__track"><div class="rev-bar__fill" style="width:70%"></div></div>
+            </div>
+            <div class="rev-bar">
+              <div>3</div>
+              <div class="rev-bar__track"><div class="rev-bar__fill" style="width:25%"></div></div>
+            </div>
+            <div class="rev-bar">
+              <div>2</div>
+              <div class="rev-bar__track"><div class="rev-bar__fill" style="width:10%"></div></div>
+            </div>
+            <div class="rev-bar">
+              <div>1</div>
+              <div class="rev-bar__track"><div class="rev-bar__fill" style="width:6%"></div></div>
+            </div>
           </div>
         </div>
 
@@ -233,16 +221,18 @@
           <div class="rev-form__label">Beri rating & ulasan</div>
 
           <div class="rev-rate">
-            <div class="rev-rate__stars" data-rating="0" id="revStars">
-              <button type="button" class="rev-starBtn" data-val="1">☆</button>
-              <button type="button" class="rev-starBtn" data-val="2">☆</button>
-              <button type="button" class="rev-starBtn" data-val="3">☆</button>
-              <button type="button" class="rev-starBtn" data-val="4">☆</button>
-              <button type="button" class="rev-starBtn" data-val="5">☆</button>
+            <div class="rev-rate__avatar" id="reviewAvatar">R</div>
+
+            <div class="rev-rate__stars" id="revStars" data-rating="0" aria-label="rating">
+              <button class="rev-starBtn" type="button" data-val="1" aria-label="1 bintang">☆</button>
+              <button class="rev-starBtn" type="button" data-val="2" aria-label="2 bintang">☆</button>
+              <button class="rev-starBtn" type="button" data-val="3" aria-label="3 bintang">☆</button>
+              <button class="rev-starBtn" type="button" data-val="4" aria-label="4 bintang">☆</button>
+              <button class="rev-starBtn" type="button" data-val="5" aria-label="5 bintang">☆</button>
             </div>
           </div>
 
-          <p id="guestRatingInfo" style="margin:6px 0 10px; font-size:12px; color:#64748b;">
+          <p id="ratingInfo" style="margin:6px 0 10px; font-size:12px; color:#64748b;">
             Belum ada rating dipilih
           </p>
 
@@ -252,10 +242,13 @@
             placeholder="Tambahkan ulasan..."
           ></textarea>
 
+          <p id="reviewError" style="margin:10px 0 0; font-size:12px; color:#dc2626; display:none;"></p>
+          <p id="reviewSuccess" style="margin:10px 0 0; font-size:12px; color:#16a34a; display:none;"></p>
+
           <button class="rev-submit" type="button" id="reviewSubmitBtn">Posting</button>
         </div>
 
-        <div class="rev-list">
+        <div class="rev-list" id="reviewList">
           <article class="rev-item">
             <div class="rev-item__top">
               <div class="rev-item__avatar">AP</div>
@@ -270,8 +263,10 @@
             </div>
           </article>
         </div>
+
       </div>
     </section>
+
   </div>
 </main>
 
@@ -281,6 +276,7 @@
       <div class="footer2__logo-ring">
         <img class="footer2__logo" src="assets/logo.png" alt="">
       </div>
+
       <div class="footer2__social">
         <a href="#" class="footer2__soc" aria-label="Facebook">
           <svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg>
@@ -297,14 +293,14 @@
       </div>
     </div>
 
-     <div class="footer2__col">
-        <div class="footer2__title">Tentang</div>
-          <p class="footer2__desc">
-          Sistem Informasi Pariwisata Online adalah sistem informasi yang
-          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
-          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
-          </p>
-      </div>
+    <div class="footer2__col">
+      <div class="footer2__title">Tentang</div>
+      <p class="footer2__desc">
+        Sistem Informasi Pariwisata Online adalah sistem informasi yang
+        menampilkan daftar info pariwisata di Kabupaten Bima meliputi
+        informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+      </p>
+    </div>
 
     <div class="footer2__col">
       <div class="footer2__title">Layanan<br>Kami</div>
@@ -346,96 +342,21 @@
   </div>
 </footer>
 
-<script src="event-detail.js"></script>
-<!-- LIGHTBOX (popup foto) -->
-<div class="lb" id="lightbox" aria-hidden="true">
-  <div class="lb__backdrop" data-lb-close></div>
-
-  <div class="lb__panel" role="dialog" aria-modal="true" aria-label="Preview foto">
-    <button class="lb__close" type="button" aria-label="Tutup" data-lb-close>×</button>
-
-    <button class="lb__nav lb__nav--prev" type="button" aria-label="Sebelumnya" data-lb-prev>
-      ‹
-    </button>
-
-    <figure class="lb__figure">
-      <img class="lb__img" id="lbImg" alt="Preview" />
-      <figcaption class="lb__cap" id="lbCap"></figcaption>
-    </figure>
-
-    <button class="lb__nav lb__nav--next" type="button" aria-label="Berikutnya" data-lb-next>
-      ›
-    </button>
-  </div>
+<div class="destdetail__modal" id="imgModal" aria-hidden="true">
+  <button class="destdetail__modalClose" type="button" id="imgModalClose" aria-label="Tutup">×</button>
+  <img class="destdetail__modalImg" id="imgModalImg" alt="Preview Dokumentasi">
 </div>
-<script src="lightbox.js"></script>
+
+<script src="destinasi.js"></script>
 <script src="detail-page.js"></script>
+
 <script>
-  const loginBtn = document.getElementById("loginBtn");
-  const loginModal = document.getElementById("loginModal");
-  const closeLogin = document.getElementById("closeLogin");
-  const loginForm = document.getElementById("loginForm");
-  const loginError = document.getElementById("loginError");
+  const storedUser = sessionStorage.getItem("loggedInUser");
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
 
-  if (loginBtn) {
-    loginBtn.addEventListener("click", function(e){
-      e.preventDefault();
-      loginModal.classList.add("active");
-      loginError.textContent = "";
-    });
-  }
-
-  if (closeLogin) {
-    closeLogin.addEventListener("click", function(){
-      loginModal.classList.remove("active");
-      loginError.textContent = "";
-    });
-  }
-
-  window.addEventListener("click", function(e){
-    if(e.target === loginModal){
-      loginModal.classList.remove("active");
-      loginError.textContent = "";
-    }
-  });
-
-  if (loginForm) {
-    loginForm.addEventListener("submit", function(e){
-      e.preventDefault();
-
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
-
-      const registeredUser = localStorage.getItem("registeredUser");
-      const registeredPass = localStorage.getItem("registeredPass");
-
-      loginError.textContent = "";
-
-      if(username === "admin" && password === "admin123"){
-        sessionStorage.setItem("isLoggedIn", "true");
-        sessionStorage.setItem("loggedInUser", username);
-        sessionStorage.setItem("userRole", "admin");
-        window.location.href = "admin.html";
-        return;
-      }
-
-      if(username === registeredUser && password === registeredPass){
-        loginError.style.color = "green";
-        loginError.textContent = "Login user berhasil!";
-
-        sessionStorage.setItem("isLoggedIn", "true");
-        sessionStorage.setItem("loggedInUser", username);
-        sessionStorage.setItem("userRole", "user");
-
-        setTimeout(() => {
-          window.location.href = "event-user.html";
-        }, 800);
-        return;
-      }
-
-      loginError.style.color = "red";
-      loginError.textContent = "Username atau password salah!";
-    });
+  if (isLoggedIn !== "true" || !storedUser) {
+    alert("Silakan login terlebih dahulu!");
+    window.location.href = "bombo-ncera.html";
   }
 </script>
 
@@ -455,7 +376,6 @@
       navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
     });
 
-    // klik di luar menu = tutup
     document.addEventListener("click", (e) => {
       if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
         navToggle.classList.remove("is-active");
@@ -465,7 +385,6 @@
       }
     });
 
-    // klik salah satu link = tutup
     mobileMenu.querySelectorAll(".nav__link").forEach((link) => {
       link.addEventListener("click", () => {
         navToggle.classList.remove("is-active");
@@ -475,7 +394,6 @@
       });
     });
 
-    // jika balik ke desktop, reset menu
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         navToggle.classList.remove("is-active");
@@ -488,72 +406,268 @@
 </script>
 
 <script>
-  const guestStarsWrap = document.getElementById("revStars");
-  const guestStars = guestStarsWrap ? guestStarsWrap.querySelectorAll(".rev-starBtn") : [];
-  const guestRatingInfo = document.getElementById("guestRatingInfo");
+  const navUsername = document.getElementById("navUsername");
+  const userMenuBtn = document.getElementById("userMenuBtn");
+  const userDropdown = document.getElementById("userDropdown");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const userMenu = document.getElementById("userMenu");
 
-  function paintGuestStars(rating) {
-    guestStars.forEach((star) => {
-      const value = Number(star.dataset.val);
-      star.textContent = value <= rating ? "★" : "☆";
+  if (navUsername && storedUser) {
+    navUsername.textContent = storedUser;
+  }
+
+  if (userMenuBtn && userDropdown && userMenu) {
+    userMenuBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      userDropdown.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!userMenu.contains(e.target)) {
+        userDropdown.classList.remove("show");
+      }
     });
   }
 
-  function setGuestRatingLabel(rating) {
-    guestRatingInfo.textContent = rating > 0
-      ? `Anda memilih ${rating} bintang`
-      : "Belum ada rating dipilih";
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      sessionStorage.removeItem("isLoggedIn");
+      sessionStorage.removeItem("loggedInUser");
+      alert("Logout berhasil!");
+      window.location.href = "event-rimpu.html";
+    });
+  }
+</script>
+
+<script>
+  const reviewAvatar = document.getElementById("reviewAvatar");
+  const revStars = document.getElementById("revStars");
+  const starButtons = revStars ? revStars.querySelectorAll(".rev-starBtn") : [];
+  const ratingInfo = document.getElementById("ratingInfo");
+  const reviewText = document.getElementById("reviewText");
+  const reviewSubmitBtn = document.getElementById("reviewSubmitBtn");
+  const reviewError = document.getElementById("reviewError");
+  const reviewSuccess = document.getElementById("reviewSuccess");
+  const reviewList = document.getElementById("reviewList");
+
+  const loggedInUser = sessionStorage.getItem("loggedInUser") || "User";
+  const REVIEW_STORAGE_KEY = "bomboNceraReviews";
+
+  if (reviewAvatar) {
+    reviewAvatar.textContent = loggedInUser.charAt(0).toUpperCase();
   }
 
-  if (guestStarsWrap) {
-    guestStars.forEach((star) => {
+  function showReviewError(message) {
+    reviewError.style.display = "block";
+    reviewError.textContent = message;
+    reviewSuccess.style.display = "none";
+    reviewSuccess.textContent = "";
+  }
+
+  function showReviewSuccess(message) {
+    reviewSuccess.style.display = "block";
+    reviewSuccess.textContent = message;
+    reviewError.style.display = "none";
+    reviewError.textContent = "";
+  }
+
+  function clearReviewMessages() {
+    reviewError.style.display = "none";
+    reviewError.textContent = "";
+    reviewSuccess.style.display = "none";
+    reviewSuccess.textContent = "";
+  }
+
+  function paintStars(rating) {
+    starButtons.forEach((star) => {
+      const value = Number(star.dataset.val);
+      star.textContent = value <= rating ? "★" : "☆";
+      star.classList.toggle("is-active", value <= rating);
+    });
+  }
+
+  function setRatingLabel(rating) {
+    const labels = {
+      1: "Anda memilih 1 bintang",
+      2: "Anda memilih 2 bintang",
+      3: "Anda memilih 3 bintang",
+      4: "Anda memilih 4 bintang",
+      5: "Anda memilih 5 bintang"
+    };
+    ratingInfo.textContent = labels[rating] || "Belum ada rating dipilih";
+  }
+
+  if (revStars) {
+    starButtons.forEach((star) => {
       star.addEventListener("mouseenter", function () {
-        paintGuestStars(Number(this.dataset.val));
+        paintStars(Number(this.dataset.val));
       });
 
       star.addEventListener("click", function () {
         const rating = Number(this.dataset.val);
-        guestStarsWrap.dataset.rating = rating;
-        paintGuestStars(rating);
-        setGuestRatingLabel(rating);
+        revStars.dataset.rating = rating;
+        paintStars(rating);
+        setRatingLabel(rating);
       });
     });
 
-    guestStarsWrap.addEventListener("mouseleave", function () {
-      paintGuestStars(Number(guestStarsWrap.dataset.rating || 0));
+    revStars.addEventListener("mouseleave", function () {
+      const savedRating = Number(revStars.dataset.rating || 0);
+      paintStars(savedRating);
     });
   }
 
-  const reviewSubmitBtn = document.getElementById("reviewSubmitBtn");
-  const reviewText = document.getElementById("reviewText");
+  function normalizeText(text) {
+    return text.toLowerCase().replace(/\s+/g, " ").trim();
+  }
+
+  function containsBlockedWords(text) {
+    const normalized = normalizeText(text);
+
+    const rudeWords = [
+      "anjing", "babi", "bangsat", "kontol", "memek",
+      "tolol", "goblok", "brengsek", "asu", "tai",
+      "idiot", "bego"
+    ];
+
+    return rudeWords.some((word) => {
+      const regex = new RegExp(`(^|\\b)${word}(\\b|$)`, "i");
+      return regex.test(normalized);
+    });
+  }
+
+  function containsNegativeLinks(text) {
+    const normalized = normalizeText(text);
+
+    const urlPattern = /(https?:\/\/|www\.|bit\.ly|tinyurl\.com|t\.me|wa\.me)/i;
+    if (urlPattern.test(normalized)) return true;
+
+    const suspiciousWords = [
+      "slot", "judi", "judol", "casino", "kasino",
+      "bet", "deposit", "gacor", "maxwin", "cuan",
+      "togel", "bokep", "porn", "sex"
+    ];
+
+    return suspiciousWords.some((word) => {
+      const regex = new RegExp(`(^|\\b)${word}(\\b|$)`, "i");
+      return regex.test(normalized);
+    });
+  }
+
+  function escapeHtml(text) {
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function getStoredReviews() {
+    try {
+      const raw = localStorage.getItem(REVIEW_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function saveStoredReviews(reviews) {
+    localStorage.setItem(REVIEW_STORAGE_KEY, JSON.stringify(reviews));
+  }
+
+  function createReviewElement(review) {
+    const article = document.createElement("article");
+    article.className = "rev-item";
+
+    const safeName = escapeHtml(review.username);
+    const safeComment = escapeHtml(review.comment);
+    const safeStars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+    const initial = review.username.charAt(0).toUpperCase();
+
+    article.innerHTML = `
+      <div class="rev-item__top">
+        <div class="rev-item__avatar">${initial}</div>
+        <div class="rev-item__name">
+          <div style="font-weight:900;color:#0f172a;">${safeName}</div>
+          <div class="rev-item__stars">${safeStars}</div>
+        </div>
+        <button class="rev-like" type="button" aria-label="Suka">♡</button>
+      </div>
+      <div class="rev-item__text">${safeComment}</div>
+    `;
+
+    return article;
+  }
+
+  function renderStoredReviews() {
+    const defaultReviews = Array.from(reviewList.querySelectorAll(".rev-item"));
+    reviewList.innerHTML = "";
+
+    defaultReviews.forEach((item) => {
+      reviewList.appendChild(item);
+    });
+
+    const storedReviews = getStoredReviews();
+    storedReviews.forEach((review) => {
+      reviewList.prepend(createReviewElement(review));
+    });
+  }
+
+  renderStoredReviews();
 
   if (reviewSubmitBtn) {
     reviewSubmitBtn.addEventListener("click", function () {
-      const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-      const loggedInUser = sessionStorage.getItem("loggedInUser");
-      const userRole = sessionStorage.getItem("userRole");
+      clearReviewMessages();
 
-      const selectedRating = Number(guestStarsWrap?.dataset.rating || 0);
-      const reviewValue = reviewText?.value.trim() || "";
+      const isLoggedInUser = sessionStorage.getItem("isLoggedIn") === "true";
+      const rating = Number(revStars.dataset.rating || 0);
+      const comment = reviewText.value.trim();
 
-      if (isLoggedIn !== "true" || !loggedInUser || userRole !== "user") {
-        loginModal.classList.add("active");
-        loginError.style.color = "red";
-        loginError.textContent = "Silakan login terlebih dahulu untuk mengirim rating dan ulasan.";
+      if (!isLoggedInUser) {
+        showReviewError("Anda harus login terlebih dahulu.");
         return;
       }
 
-      if (selectedRating === 0) {
-        alert("Silakan pilih rating terlebih dahulu.");
+      if (rating === 0) {
+        showReviewError("Silakan pilih rating terlebih dahulu.");
         return;
       }
 
-      if (reviewValue === "") {
-        alert("Silakan isi ulasan terlebih dahulu.");
+      if (comment === "") {
+        showReviewError("Silakan isi ulasan terlebih dahulu.");
         return;
       }
 
-      window.location.href = "user.html";
+      if (containsBlockedWords(comment)) {
+        showReviewError("Ulasan tidak dapat dikirim karena mengandung kata yang tidak sopan.");
+        return;
+      }
+
+      if (containsNegativeLinks(comment)) {
+        showReviewError("Ulasan tidak dapat dikirim karena mengandung link atau kata yang tidak diizinkan.");
+        return;
+      }
+
+      const newReview = {
+        username: loggedInUser,
+        rating: rating,
+        comment: comment,
+        createdAt: new Date().toISOString()
+      };
+
+      const reviews = getStoredReviews();
+      reviews.push(newReview);
+      saveStoredReviews(reviews);
+
+      reviewList.prepend(createReviewElement(newReview));
+
+      reviewText.value = "";
+      revStars.dataset.rating = "0";
+      paintStars(0);
+      setRatingLabel(0);
+
+      showReviewSuccess("Ulasan berhasil dikirim dan disimpan.");
     });
   }
 </script>
@@ -562,11 +676,11 @@
   document.addEventListener("click", function (e) {
     const likeBtn = e.target.closest(".rev-like");
     if (!likeBtn) return;
+
     likeBtn.classList.toggle("is-liked");
     likeBtn.textContent = likeBtn.classList.contains("is-liked") ? "♥" : "♡";
   });
 </script>
-
 
 </body>
 </html>
