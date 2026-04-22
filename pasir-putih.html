@@ -36,10 +36,11 @@
         <span></span><span></span><span></span>
       </button>
     </div>
-  </header>
-  <!-- LOGIN MODAL -->
+  </header><!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
-  <div class="login-box">
+
+  <!-- STEP 1: LOGIN -->
+  <div class="login-box" id="loginStep">
     <button class="login-close" id="closeLogin">&times;</button>
 
     <h2>Login Admin / User</h2>
@@ -47,25 +48,102 @@
     <form id="loginForm">
       <div class="login-group">
         <label>Username</label>
-        <input type="text" id="username" required>
+        <input type="text" id="username" placeholder="Masukan username" required>
       </div>
 
       <div class="login-group">
         <label>Password</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" placeholder="Masukan password" required>
       </div>
 
       <button type="submit" class="login-submit">Masuk</button>
     </form>
 
+    <div class="login-forgot-wrap">
+      <a href="#" class="login-forgot-link" id="goForgot">Lupa password?</a>
+    </div>
+
     <p class="login-error" id="loginError"></p>
 
-    <!-- register user -->
     <p class="login-register-text">
-      Belum punya akun user?
+      Belum punya akun?
       <a href="register.html" class="login-register-link">Register</a>
     </p>
   </div>
+
+  <!-- STEP 2: LUPA PASSWORD -->
+  <div class="login-box login-box--wide login-step-panel" id="forgotStep">
+    <button class="login-close" id="closeForgot">&times;</button>
+
+    <h2>Lupa password?</h2>
+    <p class="login-step-desc">
+      Nggak usah panik, tinggal isi data kamu biar<br>
+      biar bisa balik login
+    </p>
+
+    <form id="forgotForm">
+      <div class="login-group login-group--spaced">
+        <label>Username</label>
+        <input type="text" id="forgotUsername" placeholder="Masukan username" required>
+      </div>
+
+      <button type="submit" class="login-submit login-submit--lg">Kirim Kode</button>
+    </form>
+  </div>
+
+  <!-- STEP 3: VERIFIKASI -->
+  <div class="login-box login-box--code login-step-panel" id="verifyStep">
+    <button class="login-close" id="closeVerify">&times;</button>
+
+    <h2>Masukin Kode Rahasia</h2>
+    <p class="login-step-desc">
+      Cek Email kamu dan kirim kode 5 digit<br>
+      buat verifikasi.
+    </p>
+
+    <form id="verifyForm">
+      <div class="code-inputs">
+        <input type="text" maxlength="1" class="code-input" required>
+        <input type="text" maxlength="1" class="code-input" required>
+        <input type="text" maxlength="1" class="code-input" required>
+        <input type="text" maxlength="1" class="code-input" required>
+        <input type="text" maxlength="1" class="code-input" required>
+      </div>
+
+      <button type="submit" class="login-submit login-submit--lg">Verifikasi</button>
+    </form>
+  </div>
+
+  <!-- STEP 4: PASSWORD BARU -->
+  <div class="login-box login-box--reset login-step-panel" id="resetStep">
+    <button class="login-close" id="closeReset">&times;</button>
+
+    <h2>Bikin Password Baru</h2>
+    <p class="login-step-desc">
+      Masukkan password baru, jangan sampai<br>
+      lupa lagi ya.
+    </p>
+
+    <form id="resetForm">
+      <div class="login-group login-group--spaced">
+        <label>Password</label>
+        <div class="password-field">
+          <input type="password" id="newPassword" placeholder="Masukan password" required>
+          <button type="button" class="password-toggle" id="toggleNewPassword" aria-label="Lihat password">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 3l18 18"></path>
+              <path d="M10.58 10.58A2 2 0 0 0 13.42 13.42"></path>
+              <path d="M9.88 4.24A10.94 10.94 0 0 1 12 4c5 0 9.27 3.11 11 7.5a11.8 11.8 0 0 1-2.17 3.31"></path>
+              <path d="M6.61 6.61A11.84 11.84 0 0 0 1 11.5C2.73 15.89 7 19 12 19a10.9 10.9 0 0 0 5.39-1.39"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="login-submit login-submit--lg">Simpan Password</button>
+    </form>
+  </div>
+
 </div>
 
  <main class="detail-wrap">
@@ -408,42 +486,168 @@
   <img class="destdetail__modalImg" id="imgModalImg" alt="Preview Dokumentasi">
 </div>
 
-<script src="destinasi.js"></script>
-<script>
-const loginBtn = document.getElementById("loginBtn");
-const loginModal = document.getElementById("loginModal");
-const closeLogin = document.getElementById("closeLogin");
-const loginForm = document.getElementById("loginForm");
-const loginError = document.getElementById("loginError");
+<script src="destinasi.js"></script><script>
+  const loginBtn = document.getElementById("loginBtn");
+  const loginModal = document.getElementById("loginModal");
 
-loginBtn.addEventListener("click", function(e){
-  e.preventDefault();
-  loginModal.classList.add("active");
-});
+  const closeLogin = document.getElementById("closeLogin");
+  const closeForgot = document.getElementById("closeForgot");
+  const closeVerify = document.getElementById("closeVerify");
+  const closeReset = document.getElementById("closeReset");
 
-closeLogin.addEventListener("click", function(){
-  loginModal.classList.remove("active");
-});
+  const loginForm = document.getElementById("loginForm");
+  const loginError = document.getElementById("loginError");
 
-window.addEventListener("click", function(e){
-  if(e.target === loginModal){
+  const loginStep = document.getElementById("loginStep");
+  const forgotStep = document.getElementById("forgotStep");
+  const verifyStep = document.getElementById("verifyStep");
+  const resetStep = document.getElementById("resetStep");
+
+  const goForgot = document.getElementById("goForgot");
+  const forgotForm = document.getElementById("forgotForm");
+  const verifyForm = document.getElementById("verifyForm");
+  const resetForm = document.getElementById("resetForm");
+
+  const toggleNewPassword = document.getElementById("toggleNewPassword");
+  const newPassword = document.getElementById("newPassword");
+  const codeInputs = document.querySelectorAll(".code-input");
+
+  function hideAllSteps() {
+    loginStep.style.display = "none";
+    forgotStep.classList.remove("active-step");
+    verifyStep.classList.remove("active-step");
+    resetStep.classList.remove("active-step");
+  }
+
+  function showStep(stepName) {
+    hideAllSteps();
+
+    if (stepName === "login") {
+      loginStep.style.display = "block";
+    }
+    if (stepName === "forgot") {
+      forgotStep.classList.add("active-step");
+    }
+    if (stepName === "verify") {
+      verifyStep.classList.add("active-step");
+    }
+    if (stepName === "reset") {
+      resetStep.classList.add("active-step");
+    }
+  }
+
+  function resetForgotFlow() {
+    showStep("login");
+    loginError.textContent = "";
+
+    loginForm.reset();
+    forgotForm.reset();
+    verifyForm.reset();
+    resetForm.reset();
+
+    codeInputs.forEach(input => input.value = "");
+    newPassword.type = "password";
+  }
+
+  function closeModal() {
     loginModal.classList.remove("active");
+    resetForgotFlow();
   }
-});
 
-loginForm.addEventListener("submit", function(e){
-  e.preventDefault();
+  loginBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    loginModal.classList.add("active");
+    resetForgotFlow();
+  });
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  closeLogin.addEventListener("click", closeModal);
+  closeForgot.addEventListener("click", closeModal);
+  closeVerify.addEventListener("click", closeModal);
+  closeReset.addEventListener("click", closeModal);
 
-  // Username & password admin
-  if(username === "admin" && password === "admin123"){
-    window.location.href = "admin.html";
-  } else {
-    loginError.textContent = "Username atau password salah!";
-  }
-});
+  window.addEventListener("click", function(e) {
+    if (e.target === loginModal) {
+      closeModal();
+    }
+  });
+
+  loginForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (username === "admin" && password === "admin123") {
+      window.location.href = "admin.html";
+    } else {
+      loginError.textContent = "Username atau password salah!";
+    }
+  });
+
+  goForgot.addEventListener("click", function(e) {
+    e.preventDefault();
+    showStep("forgot");
+  });
+
+  forgotForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const forgotUsername = document.getElementById("forgotUsername").value.trim();
+    if (!forgotUsername) return;
+
+    showStep("verify");
+    if (codeInputs.length > 0) {
+      codeInputs[0].focus();
+    }
+  });
+
+  codeInputs.forEach((input, index) => {
+    input.addEventListener("input", function() {
+      this.value = this.value.replace(/[^0-9]/g, "").slice(0, 1);
+
+      if (this.value && index < codeInputs.length - 1) {
+        codeInputs[index + 1].focus();
+      }
+    });
+
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Backspace" && !this.value && index > 0) {
+        codeInputs[index - 1].focus();
+      }
+    });
+  });
+
+  verifyForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const code = Array.from(codeInputs).map(input => input.value).join("");
+
+    if (code.length !== 5) {
+      alert("Masukkan 5 digit kode verifikasi.");
+      return;
+    }
+
+    showStep("reset");
+  });
+
+  toggleNewPassword.addEventListener("click", function() {
+    const isPassword = newPassword.type === "password";
+    newPassword.type = isPassword ? "text" : "password";
+  });
+
+  resetForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const passwordBaru = newPassword.value.trim();
+
+    if (passwordBaru.length < 6) {
+      alert("Password baru minimal 6 karakter.");
+      return;
+    }
+
+    alert("Password berhasil disimpan. Silakan login kembali.");
+    closeModal();
+  });
 </script>
 <script>
   const navToggle = document.getElementById("navToggle");
