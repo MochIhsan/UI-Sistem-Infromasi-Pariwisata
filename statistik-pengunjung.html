@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Statistik Pengunjung - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!-- KONTEN WISATA -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <a class="admin-nav__item" href="analisis-destinasi.html">
+    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
+  </a>
+
+  <a class="admin-nav__item active" href="statistik-pengunjung.html">
+    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
+  </a>
+
+</nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="admin-wrap">
+        <div class="admin-head">
+          <div>
+            <h1 class="admin-h1">Statistik Pengunjung</h1>
+            <p class="admin-sub">Monitoring total kunjungan pengunjung website.</p>
+          </div>
+        </div>
+
+        <section class="admin-stats">
+          <article class="stat-card">
+            <div class="stat-top">
+              <div>
+                <div class="stat-label">Total Kunjungan</div>
+                <div class="stat-value" id="totalVisits">0</div>
+              </div>
+              
+            </div>
+            <div class="stat-foot up">Akumulasi semua kunjungan</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <div>
+                <div class="stat-label">Kunjungan Hari Ini</div>
+                <div class="stat-value" id="todayVisits">0</div>
+              </div>
+              
+            </div>
+            <div class="stat-foot warn">Reset otomatis per hari</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <div>
+                <div class="stat-label">Halaman Terakhir Dibuka</div>
+                <div class="stat-value" id="lastPage" style="font-size:16px;">-</div>
+              </div>
+              
+            </div>
+            <div class="stat-foot up">Tracking halaman aktif</div>
+          </article>
+        </section>
+
+        <section class="panel panel--table" style="margin-top:16px;">
+          <div class="panel-head">
+            <h3 class="panel-title">Riwayat Kunjungan</h3>
+          </div>
+
+          <div class="table">
+            <div class="tr th" style="grid-template-columns:1fr 1fr 1fr;">
+              <div>TANGGAL</div>
+              <div>JUMLAH KUNJUNGAN</div>
+              <div>STATUS</div>
+            </div>
+
+            <div id="visitHistoryRows"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const totalVisits = localStorage.getItem("site_total_visits") || 0;
+    const todayKey = new Date().toISOString().slice(0, 10);
+    const todayVisits = localStorage.getItem("site_visits_" + todayKey) || 0;
+    const lastPage = localStorage.getItem("site_last_page") || "-";
+
+    document.getElementById("totalVisits").textContent = totalVisits;
+    document.getElementById("todayVisits").textContent = todayVisits;
+    document.getElementById("lastPage").textContent = lastPage;
+
+    const visitHistoryRows = document.getElementById("visitHistoryRows");
+    const keys = Object.keys(localStorage)
+      .filter(key => key.startsWith("site_visits_"))
+      .sort()
+      .reverse();
+
+    if (keys.length === 0) {
+      visitHistoryRows.innerHTML = `
+        <div class="tr" style="grid-template-columns:1fr;">
+          <div>Belum ada data kunjungan.</div>
+        </div>
+      `;
+    } else {
+      visitHistoryRows.innerHTML = keys.map(key => {
+        const date = key.replace("site_visits_", "");
+        const count = localStorage.getItem(key) || 0;
+        return `
+          <div class="tr" style="grid-template-columns:1fr 1fr 1fr;">
+            <div>${date}</div>
+            <div>${count}</div>
+            <div><span class="badge ok">Tercatat</span></div>
+          </div>
+        `;
+      }).join("");
+    }
+  </script>
+
+  <script src="admin.js"></script>
+</body>
+</html>

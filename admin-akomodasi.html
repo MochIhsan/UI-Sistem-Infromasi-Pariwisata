@@ -20,32 +20,58 @@
         </div>
       </div>
 
-      <nav class="admin-nav">
-        <a class="admin-nav__item" href="admin.html">
-          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
-        </a>
-        <a class="admin-nav__item" href="admin-destinasi.html">
-          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
-        </a>
-        <a class="admin-nav__item" href="admin-event.html">
-          <img class="admin-ic" src="logo/container76.svg"></img> Event
-        </a>
-        <a class="admin-nav__item" href="admin-berita.html">
-          <img class="admin-ic" src="logo/container78.svg"></img> Berita
-        </a>
-        <a class="admin-nav__item active" href="admin-akomodasi.html">
-          <img class="admin-ic" src="logo/containerakomodasi.svg"> Akomodasi
-        </a>
-        <a class="admin-nav__item" href="kelola-admin.html">
-          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
-        </a>
-        <a class="admin-nav__item" href="kelola-user.html">
-        <img class="admin-ic" src="logo/user.svg"></img> Kelola User
-      </a>
-      <a class="admin-nav__item" href="kelola-ulasan.html">
-        <img class="admin-ic" src="logo/ulasan.svg"></img> Kelola Ulasan
-      </a>
-      </nav>
+     <nav class="admin-nav">
+
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!-- KONTEN WISATA -->
+  <div class="admin-nav__group open">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item  active" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <a class="admin-nav__item" href="analisis-destinasi.html">
+    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
+  </a>
+
+  <a class="admin-nav__item" href="statistik-pengunjung.html">
+    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
+  </a>
+
+</nav>
     </aside>
 
     <!-- MAIN -->
@@ -57,8 +83,8 @@
         <div class="admin-topbar__right">
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
-              <div class="admin-user__name">Admin User</div>
-              <div class="admin-user__role">Super Admin</div>
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
             </div>
 
             <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
@@ -120,31 +146,37 @@
               <div class="acmdm-stat__value">12</div>
             </div>
           </div>
-
           <div class="acmdm-stat">
-            <div class="acmdm-stat__icon acmdm-stat__icon--yellow" aria-hidden="true">
-              <img src="logo/container53.svg" />
-            </div>
-            <div>
-              <div class="acmdm-stat__label">Avg. Rating</div>
-              <div class="acmdm-stat__value">4.7</div>
-            </div>
+  <div class="acmdm-stat__icon acmdm-stat__icon--blue" aria-hidden="true">
+    <svg viewBox="0 0 24 24">
+      <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+      <circle cx="12" cy="12" r="2.5"></circle>
+    </svg>
+  </div>
+  <div>
+    <div class="acmdm-stat__label">Pengunjung Halaman</div>
+    <div class="acmdm-stat__value">9,860</div>
+  </div>
+</div>
+
+          
+            
           </div>
         </section>
 
         <!-- CARD -->
-        <section class="adm-card">
+        <section class="adm-card acmdm-card">
           <!-- TOOLBAR: SEARCH + SELECT + FILTER -->
           <div class="acmdm-toolbar">
             <div class="acmdm-search">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="11" cy="11" r="7"></circle>
-                <path d="M20 20l-3.5-3.5"></path>
-              </svg>
-              <input type="text" placeholder="Cari nama penginapan atau lokasi..." />
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="M20 20l-3.5-3.5"></path>
+    </svg>
+              <input type="text" id="staySearch" placeholder="Cari nama penginapan atau lokasi..." />
             </div>
 
-            <select class="adm-select acmdm-select" aria-label="Tipe penginapan">
+           <select class="adm-select acmdm-select" id="stayTypeFilter" aria-label="Tipe penginapan">
               <option selected>Semua Tipe</option>
               <option>Hotel</option>
               <option>Villa</option>
@@ -156,15 +188,15 @@
           <div class="acmdm-table">
             <div class="acmdm-thead">
               <div class="acmdm-th">ID</div>
-              <div class="acmdm-th">AKOMODASI</div>
-              <div class="acmdm-th">TIPE</div>
-              <div class="acmdm-th">HARGA/MALAM</div>
-              <div class="acmdm-th">RATING</div>
-              <div class="acmdm-th acmdm-th--right">AKSI</div>
+  <div class="acmdm-th">AKOMODASI</div>
+  <div class="acmdm-th">TIPE</div>
+  <div class="acmdm-th">HARGA/MALAM</div>
+  <div class="acmdm-th">DILIHAT</div>
+  <div class="acmdm-th acmdm-th--right">AKSI</div>
             </div>
 
             <!-- ROW 1 -->
-            <div class="acmdm-row">
+            <div class="acmdm-row" data-type="hotel">
               <div class="acmdm-td acmdm-id">#AK-1023</div>
 
               <div class="acmdm-td acmdm-acco">
@@ -181,9 +213,15 @@
 
               <div class="acmdm-td acmdm-price">Rp 300.000</div>
 
-              <div class="acmdm-td acmdm-rate">
-                <span class="acmdm-star">★</span> 4.8
-              </div>
+              <div class="acmdm-td acmdm-view">
+    <span class="acmdm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    980
+  </div>
 
               <div class="acmdm-td acmdm-actions">
                 <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
@@ -205,7 +243,7 @@
             </div>
 
             <!-- ROW 2 -->
-            <div class="acmdm-row">
+            <div class="acmdm-row" data-type="hotel">
               <div class="acmdm-td acmdm-id">#AK-1024</div>
 
               <div class="acmdm-td acmdm-acco">
@@ -222,9 +260,15 @@
 
               <div class="acmdm-td acmdm-price">Rp 4.200.000</div>
 
-              <div class="acmdm-td acmdm-rate">
-                <span class="acmdm-star">★</span> 4.9
-              </div>
+              <div class="acmdm-td acmdm-view">
+    <span class="acmdm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    980
+  </div>
 
               <div class="acmdm-td acmdm-actions">
                 <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
@@ -246,7 +290,7 @@
             </div>
 
             <!-- ROW 3 -->
-            <div class="acmdm-row">
+            <div class="acmdm-row" data-type="homestay">
               <div class="acmdm-td acmdm-id">#AK-1025</div>
 
               <div class="acmdm-td acmdm-acco">
@@ -262,11 +306,16 @@
               </div>
 
               <div class="acmdm-td acmdm-price">Rp 450.000</div>
-
-              <div class="acmdm-td acmdm-rate">
-                <span class="acmdm-star">★</span> 4.5
-              </div>
-
+ <div class="acmdm-td acmdm-view">
+    <span class="acmdm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    980
+  </div>
+             
               <div class="acmdm-td acmdm-actions">
                 <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
@@ -287,7 +336,7 @@
             </div>
 
             <!-- ROW 4 -->
-            <div class="acmdm-row">
+            <div class="acmdm-row" data-type="hotel">
               <div class="acmdm-td acmdm-id">#AK-1026</div>
 
               <div class="acmdm-td acmdm-acco">
@@ -304,9 +353,15 @@
 
               <div class="acmdm-td acmdm-price">Rp 6.800.000</div>
 
-              <div class="acmdm-td acmdm-rate">
-                <span class="acmdm-star">★</span> 5.0
-              </div>
+             <div class="acmdm-td acmdm-view">
+    <span class="acmdm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    980
+  </div>
 
               <div class="acmdm-td acmdm-actions">
                 <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">

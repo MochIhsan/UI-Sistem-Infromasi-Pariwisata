@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Admin Dashboard - Pariwisata Kabupaten Bima</title>
   <link rel="stylesheet" href="style.css" />
+
+  </style>
 </head>
 <body class="admin-body">
 
@@ -13,64 +15,80 @@
     <aside class="admin-sidebar">
       <div class="admin-brand">
         <div class="brand">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
-      </div>
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
         <div class="admin-brand__text">
           <div class="admin-brand__name">TourAdmin</div>
         </div>
       </div>
 
       <nav class="admin-nav">
-        <a class="admin-nav__item active" href="admin.html">
-          <img class="admin-ic" src="logo/container72.svg"></img> Dashboard
-        </a>
-        <a class="admin-nav__item" href="admin-destinasi.html">
-          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
-        </a>
-        <a class="admin-nav__item" href="admin-event.html">
-          <img class="admin-ic" src="logo/container76.svg"></img> Event
-        </a>
-        <a class="admin-nav__item" href="admin-berita.html">
-          <img class="admin-ic" src="logo/container78.svg"></img> Berita
-        </a>
-        <a class="admin-nav__item" href="admin-akomodasi.html">
-          <img class="admin-ic" src="logo/container80.svg"></img> Akomsodasi
-        </a>
-        <a class="admin-nav__item" href="kelola-admin.html">
-          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
-        </a>
-           <a class="admin-nav__item" href="kelola-user.html">
-  <img class="admin-ic" src="logo/user.svg"> Kelola User
-</a>
 
-<a class="admin-nav__item" href="kelola-ulasan.html">
-  <img class="admin-ic" src="logo/ulasan.svg"> Kelola Ulasan
-</a>
+        <a class="admin-nav__item active" href="admin.html">
+          <img class="admin-ic" src="logo/container72.svg" alt=""> Dashboard
+        </a>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg" alt="">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg" alt="">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
+
+        <a class="admin-nav__item" href="analisis-destinasi.html">
+          <img class="admin-ic" src="logo/container48.svg" alt=""> Analisis Destinasi
+        </a>
+
+        <a class="admin-nav__item" href="statistik-pengunjung.html">
+          <img class="admin-ic" src="logo/user.svg" alt=""> Statistik Pengunjung
+        </a>
 
       </nav>
     </aside>
 
     <!-- MAIN -->
     <main class="admin-main">
-      <!-- TOPBAR  -->
       <header class="admin-topbar">
         <div class="admin-topbar__left"></div>
 
         <div class="admin-topbar__right">
-
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
-              <div class="admin-user__name">Admin User</div>
-              <div class="admin-user__role">Super Admin</div>
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
             </div>
 
             <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
               <span>👤</span>
             </button>
 
-            <!-- DROPDOWN -->
             <div class="admin-dd" id="adminDd">
-              <!--<a href="profile-admin.html" class="admin-dd__item">Profil</a> -->
               <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
             </div>
           </div>
@@ -82,7 +100,7 @@
         <div class="admin-head">
           <div>
             <h1 class="admin-h1">Dashboard Overview</h1>
-            <p class="admin-sub">Welcome back, here's what's happening today.</p>
+            <p class="admin-sub">Selamat datang di Dashboard Admin.</p>
           </div>
         </div>
 
@@ -95,10 +113,9 @@
                 <div class="stat-value">40</div>
               </div>
               <div class="stat-icon">
-                <img src="logo/container46.svg">
+                <img src="logo/container46.svg" alt="">
               </div>
             </div>
-            <div class="stat-foot up">+12% vs last month</div>
           </article>
 
           <article class="stat-card">
@@ -107,11 +124,10 @@
                 <div class="stat-label">Total Event</div>
                 <div class="stat-value">10</div>
               </div>
-               <div class="stat-icon1">
-                <img src="logo/container51.svg">
+              <div class="stat-icon1">
+                <img src="logo/container51.svg" alt="">
               </div>
             </div>
-            <div class="stat-foot warn">Steady this month</div>
           </article>
 
           <article class="stat-card">
@@ -120,11 +136,10 @@
                 <div class="stat-label">Total Berita</div>
                 <div class="stat-value">10</div>
               </div>
-               <div class="stat-icon1">
-                <img src="logo/container56.svg">
+              <div class="stat-icon1">
+                <img src="logo/container56.svg" alt="">
               </div>
             </div>
-            <div class="stat-foot up">+5% vs last month</div>
           </article>
 
           <article class="stat-card">
@@ -133,32 +148,44 @@
                 <div class="stat-label">Akomodasi</div>
                 <div class="stat-value">7</div>
               </div>
-               <div class="stat-icon1">
-                <img src="logo/container61.svg">
+              <div class="stat-icon1">
+                <img src="logo/container61.svg" alt="">
               </div>
             </div>
-            <div class="stat-foot down">-2% vs last month</div>
           </article>
         </section>
 
         <!-- CHARTS -->
         <section class="admin-panels">
           <article class="panel panel--wide">
-            <div class="panel-head">
-            <h3 class="panel-title">Visitor Statistics</h3>
+            <div class="panel-head panel-head--chart">
+              <h3 class="panel-title">Visitor Statistics</h3>
 
-            <div class="panel-filter">
-                <label class="panel-filter__label" for="rangeSelect">Periode</label>
-                <select id="rangeSelect" class="panel-filter__select">
-                <option value="6" selected>Last 6 Months</option>
-                <option value="12">Last 12 Months</option>
-                </select>
-            </div>
+              <div class="panel-filters">
+                <div class="panel-filter">
+                  <label class="panel-filter__label" for="yearSelect">Tahun</label>
+                  <select id="yearSelect" class="panel-filter__select">
+                    <option value="2024">2024</option>
+                    <option value="2025" selected>2025</option>
+                    <option value="2026">2026</option>
+                  </select>
+                </div>
+
+                <div class="panel-filter">
+                  <label class="panel-filter__label" for="categorySelect">Kategori</label>
+                  <select id="categorySelect" class="panel-filter__select">
+                    <option value="all" selected>Semua Kunjungan</option>
+                    <option value="destinasi">Destinasi</option>
+                    <option value="event">Event</option>
+                    <option value="berita">Berita</option>
+                    <option value="akomodasi">Akomodasi</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <!-- bar chart dummy -->
-            <div class="bars" id="barsWrap"></div>
-              
+            <div class="chart-legend" id="chartLegend"></div>
+            <div class="bars bars--detailed" id="barsWrap"></div>
           </article>
 
           <article class="panel">
@@ -166,12 +193,20 @@
               <h3 class="panel-title">Popular Categories</h3>
             </div>
 
-            <!-- donut dummy -->
             <div class="donut-wrap">
-              <div class="donut">
-                <div class="donut-center">
-                  <div class="donut-num">67</div>
-                  <div class="donut-sub">ITEMS</div>
+              <div class="donut-box">
+                <div class="donut" id="popularDonut">
+                  <div class="donut-tooltip" id="donutTooltip">
+                    <div><strong>Destinasi:</strong> 73%</div>
+                    <div><strong>Event:</strong> 10%</div>
+                    <div><strong>Berita:</strong> 10%</div>
+                    <div><strong>Akomodasi:</strong> 7%</div>
+                  </div>
+
+                  <div class="donut-center">
+                    <div class="donut-num">67</div>
+                    <div class="donut-sub">ITEMS</div>
+                  </div>
                 </div>
               </div>
 
@@ -204,8 +239,8 @@
         <!-- TABLE -->
         <section class="panel panel--table">
           <div class="panel-head">
-            <h3 class="panel-title">Recent Activity</h3>
-            <a class="panel-link" href="#">View All</a>
+            <h3 class="panel-title">Aktivitas Terbaru</h3>
+            <!-- <a class="panel-link" href="#">View All</a> -->
           </div>
 
           <div class="table">
@@ -218,48 +253,36 @@
             </div>
 
             <div class="tr">
-              <div class="td-title2"><span class="ticon plus">+</span> New Destination Added: Pantai Lariti</div>
+              <div class="td-title2"><span class="ticon plus">+</span> Destinasi Baru: Pantai Lariti</div>
               <div>Destinasi</div>
-              <div>2 mins ago</div>
+              <div>2 menit yang lalu</div>
               <div><span class="badge ok">Published</span></div>
               <div class="actions">
-                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">
-                    ✎
-                </button>
-                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">
-                    🗑
-                </button>
-                </div>
+                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">✎</button>
+                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">🗑</button>
+              </div>
             </div>
 
             <div class="tr">
               <div class="td-title2"><span class="ticon edit">✎</span> Event Updated: Bau Nyale 2024</div>
               <div>Event</div>
-              <div>45 mins ago</div>
+              <div>45 menit yang lalu</div>
               <div><span class="badge info">Updated</span></div>
               <div class="actions">
-                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">
-                    ✎
-                </button>
-                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">
-                    🗑
-                </button>
-                </div>
+                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">✎</button>
+                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">🗑</button>
+              </div>
             </div>
 
             <div class="tr">
-              <div class="td-title2"><span class="ticon warn">!</span> Berita Draft: Tips Wisata Bima</div>
+              <div class="td-title2"><span class="ticon warn">!</span> Berita Updated: Tips Wisata Bima</div>
               <div>Berita</div>
-              <div>2 hours ago</div>
-              <div><span class="badge warn">Draft</span></div>
+              <div>2 jam yang lalu</div>
+              <div><span class="badge info">Updated</span></div>
               <div class="actions">
-                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">
-                    ✎
-                </button>
-                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">
-                    🗑
-                </button>
-                </div>
+                <button class="act-btn act-btn--edit" title="Edit" aria-label="Edit">✎</button>
+                <button class="act-btn act-btn--del" title="Hapus" aria-label="Hapus">🗑</button>
+              </div>
             </div>
           </div>
         </section>
@@ -269,5 +292,24 @@
   </div>
 
   <script src="admin.js"></script>
+  <script>
+    // tooltip donut follow cursor
+    const donut = document.getElementById("popularDonut");
+    const tooltip = document.getElementById("donutTooltip");
+
+    if (donut && tooltip) {
+      donut.addEventListener("mousemove", (e) => {
+        tooltip.style.opacity = "1";
+        tooltip.style.visibility = "visible";
+        tooltip.style.left = (e.clientX + 15) + "px";
+        tooltip.style.top = (e.clientY + 15) + "px";
+      });
+
+      donut.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = "0";
+        tooltip.style.visibility = "hidden";
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Analisis Wisata - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+     <nav class="admin-nav">
+
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!-- KONTEN WISATA -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <a class="admin-nav__item active" href="analisis-destinasi.html">
+    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
+  </a>
+
+  <a class="admin-nav__item" href="statistik-pengunjung.html">
+    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
+  </a>
+
+</nav>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
+            </div>
+
+            <button class="admin-user__avatar" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section class="admin-wrap">
+        <div class="admin-head">
+          <div>
+            <h1 class="admin-h1">Analisis Wisata</h1>
+            <p class="admin-sub">
+              10 wisata populer dan 10 wisata tidak populer berdasarkan contoh rating dan komentar pengunjung.
+            </p>
+          </div>
+        </div>
+
+        <section class="analysis-grid">
+          <article class="panel analysis-panel">
+            <div class="panel-head">
+              <h3 class="panel-title">10 Wisata Populer</h3>
+            </div>
+            <div class="analysis-list" id="popularList"></div>
+          </article>
+
+          <article class="panel analysis-panel">
+            <div class="panel-head">
+              <h3 class="panel-title">10 Wisata Tidak Populer</h3>
+            </div>
+            <div class="analysis-list" id="unpopularList"></div>
+          </article>
+        </section>
+
+        <section class="panel analysis-detail-panel">
+          <div class="panel-head">
+            <h3 class="panel-title">Detail Ulasan Wisata</h3>
+          </div>
+
+          <div id="destinationDetail" class="analysis-detail-empty">
+            Klik salah satu destinasi untuk melihat nama pengunjung, rating, komentar, dan tombol hapus.
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const popularDestinations = [
+      {
+        name: "Pantai Lariti",
+        rating: 4.9,
+        totalReviews: 124,
+        comments: [
+          { user: "Andi", rating: 5, text: "Pantainya sangat indah dan bersih." },
+          { user: "Siti", rating: 5, text: "Spot foto bagus, akses cukup mudah." },
+          { user: "Budi", rating: 4, text: "Sunset-nya luar biasa, cocok untuk keluarga." }
+        ]
+      },
+      {
+        name: "Pantai Pink",
+        rating: 4.8,
+        totalReviews: 98,
+        comments: [
+          { user: "Rina", rating: 5, text: "Warna pasirnya unik dan menarik." },
+          { user: "Doni", rating: 5, text: "Air laut jernih, cocok untuk snorkeling." },
+          { user: "Lina", rating: 4, text: "Perjalanan agak jauh tapi sangat worth it." }
+        ]
+      },
+      {
+        name: "Pulau Kelapa",
+        rating: 4.7,
+        totalReviews: 76,
+        comments: [
+          { user: "Tono", rating: 5, text: "Pulau sangat cantik dan tenang." },
+          { user: "Maya", rating: 4, text: "Pemandangannya bagus sekali." },
+          { user: "Rudi", rating: 5, text: "Cocok untuk healing dan liburan santai." }
+        ]
+      },
+      {
+        name: "Uma Lengge",
+        rating: 4.6,
+        totalReviews: 64,
+        comments: [
+          { user: "Arif", rating: 5, text: "Budayanya sangat menarik." },
+          { user: "Nina", rating: 4, text: "Tempat edukatif dan bagus untuk wisata sejarah." },
+          { user: "Fahmi", rating: 5, text: "Bangunan tradisionalnya unik." }
+        ]
+      },
+      {
+        name: "Pantai Oi Fanda",
+        rating: 4.6,
+        totalReviews: 52,
+        comments: [
+          { user: "Wawan", rating: 5, text: "Airnya segar dan suasananya sejuk." },
+          { user: "Indah", rating: 4, text: "Cocok untuk wisata alam." },
+          { user: "Dina", rating: 5, text: "Tempatnya masih alami." }
+        ]
+      },
+      {
+        name: "Gunung Sangiang",
+        rating: 4.5,
+        totalReviews: 47,
+        comments: [
+          { user: "Rian", rating: 4, text: "Pantainya bagus dan tidak terlalu ramai." },
+          { user: "Tari", rating: 5, text: "Pas untuk menikmati sore hari." },
+          { user: "Feri", rating: 4, text: "Lumayan bersih dan nyaman." }
+        ]
+      },
+      {
+        name: "Pulau Ular",
+        rating: 4.5,
+        totalReviews: 39,
+        comments: [
+          { user: "Raka", rating: 5, text: "Pengalaman wisata yang unik." },
+          { user: "Salsa", rating: 4, text: "Pemandu lokal cukup membantu." },
+          { user: "Beni", rating: 4, text: "Destinasi yang menarik untuk dicoba." }
+        ]
+      },
+      {
+        name: "Pantai Wane",
+        rating: 4.4,
+        totalReviews: 34,
+        comments: [
+          { user: "Yusuf", rating: 4, text: "Situs sejarah yang menarik." },
+          { user: "Putri", rating: 5, text: "Bagus untuk wisata edukasi." },
+          { user: "Aldi", rating: 4, text: "Perlu lebih banyak informasi di lokasi." }
+        ]
+      },
+      {
+        name: "Pantai Pasir Putih",
+        rating: 4.4,
+        totalReviews: 29,
+        comments: [
+          { user: "Nando", rating: 5, text: "View dari atas bukit bagus sekali." },
+          { user: "Ayu", rating: 4, text: "Cocok untuk camping." },
+          { user: "Iqbal", rating: 4, text: "Udara segar dan tenang." }
+        ]
+      },
+      {
+        name: "Pacoa Jara",
+        rating: 4.3,
+        totalReviews: 22,
+        comments: [
+          { user: "Farhan", rating: 4, text: "Pemandangannya bagus." },
+          { user: "Lia", rating: 4, text: "Akses cukup mudah dijangkau." },
+          { user: "Nita", rating: 5, text: "Cocok untuk wisata singkat." }
+        ]
+      }
+    ];
+
+    const unpopularDestinations = [
+      {
+        name: "Pantai Kalaki",
+        rating: 2.8,
+        totalReviews: 14,
+        comments: [
+          { user: "Joko", rating: 2, text: "Pantainya kurang bersih." },
+          { user: "Dewi", rating: 3, text: "Tidak ada toilet." },
+          { user: "Rahmat", rating: 2, text: "Sampah masih terlihat di beberapa titik." }
+        ]
+      },
+      {
+        name: "Pantai Toro Maria",
+        rating: 2.9,
+        totalReviews: 11,
+        comments: [
+          { user: "Tina", rating: 3, text: "Akses jalannya rusak." },
+          { user: "Amin", rating: 2, text: "Petunjuk arah kurang jelas." },
+          { user: "Riko", rating: 3, text: "Kurang terawat." }
+        ]
+      },
+      {
+        name: "Pantai Lawoli",
+        rating: 3.0,
+        totalReviews: 10,
+        comments: [
+          { user: "Nina", rating: 3, text: "Tempatnya bagus tapi fasilitas kurang." },
+          { user: "Maman", rating: 3, text: "Area parkir sempit." },
+          { user: "Sari", rating: 3, text: "Kurang tempat sampah." }
+        ]
+      },
+      {
+        name: "Air Terjun Jo Rato",
+        rating: 3.1,
+        totalReviews: 9,
+        comments: [
+          { user: "Andri", rating: 3, text: "Jalan menuju lokasi cukup sulit." },
+          { user: "Mira", rating: 3, text: "Belum ada ruang ganti." },
+          { user: "Dodi", rating: 3, text: "Keamanan perlu ditingkatkan." }
+        ]
+      },
+      {
+        name: "Panorama Bukit Ncai Kapenta",
+        rating: 3.1,
+        totalReviews: 8,
+        comments: [
+          { user: "Roni", rating: 3, text: "View bagus tapi minim fasilitas." },
+          { user: "Yani", rating: 3, text: "Kurang tempat duduk." },
+          { user: "Sinta", rating: 3, text: "Tidak ada warung." }
+        ]
+      },
+      {
+        name: "Pantai Papa",
+        rating: 3.2,
+        totalReviews: 8,
+        comments: [
+          { user: "Bahar", rating: 3, text: "Kurang bersih." },
+          { user: "Tika", rating: 3, text: "Toilet tidak tersedia." },
+          { user: "Rendi", rating: 4, text: "Akses masuk membingungkan." }
+        ]
+      },
+      {
+        name: "Wisata Torowamba",
+        rating: 3.2,
+        totalReviews: 7,
+        comments: [
+          { user: "Fina", rating: 3, text: "Butuh perbaikan fasilitas." },
+          { user: "Ilham", rating: 3, text: "Pengelolaan masih kurang." },
+          { user: "Novi", rating: 4, text: "Kurang menarik untuk wisata keluarga." }
+        ]
+      },
+      {
+        name: "Benteng Asakota",
+        rating: 3.3,
+        totalReviews: 7,
+        comments: [
+          { user: "Yoga", rating: 3, text: "Tempatnya panas dan minim gazebo." },
+          { user: "Lina", rating: 3, text: "Kurang nyaman untuk lama-lama." },
+          { user: "Asep", rating: 4, text: "Butuh perawatan tambahan." }
+        ]
+      },
+      {
+        name: "Air Terjun Oi Nca",
+        rating: 3.3,
+        totalReviews: 6,
+        comments: [
+          { user: "Kiki", rating: 3, text: "Pemandangan bagus tapi area licin." },
+          { user: "Rina", rating: 3, text: "Keamanan kurang." },
+          { user: "Bayu", rating: 4, text: "Perlu jalur yang lebih aman." }
+        ]
+      },
+      {
+        name: "Pantai So antigi",
+        rating: 3.4,
+        totalReviews: 5,
+        comments: [
+          { user: "Rais", rating: 3, text: "Potensinya bagus tapi belum dikembangkan." },
+          { user: "Tuti", rating: 4, text: "Kurang promosi." },
+          { user: "Dian", rating: 3, text: "Fasilitas pendukung minim." }
+        ]
+      }
+    ];
+
+    function renderList(containerId, data, type) {
+      const container = document.getElementById(containerId);
+
+      container.innerHTML = data.map((item, index) => `
+        <button class="analysis-destination-btn" onclick="showDestinationDetail('${type}', ${index})">
+          <div class="analysis-destination-btn__left">
+            <span class="analysis-rank">#${index + 1}</span>
+            <span class="analysis-destination-name">${item.name}</span>
+          </div>
+          <span class="analysis-destination-score ${type === 'popular' ? 'good' : 'bad'}">
+            ${item.rating}
+          </span>
+        </button>
+      `).join("");
+    }
+
+    function showDestinationDetail(type, index) {
+      const data = type === "popular" ? popularDestinations[index] : unpopularDestinations[index];
+      const detail = document.getElementById("destinationDetail");
+
+      detail.innerHTML = `
+        <div class="analysis-detail-card">
+          <div class="analysis-detail-head">
+            <div>
+              <h3 class="analysis-detail-title">${data.name}</h3>
+              <div class="analysis-detail-meta">Rating: ${data.rating} / 5 • ${data.totalReviews} ulasan</div>
+            </div>
+            <span class="analysis-destination-score ${type === 'popular' ? 'good' : 'bad'}">
+              ${type === 'popular' ? 'Populer' : 'Tidak Populer'}
+            </span>
+          </div>
+
+          <div class="analysis-detail-comments">
+            <h4 class="analysis-detail-subtitle">Komentar Pengunjung</h4>
+
+            <div class="analysis-comment-list">
+              ${data.comments.map((comment, i) => `
+                <div class="analysis-comment-item" id="comment-${type}-${index}-${i}">
+                  <div class="analysis-comment-row">
+                    <div class="analysis-comment-main">
+                      <div class="analysis-user-info">
+                        <strong>${comment.user}</strong>
+                        <span class="analysis-rating">${"★".repeat(comment.rating)}</span>
+                      </div>
+
+                      <div class="analysis-comment-text">
+                        "${comment.text}"
+                      </div>
+                    </div>
+
+                    <button class="analysis-delete" onclick="deleteComment('comment-${type}-${index}-${i}')" aria-label="Hapus">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M4 7h16"></path>
+                        <path d="M10 11v6"></path>
+                        <path d="M14 11v6"></path>
+                        <path d="M6 7l1 14h10l1-14"></path>
+                        <path d="M9 7V4h6v3"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function deleteComment(id) {
+      const item = document.getElementById(id);
+      if (item) {
+        item.remove();
+      }
+    }
+
+    renderList("popularList", popularDestinations, "popular");
+    renderList("unpopularList", unpopularDestinations, "unpopular");
+  </script>
+  <script src="admin.js"></script>
+</body>
+</html>

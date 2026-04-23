@@ -19,35 +19,59 @@
           <div class="admin-brand__name">TourAdmin</div>
         </div>
       </div>
-
       <nav class="admin-nav">
-        <a class="admin-nav__item" href="admin.html">
-          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
-        </a>
-        <a class="admin-nav__item active" href="admin-destinasi.html">
-          <img class="admin-ic" src="logo/container48.svg"></img> Destinasi
-        </a>
-        <a class="admin-nav__item" href="admin-event.html">
-          <img class="admin-ic" src="logo/container76.svg"></img> Event
-        </a>
-        <a class="admin-nav__item" href="admin-berita.html">
-          <img class="admin-ic" src="logo/container78.svg"></img> Berita
-        </a>
-        <a class="admin-nav__item" href="admin-akomodasi.html">
-          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
-        </a>
 
-        <!-- Kelola Admin -->
-        <a class="admin-nav__item" href="kelola-admin.html">
-          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
-        </a>
-        <a class="admin-nav__item" href="kelola-user.html">
-        <img class="admin-ic" src="logo/user.svg"></img> Kelola User
-      </a>
-      <a class="admin-nav__item" href="kelola-ulasan.html">
-        <img class="admin-ic" src="logo/ulasan.svg"></img> Kelola Ulasan
-      </a>
-      </nav>
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!-- KONTEN WISATA -->
+  <div class="admin-nav__group open">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item active" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <a class="admin-nav__item" href="analisis-destinasi.html">
+    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
+  </a>
+
+  <a class="admin-nav__item" href="statistik-pengunjung.html">
+    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
+  </a>
+
+</nav>
+
     </aside>
 
     <!-- MAIN -->
@@ -60,8 +84,8 @@
 
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
-              <div class="admin-user__name">Admin User</div>
-              <div class="admin-user__role">Super Admin</div>
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
             </div>
 
             <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
@@ -94,18 +118,33 @@
         </div>
 
         <!-- TOTAL CARD -->
-        <section class="adm-card adm-total">
-          <div class="adm-total__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
-              <circle cx="12" cy="9" r="2.5"></circle>
-            </svg>
-          </div>
-          <div>
-            <div class="adm-total__label">Total Destinasi</div>
-            <div class="adm-total__value">40</div>
-          </div>
-        </section>
+<section class="adm-stats-row">
+  <div class="adm-card adm-total">
+    <div class="adm-total__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+        <circle cx="12" cy="9" r="2.5"></circle>
+      </svg>
+    </div>
+    <div>
+      <div class="adm-total__label">Total Destinasi</div>
+      <div class="adm-total__value">40</div>
+    </div>
+  </div>
+
+  <div class="adm-card adm-total">
+    <div class="evt-stat__icon evt-stat__icon--green" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </div>
+    <div>
+      <div class="adm-total__label">Total Pengunjung Halaman</div>
+      <div class="adm-total__value">18,540</div>
+    </div>
+  </div>
+</section>
 
         <!-- FILTER ROW -->
         <section class="adm-card adm-filter">
@@ -114,10 +153,10 @@
               <circle cx="11" cy="11" r="7"></circle>
               <path d="M20 20l-3.5-3.5"></path>
             </svg>
-            <input type="text" placeholder="Cari destinasi berdasarkan nama atau lokasi..." />
+           <input type="text" id="destSearch" placeholder="Cari destinasi berdasarkan nama atau lokasi..." />
           </div>
 
-          <select class="adm-select" aria-label="Kategori">
+          <select class="adm-select" id="destCategoryFilter" aria-label="Kategori">
             <option selected>Semua Kategori</option>
             <option>Bahari</option>
             <option>Budaya Sejarah</option>
@@ -127,41 +166,60 @@
 
         <!-- TABLE -->
         <section class="adm-card adm-table">
-          <div class="adm-table__head">
-            <div class="adm-th">ID</div>
-            <div class="adm-th">THUMBNAIL</div>
-            <div class="adm-th">NAMA DESTINASI</div>
-            <div class="adm-th">KATEGORI</div>
-            <div class="adm-th">LOKASI</div>
-            <div class="adm-th adm-th--right">AKSI</div>
-          </div>
+         <div class="adm-table__head">
+  <div class="adm-th">ID</div>
+  <div class="adm-th">THUMBNAIL</div>
+  <div class="adm-th">NAMA DESTINASI</div>
+  <div class="adm-th">KATEGORI</div>
+  <div class="adm-th">LOKASI</div>
+  <div class="adm-th">DILIHAT</div>
+  <div class="adm-th adm-th--right">AKSI</div>
+</div>
 
           <!-- ROWS -->
-          <div class="adm-row">
-            <div class="adm-td adm-id">#001</div>
-            <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/01.png" alt="Raja Ampat">
-            </div>
-            <div class="adm-td adm-name">Air Terjun Bombo Ncera</div>
-            <div class="adm-td">
-              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
-            </div>
-            <div class="adm-td adm-loc">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
-                <circle cx="12" cy="9" r="2.5"></circle>
-              </svg>
-              Belo
-            </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
-          </div>
+          <div class="adm-row" data-category="alam pegunungan">
+  <div class="adm-td adm-id">#001</div>
+  <div class="adm-td">
+    <img class="adm-thumb" src="assets/dest/01.png" alt="Raja Ampat">
+  </div>
+  <div class="adm-td adm-name">Air Terjun Bombo Ncera</div>
+  <div class="adm-td">
+    <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+  </div>
+  <div class="adm-td adm-loc">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+      <circle cx="12" cy="9" r="2.5"></circle>
+    </svg>
+    Belo
+  </div>
+  <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+   <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
+</div>
 
           <div class="adm-row">
             <div class="adm-td adm-id">#002</div>
@@ -179,14 +237,32 @@
               </svg>
               Palibelo
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+            <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -205,14 +281,32 @@
               </svg>
               Wawo
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+             <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -231,14 +325,32 @@
               </svg>
               Wawo
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+             <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -257,14 +369,32 @@
               </svg>
               Woha
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+             <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -283,14 +413,32 @@
               </svg>
               Wera
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+             <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -309,14 +457,32 @@
               </svg>
               Monta
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+             <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -335,14 +501,32 @@
               </svg>
               Lambu
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+             <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -361,14 +545,32 @@
               </svg>
               Soromandi
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+            <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <div class="adm-row">
@@ -387,14 +589,32 @@
               </svg>
               Wera
             </div>
-            <div class="adm-td adm-actions">
-              <button class="adm-act adm-act--edit" title="Edit" aria-label="Edit">
-                <svg viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-              </button>
-              <button class="adm-act adm-act--del" title="Hapus" aria-label="Hapus">
-                <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
-              </button>
-            </div>
+             <div class="adm-td adm-view">
+    <span class="adm-eye" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="2.5"></circle>
+      </svg>
+    </span>
+    1,240
+  </div>
+             <div class="evt-td evt-actions">
+    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </button>
+    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M6 7l1 14h10l1-14"></path>
+        <path d="M9 7V4h6v3"></path>
+      </svg>
+    </button>
+  </div>
           </div>
 
           <!-- FOOT -->

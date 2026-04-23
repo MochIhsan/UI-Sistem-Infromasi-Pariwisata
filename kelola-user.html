@@ -21,32 +21,57 @@
       </div>
 
       <nav class="admin-nav">
-        <a class="admin-nav__item" href="admin.html">
-          <img class="admin-ic" src="logo/container72.svg"></img> Dashboard
-        </a>
-        <a class="admin-nav__item" href="admin-destinasi.html">
-          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
-        </a>
-        <a class="admin-nav__item" href="admin-event.html">
-          <img class="admin-ic" src="logo/container76.svg"></img> Event
-        </a>
-        <a class="admin-nav__item" href="admin-berita.html">
-          <img class="admin-ic" src="logo/container78.svg"></img> Berita
-        </a>
-        <a class="admin-nav__item" href="admin-akomodasi.html">
-          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
-        </a>
-        <a class="admin-nav__item" href="kelola-admin.html">
-          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
-        </a>
-        <a class="admin-nav__item active" href="kelola-user.html">
-          <img class="admin-ic" src="logo/user.svg"></img> Kelola User
-        </a>
-        <a class="admin-nav__item" href="kelola-ulasan.html">
-          <img class="admin-ic" src="logo/ulasan.svg"></img> Kelola Ulasan
-        </a>
 
-      </nav>
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!-- KONTEN WISATA -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item active" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <a class="admin-nav__item" href="analisis-destinasi.html">
+    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
+  </a>
+
+  <a class="admin-nav__item" href="statistik-pengunjung.html">
+    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
+  </a>
+
+</nav>
     </aside>
 
     <!-- MAIN -->
@@ -58,8 +83,8 @@
         <div class="admin-topbar__right">
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
-              <div class="admin-user__name">Admin User</div>
-              <div class="admin-user__role">Super Admin</div>
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
             </div>
 
             <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
@@ -84,20 +109,34 @@
 
         </div>
 
-        <!-- CARD -->
-       <section class="adm-card adminm-card">
+        <!-- CARD --><section class="adm-card adminm-card">
+<div class="adminm-toolbar">
+  <div class="adminm-search">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="M20 20l-3.5-3.5"></path>
+    </svg>
+    <input type="text" id="userSearch" placeholder="Cari username atau email..." />
+  </div>
+
+  <select class="adminm-filter" id="userStatusFilter" aria-label="Filter status user">
+    <option value="all" selected>Semua Status</option>
+    <option value="active">Active</option>
+    <option value="inactive">Inactive</option>
+  </select>
+</div>
 
   <div class="adminm-table">
     <div class="adminm-thead">
       <div class="adminm-th">USERNAME</div>
+      <div class="adminm-th">EMAIL</div>
       <div class="adminm-th">STATUS</div>
       <div class="adminm-th adminm-th--right">AKSI</div>
     </div>
 
-    <div class="adminm-row">
-      <div class="adminm-td adminm-namecell">
-        <span class="adminm-name">Ramasdhani</span>
-      </div>
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">ramadhani</div>
+      <div class="adminm-td adminm-email">ramadhani@touradmin.id</div>
       <div class="adminm-td">
         <span class="adminm-status adminm-status--active">
           <span class="adminm-dot"></span> Active
@@ -116,8 +155,9 @@
       </div>
     </div>
 
-    <div class="adminm-row">
-      <div class="adminm-td adminm-muted">riana_editor</div>
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">riana_editor</div>
+      <div class="adminm-td adminm-email">riana.editor@touradmin.id</div>
       <div class="adminm-td">
         <span class="adminm-status adminm-status--active">
           <span class="adminm-dot"></span> Active
@@ -136,8 +176,9 @@
       </div>
     </div>
 
-    <div class="adminm-row">
-      <div class="adminm-td adminm-muted">budi_pratama</div>
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">budi_pratama</div>
+      <div class="adminm-td adminm-email">budi.pratama@touradmin.id</div>
       <div class="adminm-td">
         <span class="adminm-status adminm-status--active">
           <span class="adminm-dot"></span> Active
@@ -155,14 +196,180 @@
         </button>
       </div>
     </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">agilaa</div>
+      <div class="adminm-td adminm-email">agilaa@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">laksana</div>
+      <div class="adminm-td adminm-email">laksana@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">sinta_putri</div>
+      <div class="adminm-td adminm-email">sinta.putri@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">dimas_aji</div>
+      <div class="adminm-td adminm-email">dimas.aji@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">fitriani</div>
+      <div class="adminm-td adminm-email">fitriani@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">yusuf_h</div>
+      <div class="adminm-td adminm-email">yusuf.h@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">nabila</div>
+      <div class="adminm-td adminm-email">nabila@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">rahmat_dev</div>
+      <div class="adminm-td adminm-email">rahmat.dev@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="adminm-row" data-status="active">
+      <div class="adminm-td adminm-username">zahra_ui</div>
+      <div class="adminm-td adminm-email">zahra.ui@touradmin.id</div>
+      <div class="adminm-td">
+        <span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span>
+      </div>
+      <div class="adminm-td adminm-th--right">
+        <button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- contoh data 11 - 50 -->
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user11</div><div class="adminm-td adminm-email">user11@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user12</div><div class="adminm-td adminm-email">user12@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user13</div><div class="adminm-td adminm-email">user13@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user14</div><div class="adminm-td adminm-email">user14@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user15</div><div class="adminm-td adminm-email">user15@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user16</div><div class="adminm-td adminm-email">user16@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user17</div><div class="adminm-td adminm-email">user17@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="inactive"><div class="adminm-td adminm-username">user18</div><div class="adminm-td adminm-email">user18@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--inactive"><span class="adminm-dot"></span> Inactive</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user19</div><div class="adminm-td adminm-email">user19@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user20</div><div class="adminm-td adminm-email">user20@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user21</div><div class="adminm-td adminm-email">user21@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user22</div><div class="adminm-td adminm-email">user22@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user23</div><div class="adminm-td adminm-email">user23@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user24</div><div class="adminm-td adminm-email">user24@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user25</div><div class="adminm-td adminm-email">user25@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user26</div><div class="adminm-td adminm-email">user26@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user27</div><div class="adminm-td adminm-email">user27@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="inactive"><div class="adminm-td adminm-username">user28</div><div class="adminm-td adminm-email">user28@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--inactive"><span class="adminm-dot"></span> Inactive</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user29</div><div class="adminm-td adminm-email">user29@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user30</div><div class="adminm-td adminm-email">user30@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user31</div><div class="adminm-td adminm-email">user31@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user32</div><div class="adminm-td adminm-email">user32@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user33</div><div class="adminm-td adminm-email">user33@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user34</div><div class="adminm-td adminm-email">user34@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user35</div><div class="adminm-td adminm-email">user35@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user36</div><div class="adminm-td adminm-email">user36@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user37</div><div class="adminm-td adminm-email">user37@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user38</div><div class="adminm-td adminm-email">user38@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user39</div><div class="adminm-td adminm-email">user39@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user40</div><div class="adminm-td adminm-email">user40@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user41</div><div class="adminm-td adminm-email">user41@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user42</div><div class="adminm-td adminm-email">user42@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user43</div><div class="adminm-td adminm-email">user43@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user44</div><div class="adminm-td adminm-email">user44@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user45</div><div class="adminm-td adminm-email">user45@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user46</div><div class="adminm-td adminm-email">user46@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user47</div><div class="adminm-td adminm-email">user47@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user48</div><div class="adminm-td adminm-email">user48@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="active"><div class="adminm-td adminm-username">user49</div><div class="adminm-td adminm-email">user49@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--active"><span class="adminm-dot"></span> Active</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
+    <div class="adminm-row" data-status="inactive"><div class="adminm-td adminm-username">user50</div><div class="adminm-td adminm-email">user50@touradmin.id</div><div class="adminm-td"><span class="adminm-status adminm-status--inactive"><span class="adminm-dot"></span> Inactive</span></div><div class="adminm-td adminm-th--right"><button class="adminm-act adminm-act--danger" title="Hapus" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div></div>
   </div>
 
   <div class="adminm-bottom">
-    <div class="adminm-footnote">Showing 3 of 3 results</div>
+    <div class="adminm-footnote">Showing 1-50 of 50 results</div>
 
     <div class="adminm-pagi">
       <button class="adminm-pagi__btn" aria-label="Prev">‹</button>
       <button class="adminm-pagi__num is-active">1</button>
+      <button class="adminm-pagi__num">2</button>
+      <button class="adminm-pagi__num">3</button>
+      <span class="adminm-pagi__dots">…</span>
+      <button class="adminm-pagi__num">5</button>
       <button class="adminm-pagi__btn" aria-label="Next">›</button>
     </div>
   </div>

@@ -123,6 +123,11 @@
         </div>
 
         <div class="register-group">
+          <label>Email</label>
+          <input type="email" id="registerEmail" placeholder="Masukkan email" required>
+        </div>
+
+        <div class="register-group">
           <label>Password</label>
           <input type="password" id="registerPassword" placeholder="Masukkan password" required>
         </div>
@@ -139,35 +144,51 @@
     </div>
   </div>
 
-  <script>
-    const registerForm = document.getElementById("registerForm");
-    const registerMessage = document.getElementById("registerMessage");
+ <script>
+  const registerForm = document.getElementById("registerForm");
+  const registerMessage = document.getElementById("registerMessage");
 
-    registerForm.addEventListener("submit", function(e){
-      e.preventDefault();
+  registerForm.addEventListener("submit", function(e){
+    e.preventDefault();
 
-      const username = document.getElementById("registerUsername").value.trim();
-      const password = document.getElementById("registerPassword").value.trim();
+    const username = document.getElementById("registerUsername").value.trim();
+    const email = document.getElementById("registerEmail").value.trim();
+    const password = document.getElementById("registerPassword").value.trim();
 
-      if(username === "" || password === ""){
-        registerMessage.style.color = "red";
-        registerMessage.textContent = "Username dan password wajib diisi.";
-        return;
-      }
+    // validasi kosong
+    if(username === "" || email === "" || password === ""){
+      registerMessage.style.color = "red";
+      registerMessage.textContent = "Semua field wajib diisi.";
+      return;
+    }
 
-      // simpan akun user ke localStorage
-      localStorage.setItem("registeredUser", username);
-      localStorage.setItem("registeredPass", password);
+    // ✅ VALIDASI EMAIL HARUS ADA "@"
+    if(!email.includes("@")){
+      alert("Email tidak valid! Harus mengandung '@'");
+      return;
+    }
 
-      registerMessage.style.color = "green";
-      registerMessage.textContent = "Pendaftaran berhasil! Silakan login.";
+    // (opsional tambahan lebih ketat)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailPattern.test(email)){
+      alert("Format email tidak valid!");
+      return;
+    }
 
-      registerForm.reset();
+    // simpan akun user ke localStorage
+    localStorage.setItem("registeredUser", username);
+    localStorage.setItem("registeredEmail", email);
+    localStorage.setItem("registeredPass", password);
 
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 1500);
-    });
-  </script>
+    registerMessage.style.color = "green";
+    registerMessage.textContent = "Pendaftaran berhasil! Silakan login.";
+
+    registerForm.reset();
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1500);
+  });
+</script>
 </body>
 </html>

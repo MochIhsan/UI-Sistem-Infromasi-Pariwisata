@@ -21,34 +21,57 @@
       </div>
 
       <nav class="admin-nav">
-        <a class="admin-nav__item" href="admin.html">
-          <img class="admin-ic" src="logo/containerdashboard.svg"></img> Dashboard
-        </a>
-        <a class="admin-nav__item" href="admin-destinasi.html">
-          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
-        </a>
-        <a class="admin-nav__item" href="admin-event.html">
-          <img class="admin-ic" src="logo/container76.svg"></img> Event
-        </a>
-        <a class="admin-nav__item active" href="admin-berita.html">
-          <img class="admin-ic" src="logo/containerberita.svg"> Berita
-        </a>
-        <a class="admin-nav__item" href="admin-akomodasi.html">
-          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
-        </a>
 
-        <!-- TAMBAHAN: Kelola Admin -->
-        <a class="admin-nav__item" href="kelola-admin.html">
-          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
-       
-        </a>
-        <a class="admin-nav__item" href="kelola-user.html">
-        <img class="admin-ic" src="logo/user.svg"></img> Kelola User
-      </a>
-      <a class="admin-nav__item" href="kelola-ulasan.html">
-        <img class="admin-ic" src="logo/ulasan.svg"></img> Kelola Ulasan
-      </a>
-      </nav>
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!-- KONTEN WISATA -->
+  <div class="admin-nav__group open">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item  active" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <a class="admin-nav__item" href="analisis-destinasi.html">
+    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
+  </a>
+
+  <a class="admin-nav__item" href="statistik-pengunjung.html">
+    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
+  </a>
+
+</nav>
     </aside>
 
     <!-- MAIN -->
@@ -61,8 +84,8 @@
 
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
-              <div class="admin-user__name">Admin User</div>
-              <div class="admin-user__role">Super Admin</div>
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
             </div>
 
             <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
@@ -91,6 +114,7 @@
             Tulis Berita
           </a>
         </div>
+
         <!-- STATS CARDS -->
         <section class="newsadm-stats">
           <div class="newsadm-stat">
@@ -108,36 +132,27 @@
               <img src="logo/container4.svg">
             </div>
             <div>
-              <div class="newsadm-stat__label">Pembaca Bulan Ini</div>
+              <div class="newsadm-stat__label">Total Pembaca</div>
               <div class="newsadm-stat__value">12,402</div>
             </div>
           </div>
 
-          <div class="newsadm-stat">
-            <div class="newsadm-stat__icon newsadm-stat__icon--yellow" aria-hidden="true">
-              <img src="logo/container8.svg">
-            </div>
-            <div>
-              <div class="newsadm-stat__label">Draft Berita</div>
-              <div class="newsadm-stat__value">7</div>
-            </div>
-          </div>
         </section>
 
         <!-- CARD -->
         <section class="adm-card newsadm-card">
 
-          <!-- TOOLBAR: Search + kategori + filter + PAGINATION DIPINDAH KE ATAS -->
+          <!-- TOOLBAR: Search + kategori + filter + PAGINATION -->
           <div class="newsadm-toolbar newsadm-toolbar--oneRow">
   <div class="newsadm-search">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="11" cy="11" r="7"></circle>
       <path d="M20 20l-3.5-3.5"></path>
     </svg>
-    <input type="text" placeholder="Cari judul berita..." />
+    <input type="text" id="newsSearch" placeholder="Cari judul berita..." />
   </div>
 
-  <select class="adm-select adm-select--katalog" aria-label="Kategori">
+  <select class="adm-select adm-select--katalog" id="newsCategoryFilter" aria-label="Kategori">
     <option selected>Semua Kategori</option>
     <option>Promotion</option>
     <option>News</option>
@@ -159,7 +174,7 @@
             </div>
 
             <!-- row 1 -->
-            <div class="newsadm-row">
+            <div class="newsadm-row" data-category="tips">
               <div class="newsadm-td newsadm-id">#4212</div>
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/1.jpg" alt="Thumbnail">
@@ -203,7 +218,7 @@
             </div>
 
             <!-- row 2 -->
-            <div class="newsadm-row">
+            <div class="newsadm-row" data-category="news">
               <div class="newsadm-td newsadm-id">#4213</div>
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/2.jpg" alt="Thumbnail">
@@ -247,7 +262,7 @@
             </div>
 
             <!-- row 3 -->
-            <div class="newsadm-row">
+            <div class="newsadm-row" data-category="news">
               <div class="newsadm-td newsadm-id">#4214</div>
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/3.jpg" alt="Thumbnail">
@@ -255,8 +270,8 @@
               <div class="newsadm-td newsadm-title">
                 <div class="newsadm-title__txt">Malam penutupan FSA...</div>
               </div>
-              <div class="newsadm-td">
-                <span class="newsadm-badge newsadm-badge--promo">News</span>
+             <div class="newsadm-td">
+                <span class="newsadm-badge newsadm-badge--news">News</span>
               </div>
               <div class="newsadm-td newsadm-author">
                 <div>Marketing</div><div class="newsadm-muted">Team</div>
@@ -291,7 +306,7 @@
             </div>
 
             <!-- row 4 -->
-            <div class="newsadm-row">
+           <div class="newsadm-row" data-category="news">
               <div class="newsadm-td newsadm-id">#4215</div>
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/4.jpg" alt="Thumbnail">
@@ -335,7 +350,7 @@
             </div>
 
             <!-- row 5 -->
-            <div class="newsadm-row">
+            <div class="newsadm-row" data-category="tips">
               <div class="newsadm-td newsadm-id">#4216</div>
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/5.jpg" alt="Thumbnail">

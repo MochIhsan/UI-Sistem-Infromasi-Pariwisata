@@ -21,32 +21,57 @@
       </div>
 
       <nav class="admin-nav">
-        <a class="admin-nav__item" href="admin.html">
-          <img class="admin-ic" src="logo/container72.svg"></img> Dashboard
-        </a>
-        <a class="admin-nav__item" href="admin-destinasi.html">
-          <img class="admin-ic" src="logo/container74.svg"></img> Destinasi
-        </a>
-        <a class="admin-nav__item" href="admin-event.html">
-          <img class="admin-ic" src="logo/container76.svg"></img> Event
-        </a>
-        <a class="admin-nav__item" href="admin-berita.html">
-          <img class="admin-ic" src="logo/container78.svg"></img> Berita
-        </a>
-        <a class="admin-nav__item" href="admin-akomodasi.html">
-          <img class="admin-ic" src="logo/container80.svg"></img> Akomodasi
-        </a>
-        <a class="admin-nav__item" href="kelola-admin.html">
-          <img class="admin-ic" src="logo/container82.svg"></img> Kelola Admin
-        </a>
-        <a class="admin-nav__item" href="kelola-user.html">
-          <img class="admin-ic" src="logo/user.svg"></img> Kelola User
-        </a>
-        <a class="admin-nav__item active" href="kelola-ulasan.html">
-          <img class="admin-ic" src="logo/ulasan.svg"></img> Kelola Ulasan
-        </a>
 
-      </nav>
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!- <!-- KONTEN WISATA -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item active" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+  <a class="admin-nav__item" href="analisis-destinasi.html">
+    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
+  </a>
+
+  <a class="admin-nav__item" href="statistik-pengunjung.html">
+    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
+  </a>
+
+</nav>
     </aside>
 
     <!-- MAIN -->
@@ -59,8 +84,8 @@
 
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
-              <div class="admin-user__name">Admin User</div>
-              <div class="admin-user__role">Super Admin</div>
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
             </div>
 
             <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
@@ -84,47 +109,31 @@
       Pantau dan moderasi ulasan dari pengguna untuk menjaga kualitas konten platform.
     </p>
   </div>
-
-  <div class="ulasan-filters">
-    <div class="ulasan-filter-card ulasan-filter-card--search">
-      <label class="ulasan-label">PENCARIAN CEPAT</label>
-      <div class="ulasan-search">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"></path>
-          <path d="m21 21-4.35-4.35"></path>
-          <path d="M10 8a2.5 2.5 0 1 1-2.5 2.5A2.5 2.5 0 0 1 10 8Z"></path>
-          <path d="M16 16c-.9-1.7-2.7-2.8-4.8-2.8-2.1 0-3.9 1.1-4.8 2.8"></path>
-        </svg>
-        <input type="text" placeholder="Nama User atau Nama Destinasi..." />
-      </div>
-    </div>
-
-    <div class="ulasan-filter-card">
-      <label class="ulasan-label">RATING</label>
-      <div class="ulasan-select-wrap">
-        <select class="ulasan-select">
-          <option>Semua Rating</option>
-          <option>5 Bintang</option>
-          <option>4 Bintang</option>
-          <option>3 Bintang</option>
-          <option>2 Bintang</option>
-          <option>1 Bintang</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="ulasan-filter-card">
-      <label class="ulasan-label">KATEGORI</label>
-      <div class="ulasan-select-wrap">
-        <select class="ulasan-select">
-          <option>Semua Kategori</option>
-          <option>Destinasi</option>
-          <option>Event</option>
-          <option>Akomodasi</option>
-        </select>
-      </div>
-    </div>
+<div class="ulasan-toolbar">
+  <div class="ulasan-search">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="M20 20l-3.5-3.5"></path>
+    </svg>
+    <input type="text" id="reviewSearch" placeholder="Cari nama user atau nama target..." />
   </div>
+
+  <select class="ulasan-select" id="reviewRatingFilter" aria-label="Filter rating">
+    <option value="all" selected>Semua Rating</option>
+    <option value="5">5 Bintang</option>
+    <option value="4">4 Bintang</option>
+    <option value="3">3 Bintang</option>
+    <option value="2">2 Bintang</option>
+    <option value="1">1 Bintang</option>
+  </select>
+
+  <select class="ulasan-select" id="reviewCategoryFilter" aria-label="Filter kategori">
+    <option value="all" selected>Semua Kategori</option>
+    <option value="destinasi">Destinasi</option>
+    <option value="event">Event</option>
+    <option value="berita">Berita</option>
+  </select>
+</div>
 
   <section class="ulasan-card">
     <div class="ulasan-table">
@@ -137,7 +146,8 @@
         <div class="ulasan-th ulasan-th--center">AKSI</div>
       </div>
 
-      <div class="ulasan-row">
+      <!-- Contoh data ulasan -->
+      <div class="ulasan-row" data-user="Budi Santoso" data-target="Pantai Lariti" data-rating="5" data-category="destinasi">
         <div class="ulasan-td ulasan-user">
           <strong>Budi<br />Santoso</strong>
         </div>
@@ -164,7 +174,7 @@
         </div>
       </div>
 
-      <div class="ulasan-row">
+      <div class="ulasan-row" data-user="Riana Destin" data-target="Event rimpu" data-rating="4" data-category="event">
         <div class="ulasan-td ulasan-user">
           <strong>Riana<br />Destin</strong>
         </div>
@@ -191,7 +201,7 @@
         </div>
       </div>
 
-      <div class="ulasan-row">
+      <div class="ulasan-row" data-user="Andi Pratama" data-target="Sidak Kantor" data-rating="3" data-category="berita">
         <div class="ulasan-td ulasan-user">
           <strong>Andi<br />Pratama</strong>
         </div>
@@ -219,8 +229,179 @@
       </div>
     </div>
 
+    <div class="ulasan-row" data-user="Siti Rahma" data-target="Pantai Wane" data-rating="5" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Siti<br />Rahma</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Pantai Wane</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★★</span></div>
+  <div class="ulasan-td ulasan-comment">Pantainya bersih, ombak tenang, dan cocok untuk liburan keluarga.</div>
+  <div class="ulasan-td ulasan-date">18 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Fajar Hidayat" data-target="Festival Rimpu" data-rating="4" data-category="event">
+  <div class="ulasan-td ulasan-user"><strong>Fajar<br />Hidayat</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--purple">Festival Rimpu</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Acara meriah dan budaya lokalnya terasa kuat, hanya parkir agak penuh.</div>
+  <div class="ulasan-td ulasan-date">17 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Maya Lestari" data-target="Benteng Asakota" data-rating="5" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Maya<br />Lestari</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Benteng Asakota</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★★</span></div>
+  <div class="ulasan-td ulasan-comment">Spot sunset sangat bagus dan pemandangannya luar biasa cantik.</div>
+  <div class="ulasan-td ulasan-date">16 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Rizky Akbar" data-target="Berita Tambora Menyapa Dunia" data-rating="4" data-category="berita">
+  <div class="ulasan-td ulasan-user"><strong>Rizky<br />Akbar</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--orange">Tambora Menyapa Dunia</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Informasinya lengkap dan mudah dipahami, sangat membantu sebelum berkunjung.</div>
+  <div class="ulasan-td ulasan-date">15 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Dewi Anggraini" data-target="Pulau Kelapa" data-rating="5" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Dewi<br />Anggraini</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Pulau Kelapa</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★★</span></div>
+  <div class="ulasan-td ulasan-comment">Air laut jernih dan suasana sangat tenang, cocok untuk healing.</div>
+  <div class="ulasan-td ulasan-date">14 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Ilham Saputra" data-target="Pacoa Jara" data-rating="4" data-category="event">
+  <div class="ulasan-td ulasan-user"><strong>Ilham<br />Saputra</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--purple">Pacoa Jara</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Atraksi seru dan unik, tapi area penonton perlu dibuat lebih tertib.</div>
+  <div class="ulasan-td ulasan-date">13 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Nina Putri" data-target="Pantai Pink" data-rating="5" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Nina<br />Putri</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Pantai Pink</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★★</span></div>
+  <div class="ulasan-td ulasan-comment">Warna pantainya cantik dan fasilitasnya lumayan lengkap.</div>
+  <div class="ulasan-td ulasan-date">12 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Reza Maulana" data-target="Berita Wisata Bima 2023" data-rating="3" data-category="berita">
+  <div class="ulasan-td ulasan-user"><strong>Reza<br />Maulana</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--orange">Wisata Bima 2023</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★☆☆</span></div>
+  <div class="ulasan-td ulasan-comment">Informasi cukup baik, tapi beberapa bagian terasa terlalu singkat.</div>
+  <div class="ulasan-td ulasan-date">11 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Lina Marlina" data-target="Air Terjun Bombo Ncera" data-rating="5" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Lina<br />Marlina</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Bombo Ncera</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★★</span></div>
+  <div class="ulasan-td ulasan-comment">Airnya segar dan tempatnya indah, sangat cocok untuk foto-foto.</div>
+  <div class="ulasan-td ulasan-date">10 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Arman Yusuf" data-target="Hari Jadi Bima" data-rating="4" data-category="event">
+  <div class="ulasan-td ulasan-user"><strong>Arman<br />Yusuf</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--purple">Hari Jadi Bima</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Acara ramai dan seru, hanya sound system sempat kurang jelas.</div>
+  <div class="ulasan-td ulasan-date">09 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Putra Kurnia" data-target="Berita Kuliner Bima" data-rating="4" data-category="berita">
+  <div class="ulasan-td ulasan-user"><strong>Putra<br />Kurnia</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--orange">Kuliner Bima</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Artikel menarik dan informatif, cocok untuk wisatawan baru.</div>
+  <div class="ulasan-td ulasan-date">08 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Salsa Aulia" data-target="Pulau Ular" data-rating="2" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Salsa<br />Aulia</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Pulau Ular</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★☆☆☆</span></div>
+  <div class="ulasan-td ulasan-comment">Pemandangan bagus, tapi akses ke lokasi cukup sulit dan petunjuk minim.</div>
+  <div class="ulasan-td ulasan-date">07 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Naufal Dani" data-target="Festival Sangiang Api" data-rating="5" data-category="event">
+  <div class="ulasan-td ulasan-user"><strong>Naufal<br />Dani</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--purple">Sangiang Api</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★★</span></div>
+  <div class="ulasan-td ulasan-comment">Event sangat meriah dan unik, pengalaman yang sulit dilupakan.</div>
+  <div class="ulasan-td ulasan-date">06 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Hana Safitri" data-target="Berita Pantai Terbaik" data-rating="3" data-category="berita">
+  <div class="ulasan-td ulasan-user"><strong>Hana<br />Safitri</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--orange">Pantai Terbaik</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★☆☆</span></div>
+  <div class="ulasan-td ulasan-comment">Cukup membantu, tapi beberapa destinasi favorit belum dicantumkan.</div>
+  <div class="ulasan-td ulasan-date">05 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Wulan Sari" data-target="Pantai Kalaki" data-rating="4" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Wulan<br />Sari</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Pantai Kalaki</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Pantainya luas dan nyaman, hanya fasilitas toilet perlu ditambah.</div>
+  <div class="ulasan-td ulasan-date">04 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Bagas Permana" data-target="Event Tambora Trail" data-rating="4" data-category="event">
+  <div class="ulasan-td ulasan-user"><strong>Bagas<br />Permana</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--purple">Tambora Trail</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Rute menarik dan menantang, cocok untuk pecinta petualangan.</div>
+  <div class="ulasan-td ulasan-date">03 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Tari Anjani" data-target="Berita Hotel Nyaman" data-rating="2" data-category="berita">
+  <div class="ulasan-td ulasan-user"><strong>Tari<br />Anjani</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--orange">Hotel Nyaman</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★☆☆☆</span></div>
+  <div class="ulasan-td ulasan-comment">Informasi kurang detail dan foto pendukung masih terlalu sedikit.</div>
+  <div class="ulasan-td ulasan-date">02 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Indra Gunawan" data-target="Pulau Satonda" data-rating="5" data-category="destinasi">
+  <div class="ulasan-td ulasan-user"><strong>Indra<br />Gunawan</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--blue">Pulau Satonda</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★★</span></div>
+  <div class="ulasan-td ulasan-comment">Pulau cantik dan airnya jernih, sangat direkomendasikan untuk snorkeling.</div>
+  <div class="ulasan-td ulasan-date">01 Okt<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
+<div class="ulasan-row" data-user="Farah Nabila" data-target="Mbolo Weki Festival" data-rating="4" data-category="event">
+  <div class="ulasan-td ulasan-user"><strong>Farah<br />Nabila</strong></div>
+  <div class="ulasan-td"><span class="ulasan-badge ulasan-badge--purple">Mbolo Weki</span></div>
+  <div class="ulasan-td"><span class="ulasan-stars">★★★★☆</span></div>
+  <div class="ulasan-td ulasan-comment">Acara budaya sangat menarik, hanya jadwalnya perlu diumumkan lebih awal.</div>
+  <div class="ulasan-td ulasan-date">30 Sep<br />2023</div>
+  <div class="ulasan-td ulasan-aksi"><button class="ulasan-delete" aria-label="Hapus"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M6 7l1 14h10l1-14"></path><path d="M9 7V4h6v3"></path></svg></button></div>
+</div>
+
     <div class="ulasan-bottom">
-      <div class="ulasan-footnote">Menampilkan 1-3 dari 124 ulasan</div>
+      <div class="ulasan-footnote">Menampilkan 1-20 dari 124 ulasan</div>
 
       <div class="ulasan-pagination">
         <button class="ulasan-page-btn" aria-label="Prev">‹</button>

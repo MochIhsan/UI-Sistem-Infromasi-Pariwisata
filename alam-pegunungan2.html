@@ -435,6 +435,20 @@
     });
   }
 </script>
+<script>
+  (function () {
+    const todayKey = new Date().toISOString().slice(0, 10);
 
+    let totalVisits = parseInt(localStorage.getItem("site_total_visits") || "0", 10);
+    let todayVisits = parseInt(localStorage.getItem("site_visits_" + todayKey) || "0", 10);
+
+    totalVisits += 1;
+    todayVisits += 1;
+
+    localStorage.setItem("site_total_visits", totalVisits);
+    localStorage.setItem("site_visits_" + todayKey, todayVisits);
+    localStorage.setItem("site_last_page", window.location.pathname.split("/").pop() || "index.html");
+  })();
+</script>
 </body>
 </html>

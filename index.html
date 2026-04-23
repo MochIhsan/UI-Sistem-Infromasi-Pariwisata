@@ -188,7 +188,7 @@
 
     <h1 class="hero-top__title">
       Sistem Informasi<br>
-      <span class="hero-top__italic">Pariwisata Kabupaten</span><br>
+      <span class="hero-top__italic">Pariwisata Online Kabupaten</span><br>
       BIMA
     </h1>
 
@@ -999,6 +999,21 @@ document.querySelectorAll(".popular2 .wcard, .cards .post-card, .infocard, .expl
       window.location.href = "destinasi.html?search=" + encodeURIComponent(keyword);
     });
   }
+</script>
+<script>
+  (function () {
+    const todayKey = new Date().toISOString().slice(0, 10);
+
+    let totalVisits = parseInt(localStorage.getItem("site_total_visits") || "0", 10);
+    let todayVisits = parseInt(localStorage.getItem("site_visits_" + todayKey) || "0", 10);
+
+    totalVisits += 1;
+    todayVisits += 1;
+
+    localStorage.setItem("site_total_visits", totalVisits);
+    localStorage.setItem("site_visits_" + todayKey, todayVisits);
+    localStorage.setItem("site_last_page", window.location.pathname.split("/").pop() || "index.html");
+  })();
 </script>
 </body>
 </html>
