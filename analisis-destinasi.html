@@ -63,14 +63,20 @@
   </div>
 
   <!-- ANALISIS -->
-  <a class="admin-nav__item active" href="analisis-destinasi.html">
-    <img class="admin-ic" src="logo/container48.svg"> Analisis Destinasi
-  </a>
+   <div class="admin-nav__group">
+  <button class="admin-nav__item admin-nav__toggle" type="button">
+    <span class="admin-nav__left">
+      <img class="admin-ic" src="logo/statistik.svg" alt="">
+      Analisis
+    </span>
+    <span class="admin-nav__caret">▾</span>
+  </button>
 
-  <a class="admin-nav__item" href="statistik-pengunjung.html">
-    <img class="admin-ic" src="logo/user.svg"> Statistik Pengunjung
-  </a>
-
+  <div class="admin-subnav">
+    <a class="admin-subnav__item active" href="analisis-destinasi.html">Analisis Destinasi</a>
+    <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+  </div>
+</div>
 </nav>
 
     </aside>
@@ -356,57 +362,98 @@
       `).join("");
     }
 
-    function showDestinationDetail(type, index) {
-      const data = type === "popular" ? popularDestinations[index] : unpopularDestinations[index];
-      const detail = document.getElementById("destinationDetail");
+  function showDestinationDetail(type, index) {
+  const data = type === "popular" ? popularDestinations[index] : unpopularDestinations[index];
+  const detail = document.getElementById("destinationDetail");
 
-      detail.innerHTML = `
-        <div class="analysis-detail-card">
-          <div class="analysis-detail-head">
-            <div>
-              <h3 class="analysis-detail-title">${data.name}</h3>
-              <div class="analysis-detail-meta">Rating: ${data.rating} / 5 • ${data.totalReviews} ulasan</div>
-            </div>
-            <span class="analysis-destination-score ${type === 'popular' ? 'good' : 'bad'}">
-              ${type === 'popular' ? 'Populer' : 'Tidak Populer'}
-            </span>
-          </div>
+  detail.innerHTML = `
+    <div class="analysis-detail-card">
+      <div class="analysis-detail-head">
+        <div>
+          <h3 class="analysis-detail-title">${data.name}</h3>
+          <div class="analysis-detail-meta">Rating: ${data.rating} / 5 • ${data.totalReviews} ulasan</div>
+        </div>
+        <span class="analysis-destination-score ${type === 'popular' ? 'good' : 'bad'}">
+          ${type === 'popular' ? 'Populer' : 'Tidak Populer'}
+        </span>
+      </div>
 
-          <div class="analysis-detail-comments">
-            <h4 class="analysis-detail-subtitle">Komentar Pengunjung</h4>
+      <!-- FILTER BAR -->
+      <div class="analysis-review-filter">
+        <input 
+          type="text" 
+          id="analysisReviewSearch" 
+          placeholder="Cari nama pengunjung atau komentar..."
+        >
 
-            <div class="analysis-comment-list">
-              ${data.comments.map((comment, i) => `
-                <div class="analysis-comment-item" id="comment-${type}-${index}-${i}">
-                  <div class="analysis-comment-row">
-                    <div class="analysis-comment-main">
-                      <div class="analysis-user-info">
-                        <strong>${comment.user}</strong>
-                        <span class="analysis-rating">${"★".repeat(comment.rating)}</span>
-                      </div>
+        <select id="analysisRatingFilter">
+          <option value="all">Semua Rating</option>
+          <option value="5">5 Bintang</option>
+          <option value="4">4 Bintang</option>
+          <option value="3">3 Bintang</option>
+          <option value="2">2 Bintang</option>
+          <option value="1">1 Bintang</option>
+        </select>
+      </div>
 
-                      <div class="analysis-comment-text">
-                        "${comment.text}"
-                      </div>
-                    </div>
+      <div class="analysis-detail-comments">
+        <h4 class="analysis-detail-subtitle">Komentar Pengunjung</h4>
 
-                    <button class="analysis-delete" onclick="deleteComment('comment-${type}-${index}-${i}')" aria-label="Hapus">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M4 7h16"></path>
-                        <path d="M10 11v6"></path>
-                        <path d="M14 11v6"></path>
-                        <path d="M6 7l1 14h10l1-14"></path>
-                        <path d="M9 7V4h6v3"></path>
-                      </svg>
-                    </button>
+        <div class="analysis-comment-list">
+          ${data.comments.map((comment, i) => `
+            <div 
+              class="analysis-comment-item"
+              id="comment-${type}-${index}-${i}"
+              data-user="${comment.user.toLowerCase()}"
+              data-comment="${comment.text.toLowerCase()}"
+              data-rating="${comment.rating}"
+            >
+              <div class="analysis-comment-row">
+                <div class="analysis-comment-main">
+                  <div class="analysis-user-info">
+                    <strong>${comment.user}</strong>
+                    <span class="analysis-rating">${"★".repeat(comment.rating)}</span>
+                  </div>
+
+                  <div class="analysis-comment-text">
+                    "${comment.text}"
                   </div>
                 </div>
-              `).join("")}
+
+                <button class="analysis-delete" onclick="deleteComment('comment-${type}-${index}-${i}')">
+                  🗑
+                </button>
+              </div>
             </div>
-          </div>
+          `).join("")}
         </div>
-      `;
-    }
+      </div>
+    </div>
+  `;
+
+  // === FILTER FUNCTION ===
+  const searchInput = document.getElementById("analysisReviewSearch");
+  const ratingSelect = document.getElementById("analysisRatingFilter");
+
+  function filterReviews() {
+    const keyword = searchInput.value.toLowerCase();
+    const rating = ratingSelect.value;
+
+    document.querySelectorAll(".analysis-comment-item").forEach(item => {
+      const user = item.dataset.user;
+      const comment = item.dataset.comment;
+      const itemRating = item.dataset.rating;
+
+      const matchKeyword = user.includes(keyword) || comment.includes(keyword);
+      const matchRating = rating === "all" || itemRating === rating;
+
+      item.style.display = (matchKeyword && matchRating) ? "block" : "none";
+    });
+  }
+
+  searchInput.addEventListener("input", filterReviews);
+  ratingSelect.addEventListener("change", filterReviews);
+}
 
     function deleteComment(id) {
       const item = document.getElementById(id);

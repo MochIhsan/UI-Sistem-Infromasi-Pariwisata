@@ -294,7 +294,8 @@
          <button class="nwd-navBtn" type="button" data-dir="right" aria-label="Geser kanan">›</button>
         </div>
       </section>
-       <section class="destdetail__section">
+
+      <section class="destdetail__section">
       <div class="rev-card">
         <div class="rev-head">
           <div class="rev-score">
@@ -340,102 +341,97 @@
           <button class="rev-submit" type="button" id="reviewSubmitBtn">Posting</button>
         </div>
 
-        <div class="rev-list">
-          <article class="rev-item">
-            <div class="rev-item__top">
-              <div class="rev-item__avatar">AP</div>
-              <div class="rev-item__name">
-                <div style="font-weight:900;color:#0f172a;">Arif Pratama</div>
-                <div class="rev-item__stars">★★★★★</div>
-              </div>
-              <button class="rev-like" type="button" aria-label="Suka">♡</button>
-            </div>
-            <div class="rev-item__text">
-              Pelayanan oke, lokasi dekat pantai. Kamar bersih dan nyaman.
-            </div>
-          </article>
-        </div>
+       <div class="rev-list" id="reviewList">
+  <article class="rev-item">
+    <div class="rev-item__top">
+      <div class="rev-item__avatar">AP</div>
+
+      <div class="rev-item__name">
+        <div style="font-weight:900;color:#0f172a;">Arif Pratama</div>
+        
+        <div class="rev-item__stars">★★★★★</div>
+
+        <!-- TAMBAHAN TANGGAL -->
+        <div class="rev-item__date">24 Apr 2026</div>
+      </div>
+
+      <button class="rev-like" type="button" aria-label="Suka">♡</button>
+    </div>
+
+    <div class="rev-item__text">
+      Pelayanan oke, lokasi dekat pantai. Kamar bersih dan nyaman.
+    </div>
+  </article>
+</div>
       </div>
     </section>
 
-    </div>
-  </main>
+  </div>
+</main>
 
-  <!-- FOOTER (sama seperti sebelumnya) -->
-  <footer class="footer2">
-    <div class="container footer2__grid">
-      <div class="footer2__brand">
-        <div class="footer2__logo-ring">
-          <img class="footer2__logo" src="assets/logo.png" alt="">
-        </div>
-
-        <div class="footer2__social">
-          <a href="#" class="footer2__soc" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg>
-          </a>
-          <a href="#" class="footer2__soc" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M17.5 6.5h.01"/></svg>
-          </a>
-          <a href="#" class="footer2__soc" aria-label="YouTube">
-            <svg viewBox="0 0 24 24"><path d="M21 8s-1-3-3-3H6C4 5 3 8 3 8s-.5 3.5 0 8c0 0 1 3 3 3h12c2 0 3-3 3-3s.5-3.5 0-8z"/><path d="M10 9.5v5l5-2.5-5-2.5z"/></svg>
-          </a>
-          <a href="#" class="footer2__soc" aria-label="X">
-            <svg viewBox="0 0 24 24"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"/></svg>
-          </a>
-        </div>
+<footer class="footer2">
+  <div class="container footer2__grid">
+    <div class="footer2__brand">
+      <div class="footer2__logo-ring">
+        <img class="footer2__logo" src="assets/logo.png" alt="">
       </div>
 
-       <div class="footer2__col">
-        <div class="footer2__title">Tentang</div>
-          <p class="footer2__desc">
-          Sistem Informasi Pariwisata Online adalah sistem informasi yang
-          menampilkan daftar info pariwisata di Kabupaten Bima meliputi
-          informasi berita, event, galeri terkait pariwisata, dan lain-lain.
-          </p>
-      </div>
-
-      <div class="footer2__col">
-        <div class="footer2__title">Layanan<br>Kami</div>
-        <a class="footer2__link" href="destinasi.html">Destinasi</a>
-        <a class="footer2__link" href="event.html">Event</a>
-        <a class="footer2__link" href="berita.html">Berita</a>
-        <a class="footer2__link" href="akomodasi.html">Akomodasi</a>
-      </div>
-
-      <div class="footer2__col">
-        <div class="footer2__title">Kontak</div>
-        <div class="footer2__contact">
-          <span class="footer2__cicon">
-            <svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          </span>
-          <span>Kantor Dinas Pariwisata<br>Kabupaten Bima<br>Nusa Tenggara Barat</span>
-        </div>
-
-        <div class="footer2__contact">
-          <span class="footer2__cicon">
-            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L9 10a16 16 0 0 0 5 5l.9-1.1a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6A2 2 0 0 1 22 16.9z"/></svg>
-          </span>
-          <span>+62 812-2404-7821</span>
-        </div>
-
-        <div class="footer2__contact">
-          <span class="footer2__cicon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
-          </span>
-          <span>info@dispar.co.id</span>
-        </div>
+      <div class="footer2__social">
+        <a href="#" class="footer2__soc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" class="footer2__soc" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M17.5 6.5h.01"/></svg></a>
+        <a href="#" class="footer2__soc" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21 8s-1-3-3-3H6C4 5 3 8 3 8s-.5 3.5 0 8c0 0 1 3 3 3h12c2 0 3-3 3-3s.5-3.5 0-8z"/><path d="M10 9.5v5l5-2.5-5-2.5z"/></svg></a>
+        <a href="#" class="footer2__soc" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"/></svg></a>
       </div>
     </div>
 
-    <div class="footer2__bottom">
-      <div class="container footer2__bottom-inner">
-        <span class="footer2__copy">©</span> 2025 Pariwisata Kabupaten Bima
+    <div class="footer2__col">
+      <div class="footer2__title">Tentang</div>
+      <p class="footer2__desc">
+        Sistem Informasi Pariwisata Online adalah sistem informasi yang menampilkan daftar info pariwisata di Kabupaten Bima meliputi informasi berita, event, galeri terkait pariwisata, dan lain-lain.
+      </p>
+    </div>
+
+    <div class="footer2__col">
+      <div class="footer2__title">Layanan<br>Kami</div>
+      <a class="footer2__link" href="destinasi.html">Destinasi</a>
+      <a class="footer2__link" href="event.html">Event</a>
+      <a class="footer2__link" href="berita.html">Berita</a>
+      <a class="footer2__link" href="akomodasi.html">Akomodasi</a>
+    </div>
+
+    <div class="footer2__col">
+      <div class="footer2__title">Kontak</div>
+      <div class="footer2__contact">
+        <span class="footer2__cicon"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+        <span>Kantor Dinas Pariwisata<br>Kabupaten Bima<br>Nusa Tenggara Barat</span>
+      </div>
+      <div class="footer2__contact">
+        <span class="footer2__cicon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L9 10a16 16 0 0 0 5 5l.9-1.1a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6A2 2 0 0 1 22 16.9z"/></svg></span>
+        <span>+62 812-2404-7821</span>
+      </div>
+      <div class="footer2__contact">
+        <span class="footer2__cicon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
+        <span>info@dispar.co.id</span>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <script src="berita-detail.js"></script>
-  <script src="detail-page.js"></script><script>
+  <div class="footer2__bottom">
+    <div class="container footer2__bottom-inner">
+      <span class="footer2__copy">©</span> 2025 Pariwisata Kabupaten Bima
+    </div>
+  </div>
+</footer>
+
+<div class="destdetail__modal" id="imgModal" aria-hidden="true">
+  <button class="destdetail__modalClose" type="button" id="imgModalClose" aria-label="Tutup">×</button>
+  <img class="destdetail__modalImg" id="imgModalImg" alt="Preview Dokumentasi">
+</div>
+
+<script src="destinasi.js"></script>
+<script src="detail-page.js"></script>
+
+<script>
   const loginBtn = document.getElementById("loginBtn");
   const loginModal = document.getElementById("loginModal");
 
@@ -489,13 +485,13 @@
     showStep("login");
     loginError.textContent = "";
 
-    loginForm.reset();
-    forgotForm.reset();
-    verifyForm.reset();
-    resetForm.reset();
+    if (loginForm) loginForm.reset();
+    if (forgotForm) forgotForm.reset();
+    if (verifyForm) verifyForm.reset();
+    if (resetForm) resetForm.reset();
 
     codeInputs.forEach(input => input.value = "");
-    newPassword.type = "password";
+    if (newPassword) newPassword.type = "password";
   }
 
   function closeModal() {
@@ -503,16 +499,18 @@
     resetForgotFlow();
   }
 
-  loginBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    loginModal.classList.add("active");
-    resetForgotFlow();
-  });
+  if (loginBtn) {
+    loginBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      loginModal.classList.add("active");
+      resetForgotFlow();
+    });
+  }
 
-  closeLogin.addEventListener("click", closeModal);
-  closeForgot.addEventListener("click", closeModal);
-  closeVerify.addEventListener("click", closeModal);
-  closeReset.addEventListener("click", closeModal);
+  if (closeLogin) closeLogin.addEventListener("click", closeModal);
+  if (closeForgot) closeForgot.addEventListener("click", closeModal);
+  if (closeVerify) closeVerify.addEventListener("click", closeModal);
+  if (closeReset) closeReset.addEventListener("click", closeModal);
 
   window.addEventListener("click", function(e) {
     if (e.target === loginModal) {
@@ -520,40 +518,69 @@
     }
   });
 
-  loginForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+  if (loginForm) {
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-    if (username === "admin" && password === "admin123") {
-      window.location.href = "admin.html";
-    } else {
+      const registeredUser = localStorage.getItem("registeredUser");
+      const registeredPass = localStorage.getItem("registeredPass");
+
+      loginError.textContent = "";
+
+      if (username === "admin" && password === "admin123") {
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("loggedInUser", username);
+        sessionStorage.setItem("userRole", "admin");
+        window.location.href = "admin.html";
+        return;
+      }
+
+      if (username === registeredUser && password === registeredPass) {
+        loginError.style.color = "green";
+        loginError.textContent = "Login user berhasil!";
+
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("loggedInUser", username);
+        sessionStorage.setItem("userRole", "user");
+
+        setTimeout(() => {
+          window.location.href = "berita-user.html";
+        }, 800);
+        return;
+      }
+
+      loginError.style.color = "red";
       loginError.textContent = "Username atau password salah!";
-    }
-  });
+    });
+  }
 
-  goForgot.addEventListener("click", function(e) {
-    e.preventDefault();
-    showStep("forgot");
-  });
+  if (goForgot) {
+    goForgot.addEventListener("click", function(e) {
+      e.preventDefault();
+      showStep("forgot");
+    });
+  }
 
-  forgotForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+  if (forgotForm) {
+    forgotForm.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-    const forgotUsername = document.getElementById("forgotUsername").value.trim();
-    if (!forgotUsername) return;
+      const forgotUsername = document.getElementById("forgotUsername").value.trim();
+      if (!forgotUsername) return;
 
-    showStep("verify");
-    if (codeInputs.length > 0) {
-      codeInputs[0].focus();
-    }
-  });
+      showStep("verify");
+      if (codeInputs.length > 0) {
+        codeInputs[0].focus();
+      }
+    });
+  }
 
   codeInputs.forEach((input, index) => {
     input.addEventListener("input", function() {
       this.value = this.value.replace(/[^0-9]/g, "").slice(0, 1);
-
       if (this.value && index < codeInputs.length - 1) {
         codeInputs[index + 1].focus();
       }
@@ -566,38 +593,43 @@
     });
   });
 
-  verifyForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+  if (verifyForm) {
+    verifyForm.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-    const code = Array.from(codeInputs).map(input => input.value).join("");
+      const code = Array.from(codeInputs).map(input => input.value).join("");
+      if (code.length !== 5) {
+        alert("Masukkan 5 digit kode verifikasi.");
+        return;
+      }
 
-    if (code.length !== 5) {
-      alert("Masukkan 5 digit kode verifikasi.");
-      return;
-    }
+      showStep("reset");
+    });
+  }
 
-    showStep("reset");
-  });
+  if (toggleNewPassword) {
+    toggleNewPassword.addEventListener("click", function() {
+      const isPassword = newPassword.type === "password";
+      newPassword.type = isPassword ? "text" : "password";
+    });
+  }
 
-  toggleNewPassword.addEventListener("click", function() {
-    const isPassword = newPassword.type === "password";
-    newPassword.type = isPassword ? "text" : "password";
-  });
+  if (resetForm) {
+    resetForm.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-  resetForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+      const passwordBaru = newPassword.value.trim();
+      if (passwordBaru.length < 6) {
+        alert("Password baru minimal 6 karakter.");
+        return;
+      }
 
-    const passwordBaru = newPassword.value.trim();
-
-    if (passwordBaru.length < 6) {
-      alert("Password baru minimal 6 karakter.");
-      return;
-    }
-
-    alert("Password berhasil disimpan. Silakan login kembali.");
-    closeModal();
-  });
+      alert("Password berhasil disimpan. Silakan login kembali.");
+      closeModal();
+    });
+  }
 </script>
+
 <script>
   const navToggle = document.getElementById("navToggle");
   const mobileMenu = document.getElementById("mobileMenu");
@@ -605,16 +637,13 @@
   if (navToggle && mobileMenu) {
     navToggle.addEventListener("click", (e) => {
       e.stopPropagation();
-
       navToggle.classList.toggle("is-active");
       mobileMenu.classList.toggle("is-open");
       document.body.classList.toggle("nav-open");
-
       const expanded = navToggle.classList.contains("is-active");
       navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
     });
 
-    // klik di luar menu = tutup
     document.addEventListener("click", (e) => {
       if (!navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
         navToggle.classList.remove("is-active");
@@ -624,7 +653,6 @@
       }
     });
 
-    // klik salah satu link = tutup
     mobileMenu.querySelectorAll(".nav__link").forEach((link) => {
       link.addEventListener("click", () => {
         navToggle.classList.remove("is-active");
@@ -634,13 +662,112 @@
       });
     });
 
-    // jika balik ke desktop, reset menu
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         navToggle.classList.remove("is-active");
         mobileMenu.classList.remove("is-open");
         document.body.classList.remove("nav-open");
         navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+</script>
+
+<script>
+  const guestStarsWrap = document.getElementById("revStars");
+  const guestStars = guestStarsWrap ? guestStarsWrap.querySelectorAll(".rev-starBtn") : [];
+  const guestRatingInfo = document.getElementById("guestRatingInfo");
+
+  function paintGuestStars(rating) {
+    guestStars.forEach((star) => {
+      const value = Number(star.dataset.val);
+      star.textContent = value <= rating ? "★" : "☆";
+    });
+  }
+
+  function setGuestRatingLabel(rating) {
+    guestRatingInfo.textContent = rating > 0
+      ? `Anda memilih ${rating} bintang`
+      : "Belum ada rating dipilih";
+  }
+
+  if (guestStarsWrap) {
+    guestStars.forEach((star) => {
+      star.addEventListener("mouseenter", function () {
+        paintGuestStars(Number(this.dataset.val));
+      });
+
+      star.addEventListener("click", function () {
+        const rating = Number(this.dataset.val);
+        guestStarsWrap.dataset.rating = rating;
+        paintGuestStars(rating);
+        setGuestRatingLabel(rating);
+      });
+    });
+
+    guestStarsWrap.addEventListener("mouseleave", function () {
+      paintGuestStars(Number(guestStarsWrap.dataset.rating || 0));
+    });
+  }
+
+  const reviewSubmitBtn = document.getElementById("reviewSubmitBtn");
+  const reviewText = document.getElementById("reviewText");
+
+  if (reviewSubmitBtn) {
+    reviewSubmitBtn.addEventListener("click", function () {
+      const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+      const loggedInUser = sessionStorage.getItem("loggedInUser");
+      const userRole = sessionStorage.getItem("userRole");
+
+      const selectedRating = Number(guestStarsWrap?.dataset.rating || 0);
+      const reviewValue = reviewText?.value.trim() || "";
+
+      if (isLoggedIn !== "true" || !loggedInUser || userRole !== "user") {
+        loginModal.classList.add("active");
+        loginError.style.color = "red";
+        loginError.textContent = "Silakan login terlebih dahulu untuk mengirim rating dan ulasan.";
+        return;
+      }
+
+      if (selectedRating === 0) {
+        alert("Silakan pilih rating terlebih dahulu.");
+        return;
+      }
+
+      if (reviewValue === "") {
+        alert("Silakan isi ulasan terlebih dahulu.");
+        return;
+      }
+
+      window.location.href = "berita-user.html";
+    });
+  }
+</script>
+
+<script>
+  document.addEventListener("click", function (e) {
+    const likeBtn = e.target.closest(".rev-like");
+    if (!likeBtn) return;
+    likeBtn.classList.toggle("is-liked");
+    likeBtn.textContent = likeBtn.classList.contains("is-liked") ? "♥" : "♡";
+  });
+</script>
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
       }
     });
   }
