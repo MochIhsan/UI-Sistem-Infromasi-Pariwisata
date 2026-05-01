@@ -410,7 +410,73 @@ Rangkaian kegiatan dalam Mbojo Literation Festival meliputi lomba bertutur, lomb
 
 <script src="destinasi.js"></script>
 <script src="detail-page.js"></script>
+<script>
+  const docSlider = document.getElementById("docSlider");
+  const prevBtn = document.querySelector('[data-slide="prev"]');
+  const nextBtn = document.querySelector('[data-slide="next"]');
 
+  if (docSlider && prevBtn && nextBtn) {
+    const slideAmount = 360;
+
+    prevBtn.addEventListener("click", () => {
+      docSlider.scrollBy({
+        left: -slideAmount,
+        behavior: "smooth"
+      });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      docSlider.scrollBy({
+        left: slideAmount,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  const imgModal = document.getElementById("imgModal");
+  const imgModalImg = document.getElementById("imgModalImg");
+  const imgModalClose = document.getElementById("imgModalClose");
+
+  document.querySelectorAll("[data-lb-item]").forEach((img) => {
+    img.style.cursor = "pointer";
+
+    img.addEventListener("click", () => {
+      if (!imgModal || !imgModalImg) return;
+
+      imgModalImg.src = img.src;
+      imgModal.classList.add("is-open");
+      imgModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeEventImageModal() {
+    if (!imgModal || !imgModalImg) return;
+
+    imgModal.classList.remove("is-open");
+    imgModal.setAttribute("aria-hidden", "true");
+    imgModalImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  if (imgModalClose) {
+    imgModalClose.addEventListener("click", closeEventImageModal);
+  }
+
+  if (imgModal) {
+    imgModal.addEventListener("click", (e) => {
+      if (e.target === imgModal) {
+        closeEventImageModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeEventImageModal();
+    }
+  });
+</script>
 <script>
   const loginBtn = document.getElementById("loginBtn");
   const loginModal = document.getElementById("loginModal");

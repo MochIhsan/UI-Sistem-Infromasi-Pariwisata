@@ -108,6 +108,45 @@
     .register-login a:hover{
       text-decoration:underline;
     }
+    .register-password-wrap{
+  position:relative;
+  width:100%;
+}
+
+.register-password-wrap input{
+  padding-right:48px;
+}
+
+.register-password-toggle{
+  position:absolute;
+  top:50%;
+  right:12px;
+  transform:translateY(-50%);
+  width:34px;
+  height:34px;
+  border:none;
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:#6b7280;
+  padding:0;
+}
+
+.register-password-toggle:hover{
+  color:#0f3a78;
+}
+
+.register-password-toggle svg{
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
   </style>
 </head>
 <body>
@@ -128,9 +167,32 @@
         </div>
 
         <div class="register-group">
-          <label>Password</label>
-          <input type="password" id="registerPassword" placeholder="Masukkan password" required>
-        </div>
+  <label>Password</label>
+
+  <div class="register-password-wrap">
+    <input
+      type="password"
+      id="registerPassword"
+      placeholder="Masukkan password"
+      required
+    >
+
+    <button
+      type="button"
+      class="register-password-toggle"
+      id="toggleRegisterPassword"
+      aria-label="Lihat password"
+    >
+      <!-- ikon mata tertutup default -->
+      <svg id="eyeIcon" viewBox="0 0 24 24">
+        <path d="M3 3l18 18"></path>
+        <path d="M10.58 10.58A2 2 0 0 0 13.42 13.42"></path>
+        <path d="M9.88 4.24A10.94 10.94 0 0 1 12 4c5 0 9.27 3.11 11 7.5a11.8 11.8 0 0 1-2.17 3.31"></path>
+        <path d="M6.61 6.61A11.84 11.84 0 0 0 1 11.5C2.73 15.89 7 19 12 19a10.9 10.9 0 0 0 5.39-1.39"></path>
+      </svg>
+    </button>
+  </div>
+</div>
 
         <button type="submit" class="register-submit">Daftar</button>
       </form>
@@ -148,6 +210,32 @@
   const registerForm = document.getElementById("registerForm");
   const registerMessage = document.getElementById("registerMessage");
 
+  const registerPassword = document.getElementById("registerPassword");
+  const toggleRegisterPassword = document.getElementById("toggleRegisterPassword");
+  const eyeIcon = document.getElementById("eyeIcon");
+
+  toggleRegisterPassword.addEventListener("click", function(){
+    const isPassword = registerPassword.type === "password";
+
+    registerPassword.type = isPassword ? "text" : "password";
+
+    if(isPassword){
+      eyeIcon.innerHTML = `
+        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      `;
+      toggleRegisterPassword.setAttribute("aria-label", "Tutup password");
+    } else {
+      eyeIcon.innerHTML = `
+        <path d="M3 3l18 18"></path>
+        <path d="M10.58 10.58A2 2 0 0 0 13.42 13.42"></path>
+        <path d="M9.88 4.24A10.94 10.94 0 0 1 12 4c5 0 9.27 3.11 11 7.5a11.8 11.8 0 0 1-2.17 3.31"></path>
+        <path d="M6.61 6.61A11.84 11.84 0 0 0 1 11.5C2.73 15.89 7 19 12 19a10.9 10.9 0 0 0 5.39-1.39"></path>
+      `;
+      toggleRegisterPassword.setAttribute("aria-label", "Lihat password");
+    }
+  });
+
   registerForm.addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -155,27 +243,23 @@
     const email = document.getElementById("registerEmail").value.trim();
     const password = document.getElementById("registerPassword").value.trim();
 
-    // validasi kosong
     if(username === "" || email === "" || password === ""){
       registerMessage.style.color = "red";
       registerMessage.textContent = "Semua field wajib diisi.";
       return;
     }
 
-    // ✅ VALIDASI EMAIL HARUS ADA "@"
     if(!email.includes("@")){
       alert("Email tidak valid! Harus mengandung '@'");
       return;
     }
 
-    // (opsional tambahan lebih ketat)
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!emailPattern.test(email)){
       alert("Format email tidak valid!");
       return;
     }
 
-    // simpan akun user ke localStorage
     localStorage.setItem("registeredUser", username);
     localStorage.setItem("registeredEmail", email);
     localStorage.setItem("registeredPass", password);
@@ -189,6 +273,7 @@
       window.location.href = "index.html";
     }, 1500);
   });
+</script>
 </script>
 </body>
 </html>

@@ -6,6 +6,7 @@
   <title>Akomodasi - Pariwisata Kabupaten Bima</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
 <header class="header">
@@ -32,7 +33,7 @@
       </a>
     </nav>
 
-    <button class="nav__burger" id="navToggle" aria-label="Buka menu">
+    <button class="nav__burger" id="navToggle" aria-label="Buka menu" type="button">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -43,7 +44,7 @@
 
   <!-- STEP 1: LOGIN -->
   <div class="login-box" id="loginStep">
-    <button class="login-close" id="closeLogin">&times;</button>
+    <button class="login-close" id="closeLogin" type="button">&times;</button>
 
     <h2>Login Admin / User</h2>
 
@@ -75,12 +76,12 @@
 
   <!-- STEP 2: LUPA PASSWORD -->
   <div class="login-box login-box--wide login-step-panel" id="forgotStep">
-    <button class="login-close" id="closeForgot">&times;</button>
+    <button class="login-close" id="closeForgot" type="button">&times;</button>
 
     <h2>Lupa password?</h2>
     <p class="login-step-desc">
       Nggak usah panik, tinggal isi data kamu biar<br>
-      biar bisa balik login
+      bisa balik login.
     </p>
 
     <form id="forgotForm">
@@ -95,7 +96,7 @@
 
   <!-- STEP 3: VERIFIKASI -->
   <div class="login-box login-box--code login-step-panel" id="verifyStep">
-    <button class="login-close" id="closeVerify">&times;</button>
+    <button class="login-close" id="closeVerify" type="button">&times;</button>
 
     <h2>Masukin Kode Rahasia</h2>
     <p class="login-step-desc">
@@ -118,7 +119,7 @@
 
   <!-- STEP 4: PASSWORD BARU -->
   <div class="login-box login-box--reset login-step-panel" id="resetStep">
-    <button class="login-close" id="closeReset">&times;</button>
+    <button class="login-close" id="closeReset" type="button">&times;</button>
 
     <h2>Bikin Password Baru</h2>
     <p class="login-step-desc">
@@ -129,8 +130,10 @@
     <form id="resetForm">
       <div class="login-group login-group--spaced">
         <label>Password</label>
+
         <div class="password-field">
           <input type="password" id="newPassword" placeholder="Masukan password" required>
+
           <button type="button" class="password-toggle" id="toggleNewPassword" aria-label="Lihat password">
             <svg viewBox="0 0 24 24">
               <path d="M3 3l18 18"></path>
@@ -160,6 +163,7 @@
     <section class="acc-filter">
       <div class="acc-field acc-field--search">
         <label class="acc-label">LOKASI ATAU NAMA HOTEL</label>
+
         <div class="acc-input">
           <span class="acc-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
@@ -167,6 +171,7 @@
               <path d="M20 20l-3.5-3.5"></path>
             </svg>
           </span>
+
           <input
             type="text"
             id="searchAkomodasi"
@@ -177,24 +182,24 @@
 
       <div class="acc-field">
         <label class="acc-label">BINTANG</label>
-        <select class="acc-select">
-          <option>Semua Bintang</option>
-          <option>★★★★★</option>
-          <option>★★★★</option>
-          <option>★★★</option>
-          <option>★★</option>
-          <option>★</option>
+        <select class="acc-select" id="filterBintang">
+          <option value="all">Semua Bintang</option>
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★</option>
+          <option value="3">★★★</option>
+          <option value="2">★★</option>
+          <option value="1">★</option>
         </select>
       </div>
 
       <div class="acc-field">
         <label class="acc-label">RENTANG HARGA (IDR)</label>
-        <select class="acc-select">
-          <option>Semua Harga</option>
-          <option>&lt; 200.000</option>
-          <option>200.000 - 400.000</option>
-          <option>400.000 - 800.000</option>
-          <option>&gt; 800.000</option>
+        <select class="acc-select" id="filterHarga">
+          <option value="all">Semua Harga</option>
+          <option value="0-199999">&lt; 200.000</option>
+          <option value="200000-400000">200.000 - 400.000</option>
+          <option value="400000-800000">400.000 - 800.000</option>
+          <option value="800001-999999999">&gt; 800.000</option>
         </select>
       </div>
 
@@ -208,17 +213,27 @@
     </p>
 
     <!-- GRID -->
-    <section class="acc-grid">
+    <section class="acc-grid" id="akomodasiGrid">
+
       <!-- 1 -->
-      <article class="acc-card">
+      <article
+        class="acc-card"
+        data-stars="4"
+        data-price="300000"
+        data-name="Hotel D'AUSSAF"
+        data-location="Pelabuhan Sape Bima"
+      >
         <div class="acc-card__img">
           <img src="assets/akomodasi/1.jpg" alt="Hotel D'AUSSAF" />
         </div>
+
         <div class="acc-card__body">
-          <div class="acc-stars" aria-label="rating">
+          <div class="acc-stars" aria-label="4 bintang">
             <span>★</span><span>★</span><span>★</span><span>★</span><span class="off">★</span>
           </div>
+
           <h3 class="acc-name">Hotel D'AUSSAF</h3>
+
           <div class="acc-loc">
             <span class="pin" aria-hidden="true">📍</span> Pelabuhan Sape, Bima
           </div>
@@ -228,7 +243,8 @@
               <div class="acc-from">MULAI DARI</div>
               <div class="acc-price">IDR 300.000 - 500.000</div>
             </div>
-            <a class="acc-go" href="akomodasi-dausaf.html" aria-label="lihat detail">
+
+            <a class="acc-go" href="akomodasi-dausaf.html" aria-label="lihat detail Hotel D'AUSSAF">
               <span>›</span>
             </a>
           </div>
@@ -236,114 +252,185 @@
       </article>
 
       <!-- 2 -->
-      <article class="acc-card">
+      <article
+        class="acc-card"
+        data-stars="3"
+        data-price="320000"
+        data-name="Mantika Hotel"
+        data-location="Pusat Kota Bima"
+      >
         <div class="acc-card__img">
           <img src="assets/akomodasi/2.jpg" alt="Mantika Hotel" />
         </div>
+
         <div class="acc-card__body">
-          <div class="acc-stars">
+          <div class="acc-stars" aria-label="3 bintang">
             <span>★</span><span>★</span><span>★</span><span class="off">★</span><span class="off">★</span>
           </div>
+
           <h3 class="acc-name">Mantika Hotel</h3>
-          <div class="acc-loc"><span class="pin">📍</span> Pusat Kota Bima</div>
+
+          <div class="acc-loc">
+            <span class="pin">📍</span> Pusat Kota Bima
+          </div>
 
           <div class="acc-priceRow">
             <div>
               <div class="acc-from">MULAI DARI</div>
               <div class="acc-price">IDR 320.000 - 450.000</div>
             </div>
-            <a class="acc-go" href="akomodasi.hotel-mantika.html"><span>›</span></a>
+
+            <a class="acc-go" href="akomodasi.hotel-mantika.html" aria-label="lihat detail Mantika Hotel">
+              <span>›</span>
+            </a>
           </div>
         </div>
       </article>
 
       <!-- 3 -->
-      <article class="acc-card">
+      <article
+        class="acc-card"
+        data-stars="3"
+        data-price="250000"
+        data-name="Losmen Mustika"
+        data-location="Kecamatan Sape Bima"
+      >
         <div class="acc-card__img">
           <img src="assets/akomodasi/3.jpg" alt="Losmen Mustika" />
         </div>
+
         <div class="acc-card__body">
-          <div class="acc-stars">
+          <div class="acc-stars" aria-label="3 bintang">
             <span>★</span><span>★</span><span>★</span><span class="off">★</span><span class="off">★</span>
           </div>
+
           <h3 class="acc-name">Losmen Mustika</h3>
-          <div class="acc-loc"><span class="pin">📍</span> Kecamatan Sape, Bima</div>
+
+          <div class="acc-loc">
+            <span class="pin">📍</span> Kecamatan Sape, Bima
+          </div>
 
           <div class="acc-priceRow">
             <div>
               <div class="acc-from">MULAI DARI</div>
               <div class="acc-price">IDR 250.000 - 350.000</div>
             </div>
-            <a class="acc-go" href="akomodasi.losmen-mustika.html"><span>›</span></a>
+
+            <a class="acc-go" href="akomodasi.losmen-mustika.html" aria-label="lihat detail Losmen Mustika">
+              <span>›</span>
+            </a>
           </div>
         </div>
       </article>
 
       <!-- 4 -->
-      <article class="acc-card">
+      <article
+        class="acc-card"
+        data-stars="4"
+        data-price="400000"
+        data-name="Hotel Kalaki Beach"
+        data-location="Pusat Kota Bima"
+      >
         <div class="acc-card__img">
           <img src="assets/akomodasi/4.jpg" alt="Hotel Kalaki Beach" />
         </div>
+
         <div class="acc-card__body">
-          <div class="acc-stars">
+          <div class="acc-stars" aria-label="4 bintang">
             <span>★</span><span>★</span><span>★</span><span>★</span><span class="off">★</span>
           </div>
+
           <h3 class="acc-name">Hotel Kalaki Beach</h3>
-          <div class="acc-loc"><span class="pin">📍</span> Pusat Kota Bima</div>
+
+          <div class="acc-loc">
+            <span class="pin">📍</span> Pusat Kota Bima
+          </div>
 
           <div class="acc-priceRow">
             <div>
               <div class="acc-from">MULAI DARI</div>
               <div class="acc-price">IDR 400.000 - 600.000</div>
             </div>
-            <a class="acc-go" href="akomodasi.hotel-kalaki.html"><span>›</span></a>
+
+            <a class="acc-go" href="akomodasi.hotel-kalaki.html" aria-label="lihat detail Hotel Kalaki Beach">
+              <span>›</span>
+            </a>
           </div>
         </div>
       </article>
 
       <!-- 5 -->
-      <article class="acc-card">
+      <article
+        class="acc-card"
+        data-stars="5"
+        data-price="180000"
+        data-name="Kalimaya"
+        data-location="Pelabuhan Sape"
+      >
         <div class="acc-card__img">
           <img src="assets/akomodasi/5.jpg" alt="Kalimaya" />
         </div>
+
         <div class="acc-card__body">
-          <div class="acc-stars">
+          <div class="acc-stars" aria-label="5 bintang">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
+
           <h3 class="acc-name">Kalimaya</h3>
-          <div class="acc-loc"><span class="pin">📍</span> Pelabuhan Sape</div>
+
+          <div class="acc-loc">
+            <span class="pin">📍</span> Pelabuhan Sape
+          </div>
 
           <div class="acc-priceRow">
             <div>
               <div class="acc-from">MULAI DARI</div>
               <div class="acc-price">IDR 180.000 - 250.000</div>
             </div>
-            <a class="acc-go" href="akomodasi.kalimaya.html"><span>›</span></a>
+
+            <a class="acc-go" href="akomodasi.kalimaya.html" aria-label="lihat detail Kalimaya">
+              <span>›</span>
+            </a>
           </div>
         </div>
       </article>
 
       <!-- 6 -->
-      <article class="acc-card">
+      <article
+        class="acc-card"
+        data-stars="5"
+        data-price="850000"
+        data-name="Villa Lariti"
+        data-location="Pantai Kalaki"
+      >
         <div class="acc-card__img">
           <img src="assets/akomodasi/6.png" alt="Villa Lariti" />
         </div>
+
         <div class="acc-card__body">
-          <div class="acc-stars">
+          <div class="acc-stars" aria-label="5 bintang">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
+
           <h3 class="acc-name">Villa Lariti</h3>
-          <div class="acc-loc"><span class="pin">📍</span> Pantai Kalaki</div>
+
+          <div class="acc-loc">
+            <span class="pin">📍</span> Pantai Kalaki
+          </div>
 
           <div class="acc-priceRow">
-            <div> 
+            <div>
               <div class="acc-from">MULAI DARI</div>
               <div class="acc-price">IDR 850.000 - 1.200.000</div>
             </div>
-            <a class="acc-go" href="akomodasi.villa-lariti.html"><span>›</span></a>
+
+            <a class="acc-go" href="akomodasi.villa-lariti.html" aria-label="lihat detail Villa Lariti">
+              <span>›</span>
+            </a>
           </div>
         </div>
       </article>
+
     </section>
 
     <!-- PAGINATION -->
@@ -362,23 +449,38 @@
 
 <footer class="footer2">
   <div class="container footer2__grid">
+
     <div class="footer2__brand">
       <div class="footer2__logo-ring">
-        <img class="footer2__logo" src="assets/logo.png" alt="">
+        <img class="footer2__logo" src="assets/logo.png" alt="Logo Pariwisata Kabupaten Bima">
       </div>
 
       <div class="footer2__social">
         <a href="#" class="footer2__soc" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1z"></path>
+          </svg>
         </a>
+
         <a href="#" class="footer2__soc" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M17.5 6.5h.01"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"></path>
+            <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"></path>
+            <path d="M17.5 6.5h.01"></path>
+          </svg>
         </a>
+
         <a href="#" class="footer2__soc" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M21 8s-1-3-3-3H6C4 5 3 8 3 8s-.5 3.5 0 8c0 0 1 3 3 3h12c2 0 3-3 3-3s.5-3.5 0-8z"/><path d="M10 9.5v5l5-2.5-5-2.5z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M21 8s-1-3-3-3H6C4 5 3 8 3 8s-.5 3.5 0 8c0 0 1 3 3 3h12c2 0 3-3 3-3s.5-3.5 0-8z"></path>
+            <path d="M10 9.5v5l5-2.5-5-2.5z"></path>
+          </svg>
         </a>
+
         <a href="#" class="footer2__soc" aria-label="X">
-          <svg viewBox="0 0 24 24"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"></path>
+          </svg>
         </a>
       </div>
     </div>
@@ -401,28 +503,38 @@
     </div>
 
     <div class="footer2__col">
-      <div class="footer2__title">Kontak</div>
+      <div class="footer2__title">Kontak<br>Kami</div>
+
       <div class="footer2__contact">
         <span class="footer2__cicon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+            <circle cx="12" cy="9" r="2.5"></circle>
+          </svg>
         </span>
-        <span>Kantor Dinas Pariwisata<br>Kabupaten Bima<br>Nusa Tenggara Barat</span>
+        <span>Kabupaten Bima, Nusa Tenggara Barat</span>
       </div>
 
       <div class="footer2__contact">
         <span class="footer2__cicon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L9 10a16 16 0 0 0 5 5l.9-1.1a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6A2 2 0 0 1 22 16.9z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"></path>
+          </svg>
         </span>
         <span>+62 812-2404-7821</span>
       </div>
 
       <div class="footer2__contact">
         <span class="footer2__cicon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M4 4h16v16H4z"></path>
+            <path d="M4 7l8 6 8-6"></path>
+          </svg>
         </span>
         <span>info@dispar.co.id</span>
       </div>
     </div>
+
   </div>
 
   <div class="footer2__bottom">
@@ -431,6 +543,7 @@
     </div>
   </div>
 </footer>
+
 <script>
   const loginBtn = document.getElementById("loginBtn");
   const loginModal = document.getElementById("loginModal");
@@ -470,12 +583,15 @@
     if (stepName === "login") {
       loginStep.style.display = "block";
     }
+
     if (stepName === "forgot") {
       forgotStep.classList.add("active-step");
     }
+
     if (stepName === "verify") {
       verifyStep.classList.add("active-step");
     }
+
     if (stepName === "reset") {
       resetStep.classList.add("active-step");
     }
@@ -522,11 +638,23 @@
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
+    const registeredUser = localStorage.getItem("registeredUser");
+    const registeredPass = localStorage.getItem("registeredPass");
+
     if (username === "admin" && password === "admin123") {
       window.location.href = "admin.html";
-    } else {
-      loginError.textContent = "Username atau password salah!";
+      return;
     }
+
+    if (username === registeredUser && password === registeredPass) {
+      localStorage.setItem("isUserLogin", "true");
+      localStorage.setItem("loginUser", username);
+      alert("Login berhasil!");
+      closeModal();
+      return;
+    }
+
+    loginError.textContent = "Username atau password salah!";
   });
 
   goForgot.addEventListener("click", function(e) {
@@ -541,6 +669,7 @@
     if (!forgotUsername) return;
 
     showStep("verify");
+
     if (codeInputs.length > 0) {
       codeInputs[0].focus();
     }
@@ -589,6 +718,8 @@
       alert("Password baru minimal 6 karakter.");
       return;
     }
+
+    localStorage.setItem("registeredPass", passwordBaru);
 
     alert("Password berhasil disimpan. Silakan login kembali.");
     closeModal();
@@ -642,68 +773,71 @@
 
 <script>
   const searchAkomodasi = document.getElementById("searchAkomodasi");
+  const filterBintang = document.getElementById("filterBintang");
+  const filterHarga = document.getElementById("filterHarga");
   const searchAkomodasiBtn = document.getElementById("searchAkomodasiBtn");
-  const akomodasiCards = document.querySelectorAll(".acc-card");
   const emptyAkomodasiMessage = document.getElementById("emptyAkomodasiMessage");
+  const akomodasiCards = document.querySelectorAll(".acc-card");
+  const pager = document.querySelector(".pager");
 
   function filterAkomodasi() {
     const keyword = searchAkomodasi.value.toLowerCase().trim();
+    const selectedStar = filterBintang.value;
+    const selectedPrice = filterHarga.value;
+
     let visibleCount = 0;
 
-    akomodasiCards.forEach((card) => {
-      const title = card.querySelector(".acc-name")?.textContent.toLowerCase() || "";
-      const location = card.querySelector(".acc-loc")?.textContent.toLowerCase() || "";
-      const imageAlt = card.querySelector("img")?.alt.toLowerCase() || "";
-      const price = card.querySelector(".acc-price")?.textContent.toLowerCase() || "";
+    akomodasiCards.forEach(card => {
+      const cardName = (card.dataset.name || "").toLowerCase();
+      const cardLocation = (card.dataset.location || "").toLowerCase();
+      const cardStars = Number(card.dataset.stars || 0);
+      const cardPrice = Number(card.dataset.price || 0);
+      const cardText = card.textContent.toLowerCase();
 
-      const isMatch =
-        title.includes(keyword) ||
-        location.includes(keyword) ||
-        imageAlt.includes(keyword) ||
-        price.includes(keyword);
+      const matchKeyword =
+        keyword === "" ||
+        cardName.includes(keyword) ||
+        cardLocation.includes(keyword) ||
+        cardText.includes(keyword);
 
-      if (isMatch) {
-        card.style.display = "block";
+      const matchStar =
+        selectedStar === "all" ||
+        cardStars === Number(selectedStar);
+
+      let matchPrice = true;
+
+      if (selectedPrice !== "all") {
+        const [minPrice, maxPrice] = selectedPrice.split("-").map(Number);
+        matchPrice = cardPrice >= minPrice && cardPrice <= maxPrice;
+      }
+
+      if (matchKeyword && matchStar && matchPrice) {
+        card.style.display = "";
         visibleCount++;
       } else {
         card.style.display = "none";
       }
     });
 
-    if (visibleCount === 0 && keyword !== "") {
-      emptyAkomodasiMessage.style.display = "block";
-    } else {
-      emptyAkomodasiMessage.style.display = "none";
+    if (emptyAkomodasiMessage) {
+      emptyAkomodasiMessage.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    if (pager) {
+      const isFiltering =
+        keyword !== "" ||
+        selectedStar !== "all" ||
+        selectedPrice !== "all";
+
+      pager.style.display = isFiltering ? "none" : "flex";
     }
   }
 
+  searchAkomodasiBtn.addEventListener("click", filterAkomodasi);
   searchAkomodasi.addEventListener("input", filterAkomodasi);
-
-  searchAkomodasi.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      filterAkomodasi();
-    }
-  });
-
-  searchAkomodasiBtn.addEventListener("click", function() {
-    filterAkomodasi();
-  });
+  filterBintang.addEventListener("change", filterAkomodasi);
+  filterHarga.addEventListener("change", filterAkomodasi);
 </script>
-<script>
-  (function () {
-    const todayKey = new Date().toISOString().slice(0, 10);
 
-    let totalVisits = parseInt(localStorage.getItem("site_total_visits") || "0", 10);
-    let todayVisits = parseInt(localStorage.getItem("site_visits_" + todayKey) || "0", 10);
-
-    totalVisits += 1;
-    todayVisits += 1;
-
-    localStorage.setItem("site_total_visits", totalVisits);
-    localStorage.setItem("site_visits_" + todayKey, todayVisits);
-    localStorage.setItem("site_last_page", window.location.pathname.split("/").pop() || "index.html");
-  })();
-</script>
 </body>
 </html>

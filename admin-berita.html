@@ -6,15 +6,17 @@
   <title>Manajemen Berita - Admin</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="admin-body">
 
   <div class="admin-layout">
-    <!-- SIDEBAR (samakan dengan dashboard admin kamu) -->
+
+    <!-- SIDEBAR -->
     <aside class="admin-sidebar">
       <div class="admin-brand">
         <div class="brand">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
-      </div>
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
         <div class="admin-brand__text">
           <div class="admin-brand__name">TourAdmin</div>
         </div>
@@ -22,93 +24,94 @@
 
       <nav class="admin-nav">
 
-  <!-- DASHBOARD -->
-  <a class="admin-nav__item" href="admin.html">
-    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
-  </a>
+        <!-- DASHBOARD -->
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg" alt="">
+          Dashboard
+        </a>
 
-  <!-- KONTEN WISATA -->
-  <div class="admin-nav__group open">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container78.svg">
-        Konten Wisata
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+        <!-- KONTEN WISATA -->
+        <div class="admin-nav__group open">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg" alt="">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
-      <a class="admin-subnav__item" href="admin-event.html">Event</a>
-      <a class="admin-subnav__item  active" href="admin-berita.html">Berita</a>
-      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
-    </div>
-  </div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item active" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
 
-  <!-- MANAJEMEN -->
-  <div class="admin-nav__group">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container82.svg">
-        Manajemen
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+        <!-- MANAJEMEN -->
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg" alt="">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
-      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
-      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
-    </div>
-  </div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
 
-  <!-- ANALISIS -->
-    <div class="admin-nav__group">
-  <button class="admin-nav__item admin-nav__toggle" type="button">
-    <span class="admin-nav__left">
-      <img class="admin-ic" src="logo/statistik.svg" alt="">
-      Analisis
-    </span>
-    <span class="admin-nav__caret">▾</span>
-  </button>
+        <!-- ANALISIS -->
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/statistik.svg" alt="">
+              Analisis
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-  <div class="admin-subnav">
-    <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
-    <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
-  </div>
-</div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+            <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+          </div>
+        </div>
 
-</nav>
+      </nav>
     </aside>
 
     <!-- MAIN -->
     <main class="admin-main">
+
       <!-- TOPBAR -->
       <header class="admin-topbar">
         <div class="admin-topbar__left"></div>
 
         <div class="admin-topbar__right">
-
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
               <div class="admin-user__name">Ramadhani</div>
               <div class="admin-user__role">Admin Rama</div>
             </div>
 
-            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin" type="button">
               <span>👤</span>
             </button>
 
-            <!-- DROPDOWN -->
             <div class="admin-dd" id="adminDd">
-              <!--<a href="profile-admin.html" class="admin-dd__item">Profil</a> -->
               <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
             </div>
           </div>
         </div>
       </header>
 
+      <!-- CONTENT -->
       <div class="admin-wrap admin-wrap--wide">
+
         <!-- HEAD -->
         <div class="adm-head">
           <div>
@@ -122,12 +125,14 @@
           </a>
         </div>
 
-        <!-- STATS CARDS -->
-        <section class="newsadm-stats">
+        <!-- STATS -->
+        <section class="newsadm-stats newsadm-stats--rating">
+
           <div class="newsadm-stat">
             <div class="newsadm-stat__icon" aria-hidden="true">
-              <img src="logo/container0.svg">
+              <img src="logo/container0.svg" alt="">
             </div>
+
             <div>
               <div class="newsadm-stat__label">Total Berita</div>
               <div class="newsadm-stat__value">10</div>
@@ -136,11 +141,25 @@
 
           <div class="newsadm-stat">
             <div class="newsadm-stat__icon1 newsadm-stat__icon--green" aria-hidden="true">
-              <img src="logo/container4.svg">
+              <img src="logo/container4.svg" alt="">
             </div>
+
             <div>
               <div class="newsadm-stat__label">Total Pembaca</div>
               <div class="newsadm-stat__value">12,402</div>
+            </div>
+          </div>
+
+          <div class="newsadm-stat">
+            <div class="newsadm-stat__icon newsadm-stat__icon--yellow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.9 6.2 6.8.8-5 4.8 1.3 6.7L12 17l-6 3.5 1.3-6.7-5-4.8 6.8-.8L12 2z"></path>
+              </svg>
+            </div>
+
+            <div>
+              <div class="newsadm-stat__label">Average Bintang</div>
+              <div class="newsadm-stat__value" id="newsAvgStarsValue">0.0</div>
             </div>
           </div>
 
@@ -149,26 +168,28 @@
         <!-- CARD -->
         <section class="adm-card newsadm-card">
 
-          <!-- TOOLBAR: Search + kategori + filter + PAGINATION -->
+          <!-- TOOLBAR -->
           <div class="newsadm-toolbar newsadm-toolbar--oneRow">
-  <div class="newsadm-search">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="11" cy="11" r="7"></circle>
-      <path d="M20 20l-3.5-3.5"></path>
-    </svg>
-    <input type="text" id="newsSearch" placeholder="Cari judul berita..." />
-  </div>
+            <div class="newsadm-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="M20 20l-3.5-3.5"></path>
+              </svg>
 
-  <select class="adm-select adm-select--katalog" id="newsCategoryFilter" aria-label="Kategori">
-    <option selected>Semua Kategori</option>
-    <option>Promotion</option>
-    <option>News</option>
-    <option>Tips</option>
-  </select>
-</div>
+              <input type="text" id="newsSearch" placeholder="Cari judul berita..." />
+            </div>
+
+            <select class="adm-select adm-select--katalog" id="newsCategoryFilter" aria-label="Kategori">
+              <option selected>Semua Kategori</option>
+              <option>Promotion</option>
+              <option>News</option>
+              <option>Tips</option>
+            </select>
+          </div>
 
           <!-- TABLE -->
-          <div class="newsadm-table">
+          <div class="newsadm-table newsadm-table--rating">
+
             <div class="newsadm-thead">
               <div class="newsadm-th">ID</div>
               <div class="newsadm-th">THUMBNAIL</div>
@@ -176,26 +197,39 @@
               <div class="newsadm-th">KATEGORI</div>
               <div class="newsadm-th">PENULIS</div>
               <div class="newsadm-th">TANGGAL</div>
+              <div class="newsadm-th">BINTANG</div>
               <div class="newsadm-th">DILIHAT</div>
               <div class="newsadm-th newsadm-th--right">AKSI</div>
             </div>
 
-            <!-- row 1 -->
-            <div class="newsadm-row" data-category="tips">
+            <!-- ROW 1 -->
+            <div class="newsadm-row" data-category="tips" data-rating="4">
               <div class="newsadm-td newsadm-id">#4212</div>
+
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/1.jpg" alt="Thumbnail">
               </div>
+
               <div class="newsadm-td newsadm-title">
-                <div class="newsadm-title__txt">Sidak Diparda,...</div>
+                <div class="newsadm-title__txt">Sidak Diparda,</div>
               </div>
+
               <div class="newsadm-td">
                 <span class="newsadm-badge newsadm-badge--tips">Tips</span>
               </div>
+
               <div class="newsadm-td newsadm-author">
-                <div>Aris</div><div class="newsadm-muted">Munandar</div>
+                <div>Aris</div>
+                <div class="newsadm-muted">Munandar</div>
               </div>
+
               <div class="newsadm-td newsadm-date">12 Okt<br>2023</div>
+
+              <div class="newsadm-td newsadm-rating">
+                <span class="newsadm-stars">★★★★☆</span>
+                <span class="newsadm-rating__num">4.0</span>
+              </div>
+
               <div class="newsadm-td newsadm-view">
                 <span class="newsadm-eye" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
@@ -205,14 +239,16 @@
                 </span>
                 1,240
               </div>
+
               <div class="newsadm-td newsadm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a class="newsadm-act newsadm-act--edit" href="edit-berita.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -224,22 +260,34 @@
               </div>
             </div>
 
-            <!-- row 2 -->
-            <div class="newsadm-row" data-category="news">
+            <!-- ROW 2 -->
+            <div class="newsadm-row" data-category="news" data-rating="5">
               <div class="newsadm-td newsadm-id">#4213</div>
+
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/2.jpg" alt="Thumbnail">
               </div>
+
               <div class="newsadm-td newsadm-title">
-                <div class="newsadm-title__txt">Pesona Pantai Rontu...</div>
+                <div class="newsadm-title__txt">Pesona Pantai Rontu.</div>
               </div>
+
               <div class="newsadm-td">
                 <span class="newsadm-badge newsadm-badge--news">News</span>
               </div>
+
               <div class="newsadm-td newsadm-author">
-                <div>Siti</div><div class="newsadm-muted">Aminah</div>
+                <div>Siti</div>
+                <div class="newsadm-muted">Aminah</div>
               </div>
+
               <div class="newsadm-td newsadm-date">10 Okt<br>2023</div>
+
+              <div class="newsadm-td newsadm-rating">
+                <span class="newsadm-stars">★★★★★</span>
+                <span class="newsadm-rating__num">5.0</span>
+              </div>
+
               <div class="newsadm-td newsadm-view">
                 <span class="newsadm-eye" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
@@ -249,14 +297,16 @@
                 </span>
                 856
               </div>
+
               <div class="newsadm-td newsadm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a class="newsadm-act newsadm-act--edit" href="edit-berita.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -268,22 +318,34 @@
               </div>
             </div>
 
-            <!-- row 3 -->
-            <div class="newsadm-row" data-category="news">
+            <!-- ROW 3 -->
+            <div class="newsadm-row" data-category="news" data-rating="4">
               <div class="newsadm-td newsadm-id">#4214</div>
+
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/3.jpg" alt="Thumbnail">
               </div>
+
               <div class="newsadm-td newsadm-title">
-                <div class="newsadm-title__txt">Malam penutupan FSA...</div>
+                <div class="newsadm-title__txt">Malam penutupan FSA.</div>
               </div>
-             <div class="newsadm-td">
+
+              <div class="newsadm-td">
                 <span class="newsadm-badge newsadm-badge--news">News</span>
               </div>
+
               <div class="newsadm-td newsadm-author">
-                <div>Marketing</div><div class="newsadm-muted">Team</div>
+                <div>Aris</div>
+                <div class="newsadm-muted">Munandar</div>
               </div>
+
               <div class="newsadm-td newsadm-date">08 Okt<br>2023</div>
+
+              <div class="newsadm-td newsadm-rating">
+                <span class="newsadm-stars">★★★★☆</span>
+                <span class="newsadm-rating__num">4.0</span>
+              </div>
+
               <div class="newsadm-td newsadm-view">
                 <span class="newsadm-eye" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
@@ -291,16 +353,18 @@
                     <circle cx="12" cy="12" r="2.5"></circle>
                   </svg>
                 </span>
-                3,412
+                1,560
               </div>
+
               <div class="newsadm-td newsadm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a class="newsadm-act newsadm-act--edit" href="edit-berita.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -312,22 +376,34 @@
               </div>
             </div>
 
-            <!-- row 4 -->
-           <div class="newsadm-row" data-category="news">
+            <!-- ROW 4 -->
+            <div class="newsadm-row" data-category="news" data-rating="3">
               <div class="newsadm-td newsadm-id">#4215</div>
+
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/4.jpg" alt="Thumbnail">
               </div>
+
               <div class="newsadm-td newsadm-title">
-                <div class="newsadm-title__txt">Pawai Rimpu dan...</div>
+                <div class="newsadm-title__txt">Pawai Rimpu dan.</div>
               </div>
+
               <div class="newsadm-td">
                 <span class="newsadm-badge newsadm-badge--news">News</span>
               </div>
+
               <div class="newsadm-td newsadm-author">
-                <div>Aris</div><div class="newsadm-muted">Munandar</div>
+                <div>Aris</div>
+                <div class="newsadm-muted">Munandar</div>
               </div>
+
               <div class="newsadm-td newsadm-date">05 Okt<br>2023</div>
+
+              <div class="newsadm-td newsadm-rating">
+                <span class="newsadm-stars">★★★☆☆</span>
+                <span class="newsadm-rating__num">3.0</span>
+              </div>
+
               <div class="newsadm-td newsadm-view">
                 <span class="newsadm-eye" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
@@ -337,14 +413,16 @@
                 </span>
                 1,102
               </div>
+
               <div class="newsadm-td newsadm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a class="newsadm-act newsadm-act--edit" href="edit-berita.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -356,22 +434,34 @@
               </div>
             </div>
 
-            <!-- row 5 -->
-            <div class="newsadm-row" data-category="tips">
+            <!-- ROW 5 -->
+            <div class="newsadm-row" data-category="tips" data-rating="4">
               <div class="newsadm-td newsadm-id">#4216</div>
+
               <div class="newsadm-td">
                 <img class="newsadm-thumb" src="assets/berita/5.jpg" alt="Thumbnail">
               </div>
+
               <div class="newsadm-td newsadm-title">
                 <div class="newsadm-title__txt">Bupati Bima Pastikan Dukung ...</div>
               </div>
+
               <div class="newsadm-td">
                 <span class="newsadm-badge newsadm-badge--tips">Tips</span>
               </div>
+
               <div class="newsadm-td newsadm-author">
-                <div>Siti</div><div class="newsadm-muted">Aminah</div>
+                <div>Siti</div>
+                <div class="newsadm-muted">Aminah</div>
               </div>
+
               <div class="newsadm-td newsadm-date">01 Okt<br>2023</div>
+
+              <div class="newsadm-td newsadm-rating">
+                <span class="newsadm-stars">★★★★☆</span>
+                <span class="newsadm-rating__num">4.0</span>
+              </div>
+
               <div class="newsadm-td newsadm-view">
                 <span class="newsadm-eye" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
@@ -381,14 +471,16 @@
                 </span>
                 2,780
               </div>
+
               <div class="newsadm-td newsadm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a class="newsadm-act newsadm-act--edit" href="edit-berita.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -402,30 +494,97 @@
 
           </div>
 
-          <!-- FOOT NOTE (tanpa pagination di bawah) -->
+          <!-- FOOT -->
           <div class="newsadm-bottom">
-  <div class="newsadm-footnote">
-    Menampilkan 1 sampai 5 dari 24 berita
-  </div>
+            <div class="newsadm-footnote">
+              Menampilkan 1 sampai 5 dari 24 berita
+            </div>
 
-  <div class="newsadm-pagi newsadm-pagi--bottom">
-    <button class="newsadm-pagi__btn" aria-label="Prev">‹</button>
-    <button class="newsadm-pagi__num is-active">1</button>
-    <button class="newsadm-pagi__num">2</button>
-    <button class="newsadm-pagi__num">3</button>
-    <span class="newsadm-pagi__dots">…</span>
-    <button class="newsadm-pagi__num">5</button>
-    <button class="newsadm-pagi__btn" aria-label="Next">›</button>
-  </div>
-</div>
+            <div class="newsadm-pagi newsadm-pagi--bottom">
+              <button class="newsadm-pagi__btn" aria-label="Prev" type="button">‹</button>
+              <button class="newsadm-pagi__num is-active" type="button">1</button>
+              <button class="newsadm-pagi__num" type="button">2</button>
+              <button class="newsadm-pagi__num" type="button">3</button>
+              <span class="newsadm-pagi__dots">…</span>
+              <button class="newsadm-pagi__num" type="button">5</button>
+              <button class="newsadm-pagi__btn" aria-label="Next" type="button">›</button>
+            </div>
+          </div>
+
         </section>
-
-      
-
       </div>
     </main>
   </div>
 
   <script src="admin.js"></script>
+
+  <script>
+    function updateNewsAverageStars(){
+      const rows = document.querySelectorAll(".newsadm-row[data-rating]");
+      const avgEl = document.getElementById("newsAvgStarsValue");
+
+      if(!avgEl || rows.length === 0) return;
+
+      let total = 0;
+      let count = 0;
+
+      rows.forEach(row => {
+        const rating = Number(row.dataset.rating);
+
+        if(!isNaN(rating) && rating > 0){
+          total += rating;
+          count++;
+        }
+      });
+
+      const average = count > 0 ? total / count : 0;
+
+      avgEl.innerHTML = `
+        ${average.toFixed(1)}
+        <span class="newsadm-avg-star">★</span>
+      `;
+    }
+
+    updateNewsAverageStars();
+
+    const newsSearch = document.getElementById("newsSearch");
+    const newsCategoryFilter = document.getElementById("newsCategoryFilter");
+    const newsRows = document.querySelectorAll(".newsadm-row[data-rating]");
+
+    function filterBerita(){
+      const keyword = newsSearch.value.toLowerCase().trim();
+      const category = newsCategoryFilter.value.toLowerCase();
+
+      newsRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        const rowCategory = (row.dataset.category || "").toLowerCase();
+
+        const matchSearch = rowText.includes(keyword);
+        const matchCategory = category === "semua kategori" || rowCategory === category;
+
+        row.style.display = matchSearch && matchCategory ? "grid" : "none";
+      });
+    }
+
+    if(newsSearch){
+      newsSearch.addEventListener("input", filterBerita);
+    }
+
+    if(newsCategoryFilter){
+      newsCategoryFilter.addEventListener("change", filterBerita);
+    }
+
+    document.querySelectorAll(".newsadm-act--del").forEach(button => {
+      button.addEventListener("click", function(){
+        const row = this.closest(".newsadm-row");
+
+        if(confirm("Yakin ingin menghapus berita ini?")){
+          row.remove();
+          updateNewsAverageStars();
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

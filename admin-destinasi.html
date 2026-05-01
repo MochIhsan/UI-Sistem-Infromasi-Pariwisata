@@ -6,79 +6,81 @@
   <title>Manajemen Destinasi - Admin</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="admin-body">
 
   <div class="admin-layout">
-    <!-- SIDEBAR (samakan dengan dashboard admin kamu) -->
+    <!-- SIDEBAR -->
     <aside class="admin-sidebar">
       <div class="admin-brand">
         <div class="brand">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
-      </div>
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
         <div class="admin-brand__text">
           <div class="admin-brand__name">TourAdmin</div>
         </div>
       </div>
+
       <nav class="admin-nav">
 
-  <!-- DASHBOARD -->
-  <a class="admin-nav__item" href="admin.html">
-    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
-  </a>
+        <!-- DASHBOARD -->
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg" alt="">
+          Dashboard
+        </a>
 
-  <!-- KONTEN WISATA -->
-  <div class="admin-nav__group open">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container78.svg">
-        Konten Wisata
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+        <!-- KONTEN WISATA -->
+        <div class="admin-nav__group open">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg" alt="">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item active" href="admin-destinasi.html">Destinasi</a>
-      <a class="admin-subnav__item" href="admin-event.html">Event</a>
-      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
-      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
-    </div>
-  </div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item active" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
 
-  <!-- MANAJEMEN -->
-  <div class="admin-nav__group">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container82.svg">
-        Manajemen
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+        <!-- MANAJEMEN -->
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg" alt="">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
-      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
-      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
-    </div>
-  </div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
 
-  <!-- ANALISIS -->
-    <div class="admin-nav__group">
-  <button class="admin-nav__item admin-nav__toggle" type="button">
-    <span class="admin-nav__left">
-      <img class="admin-ic" src="logo/statistik.svg" alt="">
-      Analisis
-    </span>
-    <span class="admin-nav__caret">▾</span>
-  </button>
+        <!-- ANALISIS -->
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/statistik.svg" alt="">
+              Analisis
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-  <div class="admin-subnav">
-    <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
-    <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
-  </div>
-</div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+            <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+          </div>
+        </div>
 
-</nav>
-
+      </nav>
     </aside>
 
     <!-- MAIN -->
@@ -88,20 +90,17 @@
         <div class="admin-topbar__left"></div>
 
         <div class="admin-topbar__right">
-
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
               <div class="admin-user__name">Ramadhani</div>
               <div class="admin-user__role">Admin Rama</div>
             </div>
 
-            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin" type="button">
               <span>👤</span>
             </button>
 
-            <!-- DROPDOWN -->
             <div class="admin-dd" id="adminDd">
-              <!--<a href="profile-admin.html" class="admin-dd__item">Profil</a> -->
               <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
             </div>
           </div>
@@ -125,33 +124,45 @@
         </div>
 
         <!-- TOTAL CARD -->
-<section class="adm-stats-row">
-  <div class="adm-card adm-total">
-    <div class="adm-total__icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
-        <circle cx="12" cy="9" r="2.5"></circle>
-      </svg>
-    </div>
-    <div>
-      <div class="adm-total__label">Total Destinasi</div>
-      <div class="adm-total__value">40</div>
-    </div>
-  </div>
+        <section class="adm-stats-row adm-stats-row--dest-rating">
+          <div class="adm-card adm-total">
+            <div class="adm-total__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="adm-total__label">Total Destinasi</div>
+              <div class="adm-total__value">40</div>
+            </div>
+          </div>
 
-  <div class="adm-card adm-total">
-    <div class="evt-stat__icon evt-stat__icon--green" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </div>
-    <div>
-      <div class="adm-total__label">Total Pengunjung Halaman</div>
-      <div class="adm-total__value">18,540</div>
-    </div>
-  </div>
-</section>
+          <div class="adm-card adm-total">
+            <div class="evt-stat__icon evt-stat__icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                <circle cx="12" cy="12" r="2.5"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="adm-total__label">Total Pengunjung Halaman</div>
+              <div class="adm-total__value">18,540</div>
+            </div>
+          </div>
+
+          <div class="adm-card adm-total">
+            <div class="adm-total__icon adm-total__icon--yellow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.9 6.2 6.8.8-5 4.8 1.3 6.7L12 17l-6 3.5 1.3-6.7-5-4.8 6.8-.8L12 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="adm-total__label">Average Bintang</div>
+              <div class="adm-total__value" id="destAvgStarsValue">0.0</div>
+            </div>
+          </div>
+        </section>
 
         <!-- FILTER ROW -->
         <section class="adm-card adm-filter">
@@ -160,7 +171,7 @@
               <circle cx="11" cy="11" r="7"></circle>
               <path d="M20 20l-3.5-3.5"></path>
             </svg>
-           <input type="text" id="destSearch" placeholder="Cari destinasi berdasarkan nama atau lokasi..." />
+            <input type="text" id="destSearch" placeholder="Cari destinasi berdasarkan nama atau lokasi..." />
           </div>
 
           <select class="adm-select" id="destCategoryFilter" aria-label="Kategori">
@@ -172,71 +183,89 @@
         </section>
 
         <!-- TABLE -->
-        <section class="adm-card adm-table">
-         <div class="adm-table__head">
-  <div class="adm-th">ID</div>
-  <div class="adm-th">THUMBNAIL</div>
-  <div class="adm-th">NAMA DESTINASI</div>
-  <div class="adm-th">KATEGORI</div>
-  <div class="adm-th">LOKASI</div>
-  <div class="adm-th">DILIHAT</div>
-  <div class="adm-th adm-th--right">AKSI</div>
-</div>
+        <section class="adm-card adm-table adm-table--rating">
+          <div class="adm-table__head">
+            <div class="adm-th">ID</div>
+            <div class="adm-th">THUMBNAIL</div>
+            <div class="adm-th">NAMA DESTINASI</div>
+            <div class="adm-th">KATEGORI</div>
+            <div class="adm-th">LOKASI</div>
+            <div class="adm-th">BINTANG</div>
+            <div class="adm-th">DILIHAT</div>
+            <div class="adm-th adm-th--right">AKSI</div>
+          </div>
 
-          <!-- ROWS -->
-          <div class="adm-row" data-category="alam pegunungan">
-  <div class="adm-td adm-id">#001</div>
-  <div class="adm-td">
-    <img class="adm-thumb" src="assets/dest/01.png" alt="Raja Ampat">
-  </div>
-  <div class="adm-td adm-name">Air Terjun Bombo Ncera</div>
-  <div class="adm-td">
-    <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
-  </div>
-  <div class="adm-td adm-loc">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
-      <circle cx="12" cy="9" r="2.5"></circle>
-    </svg>
-    Belo
-  </div>
-  <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-   <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
-</div>
+          <!-- ROW 1 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="4">
+            <div class="adm-td adm-id">#001</div>
 
-          <div class="adm-row">
-            <div class="adm-td adm-id">#002</div>
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/02.png" alt="Candi Borobudur">
+              <img class="adm-thumb" src="assets/dest/01.png" alt="Air Terjun Bombo Ncera">
             </div>
-            <div class="adm-td adm-name">Air Terjun Bombo Roi</div>
+
+            <div class="adm-td adm-name">Air Terjun Bombo Ncera</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
+            <div class="adm-td adm-loc">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              Belo
+            </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★☆</span>
+              <span class="adm-rating__num">4.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ROW 2 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="4">
+            <div class="adm-td adm-id">#002</div>
+
+            <div class="adm-td">
+              <img class="adm-thumb" src="assets/dest/02.png" alt="Air Terjun Bombo Roi">
+            </div>
+
+            <div class="adm-td adm-name">Air Terjun Bombo Roi</div>
+
+            <div class="adm-td">
+              <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
+            </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -244,43 +273,56 @@
               </svg>
               Palibelo
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★☆</span>
+              <span class="adm-rating__num">4.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 3 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="3">
             <div class="adm-td adm-id">#003</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/03.png" alt="Pantai Kuta">
+              <img class="adm-thumb" src="assets/dest/03.png" alt="Air Terjun Jo Rato">
             </div>
+
             <div class="adm-td adm-name">Air Terjun Jo Rato</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -288,43 +330,56 @@
               </svg>
               Wawo
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★☆☆</span>
+              <span class="adm-rating__num">3.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 4 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="4">
             <div class="adm-td adm-id">#004</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/04.png" alt="Gunung Bromo">
+              <img class="adm-thumb" src="assets/dest/04.png" alt="Air Terjun Ka Owa">
             </div>
+
             <div class="adm-td adm-name">Air Terjun Ka Owa</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -332,43 +387,56 @@
               </svg>
               Wawo
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★☆</span>
+              <span class="adm-rating__num">4.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 5 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="5">
             <div class="adm-td adm-id">#005</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/05.png" alt="Labuan Bajo">
+              <img class="adm-thumb" src="assets/dest/05.png" alt="Air Terjun Kalate Mbaju">
             </div>
+
             <div class="adm-td adm-name">Air Terjun Kalate Mbaju</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -376,43 +444,56 @@
               </svg>
               Woha
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★★</span>
+              <span class="adm-rating__num">5.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 6 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="4">
             <div class="adm-td adm-id">#006</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/06.png" alt="Raja Ampat">
+              <img class="adm-thumb" src="assets/dest/06.png" alt="Air Terjun Oi Nca">
             </div>
+
             <div class="adm-td adm-name">Air Terjun Oi Nca</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -420,43 +501,56 @@
               </svg>
               Wera
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★☆</span>
+              <span class="adm-rating__num">4.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 7 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="3">
             <div class="adm-td adm-id">#007</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/07.png" alt="Candi Borobudur">
+              <img class="adm-thumb" src="assets/dest/07.png" alt="Air Terjun Oi Sariwu Tuda Ncua">
             </div>
+
             <div class="adm-td adm-name">Air Terjun Oi Sariwu Tuda Ncua</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -464,43 +558,56 @@
               </svg>
               Monta
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★☆☆</span>
+              <span class="adm-rating__num">3.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 8 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="4">
             <div class="adm-td adm-id">#008</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/08.png" alt="Pantai Kuta">
+              <img class="adm-thumb" src="assets/dest/08.png" alt="Bendungan Diwumoro">
             </div>
+
             <div class="adm-td adm-name">Bendungan Diwumoro</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -508,43 +615,56 @@
               </svg>
               Lambu
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★☆</span>
+              <span class="adm-rating__num">4.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 9 -->
+          <div class="adm-row" data-category="budaya sejarah" data-rating="4">
             <div class="adm-td adm-id">#009</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/09.png" alt="Gunung Bromo">
+              <img class="adm-thumb" src="assets/dest/09.png" alt="Benteng Asakota">
             </div>
+
             <div class="adm-td adm-name">Benteng Asakota</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--green">Budaya Sejarah</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -552,43 +672,56 @@
               </svg>
               Soromandi
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★☆</span>
+              <span class="adm-rating__num">4.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="adm-row">
+          <!-- ROW 10 -->
+          <div class="adm-row" data-category="alam pegunungan" data-rating="5">
             <div class="adm-td adm-id">#010</div>
+
             <div class="adm-td">
-              <img class="adm-thumb" src="assets/dest/10.png" alt="Labuan Bajo">
+              <img class="adm-thumb" src="assets/dest/10.png" alt="Gunung Sangiang">
             </div>
+
             <div class="adm-td adm-name">Gunung Sangiang</div>
+
             <div class="adm-td">
               <span class="adm-badge adm-badge--blue">Alam Pegunungan</span>
             </div>
+
             <div class="adm-td adm-loc">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
@@ -596,32 +729,40 @@
               </svg>
               Wera
             </div>
-             <div class="adm-td adm-view">
-    <span class="adm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    1,240
-  </div>
-             <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
+
+            <div class="adm-td adm-rating">
+              <span class="adm-stars">★★★★★</span>
+              <span class="adm-rating__num">5.0</span>
+            </div>
+
+            <div class="adm-td adm-view">
+              <span class="adm-eye" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="2.5"></circle>
+                </svg>
+              </span>
+              1,240
+            </div>
+
+            <div class="evt-td evt-actions">
+              <a class="evt-act evt-act--edit" href="edit-destinasi.html" title="Edit" aria-label="Edit">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                  <path d="M13.5 6.5l4 4"></path>
+                </svg>
+              </a>
+
+              <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16"></path>
+                  <path d="M10 11v6"></path>
+                  <path d="M14 11v6"></path>
+                  <path d="M6 7l1 14h10l1-14"></path>
+                  <path d="M9 7V4h6v3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <!-- FOOT -->
@@ -629,13 +770,13 @@
             <div class="adm-foot__text">Menampilkan 1 hingga 10 dari 40 destinasi</div>
 
             <div class="adm-pagi">
-              <button class="adm-pagi__btn" aria-label="Prev">‹</button>
-              <button class="adm-pagi__num is-active">1</button>
-              <button class="adm-pagi__num">2</button>
-              <button class="adm-pagi__num">3</button>
+              <button class="adm-pagi__btn" aria-label="Prev" type="button">‹</button>
+              <button class="adm-pagi__num is-active" type="button">1</button>
+              <button class="adm-pagi__num" type="button">2</button>
+              <button class="adm-pagi__num" type="button">3</button>
               <span class="adm-pagi__dots">…</span>
-              <button class="adm-pagi__num">5</button>
-              <button class="adm-pagi__btn" aria-label="Next">›</button>
+              <button class="adm-pagi__num" type="button">5</button>
+              <button class="adm-pagi__btn" aria-label="Next" type="button">›</button>
             </div>
           </div>
         </section>
@@ -645,5 +786,73 @@
   </div>
 
   <script src="admin.js"></script>
+
+  <script>
+    function updateDestAverageStars(){
+      const rows = document.querySelectorAll(".adm-row[data-rating]");
+      const avgEl = document.getElementById("destAvgStarsValue");
+
+      if(!avgEl || rows.length === 0) return;
+
+      let total = 0;
+      let count = 0;
+
+      rows.forEach(row => {
+        const rating = Number(row.dataset.rating);
+
+        if(!isNaN(rating) && rating > 0){
+          total += rating;
+          count++;
+        }
+      });
+
+      const average = count > 0 ? total / count : 0;
+
+      avgEl.innerHTML = `
+        ${average.toFixed(1)}
+        <span class="adm-avg-star">★</span>
+      `;
+    }
+
+    updateDestAverageStars();
+
+    const destSearch = document.getElementById("destSearch");
+    const destCategoryFilter = document.getElementById("destCategoryFilter");
+    const destRows = document.querySelectorAll(".adm-row[data-rating]");
+
+    function filterDestinasi(){
+      const keyword = destSearch.value.toLowerCase().trim();
+      const category = destCategoryFilter.value.toLowerCase();
+
+      destRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        const rowCategory = (row.dataset.category || "").toLowerCase();
+
+        const matchSearch = rowText.includes(keyword);
+        const matchCategory = category === "semua kategori" || rowCategory === category;
+
+        row.style.display = matchSearch && matchCategory ? "grid" : "none";
+      });
+    }
+
+    if(destSearch){
+      destSearch.addEventListener("input", filterDestinasi);
+    }
+
+    if(destCategoryFilter){
+      destCategoryFilter.addEventListener("change", filterDestinasi);
+    }
+
+    document.querySelectorAll(".evt-act--del").forEach(button => {
+      button.addEventListener("click", function(){
+        const row = this.closest(".adm-row");
+
+        if(confirm("Yakin ingin menghapus destinasi ini?")){
+          row.remove();
+          updateDestAverageStars();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

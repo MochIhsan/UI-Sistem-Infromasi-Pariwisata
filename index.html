@@ -275,12 +275,47 @@
 
   <!-- Underwater banner -->
   <section class="underwater" aria-label="Banner bawah laut">
-    <div class="container">
-      <div class="underwater__card">
-        <img src="assets/underwater.jpg" alt="Bawah laut" />
+  <div class="container">
+    <div class="underwater__card">
+
+      <!-- SLIDES -->
+      <div class="underwater__slide active">
+        <img src="assets/3.jpg" alt="">
       </div>
+
+      <div class="underwater__slide">
+        <img src="assets/1.jpg" alt="">
+      </div>
+
+      <div class="underwater__slide">
+        <img src="assets/4.jpg" alt="">
+      </div>
+
+      <div class="underwater__slide">
+        <img src="assets/5.jpg" alt="">
+      </div>
+
+      <div class="underwater__slide">
+        <img src="assets/6.jpg" alt="">
+      </div>
+
+      <div class="underwater__slide">
+        <img src="assets/7.jpg" alt="">
+      </div>
+
+      <!-- OVERLAY -->
+      <div class="underwater__overlay"></div>
+
+      <!-- TEXT (opsional tapi direkomendasikan) -->
+      <div class="underwater__content">
+        <!--<h2>Menyusuri Jejak Sejarah Bima</h2>-->
+        <p>Di balik keindahan alamnya, tersimpan perjalanan panjang peradaban yang membentuk jati diri masyarakat Bima hingga hari ini.
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
 <!---- Hal Penting-->
 <section class="info info--clean">
@@ -1014,6 +1049,28 @@ document.querySelectorAll(".popular2 .wcard, .cards .post-card, .infocard, .expl
     localStorage.setItem("site_visits_" + todayKey, todayVisits);
     localStorage.setItem("site_last_page", window.location.pathname.split("/").pop() || "index.html");
   })();
+</script>
+<script>
+  const uwSlides = document.querySelectorAll(".underwater__slide");
+  let uwIndex = 0;
+
+  setInterval(() => {
+    uwSlides[uwIndex].classList.remove("active");
+    uwIndex = (uwIndex + 1) % uwSlides.length;
+    uwSlides[uwIndex].classList.add("active");
+  }, 5000); // 5 detik
+</script>
+<script>
+  const slides = document.querySelectorAll(".underwater__slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+
+    index = (index + 1) % slides.length;
+
+    slides[index].classList.add("active");
+  }, 5000); // 5 detik (biar zoom terasa)
 </script>
 </body>
 </html>

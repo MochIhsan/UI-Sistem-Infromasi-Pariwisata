@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Event - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin-tambah-event.css" />
+</head>
+
+<body class="admin-body">
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+        </a>
+
+        <div class="admin-nav__group open">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item active" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/statistik.svg" alt="">
+              Analisis
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+            <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+
+        <div class="td-head">
+          <div>
+            <h1 class="td-title">Edit Event</h1>
+            <p class="td-sub">Ubah informasi event yang sudah ada.</p>
+          </div>
+
+          <div class="td-actions">
+            <a class="td-btn td-btn--ghost" href="admin-event.html">Batal</a>
+            <button class="td-btn td-btn--primary" id="btnSaveEvent" type="button">
+              <span class="td-ic">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h12l2 2v14H5z"></path>
+                  <path d="M8 4v6h8V4"></path>
+                  <path d="M8 20v-6h8v6"></path>
+                </svg>
+              </span>
+              Simpan Perubahan
+            </button>
+          </div>
+        </div>
+
+        <section class="td-card">
+          <div class="td-card__head">
+            <span class="td-card__icon">🖼️</span>
+            <div class="td-card__ttl">Banner Event</div>
+          </div>
+
+          <div class="td-edit-image">
+            <input id="bannerInput" type="file" accept="image/*" hidden />
+
+            <div class="td-edit-image__preview">
+              <img id="bannerPreviewImg" src="assets/event/rimpu/hero.jpg" alt="Banner Event Rimpu">
+            </div>
+
+            <div class="td-edit-image__body">
+              <h3>Banner saat ini</h3>
+              <p>Banner ini akan tampil di halaman detail event.</p>
+
+              <button class="td-btn td-btn--mini" type="button" id="btnPickBanner">
+                Ganti Banner
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="td-grid2">
+          <div class="td-card">
+            <div class="td-card__head">
+              <span class="td-card__icon">ℹ️</span>
+              <div class="td-card__ttl">Detail Event</div>
+            </div>
+
+            <div class="td-form">
+              <div class="td-field">
+                <label class="td-label">Judul Event</label>
+                <input class="td-input" id="judulEvent" type="text" value="Event Rimpu" />
+              </div>
+
+              <div class="td-row2">
+                <div class="td-field">
+                  <label class="td-label">Tanggal Event</label>
+                  <input class="td-input" id="tanggalEvent" type="date" value="2025-04-24" />
+                </div>
+
+                <div class="td-field">
+                  <label class="td-label">Harga Tiket</label>
+                  <input class="td-input" id="hargaTiket" type="text" value="Gratis" />
+                </div>
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Lokasi Event</label>
+                <input class="td-input" id="alamatEvent" type="text" value="Kantor Bupati Kabupaten Bima" />
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Status Event</label>
+                <select class="td-input" id="statusEvent">
+                  <option selected>Akan Datang</option>
+                  <option>Berlangsung</option>
+                  <option>Selesai</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="td-card">
+            <div class="td-card__head">
+              <span class="td-card__icon">📍</span>
+              <div class="td-card__ttl">Lokasi Event</div>
+            </div>
+
+            <div class="td-form">
+              <div class="td-row2">
+                <div class="td-field">
+                  <label class="td-label">Latitude</label>
+                  <input class="td-input" id="latInput" type="text" value="-8.589" />
+                </div>
+
+                <div class="td-field">
+                  <label class="td-label">Longitude</label>
+                  <input class="td-input" id="lngInput" type="text" value="119.444" />
+                </div>
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Peta Lokasi</label>
+
+                <div class="td-mapWrap">
+                  <iframe
+                    id="mapFrame"
+                    title="Peta Lokasi"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=-8.589,119.444&z=13&output=embed">
+                  </iframe>
+
+                  <div class="td-mapOverlay" id="mapOverlay">
+                    <div class="td-mapOverlay__txt">Interactive Map Integration</div>
+                  </div>
+                </div>
+
+                <div class="td-mapHint">
+                  Ubah latitude/longitude untuk memperbarui peta.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="td-card">
+          <div class="td-card__head">
+            <span class="td-card__icon">📝</span>
+            <div class="td-card__ttl">Tentang Event</div>
+          </div>
+
+          <div class="td-editor">
+            <div class="td-editor__bar">
+              <button class="td-edBtn" type="button" data-cmd="bold"><b>B</b></button>
+              <button class="td-edBtn" type="button" data-cmd="italic"><i>I</i></button>
+              <button class="td-edBtn" type="button" data-cmd="underline"><u>U</u></button>
+              <div class="td-edSep"></div>
+              <button class="td-edBtn" type="button" data-cmd="insertUnorderedList">•≡</button>
+              <button class="td-edBtn" type="button" data-cmd="insertOrderedList">1≡</button>
+              <div class="td-edSep"></div>
+              <button class="td-edBtn" type="button" data-cmd="createLink">🔗</button>
+            </div>
+
+            <div class="td-editor__box" id="descBox" contenteditable="true">
+              Rimpu merupakan manifestasi berhijab perempuan Bima tempo dulu, mulai digunakan secara umum dan menjadi budaya yang diwariskan sejak masa Kesultanan Bima pada tahun 1640. Event Rimpu biasanya melibatkan ribuan peserta dari berbagai kalangan, mulai dari pelajar, komunitas budaya, hingga masyarakat umum. Selain parade, acara ini juga dimeriahkan dengan pertunjukan seni, fashion show Rimpu, pameran tenun, serta bazar UMKM lokal.
+            </div>
+          </div>
+        </section>
+
+        <section class="td-card">
+          <div class="td-card__head td-card__head--between">
+            <div class="td-card__headLeft">
+              <span class="td-card__icon">🖼️</span>
+              <div class="td-card__ttl">Dokumentasi Event</div>
+            </div>
+            <div class="td-badge">Maks. 4 Foto</div>
+          </div>
+
+          <div class="td-edit-gallery">
+            <div class="td-edit-gallery__item">
+              <img src="assets/event/rimpu/1.png" alt="Dokumentasi 1">
+              <input type="file" accept="image/*" hidden>
+              <button type="button" class="td-gal-change">Ganti Foto</button>
+            </div>
+
+            <div class="td-edit-gallery__item">
+              <img src="assets/event/rimpu/2.png" alt="Dokumentasi 2">
+              <input type="file" accept="image/*" hidden>
+              <button type="button" class="td-gal-change">Ganti Foto</button>
+            </div>
+
+            <div class="td-edit-gallery__item">
+              <img src="assets/event/rimpu/3.png" alt="Dokumentasi 3">
+              <input type="file" accept="image/*" hidden>
+              <button type="button" class="td-gal-change">Ganti Foto</button>
+            </div>
+
+            <div class="td-edit-gallery__item">
+              <img src="assets/event/rimpu/4.png" alt="Dokumentasi 4">
+              <input type="file" accept="image/*" hidden>
+              <button type="button" class="td-gal-change">Ganti Foto</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+
+  <script>
+    const bannerInput = document.getElementById("bannerInput");
+    const btnPickBanner = document.getElementById("btnPickBanner");
+    const bannerPreviewImg = document.getElementById("bannerPreviewImg");
+
+    btnPickBanner?.addEventListener("click", function () {
+      bannerInput.click();
+    });
+
+    bannerInput?.addEventListener("change", function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("File harus berupa gambar.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        bannerPreviewImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    document.querySelectorAll(".td-edit-gallery__item").forEach(function (item) {
+      const img = item.querySelector("img");
+      const input = item.querySelector("input");
+      const btn = item.querySelector(".td-gal-change");
+
+      btn?.addEventListener("click", function () {
+        input.click();
+      });
+
+      input?.addEventListener("change", function () {
+        const file = this.files[0];
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+          alert("File harus berupa gambar.");
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    const latInput = document.getElementById("latInput");
+    const lngInput = document.getElementById("lngInput");
+    const mapFrame = document.getElementById("mapFrame");
+
+    function updateMap() {
+      const lat = latInput.value.trim();
+      const lng = lngInput.value.trim();
+
+      if (!lat || !lng) return;
+
+      mapFrame.src = `https://www.google.com/maps?q=${lat},${lng}&z=13&output=embed`;
+    }
+
+    latInput?.addEventListener("input", updateMap);
+    lngInput?.addEventListener("input", updateMap);
+
+    document.querySelectorAll(".td-edBtn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const cmd = btn.dataset.cmd;
+
+        if (cmd === "createLink") {
+          const url = prompt("Masukkan URL:");
+          if (url) document.execCommand(cmd, false, url);
+          return;
+        }
+
+        document.execCommand(cmd, false, null);
+      });
+    });
+
+    const btnSaveEvent = document.getElementById("btnSaveEvent");
+
+    btnSaveEvent?.addEventListener("click", function () {
+      alert("Perubahan event berhasil disimpan!");
+      window.location.href = "admin-event.html";
+    });
+  </script>
+</body>
+</html>

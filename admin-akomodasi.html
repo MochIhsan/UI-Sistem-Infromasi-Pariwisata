@@ -5,7 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manajemen Akomodasi - Admin</title>
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* =========================
+       TAMBAHAN BINTANG AKOMODASI
+    ========================= */
+
+    .acmdm-stats{
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .acmdm-stat__icon--yellow{
+      background:#fff7dc;
+      color:#ffb000;
+    }
+
+    .acmdm-stat__icon--yellow svg{
+      width:24px;
+      height:24px;
+      fill:#ffb000;
+      stroke:#ffb000;
+      stroke-width:1.8;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .acmdm-thead,
+    .acmdm-row{
+      display:grid;
+      grid-template-columns: 110px minmax(260px, 1.8fr) 130px 160px 145px 120px 110px;
+      align-items:center;
+      column-gap:16px;
+    }
+
+    .acmdm-rating{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
+      font-weight:800;
+    }
+
+    .acmdm-stars{
+      color:#ffb000;
+      letter-spacing:1px;
+      font-size:15px;
+      line-height:1;
+    }
+
+    .acmdm-rating__num{
+      color:#334155;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .acmdm-avg-star{
+      color:#ffb000;
+      font-size:18px;
+      margin-left:6px;
+    }
+
+    @media (max-width:1280px){
+      .acmdm-table{
+        overflow-x:auto;
+      }
+
+      .acmdm-thead,
+      .acmdm-row{
+        min-width:1180px;
+      }
+    }
+
+    @media (max-width:1100px){
+      .acmdm-stats{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:640px){
+      .acmdm-stats{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body class="admin-body">
 
   <div class="admin-layout">
@@ -20,69 +104,67 @@
         </div>
       </div>
 
-     <nav class="admin-nav">
+      <nav class="admin-nav">
 
-  <!-- DASHBOARD -->
-  <a class="admin-nav__item" href="admin.html">
-    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
-  </a>
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg" alt="">
+          Dashboard
+        </a>
 
-  <!-- KONTEN WISATA -->
-  <div class="admin-nav__group open">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container78.svg">
-        Konten Wisata
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+        <div class="admin-nav__group open">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg" alt="">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
-      <a class="admin-subnav__item" href="admin-event.html">Event</a>
-      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
-      <a class="admin-subnav__item  active" href="admin-akomodasi.html">Akomodasi</a>
-    </div>
-  </div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item active" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
 
-  <!-- MANAJEMEN -->
-  <div class="admin-nav__group">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container82.svg">
-        Manajemen
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg" alt="">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
-      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
-      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
-    </div>
-  </div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
 
-  <!-- ANALISIS -->
-    <div class="admin-nav__group">
-  <button class="admin-nav__item admin-nav__toggle" type="button">
-    <span class="admin-nav__left">
-      <img class="admin-ic" src="logo/statistik.svg" alt="">
-      Analisis
-    </span>
-    <span class="admin-nav__caret">▾</span>
-  </button>
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/statistik.svg" alt="">
+              Analisis
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-  <div class="admin-subnav">
-    <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
-    <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
-  </div>
-</div>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+            <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+          </div>
+        </div>
 
-</nav>
+      </nav>
     </aside>
 
     <!-- MAIN -->
     <main class="admin-main">
+
       <!-- TOPBAR -->
       <header class="admin-topbar">
         <div class="admin-topbar__left"></div>
@@ -94,13 +176,11 @@
               <div class="admin-user__role">Admin Rama</div>
             </div>
 
-            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin" type="button">
               <span>👤</span>
             </button>
 
-            <!-- DROPDOWN -->
             <div class="admin-dd" id="adminDd">
-              <!--<a href="profile-admin.html" class="admin-dd__item">Profil</a> -->
               <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
             </div>
           </div>
@@ -109,6 +189,7 @@
 
       <!-- CONTENT -->
       <div class="admin-wrap admin-wrap--wide">
+
         <!-- HEAD -->
         <div class="adm-head">
           <div>
@@ -122,12 +203,14 @@
           </a>
         </div>
 
-        <!-- ✅ STATS  -->
+        <!-- STATS -->
         <section class="acmdm-stats">
+
           <div class="acmdm-stat">
             <div class="acmdm-stat__icon1 acmdm-stat__icon--blue" aria-hidden="true">
-              <img src="logo/container41.svg" />
+              <img src="logo/container41.svg" alt="">
             </div>
+
             <div>
               <div class="acmdm-stat__label">Total Hotel</div>
               <div class="acmdm-stat__value">10</div>
@@ -136,8 +219,9 @@
 
           <div class="acmdm-stat">
             <div class="acmdm-stat__icon acmdm-stat__icon--green" aria-hidden="true">
-              <img src="logo/container45.svg" />
+              <img src="logo/container45.svg" alt="">
             </div>
+
             <div>
               <div class="acmdm-stat__label">Total Villa</div>
               <div class="acmdm-stat__value">12</div>
@@ -146,44 +230,60 @@
 
           <div class="acmdm-stat">
             <div class="acmdm-stat__icon acmdm-stat__icon--purple" aria-hidden="true">
-              <img src="logo/container49.svg" />
+              <img src="logo/container49.svg" alt="">
             </div>
+
             <div>
               <div class="acmdm-stat__label">Total Homestay</div>
               <div class="acmdm-stat__value">12</div>
             </div>
           </div>
-          <div class="acmdm-stat">
-  <div class="acmdm-stat__icon acmdm-stat__icon--blue" aria-hidden="true">
-    <svg viewBox="0 0 24 24">
-      <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-      <circle cx="12" cy="12" r="2.5"></circle>
-    </svg>
-  </div>
-  <div>
-    <div class="acmdm-stat__label">Pengunjung Halaman</div>
-    <div class="acmdm-stat__value">9,860</div>
-  </div>
-</div>
 
-          
-            
+          <div class="acmdm-stat">
+            <div class="acmdm-stat__icon acmdm-stat__icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                <circle cx="12" cy="12" r="2.5"></circle>
+              </svg>
+            </div>
+
+            <div>
+              <div class="acmdm-stat__label">Total Pengunjung Halaman</div>
+              <div class="acmdm-stat__value">9,860</div>
+            </div>
           </div>
+
+          <!-- AVERAGE BINTANG -->
+          <div class="acmdm-stat">
+            <div class="acmdm-stat__icon acmdm-stat__icon--yellow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.9 6.2 6.8.8-5 4.8 1.3 6.7L12 17l-6 3.5 1.3-6.7-5-4.8 6.8-.8L12 2z"></path>
+              </svg>
+            </div>
+
+            <div>
+              <div class="acmdm-stat__label">Average Bintang</div>
+              <div class="acmdm-stat__value" id="avgStarsValue">0.0</div>
+            </div>
+          </div>
+
         </section>
 
         <!-- CARD -->
         <section class="adm-card acmdm-card">
-          <!-- TOOLBAR: SEARCH + SELECT + FILTER -->
+
+          <!-- TOOLBAR -->
           <div class="acmdm-toolbar">
             <div class="acmdm-search">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="11" cy="11" r="7"></circle>
-      <path d="M20 20l-3.5-3.5"></path>
-    </svg>
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="M20 20l-3.5-3.5"></path>
+              </svg>
+
               <input type="text" id="staySearch" placeholder="Cari nama penginapan atau lokasi..." />
             </div>
 
-           <select class="adm-select acmdm-select" id="stayTypeFilter" aria-label="Tipe penginapan">
+            <select class="adm-select acmdm-select" id="stayTypeFilter" aria-label="Tipe penginapan">
               <option selected>Semua Tipe</option>
               <option>Hotel</option>
               <option>Villa</option>
@@ -193,24 +293,27 @@
 
           <!-- TABLE -->
           <div class="acmdm-table">
+
             <div class="acmdm-thead">
               <div class="acmdm-th">ID</div>
-  <div class="acmdm-th">AKOMODASI</div>
-  <div class="acmdm-th">TIPE</div>
-  <div class="acmdm-th">HARGA/MALAM</div>
-  <div class="acmdm-th">DILIHAT</div>
-  <div class="acmdm-th acmdm-th--right">AKSI</div>
+              <div class="acmdm-th">AKOMODASI</div>
+              <div class="acmdm-th">TIPE</div>
+              <div class="acmdm-th">HARGA/MALAM</div>
+              <div class="acmdm-th">BINTANG</div>
+              <div class="acmdm-th">DILIHAT</div>
+              <div class="acmdm-th acmdm-th--right">AKSI</div>
             </div>
 
             <!-- ROW 1 -->
-            <div class="acmdm-row" data-type="hotel">
+            <div class="acmdm-row" data-type="hotel" data-rating="3">
               <div class="acmdm-td acmdm-id">#AK-1023</div>
 
               <div class="acmdm-td acmdm-acco">
-                <img class="acmdm-thumb" src="assets/akomodasi/1.jpg" alt="Grand Hyatt Bali">
+                <img class="acmdm-thumb" src="assets/akomodasi/1.jpg" alt="Hotel D'AUSSAF">
+
                 <div>
                   <div class="acmdm-name">Hotel D'AUSSAF</div>
-                  <div class="acmdm-muted"> Pelabuhan Sape, Bima</div>
+                  <div class="acmdm-muted">Pelabuhan Sape, Bima</div>
                 </div>
               </div>
 
@@ -220,24 +323,30 @@
 
               <div class="acmdm-td acmdm-price">Rp 300.000</div>
 
+              <div class="acmdm-td acmdm-rating" data-stars="3">
+                <span class="acmdm-stars">★★★☆☆</span>
+                <span class="acmdm-rating__num">3.0</span>
+              </div>
+
               <div class="acmdm-td acmdm-view">
-    <span class="acmdm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    980
-  </div>
+                <span class="acmdm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                1,250
+              </div>
 
               <div class="acmdm-td acmdm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a href="edit-akomodasi.html" class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -250,11 +359,12 @@
             </div>
 
             <!-- ROW 2 -->
-            <div class="acmdm-row" data-type="hotel">
+            <div class="acmdm-row" data-type="hotel" data-rating="4">
               <div class="acmdm-td acmdm-id">#AK-1024</div>
 
               <div class="acmdm-td acmdm-acco">
-                <img class="acmdm-thumb" src="assets/akomodasi/2.jpg" alt="Seminyak Private Villa">
+                <img class="acmdm-thumb" src="assets/akomodasi/2.jpg" alt="Mantika Hotel">
+
                 <div>
                   <div class="acmdm-name">Mantika Hotel</div>
                   <div class="acmdm-muted">Pelabuhan Sape, Bima</div>
@@ -267,24 +377,30 @@
 
               <div class="acmdm-td acmdm-price">Rp 4.200.000</div>
 
+              <div class="acmdm-td acmdm-rating" data-stars="4">
+                <span class="acmdm-stars">★★★★☆</span>
+                <span class="acmdm-rating__num">4.0</span>
+              </div>
+
               <div class="acmdm-td acmdm-view">
-    <span class="acmdm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    980
-  </div>
+                <span class="acmdm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                1,500
+              </div>
 
               <div class="acmdm-td acmdm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a href="edit-akomodasi.html" class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -297,11 +413,12 @@
             </div>
 
             <!-- ROW 3 -->
-            <div class="acmdm-row" data-type="homestay">
+            <div class="acmdm-row" data-type="homestay" data-rating="2">
               <div class="acmdm-td acmdm-id">#AK-1025</div>
 
               <div class="acmdm-td acmdm-acco">
-                <img class="acmdm-thumb" src="assets/akomodasi/3.jpg" alt="Batu Hillside Homestay">
+                <img class="acmdm-thumb" src="assets/akomodasi/3.jpg" alt="Losmen Mustika">
+
                 <div>
                   <div class="acmdm-name">Losmen Mustika</div>
                   <div class="acmdm-muted">Kecamatan Sape, Bima</div>
@@ -313,24 +430,31 @@
               </div>
 
               <div class="acmdm-td acmdm-price">Rp 450.000</div>
- <div class="acmdm-td acmdm-view">
-    <span class="acmdm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    980
-  </div>
-             
+
+              <div class="acmdm-td acmdm-rating" data-stars="2">
+                <span class="acmdm-stars">★★☆☆☆</span>
+                <span class="acmdm-rating__num">2.0</span>
+              </div>
+
+              <div class="acmdm-td acmdm-view">
+                <span class="acmdm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                980
+              </div>
+
               <div class="acmdm-td acmdm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a href="edit-akomodasi.html" class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -343,11 +467,12 @@
             </div>
 
             <!-- ROW 4 -->
-            <div class="acmdm-row" data-type="hotel">
+            <div class="acmdm-row" data-type="hotel" data-rating="5">
               <div class="acmdm-td acmdm-id">#AK-1026</div>
 
               <div class="acmdm-td acmdm-acco">
-                <img class="acmdm-thumb" src="assets/akomodasi/4.jpg" alt="Ritz-Carlton Beach">
+                <img class="acmdm-thumb" src="assets/akomodasi/4.jpg" alt="Hotel Kalaki Beach">
+
                 <div>
                   <div class="acmdm-name">Hotel Kalaki Beach</div>
                   <div class="acmdm-muted">Belo Kabupaten Bima</div>
@@ -360,24 +485,30 @@
 
               <div class="acmdm-td acmdm-price">Rp 6.800.000</div>
 
-             <div class="acmdm-td acmdm-view">
-    <span class="acmdm-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    980
-  </div>
+              <div class="acmdm-td acmdm-rating" data-stars="5">
+                <span class="acmdm-stars">★★★★★</span>
+                <span class="acmdm-rating__num">5.0</span>
+              </div>
+
+              <div class="acmdm-td acmdm-view">
+                <span class="acmdm-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                4,200
+              </div>
 
               <div class="acmdm-td acmdm-actions">
-                <button class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
+                <a href="edit-akomodasi.html" class="newsadm-act newsadm-act--edit" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="newsadm-act newsadm-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -396,20 +527,139 @@
             <div class="newsadm-footnote">Menampilkan 1 - 4 dari 48 penginapan</div>
 
             <div class="newsadm-pagi newsadm-pagi--bottom">
-              <button class="newsadm-pagi__btn" aria-label="Prev">‹</button>
-              <button class="newsadm-pagi__num is-active">1</button>
-              <button class="newsadm-pagi__num">2</button>
-              <button class="newsadm-pagi__num">3</button>
+              <button class="newsadm-pagi__btn" aria-label="Prev" type="button">‹</button>
+              <button class="newsadm-pagi__num is-active" type="button">1</button>
+              <button class="newsadm-pagi__num" type="button">2</button>
+              <button class="newsadm-pagi__num" type="button">3</button>
               <span class="newsadm-pagi__dots">…</span>
-              <button class="newsadm-pagi__num">12</button>
-              <button class="newsadm-pagi__btn" aria-label="Next">›</button>
+              <button class="newsadm-pagi__num" type="button">12</button>
+              <button class="newsadm-pagi__btn" aria-label="Next" type="button">›</button>
             </div>
           </div>
+
         </section>
       </div>
     </main>
   </div>
 
   <script src="admin.js"></script>
+
+  <script>
+    /* =========================
+       HITUNG AVERAGE BINTANG
+    ========================= */
+    function updateAverageStars(){
+      const rows = document.querySelectorAll(".acmdm-row[data-rating]");
+      const avgStarsValue = document.getElementById("avgStarsValue");
+
+      if(!avgStarsValue || rows.length === 0) return;
+
+      let total = 0;
+      let count = 0;
+
+      rows.forEach(row => {
+        const rating = Number(row.dataset.rating);
+
+        if(!isNaN(rating) && rating > 0){
+          total += rating;
+          count++;
+        }
+      });
+
+      const average = count > 0 ? total / count : 0;
+
+      avgStarsValue.innerHTML = `
+        ${average.toFixed(1)}
+        <span class="acmdm-avg-star">★</span>
+      `;
+    }
+
+    updateAverageStars();
+
+    /* =========================
+       SEARCH DAN FILTER AKOMODASI
+    ========================= */
+    const staySearch = document.getElementById("staySearch");
+    const stayTypeFilter = document.getElementById("stayTypeFilter");
+    const stayRows = document.querySelectorAll(".acmdm-row");
+
+    function filterAkomodasi(){
+      const keyword = staySearch.value.toLowerCase().trim();
+      const selectedType = stayTypeFilter.value.toLowerCase();
+
+      stayRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        const rowType = row.dataset.type.toLowerCase();
+
+        const matchSearch = rowText.includes(keyword);
+        const matchType = selectedType === "semua tipe" || rowType === selectedType;
+
+        row.style.display = matchSearch && matchType ? "grid" : "none";
+      });
+    }
+
+    if(staySearch){
+      staySearch.addEventListener("input", filterAkomodasi);
+    }
+
+    if(stayTypeFilter){
+      stayTypeFilter.addEventListener("change", filterAkomodasi);
+    }
+
+    /* =========================
+       HAPUS ROW
+    ========================= */
+    document.querySelectorAll(".newsadm-act--del").forEach(button => {
+      button.addEventListener("click", function(){
+        const row = this.closest(".acmdm-row");
+
+        if(confirm("Yakin ingin menghapus data akomodasi ini?")){
+          row.remove();
+          updateAverageStars();
+        }
+      });
+    });
+
+    /* =========================
+       DROPDOWN ADMIN
+    ========================= */
+    const adminUserBtn = document.getElementById("adminUserBtn");
+    const adminDd = document.getElementById("adminDd");
+
+    if(adminUserBtn && adminDd){
+      adminUserBtn.addEventListener("click", function(e){
+        e.stopPropagation();
+        adminDd.classList.toggle("is-open");
+      });
+
+      document.addEventListener("click", function(){
+        adminDd.classList.remove("is-open");
+      });
+    }
+
+    /* =========================
+       LOGOUT
+    ========================= */
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if(logoutBtn){
+      logoutBtn.addEventListener("click", function(e){
+        e.preventDefault();
+        alert("Berhasil logout!");
+        window.location.href = "index.html";
+      });
+    }
+
+    /* =========================
+       SIDEBAR DROPDOWN
+    ========================= */
+    document.querySelectorAll(".admin-nav__toggle").forEach(toggle => {
+      toggle.addEventListener("click", function(){
+        const group = this.closest(".admin-nav__group");
+        group.classList.toggle("open");
+      });
+    });
+  </script>
+
 </body>
 </html>

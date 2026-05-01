@@ -12297,3 +12297,650 @@ body.dark-mode .login-close{
   color:#94a3b8;
   margin-top:2px;
 }
+
+/* EDIT DESTINASI IMAGE */
+.td-edit-image{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:20px;
+  align-items:center;
+}
+
+.td-edit-image__preview{
+  height:170px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #e6ecf2;
+  background:#f8fafc;
+}
+
+.td-edit-image__preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.td-edit-image__body h3{
+  margin:0 0 6px;
+  font-size:16px;
+  color:#0f172a;
+}
+
+.td-edit-image__body p{
+  margin:0 0 14px;
+  font-size:13px;
+  color:#64748b;
+}
+
+.td-edit-gallery{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:14px;
+}
+
+.td-edit-gallery__item{
+  position:relative;
+  height:150px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #e6ecf2;
+  background:#f8fafc;
+}
+
+.td-edit-gallery__item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.td-gal-change{
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  border:none;
+  border-radius:10px;
+  padding:9px 10px;
+  background:rgba(15,58,120,.92);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+  .td-edit-image{
+    grid-template-columns:1fr;
+  }
+
+  .td-edit-gallery{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media(max-width:520px){
+  .td-edit-gallery{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+.underwater__card{
+  position:relative;
+  overflow:hidden;
+}
+
+.underwater__slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.underwater__slide.active{
+  opacity:1;
+}
+
+
+
+
+
+/* ===== UNDERWATER CINEMATIC ===== */
+.underwater__card{
+  position:relative;
+  width:min(1000px, 100%);
+  height:600px;
+  margin:0 auto;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+/* slide wrapper */
+.underwater__slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity 1.5s ease-in-out;
+}
+
+/* gambar */
+.underwater__slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1);
+}
+
+/* aktif */
+.underwater__slide.active{
+  opacity:1;
+  z-index:2;
+}
+
+/* ZOOM ANIMATION */
+.underwater__slide.active img{
+  animation: zoomEffect 8s ease-in-out forwards;
+}
+
+@keyframes zoomEffect{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(1.15);
+  }
+}
+
+/* overlay cinematic */
+.underwater__overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.2),
+    rgba(0,0,0,.5)
+  );
+  z-index:3;
+}
+
+/* text content */
+.underwater__content{
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  color:#fff;
+  z-index:4;
+  max-width:500px;
+}
+
+.underwater__content h2{
+  margin:0;
+  font-size:28px;
+  font-weight:700;
+}
+
+.underwater__content p{
+  margin-top:8px;
+  font-size:14px;
+  opacity:.9;
+}
+
+/* responsive */
+@media (max-width:768px){
+  .underwater__card{ height:300px; }
+  .underwater__content{
+    left:20px;
+    bottom:20px;
+  }
+  .underwater__content h2{ font-size:18px; }
+  .underwater__content p{ font-size:12px; }
+}
+
+.underwater__content{
+  animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
+
+/* =========================
+   RATING / BINTANG AKOMODASI
+========================= */
+
+/* stats akomodasi jadi 5 card */
+.acmdm-stats{
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* icon bintang di card average */
+.acmdm-stat__icon svg,
+.acmdm-stat__icon1 svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:#0f3a78;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* tabel akomodasi sekarang 7 kolom */
+.acmdm-thead,
+.acmdm-row{
+  display:grid;
+  grid-template-columns: 120px minmax(250px, 1.7fr) 130px 160px 140px 120px 110px;
+  align-items:center;
+  column-gap:16px;
+}
+
+/* kolom bintang */
+.acmdm-rating{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+  font-weight:800;
+}
+
+.acmdm-stars{
+  color:#ffb000;
+  letter-spacing:1px;
+  font-size:15px;
+  line-height:1;
+}
+
+.acmdm-rating__num{
+  color:#334155;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* responsive */
+@media (max-width: 1280px){
+  .acmdm-table{
+    overflow-x:auto;
+  }
+
+  .acmdm-thead,
+  .acmdm-row{
+    min-width:1180px;
+  }
+}
+
+@media (max-width: 1100px){
+  .acmdm-stats{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px){
+  .acmdm-stats{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+/* =========================
+   RATING / BINTANG ADMIN LIST
+   Destinasi, Event, Berita
+========================= */
+
+.adm-rating,
+.evt-rating,
+.newsadm-rating{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+  font-weight:800;
+}
+
+.adm-stars,
+.evt-stars,
+.newsadm-stars{
+  color:#ffb000;
+  letter-spacing:1px;
+  font-size:15px;
+  line-height:1;
+}
+
+.adm-rating__num,
+.evt-rating__num,
+.newsadm-rating__num{
+  color:#334155;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* icon bintang di card average */
+.adm-total__icon svg,
+.evt-stat__icon svg,
+.newsadm-stat__icon svg,
+.newsadm-stat__icon1 svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* ===== DESTINASI: tambah kolom BINTANG ===== */
+.adm-table__head,
+.adm-row{
+  display:grid;
+  grid-template-columns: 90px 120px 2fr 180px 160px 130px 130px 120px;
+  align-items:center;
+  column-gap:18px;
+}
+
+/* ===== EVENT: tambah kolom BINTANG ===== */
+.evt-thead,
+.evt-row{
+  display:grid;
+  grid-template-columns: 90px 110px 1.7fr 150px 160px 120px 130px 120px 110px;
+  align-items:center;
+  column-gap:16px;
+}
+
+/* ===== BERITA: tambah kolom BINTANG ===== */
+.newsadm-thead,
+.newsadm-row{
+  display:grid;
+  grid-template-columns: 90px 110px 2fr 130px 130px 120px 130px 120px 110px;
+  align-items:center;
+  column-gap:16px;
+}
+
+@media (max-width:1280px){
+  .adm-table,
+  .evt-card,
+  .newsadm-card{
+    overflow-x:auto;
+  }
+
+  .adm-table__head,
+  .adm-row{
+    min-width:1250px;
+  }
+
+  .evt-thead,
+  .evt-row{
+    min-width:1300px;
+  }
+
+  .newsadm-thead,
+  .newsadm-row{
+    min-width:1280px;
+  }
+}
+
+
+/* =========================
+   ADMIN DESTINASI - RATING
+========================= */
+
+.adm-stats-row--dest-rating{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+  margin-bottom:18px;
+}
+
+.adm-total__icon--yellow{
+  background:#fff7dc;
+  color:#ffb000;
+}
+
+.adm-total__icon--yellow svg{
+  width:24px;
+  height:24px;
+  fill:#ffb000;
+  stroke:#ffb000;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.adm-table--rating .adm-table__head,
+.adm-table--rating .adm-row{
+  display:grid;
+  grid-template-columns:90px 120px minmax(220px, 2fr) 180px 160px 130px 130px 120px;
+  align-items:center;
+  column-gap:18px;
+}
+
+.adm-rating{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+  font-weight:800;
+}
+
+.adm-stars{
+  color:#ffb000;
+  letter-spacing:1px;
+  font-size:15px;
+  line-height:1;
+}
+
+.adm-rating__num{
+  color:#334155;
+  font-size:13px;
+  font-weight:800;
+}
+
+.adm-avg-star{
+  color:#ffb000;
+  font-size:18px;
+  margin-left:6px;
+}
+
+@media(max-width:1280px){
+  .adm-table--rating{
+    overflow-x:auto;
+  }
+
+  .adm-table--rating .adm-table__head,
+  .adm-table--rating .adm-row{
+    min-width:1250px;
+  }
+}
+
+@media(max-width:900px){
+  .adm-stats-row--dest-rating{
+    grid-template-columns:1fr;
+  }
+}
+
+/* =========================
+   ADMIN EVENT - RATING
+========================= */
+
+.evt-stats--rating{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+  margin-bottom:18px;
+}
+
+.evt-stat__icon--yellow{
+  background:#fff7dc;
+  color:#ffb000;
+}
+
+.evt-stat__icon--yellow svg{
+  width:24px;
+  height:24px;
+  fill:#ffb000;
+  stroke:#ffb000;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.evt-table--rating .evt-thead,
+.evt-table--rating .evt-row{
+  display:grid;
+  grid-template-columns:90px 110px minmax(220px, 1.7fr) 150px 160px 120px 130px 120px 110px;
+  align-items:center;
+  column-gap:16px;
+}
+
+.evt-rating{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+  font-weight:800;
+}
+
+.evt-stars{
+  color:#ffb000;
+  letter-spacing:1px;
+  font-size:15px;
+  line-height:1;
+}
+
+.evt-rating__num{
+  color:#334155;
+  font-size:13px;
+  font-weight:800;
+}
+
+.evt-avg-star{
+  color:#ffb000;
+  font-size:18px;
+  margin-left:6px;
+}
+
+@media(max-width:1280px){
+  .evt-card{
+    overflow-x:auto;
+  }
+
+  .evt-table--rating .evt-thead,
+  .evt-table--rating .evt-row{
+    min-width:1300px;
+  }
+}
+
+@media(max-width:900px){
+  .evt-stats--rating{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* =========================
+   ADMIN BERITA - RATING
+========================= */
+
+.newsadm-stats--rating{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+  margin-bottom:18px;
+}
+
+.newsadm-stat__icon--yellow{
+  background:#fff7dc;
+  color:#ffb000;
+}
+
+.newsadm-stat__icon--yellow svg{
+  width:24px;
+  height:24px;
+  fill:#ffb000;
+  stroke:#ffb000;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.newsadm-table--rating .newsadm-thead,
+.newsadm-table--rating .newsadm-row{
+  display:grid;
+  grid-template-columns:90px 110px minmax(220px, 2fr) 130px 130px 120px 130px 120px 110px;
+  align-items:center;
+  column-gap:16px;
+}
+
+.newsadm-rating{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+  font-weight:800;
+}
+
+.newsadm-stars{
+  color:#ffb000;
+  letter-spacing:1px;
+  font-size:15px;
+  line-height:1;
+}
+
+.newsadm-rating__num{
+  color:#334155;
+  font-size:13px;
+  font-weight:800;
+}
+
+.newsadm-avg-star{
+  color:#ffb000;
+  font-size:18px;
+  margin-left:6px;
+}
+
+@media(max-width:1280px){
+  .newsadm-card{
+    overflow-x:auto;
+  }
+
+  .newsadm-table--rating .newsadm-thead,
+  .newsadm-table--rating .newsadm-row{
+    min-width:1280px;
+  }
+}
+
+@media(max-width:900px){
+  .newsadm-stats--rating{
+    grid-template-columns:1fr;
+  }
+}
+/* =========================
+   AKOMODASI FILTER FUNCTION
+========================= */
+
+#emptyAkomodasiMessage{
+  padding:14px 16px;
+  border:1px solid #e6ecf2;
+  border-radius:12px;
+  background:#f8fafc;
+  font-size:13px;
+}
+
+.acc-card[style*="display: none"]{
+  pointer-events:none;
+}

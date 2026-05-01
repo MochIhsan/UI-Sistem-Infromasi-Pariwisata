@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Berita - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="admin-body">
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+        </a>
+
+        <div class="admin-nav__group open">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item active" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/statistik.svg" alt="">
+              Analisis
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+            <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar__left"></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+
+        <div class="wb-head">
+          <div class="wb-head__left">
+            <div>
+              <h1 class="wb-title">Edit Berita</h1>
+              <div class="wb-bread">Manajemen Berita &nbsp; / &nbsp; <b>Edit Berita</b></div>
+            </div>
+          </div>
+
+          <div class="wb-actions">
+            <a class="td-btn td-btn--ghost" href="admin-berita.html">Batal</a>
+
+            <button class="wb-btn wb-btn--primary" id="btnPublish" type="button">
+              <span class="td-ic">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h12l2 2v14H5z"></path>
+                  <path d="M8 4v6h8V4"></path>
+                  <path d="M8 20v-6h8v6"></path>
+                </svg>
+              </span>
+              Simpan Perubahan
+            </button>
+          </div>
+        </div>
+
+        <div class="wb-grid">
+
+          <section class="wb-left">
+
+            <div class="wb-card">
+              <label class="wb-label" for="judul">Judul Berita</label>
+              <input
+                id="judul"
+                class="wb-input wb-input--title"
+                type="text"
+                value="Sidak Diparda, Bupati dan Wakil Bupati Bima Tegaskan Komitmen Membangun Pariwisata"
+              />
+            </div>
+
+            <div class="wb-card">
+              <div class="wb-labelRow">
+                <label class="wb-label">Banner Utama Berita</label>
+              </div>
+
+              <div class="upbox upbox--filled" id="bannerDrop" tabindex="0" role="button" aria-label="Upload banner berita">
+                <input id="bannerInput" class="upbox__input" type="file" accept="image/*" />
+
+                <div class="upbox__empty" id="bannerEmpty" hidden>
+                  <div class="upbox__icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 18h10a4 4 0 0 0 .6-8A5.5 5.5 0 0 0 7 9.7 3.5 3.5 0 0 0 7 18z"></path>
+                      <path d="M12 12v6"></path>
+                      <path d="M9.5 14.5 12 12l2.5 2.5"></path>
+                    </svg>
+                  </div>
+                  <div class="upbox__title">Upload Banner Berita</div>
+                  <div class="upbox__hint">
+                    Seret dan lepas gambar ke sini, atau klik untuk memilih file.
+                  </div>
+                </div>
+
+                <div class="upbox__preview" id="bannerPreview">
+                  <img id="bannerImg" src="assets/berita/1.jpg" alt="Preview banner berita" />
+                   <!--<button class="upbox__remove" id="bannerRemove" type="button">Ganti Foto</button>-->
+                  <button type="button" class="td-gal-change">Ganti Foto</button> 
+                </div>
+              </div>
+            </div>
+
+            <div class="wb-card">
+              <label class="wb-label">Konten Berita</label>
+
+              <div class="wb-editor">
+                <div class="wb-toolbar" role="toolbar" aria-label="Toolbar editor">
+                  <button class="wb-tool" type="button" data-cmd="bold"><b>B</b></button>
+                  <button class="wb-tool" type="button" data-cmd="italic"><i>I</i></button>
+                  <button class="wb-tool" type="button" data-cmd="underline"><u>U</u></button>
+                  <span class="wb-toolSep"></span>
+                  <button class="wb-tool" type="button" data-cmd="insertUnorderedList">•≡</button>
+                  <button class="wb-tool" type="button" data-cmd="insertOrderedList">1≡</button>
+                  <span class="wb-toolSep"></span>
+                  <button class="wb-tool" type="button" data-link>🔗</button>
+                  <button class="wb-tool" type="button" data-cmd="formatBlock" data-arg="blockquote">❝</button>
+                </div>
+
+                <div
+                  id="editor"
+                  class="wb-editorArea"
+                  contenteditable="true"
+                  spellcheck="true"
+                >
+                  <p>BIMA — Bupati Bima Ady Mahyudin bersama Wakil Bupati Bima dr. H. Irfan Zubaidy melakukan inspeksi mendadak (sidak) di Kantor Dinas Pariwisata Kabupaten Bima yang berlokasi di kawasan Taman Wisata Pantai Kalaki, Palibelo.</p>
+
+                  <p>Sidak ini menjadi bagian dari komitmen kuat kepemimpinan Bupati dan Wakil Bupati Bima memastikan seluruh perangkat daerah bekerja selaras dengan visi pembangunan daerah, khususnya dalam penguatan sektor pariwisata.</p>
+
+                  <p>Pembangunan difokuskan pada pengembangan destinasi wisata sebagai sektor strategis yang diyakini mampu menjadi motor penggerak ekonomi masyarakat dan sumber pendapatan asli daerah.</p>
+
+                  <p>Pemerintah juga mengajak kolaborasi lintas sektor serta menekankan pentingnya kebersihan, kenyamanan, dan aksesibilitas agar pengalaman wisatawan semakin baik.</p>
+
+                  <p>“Pariwisata tidak cukup hanya dengan potensi alam. Diperlukan tata kelola yang baik, pelayanan prima, dan kolaborasi,” tegas Bupati.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="wb-right">
+
+            <div class="wb-card wb-card--side">
+              <div class="wb-sideTitle">
+                <span class="wb-sideTitle__ic">ⓘ</span>
+                Informasi Metadata
+              </div>
+
+              <div class="wb-field">
+                <label class="wb-label" for="penulis">Penulis</label>
+                <div class="wb-inputIcon">
+                  <span class="wb-inputIcon__ic">👤</span>
+                  <input id="penulis" class="wb-input" type="text" value="Admin" />
+                </div>
+              </div>
+
+              <div class="wb-field">
+                <label class="wb-label" for="kategori">Kategori</label>
+                <select id="kategori" class="wb-select">
+                  <option selected>Berita Terkini</option>
+                  <option>Tips Wisata</option>
+                  <option>Event</option>
+                  <option>Promosi</option>
+                </select>
+              </div>
+
+              <div class="wb-field">
+                <label class="wb-label" for="tgl">Tanggal Publikasi</label>
+                <div class="wb-inputIcon">
+                  <span class="wb-inputIcon__ic">📅</span>
+                  <input id="tgl" class="wb-input" type="date" value="2026-01-21" />
+                </div>
+              </div>
+            </div>
+
+            <div class="wb-card wb-card--side">
+              <div class="wb-sideTitle">
+                <span class="wb-sideTitle__ic">🏷️</span>
+                Label / Tags
+              </div>
+
+              <div class="wb-tags" id="tagsWrap">
+                <span class="wb-tag">Pariwisata <button type="button">×</button></span>
+                <span class="wb-tag">Diparda <button type="button">×</button></span>
+                <span class="wb-tag">Kabupaten Bima <button type="button">×</button></span>
+              </div>
+
+              <input
+                id="tagInput"
+                class="wb-input"
+                type="text"
+                placeholder="Tambah tag..."
+                autocomplete="off"
+              />
+
+              <div class="wb-help">
+                Tekan Enter atau gunakan koma untuk memisahkan tag.
+              </div>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+
+  <script>
+    const bannerInput = document.getElementById("bannerInput");
+    const bannerDrop = document.getElementById("bannerDrop");
+    const bannerPreview = document.getElementById("bannerPreview");
+    const bannerEmpty = document.getElementById("bannerEmpty");
+    const bannerImg = document.getElementById("bannerImg");
+    const bannerRemove = document.getElementById("bannerRemove");
+
+    bannerDrop?.addEventListener("click", function (e) {
+      if (e.target === bannerRemove) return;
+      bannerInput.click();
+    });
+
+    bannerRemove?.addEventListener("click", function (e) {
+      e.stopPropagation();
+      bannerInput.click();
+    });
+
+    bannerInput?.addEventListener("change", function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("File harus berupa gambar.");
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        bannerImg.src = e.target.result;
+        bannerPreview.hidden = false;
+        bannerEmpty.hidden = true;
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    document.querySelectorAll(".wb-tool").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const cmd = btn.dataset.cmd;
+        const arg = btn.dataset.arg || null;
+
+        if (btn.hasAttribute("data-link")) {
+          const url = prompt("Masukkan URL:");
+          if (url) document.execCommand("createLink", false, url);
+          return;
+        }
+
+        document.execCommand(cmd, false, arg);
+      });
+    });
+
+    const tagsWrap = document.getElementById("tagsWrap");
+    const tagInput = document.getElementById("tagInput");
+
+    function addTag(text) {
+      const value = text.trim();
+      if (!value) return;
+
+      const tag = document.createElement("span");
+      tag.className = "wb-tag";
+      tag.innerHTML = `${value} <button type="button">×</button>`;
+      tagsWrap.appendChild(tag);
+    }
+
+    tagInput?.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === ",") {
+        e.preventDefault();
+        addTag(this.value.replace(",", ""));
+        this.value = "";
+      }
+    });
+
+    tagsWrap?.addEventListener("click", function (e) {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+      btn.parentElement.remove();
+    });
+
+    const btnPublish = document.getElementById("btnPublish");
+
+    btnPublish?.addEventListener("click", function () {
+      alert("Perubahan berita berhasil disimpan!");
+      window.location.href = "admin-berita.html";
+    });
+  </script>
+</body>
+</html>

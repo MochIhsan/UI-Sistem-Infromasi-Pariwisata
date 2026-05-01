@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Destinasi - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="admin-body">
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="admin-brand__text">
+          <div class="admin-brand__name">TourAdmin</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+        </a>
+
+        <div class="admin-nav__group open">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item active" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
+
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/statistik.svg" alt="">
+              Analisis
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
+
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+            <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div></div>
+
+        <div class="admin-topbar__right">
+          <div class="admin-user" id="adminUser">
+            <div class="admin-user__text">
+              <div class="admin-user__name">Ramadhani</div>
+              <div class="admin-user__role">Admin Rama</div>
+            </div>
+
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+              <span>👤</span>
+            </button>
+
+            <div class="admin-dd" id="adminDd">
+              <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-wrap admin-wrap--wide">
+
+        <!-- HEADER PAGE -->
+        <div class="td-head">
+          <div>
+            <h1 class="td-title">Edit Destinasi</h1>
+            <p class="td-sub">Ubah informasi destinasi yang sudah terdaftar.</p>
+          </div>
+
+          <div class="td-actions">
+            <a class="td-btn td-btn--ghost" href="admin-destinasi.html">Batal</a>
+            <button class="td-btn td-btn--primary" id="btnSaveEdit" type="button">
+              <span class="td-ic">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h12l2 2v14H5z"></path>
+                  <path d="M8 4v6h8V4"></path>
+                  <path d="M8 20v-6h8v6"></path>
+                </svg>
+              </span>
+              Simpan Perubahan
+            </button>
+          </div>
+        </div>
+
+        <!-- BANNER UTAMA -->
+       <section class="td-card">
+  <div class="td-card__head">
+    <span class="td-card__icon">🖼️</span>
+    <div class="td-card__ttl">Banner Utama</div>
+  </div>
+
+  <div class="td-edit-image">
+    <input id="bannerInput" type="file" accept="image/*" hidden />
+
+    <div class="td-edit-image__preview">
+      <img id="bannerPreviewImg" src="assets/dest/bombo-ncera/hero.png" alt="Banner Air Terjun Bombo Ncera">
+    </div>
+
+    <div class="td-edit-image__body">
+      <h3>Banner saat ini</h3>
+      <p>Gambar ini akan tampil sebagai banner utama pada halaman detail destinasi.</p>
+
+      <button class="td-btn td-btn--mini" type="button" id="btnPickBanner">
+        Ganti Banner
+      </button>
+    </div>
+  </div>
+</section>
+
+        <!-- GRID 2 KOLOM -->
+        <section class="td-grid2">
+
+          <!-- INFORMASI DASAR -->
+          <div class="td-card">
+            <div class="td-card__head">
+              <span class="td-card__icon">ℹ️</span>
+              <div class="td-card__ttl">Informasi Dasar</div>
+            </div>
+
+            <div class="td-form">
+              <div class="td-field">
+                <label class="td-label">Nama Destinasi</label>
+                <input class="td-input" id="destName" type="text" value="Air Terjun Bombo Ncera" />
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Lokasi Daerah</label>
+                <input class="td-input" id="destLocation" type="text" value="Belo" />
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Kategori</label>
+                <select class="td-input" id="destCategory">
+                  <option>Bahari</option>
+                  <option>Budaya Sejarah</option>
+                  <option selected>Alam Pegunungan</option>
+                </select>
+              </div>
+
+              <div class="td-row2">
+                <div class="td-field">
+                  <label class="td-label">Jam Buka</label>
+                  <div class="td-inputIcon">
+                    <input class="td-input" id="openTime" type="time" value="08:00" />
+                    <span class="td-inputIcon__ic" aria-hidden="true">🕘</span>
+                  </div>
+                </div>
+
+                <div class="td-field">
+                  <label class="td-label">Jam Tutup</label>
+                  <div class="td-inputIcon">
+                    <input class="td-input" id="closeTime" type="time" value="17:30" />
+                    <span class="td-inputIcon__ic" aria-hidden="true">🕔</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Harga Tiket Masuk (IDR)</label>
+                <input class="td-input" id="ticketPrice" type="number" min="0" value="10000" />
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Akses Lokasi</label>
+
+                <div class="td-access" id="aksesLokasi">
+                  <button class="td-chip is-active" data-value="mobil" type="button">
+                    <span class="td-chip__ic" aria-hidden="true">🚗</span> Mobil
+                  </button>
+                  <button class="td-chip is-active" data-value="motor" type="button">
+                    <span class="td-chip__ic" aria-hidden="true">🏍️</span> Motor
+                  </button>
+                  <button class="td-chip" data-value="kapal" type="button">
+                    <span class="td-chip__ic" aria-hidden="true">🛥️</span> Kapal
+                  </button>
+                </div>
+
+                <input type="hidden" id="aksesValue" value="mobil,motor" />
+              </div>
+            </div>
+          </div>
+
+          <!-- LOKASI WISATA -->
+          <div class="td-card">
+            <div class="td-card__head">
+              <span class="td-card__icon">📍</span>
+              <div class="td-card__ttl">Lokasi Wisata</div>
+            </div>
+
+            <div class="td-form">
+              <div class="td-row2">
+                <div class="td-field">
+                  <label class="td-label">Latitude</label>
+                  <input class="td-input" id="latInput" type="text" value="-8.646959" />
+                </div>
+
+                <div class="td-field">
+                  <label class="td-label">Longitude</label>
+                  <input class="td-input" id="lngInput" type="text" value="118.760201" />
+                </div>
+              </div>
+
+              <div class="td-field">
+                <label class="td-label">Peta Lokasi</label>
+
+                <div class="td-mapWrap">
+                  <iframe
+                    id="mapFrame"
+                    title="Peta Lokasi"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=-8.646959,118.760201&z=13&output=embed">
+                  </iframe>
+
+                  <div class="td-mapOverlay" id="mapOverlay">
+                    <div class="td-mapOverlay__txt">Interactive Map Integration</div>
+                  </div>
+                </div>
+
+                <div class="td-mapHint">
+                  Ubah latitude/longitude untuk memperbarui peta.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DESKRIPSI -->
+        <section class="td-card">
+          <div class="td-card__head">
+            <span class="td-card__icon">📝</span>
+            <div class="td-card__ttl">Deskripsi Wisata</div>
+          </div>
+
+          <div class="td-editor">
+            <div class="td-editor__bar">
+              <button class="td-edBtn" type="button" data-cmd="bold"><b>B</b></button>
+              <button class="td-edBtn" type="button" data-cmd="italic"><i>I</i></button>
+              <button class="td-edBtn" type="button" data-cmd="underline"><u>U</u></button>
+              <div class="td-edSep"></div>
+              <button class="td-edBtn" type="button" data-cmd="insertUnorderedList">•≡</button>
+              <button class="td-edBtn" type="button" data-cmd="insertOrderedList">1≡</button>
+              <div class="td-edSep"></div>
+              <button class="td-edBtn" type="button" data-cmd="createLink">🔗</button>
+            </div>
+
+            <div class="td-editor__box" id="descBox" contenteditable="true">
+              Air Terjun Bombo Ncera merupakan salah satu destinasi wisata alam yang memikat di Desa Ncera, Kecamatan Belo, Kabupaten Bima, NTB. Air terjun ini memiliki beberapa tingkatan dengan ketinggian sekitar 5–7 meter dan dikelilingi oleh dinding batuan alami serta hutan yang masih asri.
+            </div>
+          </div>
+        </section>
+
+        <!-- FASILITAS -->
+        <section class="td-card">
+          <div class="td-card__head">
+            <span class="td-card__icon">🧩</span>
+            <div class="td-card__ttl">Fasilitas Destinasi</div>
+          </div>
+
+          <div class="td-facGrid" id="facGrid">
+            <button class="td-fac is-active" data-key="parkir" type="button">
+              <span class="td-fac__ic">🅿️</span><span class="td-fac__txt">Area Parkir</span>
+            </button>
+            <button class="td-fac" data-key="mushola" type="button">
+              <span class="td-fac__ic">🕌</span><span class="td-fac__txt">Mushola</span>
+            </button>
+            <button class="td-fac is-active" data-key="toilet" type="button">
+              <span class="td-fac__ic">🚻</span><span class="td-fac__txt">Toilet Umum</span>
+            </button>
+            <button class="td-fac is-active" data-key="makan" type="button">
+              <span class="td-fac__ic">🍽️</span><span class="td-fac__txt">Tempat Makan</span>
+            </button>
+            <button class="td-fac" data-key="wifi" type="button">
+              <span class="td-fac__ic">📶</span><span class="td-fac__txt">WiFi</span>
+            </button>
+            <button class="td-fac" data-key="akses" type="button">
+              <span class="td-fac__ic">♿</span><span class="td-fac__txt">Akses Disabilitas</span>
+            </button>
+            <button class="td-fac is-active" data-key="spotfoto" type="button">
+              <span class="td-fac__ic">📷</span><span class="td-fac__txt">Spot Foto</span>
+            </button>
+            <button class="td-fac" data-key="gazebo" type="button">
+              <span class="td-fac__ic">🏕️</span><span class="td-fac__txt">Gazebo</span>
+            </button>
+          </div>
+
+          <input type="hidden" id="facValue" value="parkir,toilet,makan,spotfoto" />
+        </section>
+
+        <!-- GALERI -->
+        <section class="td-card">
+  <div class="td-card__head td-card__head--between">
+    <div class="td-card__headLeft">
+      <span class="td-card__icon">🖼️</span>
+      <div class="td-card__ttl">Galeri Dokumentasi</div>
+    </div>
+    <div class="td-badge">Maks. 5 Foto</div>
+  </div>
+
+  <div class="td-edit-gallery">
+
+    <div class="td-edit-gallery__item">
+      <img src="assets/dest/bombo-ncera/1.png" alt="Dokumentasi 1">
+      <input type="file" accept="image/*" hidden>
+      <button type="button" class="td-gal-change">Ganti Foto</button>
+    </div>
+
+    <div class="td-edit-gallery__item">
+      <img src="assets/dest/bombo-ncera/2.png" alt="Dokumentasi 2">
+      <input type="file" accept="image/*" hidden>
+      <button type="button" class="td-gal-change">Ganti Foto</button>
+    </div>
+
+    <div class="td-edit-gallery__item">
+      <img src="assets/dest/bombo-ncera/3.png" alt="Dokumentasi 3">
+      <input type="file" accept="image/*" hidden>
+      <button type="button" class="td-gal-change">Ganti Foto</button>
+    </div>
+
+    <div class="td-edit-gallery__item">
+      <img src="assets/dest/bombo-ncera/4.png" alt="Dokumentasi 4">
+      <input type="file" accept="image/*" hidden>
+      <button type="button" class="td-gal-change">Ganti Foto</button>
+    </div>
+
+    <div class="td-edit-gallery__item">
+      <img src="assets/dest/bombo-ncera/5.png" alt="Dokumentasi 5">
+      <input type="file" accept="image/*" hidden>
+      <button type="button" class="td-gal-change">Ganti Foto</button>
+    </div>
+
+  </div>
+</section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+  <script src="admin-tambah-destinasi.js"></script>
+
+  
+  <script>
+  const bannerInput = document.getElementById("bannerInput");
+  const btnPickBanner = document.getElementById("btnPickBanner");
+  const bannerPreviewImg = document.getElementById("bannerPreviewImg");
+
+  btnPickBanner?.addEventListener("click", () => {
+    bannerInput.click();
+  });
+
+  bannerInput?.addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      alert("File harus berupa gambar.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      bannerPreviewImg.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  document.querySelectorAll(".td-edit-gallery__item").forEach((item) => {
+    const img = item.querySelector("img");
+    const input = item.querySelector("input");
+    const btn = item.querySelector(".td-gal-change");
+
+    btn.addEventListener("click", () => {
+      input.click();
+    });
+
+    input.addEventListener("change", function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("File harus berupa gambar.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  const btnSaveEdit = document.getElementById("btnSaveEdit");
+
+  btnSaveEdit?.addEventListener("click", function () {
+    alert("Perubahan destinasi berhasil disimpan!");
+    window.location.href = "admin-destinasi.html";
+  });
+</script>
+</body>
+</html>

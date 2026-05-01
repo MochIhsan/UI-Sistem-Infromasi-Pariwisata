@@ -6,106 +6,110 @@
   <title>Manajemen Event - Admin</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="admin-body">
 
   <div class="admin-layout">
-    <!-- SIDEBAR (samakan dengan dashboard admin kamu) -->
-     <aside class="admin-sidebar">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
       <div class="admin-brand">
         <div class="brand">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo" />
-      </div>
+          <img class="brand__logo" src="assets/logo.png" alt="Logo" />
+        </div>
         <div class="admin-brand__text">
           <div class="admin-brand__name">TourAdmin</div>
         </div>
-      </div><nav class="admin-nav">
+      </div>
 
-  <!-- DASHBOARD -->
-  <a class="admin-nav__item" href="admin.html">
-    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
-  </a>
+      <nav class="admin-nav">
 
-  <!-- KONTEN WISATA -->
-  <div class="admin-nav__group open">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container78.svg">
-        Konten Wisata
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+        <!-- DASHBOARD -->
+        <a class="admin-nav__item" href="admin.html">
+          <img class="admin-ic" src="logo/containerdashboard.svg" alt="">
+          Dashboard
+        </a>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
-      <a class="admin-subnav__item  active" href="admin-event.html">Event</a>
-      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
-      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
-    </div>
-  </div>
+        <!-- KONTEN WISATA -->
+        <div class="admin-nav__group open">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container78.svg" alt="">
+              Konten Wisata
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-  <!-- MANAJEMEN -->
-  <div class="admin-nav__group">
-    <button class="admin-nav__item admin-nav__toggle">
-      <span class="admin-nav__left">
-        <img class="admin-ic" src="logo/container82.svg">
-        Manajemen
-      </span>
-      <span class="admin-nav__caret">▾</span>
-    </button>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+            <a class="admin-subnav__item active" href="admin-event.html">Event</a>
+            <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+            <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+          </div>
+        </div>
 
-    <div class="admin-subnav">
-      <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
-      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
-      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
-    </div>
-  </div>
+        <!-- MANAJEMEN -->
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/container82.svg" alt="">
+              Manajemen
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-  <!-- ANALISIS -->
-    <div class="admin-nav__group">
-  <button class="admin-nav__item admin-nav__toggle" type="button">
-    <span class="admin-nav__left">
-      <img class="admin-ic" src="logo/statistik.svg" alt="">
-      Analisis
-    </span>
-    <span class="admin-nav__caret">▾</span>
-  </button>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="kelola-admin.html">Kelola Admin</a>
+            <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+            <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+          </div>
+        </div>
 
-  <div class="admin-subnav">
-    <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
-    <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
-  </div>
-</div>
+        <!-- ANALISIS -->
+        <div class="admin-nav__group">
+          <button class="admin-nav__item admin-nav__toggle" type="button">
+            <span class="admin-nav__left">
+              <img class="admin-ic" src="logo/statistik.svg" alt="">
+              Analisis
+            </span>
+            <span class="admin-nav__caret">▾</span>
+          </button>
 
-</nav>
+          <div class="admin-subnav">
+            <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+            <a class="admin-subnav__item" href="statistik-pengunjung.html">Statistik Pengunjung</a>
+          </div>
+        </div>
+
+      </nav>
     </aside>
 
     <!-- MAIN -->
     <main class="admin-main">
+
       <!-- TOPBAR -->
       <header class="admin-topbar">
         <div class="admin-topbar__left"></div>
 
         <div class="admin-topbar__right">
-
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
               <div class="admin-user__name">Ramadhani</div>
               <div class="admin-user__role">Admin Rama</div>
             </div>
 
-            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin" type="button">
               <span>👤</span>
             </button>
 
-            <!-- DROPDOWN -->
             <div class="admin-dd" id="adminDd">
-              <!--<a href="profile-admin.html" class="admin-dd__item">Profil</a> -->
               <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
             </div>
           </div>
         </div>
       </header>
 
+      <!-- CONTENT -->
       <div class="admin-wrap admin-wrap--wide">
 
         <!-- HEAD -->
@@ -120,146 +124,191 @@
             Tambah Event
           </a>
         </div>
+
         <!-- STATS EVENT -->
-<section class="evt-stats">
-  <div class="evt-stat">
-    <div class="evt-stat__icon evt-stat__icon--blue" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-        <path d="M16 3v4"></path>
-        <path d="M8 3v4"></path>
-        <path d="M3 10h18"></path>
-      </svg>
-    </div>
-    <div>
-      <div class="evt-stat__label">Total Event</div>
-      <div class="evt-stat__value">10</div>
-    </div>
-  </div>
+        <section class="evt-stats evt-stats--rating">
 
-  <div class="evt-stat">
-    <div class="evt-stat__icon evt-stat__icon--green" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </div>
-    <div>
-      <div class="evt-stat__label">Jumlah Pengunjung Halaman</div>
-      <div class="evt-stat__value">24,150</div>
-    </div>
-  </div>
-</section>
+          <div class="evt-stat">
+            <div class="evt-stat__icon evt-stat__icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                <path d="M16 3v4"></path>
+                <path d="M8 3v4"></path>
+                <path d="M3 10h18"></path>
+              </svg>
+            </div>
 
-        <!-- CARD TABLE WRAP -->
+            <div>
+              <div class="evt-stat__label">Total Event</div>
+              <div class="evt-stat__value">10</div>
+            </div>
+          </div>
+
+          <div class="evt-stat">
+            <div class="evt-stat__icon evt-stat__icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                <circle cx="12" cy="12" r="2.5"></circle>
+              </svg>
+            </div>
+
+            <div>
+              <div class="evt-stat__label">Total Pengunjung Halaman</div>
+              <div class="evt-stat__value">24,150</div>
+            </div>
+          </div>
+
+          <div class="evt-stat">
+            <div class="evt-stat__icon evt-stat__icon--yellow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.9 6.2 6.8.8-5 4.8 1.3 6.7L12 17l-6 3.5 1.3-6.7-5-4.8 6.8-.8L12 2z"></path>
+              </svg>
+            </div>
+
+            <div>
+              <div class="evt-stat__label">Average Bintang</div>
+              <div class="evt-stat__value" id="eventAvgStarsValue">0.0</div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- CARD TABLE -->
         <section class="adm-card evt-card">
-          <!-- TOOLBAR: Search + kategori + filter + PAGINATION DIPINDAH KE ATAS -->
+
+          <!-- TOOLBAR -->
           <div class="newsadm-toolbar newsadm-toolbar--oneRow">
-  <div class="newsadm-search">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="11" cy="11" r="7"></circle>
-      <path d="M20 20l-3.5-3.5"></path>
-    </svg>
-    <input type="text" id="eventSearch" placeholder="Cari event..." />
-  </div>
+            <div class="newsadm-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="M20 20l-3.5-3.5"></path>
+              </svg>
 
-  <select class="adm-select adm-select--katalog" id="eventStatusFilter" aria-label="Kategori">
-    <option selected>Semua Kategori</option>
-    <option>Akan Datang</option>
-    <option>Berlangsung</option>
-    <option>Selesai</option>
-  </select>
-</div>
+              <input type="text" id="eventSearch" placeholder="Cari event..." />
+            </div>
 
-        
-          <!-- table -->
-<div class="evt-table">
-  <div class="evt-thead">
-    <div class="evt-th">ID</div>
-    <div class="evt-th">POSTER</div>
-    <div class="evt-th">NAMA EVENT</div>
-    <div class="evt-th">TANGGAL</div>
-    <div class="evt-th">LOKASI</div>
-    <div class="evt-th">STATUS</div>
-    <div class="evt-th">DILIHAT</div>
-    <div class="evt-th evt-th--right">AKSI</div>
-  </div>
+            <select class="adm-select adm-select--katalog" id="eventStatusFilter" aria-label="Kategori">
+              <option selected>Semua Kategori</option>
+              <option>Akan Datang</option>
+              <option>Berlangsung</option>
+              <option>Selesai</option>
+            </select>
+          </div>
+
+          <!-- TABLE -->
+          <div class="evt-table evt-table--rating">
+
+            <div class="evt-thead">
+              <div class="evt-th">ID</div>
+              <div class="evt-th">POSTER</div>
+              <div class="evt-th">NAMA EVENT</div>
+              <div class="evt-th">TANGGAL</div>
+              <div class="evt-th">LOKASI</div>
+              <div class="evt-th">STATUS</div>
+              <div class="evt-th">BINTANG</div>
+              <div class="evt-th">DILIHAT</div>
+              <div class="evt-th evt-th--right">AKSI</div>
+            </div>
 
             <!-- ROW 1 -->
-           <div class="evt-row" data-status="akan datang">
-  <div class="evt-td evt-id">#EV-001</div>
-  <div class="evt-td">
-    <img class="evt-poster" src="assets/event/1.jpg" alt="Poster Event">
-  </div>
-  <div class="evt-td evt-name">
-    <div class="evt-name__title">Event Rimpu</div>
-    <!--<div class="evt-name__sub">Musik &amp; Budaya</div>-->
-  </div>
-  <div class="evt-td evt-date">24-26 April 2025</div>
-  <div class="evt-td evt-loc">Kantor Bupati Bima</div>
-  <div class="evt-td">
-    <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
-  </div>
-  <div class="evt-td evt-view">
-    <span class="evt-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    2,415
-  </div>
-  <div class="evt-td evt-actions">
-    <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
-        <path d="M13.5 6.5l4 4"></path>
-      </svg>
-    </button>
-    <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 7h16"></path>
-        <path d="M10 11v6"></path>
-        <path d="M14 11v6"></path>
-        <path d="M6 7l1 14h10l1-14"></path>
-        <path d="M9 7V4h6v3"></path>
-      </svg>
-    </button>
-  </div>
-</div>
+            <div class="evt-row" data-status="akan datang" data-rating="5">
+              <div class="evt-td evt-id">#EV-001</div>
 
-            <!-- ROW 2 -->
-            <div class="evt-row" data-status="selesai">
-              <div class="evt-td evt-id">#EV-002</div>
               <div class="evt-td">
-                <img class="evt-poster" src="assets/event/2.jpg" alt="Poster Event">
+                <img class="evt-poster" src="assets/event/1.jpg" alt="Poster Event">
               </div>
+
               <div class="evt-td evt-name">
-                <div class="evt-name__title">Tambora Menyapa Dunia</div>
-                <!--<div class="evt-name__sub">Pameran Seni</div>-->
+                <div class="evt-name__title">Event Rimpu</div>
               </div>
-              <div class="evt-td evt-date">8 April 2025</div>
-              <div class="evt-td evt-loc">Sanggar Kabupaten Bima</div>
+
+              <div class="evt-td evt-date">24-26 April 2025</div>
+
+              <div class="evt-td evt-loc">Kantor Bupati Bima</div>
+
               <div class="evt-td">
-                <span class="evt-badge evt-badge--on">Selesai</span>
+                <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
               </div>
-                <div class="evt-td evt-view">
-    <span class="evt-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    2,415
-  </div>
+
+              <div class="evt-td evt-rating">
+                <span class="evt-stars">★★★★★</span>
+                <span class="evt-rating__num">5.0</span>
+              </div>
+
+              <div class="evt-td evt-view">
+                <span class="evt-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                2,415
+              </div>
+
               <div class="evt-td evt-actions">
-                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                <a class="evt-act evt-act--edit" href="edit-event.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
+                </a>
+
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M10 11v6"></path>
+                    <path d="M14 11v6"></path>
+                    <path d="M6 7l1 14h10l1-14"></path>
+                    <path d="M9 7V4h6v3"></path>
+                  </svg>
                 </button>
-                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+              </div>
+            </div>
+
+            <!-- ROW 2 -->
+            <div class="evt-row" data-status="berlangsung" data-rating="4">
+              <div class="evt-td evt-id">#EV-002</div>
+
+              <div class="evt-td">
+                <img class="evt-poster" src="assets/event/2.jpg" alt="Poster Event">
+              </div>
+
+              <div class="evt-td evt-name">
+                <div class="evt-name__title">Festival Budaya Bima</div>
+              </div>
+
+              <div class="evt-td evt-date">12 Mei 2025</div>
+
+              <div class="evt-td evt-loc">Lapangan Serasuba</div>
+
+              <div class="evt-td">
+                <span class="evt-badge evt-badge--run">Berlangsung</span>
+              </div>
+
+              <div class="evt-td evt-rating">
+                <span class="evt-stars">★★★★☆</span>
+                <span class="evt-rating__num">4.0</span>
+              </div>
+
+              <div class="evt-td evt-view">
+                <span class="evt-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                1,920
+              </div>
+
+              <div class="evt-td evt-actions">
+                <a class="evt-act evt-act--edit" href="edit-event.html" title="Edit" aria-label="Edit">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
+                    <path d="M13.5 6.5l4 4"></path>
+                  </svg>
+                </a>
+
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -272,37 +321,49 @@
             </div>
 
             <!-- ROW 3 -->
-            <div class="evt-row" data-status="selesai">
+            <div class="evt-row" data-status="akan datang" data-rating="4">
               <div class="evt-td evt-id">#EV-003</div>
+
               <div class="evt-td">
                 <img class="evt-poster" src="assets/event/3.jpg" alt="Poster Event">
               </div>
+
               <div class="evt-td evt-name">
-                <div class="evt-name__title">Pacoa Jara</div>
-               <!-- <div class="evt-name__sub">Olahraga</div> -->
+                <div class="evt-name__title">Lomba Perahu Hias</div>
               </div>
-              <div class="evt-td evt-date">Juli 2025</div>
-              <div class="evt-td evt-loc">Lapangan Pacuan Kuda Panda</div>
+
+              <div class="evt-td evt-date">18 Juni 2025</div>
+
+              <div class="evt-td evt-loc">Pelabuhan Sape</div>
+
               <div class="evt-td">
-                <span class="evt-badge evt-badge--on">Selesai</span>
+                <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
               </div>
-                <div class="evt-td evt-view">
-    <span class="evt-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    2,415
-  </div>
+
+              <div class="evt-td evt-rating">
+                <span class="evt-stars">★★★★☆</span>
+                <span class="evt-rating__num">4.0</span>
+              </div>
+
+              <div class="evt-td evt-view">
+                <span class="evt-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                1,420
+              </div>
+
               <div class="evt-td evt-actions">
-                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                <a class="evt-act evt-act--edit" href="edit-event.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -315,37 +376,49 @@
             </div>
 
             <!-- ROW 4 -->
-            <div class="evt-row" data-status="akan datang">
+            <div class="evt-row" data-status="selesai" data-rating="3">
               <div class="evt-td evt-id">#EV-004</div>
+
               <div class="evt-td">
                 <img class="evt-poster" src="assets/event/4.jpg" alt="Poster Event">
               </div>
+
               <div class="evt-td evt-name">
                 <div class="evt-name__title">Hari Jadi Bima</div>
-                <!--<div class="evt-name__sub">Festival Daerah</div>  -->
               </div>
+
               <div class="evt-td evt-date">5 Juli 2025</div>
+
               <div class="evt-td evt-loc">Kantor Bupati Bima</div>
+
               <div class="evt-td">
-                <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
+                <span class="evt-badge evt-badge--done">Selesai</span>
               </div>
-                <div class="evt-td evt-view">
-    <span class="evt-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    2,415
-  </div>
+
+              <div class="evt-td evt-rating">
+                <span class="evt-stars">★★★☆☆</span>
+                <span class="evt-rating__num">3.0</span>
+              </div>
+
+              <div class="evt-td evt-view">
+                <span class="evt-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                2,415
+              </div>
+
               <div class="evt-td evt-actions">
-                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                <a class="evt-act evt-act--edit" href="edit-event.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -358,37 +431,49 @@
             </div>
 
             <!-- ROW 5 -->
-            <div class="evt-row" data-status="akan datang">
+            <div class="evt-row" data-status="akan datang" data-rating="5">
               <div class="evt-td evt-id">#EV-005</div>
+
               <div class="evt-td">
                 <img class="evt-poster" src="assets/event/5.jpg" alt="Poster Event">
               </div>
+
               <div class="evt-td evt-name">
                 <div class="evt-name__title">Festival Sangiang Api</div>
-                <!--<div class="evt-name__sub">Olahraga</div>-->
               </div>
+
               <div class="evt-td evt-date">27 Juli - 2 Agustus 2025</div>
+
               <div class="evt-td evt-loc">Pantai Sangiang Bima</div>
+
               <div class="evt-td">
                 <span class="evt-badge evt-badge--up">Akan<br>Datang</span>
               </div>
-                <div class="evt-td evt-view">
-    <span class="evt-eye" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
-        <circle cx="12" cy="12" r="2.5"></circle>
-      </svg>
-    </span>
-    2,415
-  </div>
+
+              <div class="evt-td evt-rating">
+                <span class="evt-stars">★★★★★</span>
+                <span class="evt-rating__num">5.0</span>
+              </div>
+
+              <div class="evt-td evt-view">
+                <span class="evt-eye" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </span>
+                2,415
+              </div>
+
               <div class="evt-td evt-actions">
-                <button class="evt-act evt-act--edit" title="Edit" aria-label="Edit">
+                <a class="evt-act evt-act--edit" href="edit-event.html" title="Edit" aria-label="Edit">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 20h4l10.5-10.5-4-4L4 16v4z"></path>
                     <path d="M13.5 6.5l4 4"></path>
                   </svg>
-                </button>
-                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus">
+                </a>
+
+                <button class="evt-act evt-act--del" title="Hapus" aria-label="Hapus" type="button">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 7h16"></path>
                     <path d="M10 11v6"></path>
@@ -404,16 +489,16 @@
 
           <!-- FOOT -->
           <div class="evt-foot">
-            <div class="evt-foot__text">Menampilkan 1-5 dari 124 event</div>
+            <div class="evt-foot__text">Menampilkan 1-5 dari 20 event</div>
 
             <div class="evt-pagi">
-              <button class="evt-pagi__btn" aria-label="Prev">‹</button>
-              <button class="evt-pagi__num is-active">1</button>
-              <button class="evt-pagi__num">2</button>
-              <button class="evt-pagi__num">3</button>
+              <button class="evt-pagi__btn" aria-label="Prev" type="button">‹</button>
+              <button class="evt-pagi__num is-active" type="button">1</button>
+              <button class="evt-pagi__num" type="button">2</button>
+              <button class="evt-pagi__num" type="button">3</button>
               <span class="evt-pagi__dots">…</span>
-              <button class="evt-pagi__num">25</button>
-              <button class="evt-pagi__btn" aria-label="Next">›</button>
+              <button class="evt-pagi__num" type="button">5</button>
+              <button class="evt-pagi__btn" aria-label="Next" type="button">›</button>
             </div>
           </div>
 
@@ -423,5 +508,74 @@
   </div>
 
   <script src="admin.js"></script>
+
+  <script>
+    function updateEventAverageStars(){
+      const rows = document.querySelectorAll(".evt-row[data-rating]");
+      const avgEl = document.getElementById("eventAvgStarsValue");
+
+      if(!avgEl || rows.length === 0) return;
+
+      let total = 0;
+      let count = 0;
+
+      rows.forEach(row => {
+        const rating = Number(row.dataset.rating);
+
+        if(!isNaN(rating) && rating > 0){
+          total += rating;
+          count++;
+        }
+      });
+
+      const average = count > 0 ? total / count : 0;
+
+      avgEl.innerHTML = `
+        ${average.toFixed(1)}
+        <span class="evt-avg-star">★</span>
+      `;
+    }
+
+    updateEventAverageStars();
+
+    const eventSearch = document.getElementById("eventSearch");
+    const eventStatusFilter = document.getElementById("eventStatusFilter");
+    const eventRows = document.querySelectorAll(".evt-row[data-rating]");
+
+    function filterEvent(){
+      const keyword = eventSearch.value.toLowerCase().trim();
+      const status = eventStatusFilter.value.toLowerCase();
+
+      eventRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        const rowStatus = (row.dataset.status || "").toLowerCase();
+
+        const matchSearch = rowText.includes(keyword);
+        const matchStatus = status === "semua kategori" || rowStatus === status;
+
+        row.style.display = matchSearch && matchStatus ? "grid" : "none";
+      });
+    }
+
+    if(eventSearch){
+      eventSearch.addEventListener("input", filterEvent);
+    }
+
+    if(eventStatusFilter){
+      eventStatusFilter.addEventListener("change", filterEvent);
+    }
+
+    document.querySelectorAll(".evt-act--del").forEach(button => {
+      button.addEventListener("click", function(){
+        const row = this.closest(".evt-row");
+
+        if(confirm("Yakin ingin menghapus event ini?")){
+          row.remove();
+          updateEventAverageStars();
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
