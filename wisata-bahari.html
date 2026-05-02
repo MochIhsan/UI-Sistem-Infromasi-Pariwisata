@@ -461,7 +461,7 @@
   }
 </script>
 
-<script>
+<!-- <script>
   const searchBahari = document.getElementById("searchBahari");
   const bahariCards = document.querySelectorAll(".dest-card");
   const emptyBahariMessage = document.getElementById("emptyBahariMessage");
@@ -501,6 +501,219 @@
       filterBahari();
     }
   });
+</script> -->
+<script>
+  (function () {
+    const searchInput = document.getElementById("searchBahari");
+    const destGrid = document.querySelector(".dest-grid");
+    const emptyMessage = document.getElementById("emptyBahariMessage");
+    const pager = document.querySelector(".pager");
+    const destCount = document.querySelector(".dest-count");
+
+    if (!searchInput || !destGrid) return;
+
+    const originalGridHTML = destGrid.innerHTML;
+    const originalPagerDisplay = pager ? pager.style.display : "";
+
+    const dataBahari = [
+      {
+        title: "Pantai Kalaki",
+        lokasi: "Sape",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/20.png",
+        alt: "Pantai Kalaki",
+        link: "pantai-kalaki.html"
+      },
+      {
+        title: "Pantai Lariti",
+        lokasi: "Sape",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/22.jpeg",
+        alt: "Pantai Lariti",
+        link: "lariti.html"
+      },
+      {
+        title: "Pantai Lawoli",
+        lokasi: "Lambu",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/23.png",
+        alt: "Pantai Lawoli",
+        link: "pantai-lawoli.html"
+      },
+      {
+        title: "Pantai Lere",
+        lokasi: "Parado",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/24.png",
+        alt: "Pantai Lere",
+        link: "pantai-lere.html"
+      },
+      {
+        title: "Pantai Oi Fanda",
+        lokasi: "Wera",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/25.png",
+        alt: "Pantai Oi Fanda",
+        link: "oi-fanda.html"
+      },
+      {
+        title: "Pantai Papa",
+        lokasi: "Sape",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/26.png",
+        alt: "Pantai Papa",
+        link: "pantai-papa.html"
+      },
+      {
+        title: "Pantai Pasir Putih",
+        lokasi: "Wera",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/27.png",
+        alt: "Pantai Pasir Putih",
+        link: "pasir-putih.html"
+      },
+      {
+        title: "Pantai Pink",
+        lokasi: "Sape",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/28.png",
+        alt: "Pantai Pink",
+        link: "pantai-pink.html"
+      },
+      {
+        title: "Pantai Piong",
+        lokasi: "Sanggar",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/29.png",
+        alt: "Pantai Piong",
+        link: "pantai-piong.html"
+      },
+      {
+        title: "Pantai Rontu",
+        lokasi: "Monta",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/30.png",
+        alt: "Pantai Rontu",
+        link: "pantai-rontu.html"
+      },
+      {
+        title: "Pantai So Santigi",
+        lokasi: "Sape",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/31.png",
+        alt: "Pantai So Santigi",
+        link: "so-santigi.html"
+      },
+      {
+        title: "Pantai Toro Maria",
+        lokasi: "Sape",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/32.png",
+        alt: "Pantai Toro Maria",
+        link: "toro-maria.html"
+      },
+      {
+        title: "Pantai Torowamba",
+        lokasi: "Sape",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/33.png",
+        alt: "Pantai Torowamba",
+        link: "pantai-torowamba.html"
+      },
+      {
+        title: "Pantai Wane",
+        lokasi: "Monta",
+        kategori: "WISATA BAHARI",
+        img: "assets/dest/34.png",
+        alt: "Pantai Wane",
+        link: "pantai-wane.html"
+      }
+    ];
+
+    function buatCard(item) {
+      return `
+        <a class="dest-card" href="${item.link}">
+          <div class="dest-card__media">
+            <img src="${item.img}" alt="${item.alt}">
+            <span class="dest-tag">${item.kategori}</span>
+          </div>
+
+          <div class="dest-card__body">
+            <h3 class="dest-card__title">${item.title}</h3>
+            <div class="dest-card__meta">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              <span>${item.lokasi}</span>
+            </div>
+          </div>
+        </a>
+      `;
+    }
+
+    function cariBahari() {
+      const keyword = searchInput.value.toLowerCase().trim();
+
+      if (keyword === "") {
+        destGrid.innerHTML = originalGridHTML;
+
+        if (pager) {
+          pager.style.display = originalPagerDisplay;
+        }
+
+        if (emptyMessage) {
+          emptyMessage.style.display = "none";
+        }
+
+        if (destCount) {
+          destCount.textContent = `${dataBahari.length} Destinasi Tersedia`;
+        }
+
+        return;
+      }
+
+      const hasil = dataBahari.filter((item) => {
+        return (
+          item.title.toLowerCase().includes(keyword) ||
+          item.lokasi.toLowerCase().includes(keyword) ||
+          item.kategori.toLowerCase().includes(keyword) ||
+          item.alt.toLowerCase().includes(keyword)
+        );
+      });
+
+      if (pager) {
+        pager.style.display = "none";
+      }
+
+      if (hasil.length === 0) {
+        destGrid.innerHTML = "";
+
+        if (emptyMessage) {
+          emptyMessage.style.display = "block";
+          emptyMessage.textContent = `Destinasi wisata bahari dengan kata kunci "${searchInput.value}" tidak ditemukan.`;
+        }
+
+        if (destCount) {
+          destCount.textContent = "0 Destinasi Ditemukan";
+        }
+
+        return;
+      }
+
+      if (emptyMessage) {
+        emptyMessage.style.display = "none";
+      }
+
+      destGrid.innerHTML = hasil.map(buatCard).join("");
+
+      if (destCount) {
+        destCount.textContent = `${hasil.length} Destinasi Ditemukan`;
+      }
+    }
+
+    searchInput.addEventListener("input", cariBahari);
+  })();
 </script>
 <script>
   (function () {

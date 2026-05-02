@@ -12933,12 +12933,11 @@ body.dark-mode .login-close{
    AKOMODASI FILTER FUNCTION
 ========================= */
 
-#emptyAkomodasiMessage{
-  padding:14px 16px;
-  border:1px solid #e6ecf2;
-  border-radius:12px;
-  background:#f8fafc;
-  font-size:13px;
+.empty-akomodasi{
+  display: none;
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 13px;
 }
 
 .acc-card[style*="display: none"]{

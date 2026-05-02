@@ -600,7 +600,7 @@
   }
 </script>
 
-<script>
+<!--<script>
   const searchDestinasi = document.getElementById("searchDestinasi");
   const destinasiCards = document.querySelectorAll(".dest-card");
   const emptyDestinasiMessage = document.getElementById("emptyDestinasiMessage");
@@ -640,6 +640,394 @@
       filterDestinasi();
     }
   });
+</script> -->
+<script>
+  const searchDestinasi = document.getElementById("searchDestinasi");
+  const destGrid = document.querySelector(".dest-grid");
+  const emptyDestinasiMessage = document.getElementById("emptyDestinasiMessage");
+  const destPagination = document.querySelector(".dest-pagination");
+  const destCount = document.querySelector(".dest-count");
+
+  const originalGridHTML = destGrid ? destGrid.innerHTML : "";
+  const originalPaginationDisplay = destPagination ? destPagination.style.display : "";
+
+  const semuaDestinasi = [
+    {
+      title: "Air Terjun Bombo Ncera",
+      lokasi: "Belo",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/01.png",
+      alt: "Air Terjun Bombo Ncera",
+      link: "bombo-ncera.html"
+    },
+    {
+      title: "Air Terjun Bombo Roi",
+      lokasi: "Palibelo",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/02.png",
+      alt: "Air Terjun Bombo Roi",
+      link: "bombo-roi.html"
+    },
+    {
+      title: "Air Terjun Jo Rato",
+      lokasi: "Wawo",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/03.png",
+      alt: "Air Terjun Jo Rato",
+      link: "jo-rato.html"
+    },
+    {
+      title: "Air Terjun Kalate Mbaju",
+      lokasi: "Woha",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/05.png",
+      alt: "Air Terjun Kalate Mbaju",
+      link: "kalate-mbaju.html"
+    },
+    {
+      title: "Air Terjun Oi Nca",
+      lokasi: "Wera",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/06.png",
+      alt: "Air Terjun Oi Nca",
+      link: "oi-nca.html"
+    },
+    {
+      title: "Air Terjun Oi Sariwu Tuda Nua",
+      lokasi: "Monta",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/07.png",
+      alt: "Air Terjun Oi Sariwu Tuda Ncua",
+      link: "tuda-ncua.html"
+    },
+    {
+      title: "Bendungan Diwumoro",
+      lokasi: "Lambu",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/08.png",
+      alt: "Bendungan Diwumoro",
+      link: "bendungan-diwuoro.html"
+    },
+    {
+      title: "Benteng Asakota",
+      lokasi: "Soromandi",
+      kategori: "BUDAYA & SEJARAH",
+      img: "assets/dest/09.png",
+      alt: "Benteng Asakota",
+      link: "benteng-asakota.html"
+    },
+    {
+      title: "Gunung Sangiang",
+      lokasi: "Sangiang",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/10.png",
+      alt: "Gunung Sangiang",
+      link: "sangiang-api.html"
+    },
+    {
+      title: "Jalur Pendakian Kawinda To'i",
+      lokasi: "Tambora",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/11.png",
+      alt: "Jalur Pendakian Kawinda To'i",
+      link: "kawinda-toi.html"
+    },
+    {
+      title: "Jalur Pendakian Kore",
+      lokasi: "Sanggar",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/12.png",
+      alt: "Jalur Pendakian Kore",
+      link: "pendakian-kore.html"
+    },
+    {
+      title: "Kampung Adat Sambori",
+      lokasi: "Sape",
+      kategori: "BUDAYA & SEJARAH",
+      img: "assets/dest/13.png",
+      alt: "Kampung Adat Sambori",
+      link: "adat-sambori.html"
+    },
+    {
+      title: "Karombo Wera",
+      lokasi: "Wera",
+      kategori: "BUDAYA & SEJARAH",
+      img: "assets/dest/14.png",
+      alt: "Karombo Wera",
+      link: "karombo.html"
+    },
+    {
+      title: "Kawasan Bajo Pulau",
+      lokasi: "Sape",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/15.png",
+      alt: "Kawasan Bajo Pulau",
+      link: "bajo-pulau.html"
+    },
+    {
+      title: "Monumen Perang Ngali",
+      lokasi: "Wera",
+      kategori: "BUDAYA & SEJARAH",
+      img: "assets/dest/16.png",
+      alt: "Monumen Perang Ngali",
+      link: "monumen-ngali.html"
+    },
+    {
+      title: "Pacoa Jara",
+      lokasi: "Tambora",
+      kategori: "BUDAYA & SEJARAH",
+      img: "assets/dest/18.png",
+      alt: "Pacoa Jara",
+      link: "pacoa-jara.html"
+    },
+    {
+      title: "Panorama Bukit Ncai Kapenta",
+      lokasi: "Wera",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/19.png",
+      alt: "Panorama Bukit Ncai Kapenta",
+      link: "ncai-kapenta.html"
+    },
+    {
+      title: "Pantai Kalaki",
+      lokasi: "Palibelo",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/20.png",
+      alt: "Pantai Kalaki",
+      link: "pantai-kalaki.html"
+    },
+    {
+      title: "Pantai Lariti",
+      lokasi: "Sape",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/22.jpeg",
+      alt: "Pantai Lariti",
+      link: "lariti.html"
+    },
+    {
+      title: "Pantai Lawoli",
+      lokasi: "Lambu",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/23.png",
+      alt: "Pantai Lawoli",
+      link: "pantai-lawoli.html"
+    },
+    {
+      title: "Pantai Lere",
+      lokasi: "Parado",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/24.png",
+      alt: "Pantai Lere",
+      link: "pantai-lere.html"
+    },
+    {
+      title: "Pantai Oi Fanda",
+      lokasi: "Wera",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/25.png",
+      alt: "Pantai Oi Fanda",
+      link: "oi-fanda.html"
+    },
+    {
+      title: "Pantai Papa",
+      lokasi: "Sape",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/26.png",
+      alt: "Pantai Papa",
+      link: "pantai-papa.html"
+    },
+    {
+      title: "Pantai Pasir Putih",
+      lokasi: "Wera",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/27.png",
+      alt: "Pantai Pasir Putih",
+      link: "pasir-putih.html"
+    },
+    {
+      title: "Pantai Pink",
+      lokasi: "Sape",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/28.png",
+      alt: "Pantai Pink",
+      link: "pantai-pink.html"
+    },
+    {
+      title: "Pantai Piong",
+      lokasi: "Sanggar",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/29.png",
+      alt: "Pantai Piong",
+      link: "pantai-piong.html"
+    },
+    {
+      title: "Pantai Rontu",
+      lokasi: "Monta",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/30.png",
+      alt: "Pantai Rontu",
+      link: "pantai-rontu.html"
+    },
+    {
+      title: "Pantai So Santigi",
+      lokasi: "Sape",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/31.png",
+      alt: "Pantai So Santigi",
+      link: "so-santigi.html"
+    },
+    {
+      title: "Pantai Toro Maria",
+      lokasi: "Sape",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/32.png",
+      alt: "Pantai Toro Maria",
+      link: "toro-maria.html"
+    },
+    {
+      title: "Pantai Torowamba",
+      lokasi: "Sape",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/33.png",
+      alt: "Pantai Torowamba",
+      link: "pantai-torowamba.html"
+    },
+    {
+      title: "Pantai Wane",
+      lokasi: "Monta",
+      kategori: "WISATA BAHARI",
+      img: "assets/dest/34.png",
+      alt: "Pantai Wane",
+      link: "pantai-wane.html"
+    },
+    {
+      title: "Pulau Gilibanta",
+      lokasi: "Sape",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/35.png",
+      alt: "Pulau Gilibanta",
+      link: "pulau-gilibanta.html"
+    },
+    {
+      title: "Pulau Kelapa",
+      lokasi: "Sape",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/36.png",
+      alt: "Pulau Kelapa",
+      link: "pulau-kelapa.html"
+    },
+    {
+      title: "Pulau Ular",
+      lokasi: "Wera",
+      kategori: "ALAM PEGUNUNGAN",
+      img: "assets/dest/37.png",
+      alt: "Pulau Ular",
+      link: "pulau-ular.html"
+    },
+    {
+      title: "Uma Lengge",
+      lokasi: "Wawo",
+      kategori: "BUDAYA & SEJARAH",
+      img: "assets/dest/38.png",
+      alt: "Uma Lengge",
+      link: "uma-lengge.html"
+    },
+    {
+      title: "Wadu Pa'a",
+      lokasi: "Soromandi",
+      kategori: "BUDAYA & SEJARAH",
+      img: "assets/dest/39.png",
+      alt: "Wadu Pa'a",
+      link: "wadu-paa.html"
+    }
+  ];
+
+  function buatCardDestinasi(item) {
+    return `
+      <a class="dest-card" href="${item.link}">
+        <div class="dest-card__media">
+          <img src="${item.img}" alt="${item.alt}">
+          <span class="dest-tag">${item.kategori}</span>
+        </div>
+
+        <div class="dest-card__body">
+          <h3 class="dest-card__title">${item.title}</h3>
+          <div class="dest-card__meta">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"></path>
+              <circle cx="12" cy="9" r="2.5"></circle>
+            </svg>
+            <span>${item.lokasi}</span>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  function cariSemuaDestinasi() {
+    const keyword = searchDestinasi.value.toLowerCase().trim();
+
+    if (keyword === "") {
+      destGrid.innerHTML = originalGridHTML;
+
+      if (destPagination) {
+        destPagination.style.display = originalPaginationDisplay;
+      }
+
+      if (emptyDestinasiMessage) {
+        emptyDestinasiMessage.style.display = "none";
+      }
+
+      if (destCount) {
+        destCount.textContent = "40 Destinasi Tersedia";
+      }
+
+      return;
+    }
+
+    const hasil = semuaDestinasi.filter((item) => {
+      return (
+        item.title.toLowerCase().includes(keyword) ||
+        item.lokasi.toLowerCase().includes(keyword) ||
+        item.kategori.toLowerCase().includes(keyword) ||
+        item.alt.toLowerCase().includes(keyword)
+      );
+    });
+
+    if (destPagination) {
+      destPagination.style.display = "none";
+    }
+
+    if (hasil.length === 0) {
+      destGrid.innerHTML = "";
+      emptyDestinasiMessage.style.display = "block";
+      emptyDestinasiMessage.textContent = `Destinasi dengan kata kunci "${searchDestinasi.value}" tidak ditemukan.`;
+
+      if (destCount) {
+        destCount.textContent = "0 Destinasi Ditemukan";
+      }
+
+      return;
+    }
+
+    emptyDestinasiMessage.style.display = "none";
+    destGrid.innerHTML = hasil.map(buatCardDestinasi).join("");
+
+    if (destCount) {
+      destCount.textContent = `${hasil.length} Destinasi Ditemukan`;
+    }
+  }
+
+  if (searchDestinasi && destGrid) {
+    searchDestinasi.addEventListener("input", cariSemuaDestinasi);
+
+    searchDestinasi.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        cariSemuaDestinasi();
+      }
+    });
+  }
 </script>
 <script>
   (function () {
