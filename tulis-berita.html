@@ -277,8 +277,18 @@
     </main>
   </div>
 
-  <!-- dropdown admin (kalau admin.js kamu sudah handle, ini boleh tetap) -->
+  <!-- dropdown admin  -->
   <script src="admin.js"></script>
   <script src="tulis-berita.js"></script>
+  <script>
+  const btnPublish = document.getElementById("btnPublish");
+
+  if (btnPublish) {
+    btnPublish.addEventListener("click", function () {
+      alert("Berita berhasil diterbitkan!");
+      window.location.href = "admin-berita.html";
+    });
+  }
+</script>
 </body>
 </html>

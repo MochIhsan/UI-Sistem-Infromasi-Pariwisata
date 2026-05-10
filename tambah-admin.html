@@ -150,7 +150,7 @@
               <div class="ta-row2">
                 <div class="ta-field">
                   <label class="ta-label" for="username">Username</label>
-                  <input class="ta-input" id="username" type="text" placeholder="Contoh: admin_utama" />
+                  <input class="ta-input" id="username" type="text" placeholder="Contoh: admin rama" />
                   <div class="ta-err" id="errUsername"></div>
                 </div>
 
@@ -229,5 +229,14 @@
 
   <script src="admin.js"></script>
   <script src="tambah-admin.js"></script>
+  <script>
+  const btnSaveAdmin = document.getElementById("btnSaveAdmin");
+
+  if (btnSaveAdmin) {
+    btnSaveAdmin.addEventListener("click", function () {
+      window.location.href = "kelola-admin.html";
+    });
+  }
+</script>
 </body>
 </html>

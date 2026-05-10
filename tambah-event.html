@@ -310,5 +310,15 @@
 
   <!-- script khusus tambah event -->
   <script src="admin-tambah-event.js"></script>
+  <script>
+  const btnSaveEvent = document.getElementById("btnSaveEvent");
+
+  if (btnSaveEvent) {
+    btnSaveEvent.addEventListener("click", function () {
+      alert("Event berhasil disimpan!");
+      window.location.href = "admin-event.html";
+    });
+  }
+</script>
 </body>
 </html>

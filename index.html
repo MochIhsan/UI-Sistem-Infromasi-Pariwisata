@@ -972,46 +972,409 @@ document.querySelectorAll(".popular2 .wcard, .cards .post-card, .infocard, .expl
   const heroSearchForm = document.getElementById("heroSearchForm");
   const heroSearchInput = document.getElementById("heroSearchInput");
 
-  const destinationMap = {
-      /* DESTINASI */
-    "lariti": "lariti.html",
-    "pantai lariti": "lariti.html",
+  const searchData = [
+    /* ================= MENU UTAMA ================= */
+    {
+      title: "Destinasi",
+      kategori: "destinasi",
+      keywords: "destinasi wisata tempat wisata objek wisata wisata alam wisata bahari budaya sejarah alam pegunungan",
+      link: "destinasi.html"
+    },
+    {
+      title: "Event",
+      kategori: "event",
+      keywords: "event acara festival kegiatan agenda budaya",
+      link: "event.html"
+    },
+    {
+      title: "Berita",
+      kategori: "berita",
+      keywords: "berita news informasi artikel kabar wisata",
+      link: "berita.html"
+    },
+    {
+      title: "Akomodasi",
+      kategori: "akomodasi",
+      keywords: "akomodasi hotel penginapan losmen villa tempat menginap",
+      link: "akomodasi.html"
+    },
 
-    "pantai pink": "pantai-pink.html",
-    "pink": "pantai-pink.html",
+    /* ================= DESTINASI ================= */
+    {
+      title: "Air Terjun Bombo Ncera",
+      kategori: "destinasi",
+      keywords: "air terjun bombo ncera belo alam pegunungan",
+      link: "bombo-ncera.html"
+    },
+    {
+      title: "Air Terjun Bombo Roi",
+      kategori: "destinasi",
+      keywords: "air terjun bombo roi palibelo alam pegunungan",
+      link: "bombo-roi.html"
+    },
+    {
+      title: "Air Terjun Jo Rato",
+      kategori: "destinasi",
+      keywords: "air terjun jo rato wawo alam pegunungan",
+      link: "jo-rato.html"
+    },
+    {
+      title: "Air Terjun Kalate Mbaju",
+      kategori: "destinasi",
+      keywords: "air terjun kalate mbaju woha alam pegunungan",
+      link: "kalate-mbaju.html"
+    },
+    {
+      title: "Air Terjun Oi Nca",
+      kategori: "destinasi",
+      keywords: "air terjun oi nca wera alam pegunungan",
+      link: "oi-nca.html"
+    },
+    {
+      title: "Air Terjun Oi Sariwu Tuda Nua",
+      kategori: "destinasi",
+      keywords: "air terjun oi sariwu tuda nua monta alam pegunungan",
+      link: "tuda-ncua.html"
+    },
+    {
+      title: "Bendungan Diwumoro",
+      kategori: "destinasi",
+      keywords: "bendungan diwumoro lambu alam pegunungan",
+      link: "bendungan-diwuoro.html"
+    },
+    {
+      title: "Benteng Asakota",
+      kategori: "destinasi",
+      keywords: "benteng asakota soromandi budaya sejarah",
+      link: "benteng-asakota.html"
+    },
+    {
+      title: "Gunung Sangiang",
+      kategori: "destinasi",
+      keywords: "gunung sangiang sangiang api alam pegunungan",
+      link: "sangiang-api.html"
+    },
+    {
+      title: "Jalur Pendakian Kawinda To'i",
+      kategori: "destinasi",
+      keywords: "jalur pendakian kawinda toi tambora alam pegunungan",
+      link: "kawinda-toi.html"
+    },
+    {
+      title: "Jalur Pendakian Kore",
+      kategori: "destinasi",
+      keywords: "jalur pendakian kore sanggar alam pegunungan",
+      link: "pendakian-kore.html"
+    },
+    {
+      title: "Kampung Adat Sambori",
+      kategori: "destinasi",
+      keywords: "kampung adat sambori sape budaya sejarah",
+      link: "adat-sambori.html"
+    },
+    {
+      title: "Karombo Wera",
+      kategori: "destinasi",
+      keywords: "karombo wera budaya sejarah",
+      link: "karombo.html"
+    },
+    {
+      title: "Kawasan Bajo Pulau",
+      kategori: "destinasi",
+      keywords: "kawasan bajo pulau sape alam pegunungan",
+      link: "bajo-pulau.html"
+    },
+    {
+      title: "Monumen Perang Ngali",
+      kategori: "destinasi",
+      keywords: "monumen perang ngali wera budaya sejarah",
+      link: "monumen-ngali.html"
+    },
+    {
+      title: "Pacoa Jara",
+      kategori: "destinasi",
+      keywords: "pacoa jara tambora budaya sejarah balap kuda",
+      link: "pacoa-jara.html"
+    },
+    {
+      title: "Panorama Bukit Ncai Kapenta",
+      kategori: "destinasi",
+      keywords: "panorama bukit ncai kapenta wera alam pegunungan",
+      link: "ncai-kapenta.html"
+    },
+    {
+      title: "Pantai Kalaki",
+      kategori: "destinasi",
+      keywords: "pantai kalaki palibelo wisata bahari",
+      link: "pantai-kalaki.html"
+    },
+    {
+      title: "Pantai Lariti",
+      kategori: "destinasi",
+      keywords: "pantai lariti sape wisata bahari laut terbelah",
+      link: "lariti.html"
+    },
+    {
+      title: "Pantai Lawoli",
+      kategori: "destinasi",
+      keywords: "pantai lawoli lambu wisata bahari",
+      link: "pantai-lawoli.html"
+    },
+    {
+      title: "Pantai Lere",
+      kategori: "destinasi",
+      keywords: "pantai lere parado wisata bahari",
+      link: "pantai-lere.html"
+    },
+    {
+      title: "Pantai Oi Fanda",
+      kategori: "destinasi",
+      keywords: "pantai oi fanda wera wisata bahari",
+      link: "oi-fanda.html"
+    },
+    {
+      title: "Pantai Papa",
+      kategori: "destinasi",
+      keywords: "pantai papa sape wisata bahari",
+      link: "pantai-papa.html"
+    },
+    {
+      title: "Pantai Pasir Putih",
+      kategori: "destinasi",
+      keywords: "pantai pasir putih wera wisata bahari",
+      link: "pasir-putih.html"
+    },
+    {
+      title: "Pantai Pink",
+      kategori: "destinasi",
+      keywords: "pantai pink sape wisata bahari",
+      link: "pantai-pink.html"
+    },
+    {
+      title: "Pantai Piong",
+      kategori: "destinasi",
+      keywords: "pantai piong sanggar wisata bahari",
+      link: "pantai-piong.html"
+    },
+    {
+      title: "Pantai Rontu",
+      kategori: "destinasi",
+      keywords: "pantai rontu monta wisata bahari",
+      link: "pantai-rontu.html"
+    },
+    {
+      title: "Pantai So Santigi",
+      kategori: "destinasi",
+      keywords: "pantai so santigi sape wisata bahari",
+      link: "so-santigi.html"
+    },
+    {
+      title: "Pantai Toro Maria",
+      kategori: "destinasi",
+      keywords: "pantai toro maria sape wisata bahari",
+      link: "toro-maria.html"
+    },
+    {
+      title: "Pantai Torowamba",
+      kategori: "destinasi",
+      keywords: "pantai torowamba sape wisata bahari",
+      link: "pantai-torowamba.html"
+    },
+    {
+      title: "Pantai Wane",
+      kategori: "destinasi",
+      keywords: "pantai wane monta wisata bahari",
+      link: "pantai-wane.html"
+    },
+    {
+      title: "Pulau Gilibanta",
+      kategori: "destinasi",
+      keywords: "pulau gilibanta sape alam pegunungan wisata bahari",
+      link: "pulau-gilibanta.html"
+    },
+    {
+      title: "Pulau Kelapa",
+      kategori: "destinasi",
+      keywords: "pulau kelapa sape alam pegunungan wisata bahari",
+      link: "pulau-kelapa.html"
+    },
+    {
+      title: "Pulau Ular",
+      kategori: "destinasi",
+      keywords: "pulau ular wera alam pegunungan nusa nipa",
+      link: "pulau-ular.html"
+    },
+    {
+      title: "Uma Lengge",
+      kategori: "destinasi",
+      keywords: "uma lengge wawo budaya sejarah rumah adat",
+      link: "uma-lengge.html"
+    },
+    {
+      title: "Wadu Pa'a",
+      kategori: "destinasi",
+      keywords: "wadu paa wadu pa'a soromandi budaya sejarah",
+      link: "wadu-paa.html"
+    },
 
-    "pulau kelapa": "pulau-kelapa.html",
-    "kelapa": "pulau-kelapa.html",
+    /* ================= EVENT ================= 
+    {
+      title: "Event Rimpu",
+      kategori: "event",
+      keywords: "event rimpu budaya khas bima busana tradisional rimpu",
+      link: "event-rimpu.html"
+    },
+    {
+      title: "Tambora Menyapa Dunia",
+      kategori: "event",
+      keywords: "tambora menyapa dunia event budaya sejarah gunung tambora festival",
+      link: "event-tambora.html"
+    },
+    {
+      title: "Pacoa Jara",
+      kategori: "event",
+      keywords: "pacoa jara balap kuda tradisional khas bima event",
+      link: "event-pacoa.html"
+    },
+    {
+      title: "Hari Jadi Bima",
+      kategori: "event",
+      keywords: "hari jadi bima peringatan hari lahir kabupaten bima adat budaya",
+      link: "event-harijadi.html"
+    },
+    {
+      title: "Festival Sangiang Api",
+      kategori: "event",
+      keywords: "festival sangiang api event bahari budaya gunung sangiang",
+      link: "event-sangiang.html"
+    },
+    {
+      title: "Festival Uma Lengge",
+      kategori: "event",
+      keywords: "festival uma lengge budaya tradisi wawo",
+      link: "event-lengge.html"
+    },
+    {
+      title: "Mbojo Literation Festival",
+      kategori: "event",
+      keywords: "mbojo literation festival literasi pameran buku diskusi seni",
+      link: "event-literation.html"
+    },
 
-    "uma lengge": "uma-lengge.html",
-    "lengge": "uma-lengge.html",
+    /* ================= BERITA ================= 
+    {
+      title: "Sidak Diparda, Bupati dan Wakil Bupati Bima Tegaskan Komitmen Membangun Pariwisata sebagai Pilar Ekonomi Daerah",
+      kategori: "berita",
+      keywords: "sidak diparda bupati wakil bupati bima pariwisata ekonomi daerah",
+      link: "berita-1.html"
+    },
+    {
+      title: "Pesona Pantai Rontu di Bima NTB",
+      kategori: "berita",
+      keywords: "pesona pantai rontu bima ntb lokasi daya tarik tips berwisata",
+      link: "berita-2.html"
+    },
+    {
+      title: "Malam penutupan FSA 2025",
+      kategori: "berita",
+      keywords: "malam penutupan fsa 2025 festival sangiang api artis lokal bima",
+      link: "berita-3.html"
+    },
+    {
+      title: "Pawai Rimpu dan Doa Dana Serentak Awali Peringatan Hari Jadi Bima 2025",
+      kategori: "berita",
+      keywords: "pawai rimpu doa dana hari jadi bima 2025",
+      link: "berita-4.html"
+    },
+    {
+      title: "Bupati Bima Pastikan Dukung Event Festival Sangiang Api 2025",
+      kategori: "berita",
+      keywords: "bupati bima dukung event festival sangiang api 2025",
+      link: "berita-5.html"
+    },
+    {
+      title: "Menikmati Pesona Laut Terbelah Pantai Lariti di Bima",
+      kategori: "berita",
+      keywords: "laut terbelah pantai lariti bima wisata bahari",
+      link: "berita-6.html"
+    },
+    {
+      title: "Moeldoko: Bima, Potensi Wisata yang Terlindungi",
+      kategori: "berita",
+      keywords: "moeldoko bima potensi wisata terlindungi",
+      link: "berita-7.html"
+    },
+    {
+      title: "Pantai di Bima Ini Indah, tapi Sayang Akses Jalannya Rusak Parah",
+      kategori: "berita",
+      keywords: "pantai bima indah akses jalan rusak parah",
+      link: "berita-8.html"
+    },
+    {
+      title: "Indahnya Pantai Baku, Surga Tersembunyi di Ujung Timur Bima",
+      kategori: "berita",
+      keywords: "pantai baku surga tersembunyi ujung timur bima",
+      link: "berita-9.html"
+    },
+    {
+      title: "Misteri Nusa Nipa di Bima, Pulau Penuh Ular Jelmaan Manusia",
+      kategori: "berita",
+      keywords: "misteri nusa nipa bima pulau ular jelmaan manusia",
+      link: "berita-10.html"
+    },
 
-    "oi fanda": "oi-fanda.html",
-    "pantai oi fanda": "oi-fanda.html",
+    /* ================= AKOMODASI ================= 
+    {
+      title: "Hotel D'AUSSAF",
+      kategori: "akomodasi",
+      keywords: "hotel daussaf d'aussaf pelabuhan sape bima penginapan akomodasi",
+      link: "akomodasi-dausaf.html"
+    },
+    {
+      title: "Mantika Hotel",
+      kategori: "akomodasi",
+      keywords: "mantika hotel pusat kota bima penginapan akomodasi",
+      link: "akomodasi.hotel-mantika.html"
+    },
+    {
+      title: "Losmen Mustika",
+      kategori: "akomodasi",
+      keywords: "losmen mustika kecamatan sape bima penginapan akomodasi",
+      link: "akomodasi.losmen-mustika.html"
+    },
+    {
+      title: "Hotel Kalaki Beach",
+      kategori: "akomodasi",
+      keywords: "hotel kalaki beach pusat kota bima pantai kalaki penginapan akomodasi",
+      link: "akomodasi.hotel-kalaki.html"
+    },
+    {
+      title: "Kalimaya",
+      kategori: "akomodasi",
+      keywords: "kalimaya pelabuhan sape hotel penginapan akomodasi",
+      link: "akomodasi.kalimaya.html"
+    },
+    {
+      title: "Villa Lariti",
+      kategori: "akomodasi",
+      keywords: "villa lariti pantai kalaki hotel penginapan akomodasi",
+      link: "akomodasi.villa-lariti.html"
+    }*/
+  ];
 
-    "bombo ncera": "bombo-ncera.html",
-    "air terjun bombo ncera": "bombo-ncera.html",
-
-    /* MENU UTAMA */
-    "destinasi": "destinasi.html",
-
-    "event": "event.html",
-    "acara": "event.html",
-    "festival": "event.html",
-
-    "berita": "berita.html",
-    "news": "berita.html",
-
-    "akomodasi": "akomodasi.html",
-    "hotel": "akomodasi.html",
-    "penginapan": "akomodasi.html"
-  };
+  function normalizeText(text) {
+    return text
+      .toLowerCase()
+      .replace(/['’]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
 
   if (heroSearchForm && heroSearchInput) {
     heroSearchForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const keyword = heroSearchInput.value.trim().toLowerCase();
+      const keyword = normalizeText(heroSearchInput.value);
 
       if (!keyword) {
         alert("Silakan masukkan kata kunci pencarian.");
@@ -1019,19 +1382,25 @@ document.querySelectorAll(".popular2 .wcard, .cards .post-card, .infocard, .expl
         return;
       }
 
-      if (destinationMap[keyword]) {
-        window.location.href = destinationMap[keyword];
-        return;
-      }
+      const result = searchData.find((item) => {
+        const title = normalizeText(item.title);
+        const kategori = normalizeText(item.kategori);
+        const keywords = normalizeText(item.keywords);
 
-      for (const key in destinationMap) {
-        if (key.includes(keyword) || keyword.includes(key)) {
-          window.location.href = destinationMap[key];
-          return;
-        }
-      }
+        return (
+          title.includes(keyword) ||
+          kategori.includes(keyword) ||
+          keywords.includes(keyword) ||
+          keyword.includes(title)
+        );
+      });
 
-      window.location.href = "destinasi.html?search=" + encodeURIComponent(keyword);
+      if (result) {
+        window.location.href = result.link;
+      } else {
+        alert("Informasi tidak ada.");
+        heroSearchInput.focus();
+      }
     });
   }
 </script>

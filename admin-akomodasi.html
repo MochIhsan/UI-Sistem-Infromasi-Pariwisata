@@ -6,88 +6,7 @@
   <title>Manajemen Akomodasi - Admin</title>
   <link rel="stylesheet" href="style.css" />
 
-  <style>
-    /* =========================
-       TAMBAHAN BINTANG AKOMODASI
-    ========================= */
-
-    .acmdm-stats{
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    .acmdm-stat__icon--yellow{
-      background:#fff7dc;
-      color:#ffb000;
-    }
-
-    .acmdm-stat__icon--yellow svg{
-      width:24px;
-      height:24px;
-      fill:#ffb000;
-      stroke:#ffb000;
-      stroke-width:1.8;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-
-    .acmdm-thead,
-    .acmdm-row{
-      display:grid;
-      grid-template-columns: 110px minmax(260px, 1.8fr) 130px 160px 145px 120px 110px;
-      align-items:center;
-      column-gap:16px;
-    }
-
-    .acmdm-rating{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      white-space:nowrap;
-      font-weight:800;
-    }
-
-    .acmdm-stars{
-      color:#ffb000;
-      letter-spacing:1px;
-      font-size:15px;
-      line-height:1;
-    }
-
-    .acmdm-rating__num{
-      color:#334155;
-      font-size:13px;
-      font-weight:800;
-    }
-
-    .acmdm-avg-star{
-      color:#ffb000;
-      font-size:18px;
-      margin-left:6px;
-    }
-
-    @media (max-width:1280px){
-      .acmdm-table{
-        overflow-x:auto;
-      }
-
-      .acmdm-thead,
-      .acmdm-row{
-        min-width:1180px;
-      }
-    }
-
-    @media (max-width:1100px){
-      .acmdm-stats{
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width:640px){
-      .acmdm-stats{
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+ 
 </head>
 
 <body class="admin-body">
@@ -106,11 +25,13 @@
 
       <nav class="admin-nav">
 
+        <!-- DASHBOARD -->
         <a class="admin-nav__item" href="admin.html">
           <img class="admin-ic" src="logo/containerdashboard.svg" alt="">
           Dashboard
         </a>
 
+        <!-- KONTEN WISATA -->
         <div class="admin-nav__group open">
           <button class="admin-nav__item admin-nav__toggle" type="button">
             <span class="admin-nav__left">
@@ -128,6 +49,7 @@
           </div>
         </div>
 
+        <!-- MANAJEMEN -->
         <div class="admin-nav__group">
           <button class="admin-nav__item admin-nav__toggle" type="button">
             <span class="admin-nav__left">
@@ -144,6 +66,7 @@
           </div>
         </div>
 
+        <!-- ANALISIS -->
         <div class="admin-nav__group">
           <button class="admin-nav__item admin-nav__toggle" type="button">
             <span class="admin-nav__left">
@@ -275,10 +198,7 @@
           <!-- TOOLBAR -->
           <div class="acmdm-toolbar">
             <div class="acmdm-search">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="11" cy="11" r="7"></circle>
-                <path d="M20 20l-3.5-3.5"></path>
-              </svg>
+             
 
               <input type="text" id="staySearch" placeholder="Cari nama penginapan atau lokasi..." />
             </div>

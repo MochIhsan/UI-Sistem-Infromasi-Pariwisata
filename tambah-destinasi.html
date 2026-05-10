@@ -363,5 +363,17 @@
 
   <script src="admin.js"></script>
   <script src="admin-tambah-destinasi.js"></script>
+  <script>
+  (function () {
+    const tombolSimpanDestinasi = document.getElementById("btnSave");
+
+    if (tombolSimpanDestinasi) {
+      tombolSimpanDestinasi.addEventListener("click", function () {
+        alert("Destinasi berhasil disimpan!");
+        window.location.href = "admin-destinasi.html";
+      });
+    }
+  })();
+</script>
 </body>
 </html>

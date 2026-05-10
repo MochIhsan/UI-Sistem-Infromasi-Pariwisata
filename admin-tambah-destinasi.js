@@ -220,6 +220,6 @@ syncAksesValue();
 
   // ===== Save (dummy) =====
   document.getElementById("btnSave")?.addEventListener("click", () => {
-    alert("Simpan Destinasi (demo). Integrasikan ke backend/database kamu ya.");
+    alert("Simpan Destinasi .");
   });
 })();
