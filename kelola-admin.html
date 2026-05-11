@@ -133,7 +133,7 @@
             </div>
 
             <!-- ROW 1 -->
-            <div class="adminm-row">
+            <div class="adminm-row" data-username="admin rama">
               <div class="adminm-td adminm-namecell">
                 <span class="adminm-ava">R</span>
                 <span class="adminm-name">Ramadhani</span>
@@ -178,7 +178,7 @@
             </div>
 
             <!-- ROW 2 -->
-            <div class="adminm-row">
+            <div class="adminm-row" data-username="riana_editor">
               <div class="adminm-td adminm-namecell">
                 <span class="adminm-ava">RD</span>
                 <span class="adminm-name">Riana Destin</span>
@@ -223,7 +223,7 @@
             </div>
 
             <!-- ROW 3 -->
-            <div class="adminm-row">
+            <div class="adminm-row" data-username="budi_pratama">
               <div class="adminm-td adminm-namecell">
                 <span class="adminm-ava">BP</span>
                 <span class="adminm-name">Budi Pratama</span>
@@ -282,5 +282,33 @@
   </div>
 
   <script src="admin.js"></script>
+
+<script>
+  // Username admin yang sedang login
+  // Karena sekarang kamu login sebagai Ramadhani, username-nya adalah "admin rama"
+  const currentAdminUsername = "admin rama";
+
+  document.querySelectorAll(".adminm-row").forEach(function (row) {
+    const rowUsername = (row.dataset.username || "").toLowerCase().trim();
+    const loginUsername = currentAdminUsername.toLowerCase().trim();
+
+    const buttons = row.querySelectorAll(".adminm-act");
+
+    // Jika baris admin bukan akun yang sedang login, maka tombol edit & hapus diblok
+    if (rowUsername !== loginUsername) {
+      row.classList.add("is-blocked");
+
+      buttons.forEach(function (btn) {
+        btn.disabled = true;
+        btn.removeAttribute("onclick");
+        btn.setAttribute("title", "Aksi diblokir. Hanya akun yang sedang login yang dapat diedit atau dihapus.");
+        btn.setAttribute("aria-disabled", "true");
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
 </body>
 </html>

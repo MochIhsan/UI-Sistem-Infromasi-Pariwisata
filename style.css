@@ -13026,3 +13026,20 @@ body.dark-mode .login-close{
       }
     }
  
+    /* BLOK AKSI ADMIN LAIN */
+.adminm-row.is-blocked {
+  opacity: 0.55;
+}
+
+.adminm-row.is-blocked .adminm-act,
+.adminm-act:disabled {
+  cursor: not-allowed;
+  background: #f3f4f6;
+  color: #9ca3af;
+  border-color: #e5e7eb;
+}
+
+.adminm-row.is-blocked .adminm-act svg,
+.adminm-act:disabled svg {
+  opacity: 0.45;
+}
