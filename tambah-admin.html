@@ -238,5 +238,12 @@
     });
   }
 </script>
+<script>
+  const currentAdmin = JSON.parse(localStorage.getItem("currentAdmin") || "null");
+
+  if (!currentAdmin || currentAdmin.role !== "Super Admin") {
+    window.location.href = "kelola-admin.html";
+  }
+</script>
 </body>
 </html>

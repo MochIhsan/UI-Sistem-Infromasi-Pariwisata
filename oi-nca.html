@@ -556,43 +556,71 @@ Untuk mencapai lokasi Air Terjun Oi Nca, pengunjung umumnya harus menempuh perja
   });
 
   if (loginForm) {
-    loginForm.addEventListener("submit", function(e) {
-      e.preventDefault();
+  loginForm.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
+    const username = document.getElementById("username").value.trim().toLowerCase();
+    const password = document.getElementById("password").value.trim();
 
-      const registeredUser = localStorage.getItem("registeredUser");
-      const registeredPass = localStorage.getItem("registeredPass");
+    const registeredUser = localStorage.getItem("registeredUser");
+    const registeredPass = localStorage.getItem("registeredPass");
 
-      loginError.textContent = "";
+    loginError.textContent = "";
 
-      if (username === "admin" && password === "admin123") {
-        sessionStorage.setItem("isLoggedIn", "true");
-        sessionStorage.setItem("loggedInUser", username);
-        sessionStorage.setItem("userRole", "admin");
-        window.location.href = "admin.html";
-        return;
+    const akunAdmin = [
+      {
+        nama: "Ramadhani",
+        username: "admin rama",
+        password: "admin123",
+        role: "Super Admin"
+      },
+      {
+        nama: "Riana Destin",
+        username: "riana_editor",
+        password: "riana123",
+        role: "Admin"
+      },
+      {
+        nama: "Budi Pratama",
+        username: "budi_pratama",
+        password: "budi123",
+        role: "Admin"
       }
+    ];
 
-      if (username === registeredUser && password === registeredPass) {
-        loginError.style.color = "green";
-        loginError.textContent = "Login user berhasil!";
-
-        sessionStorage.setItem("isLoggedIn", "true");
-        sessionStorage.setItem("loggedInUser", username);
-        sessionStorage.setItem("userRole", "user");
-
-        setTimeout(() => {
-          window.location.href = "user.html";
-        }, 800);
-        return;
-      }
-
-      loginError.style.color = "red";
-      loginError.textContent = "Username atau password salah!";
+    const akunLogin = akunAdmin.find(function(akun) {
+      return akun.username.toLowerCase() === username && akun.password === password;
     });
-  }
+
+    if (akunLogin) {
+      sessionStorage.setItem("isLoggedIn", "true");
+      sessionStorage.setItem("loggedInUser", akunLogin.username);
+      sessionStorage.setItem("userRole", "admin");
+
+      localStorage.setItem("currentAdmin", JSON.stringify(akunLogin));
+
+      window.location.href = "admin.html";
+      return;
+    }
+
+    if (username === registeredUser && password === registeredPass) {
+      loginError.style.color = "green";
+      loginError.textContent = "Login user berhasil!";
+
+      sessionStorage.setItem("isLoggedIn", "true");
+      sessionStorage.setItem("loggedInUser", username);
+      sessionStorage.setItem("userRole", "user");
+
+      setTimeout(function() {
+        window.location.href = "user.html";
+      }, 800);
+      return;
+    }
+
+    loginError.style.color = "red";
+    loginError.textContent = "Username atau password salah!";
+  });
+}
 
   if (goForgot) {
     goForgot.addEventListener("click", function(e) {

@@ -638,29 +638,43 @@
   });
 
   loginForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+  const username = document.getElementById("username").value.trim().toLowerCase();
+  const password = document.getElementById("password").value.trim();
 
-    const registeredUser = localStorage.getItem("registeredUser");
-    const registeredPass = localStorage.getItem("registeredPass");
-
-    if (username === "admin" && password === "admin123") {
-      window.location.href = "admin.html";
-      return;
+  const akunAdmin = [
+    {
+      nama: "Ramadhani",
+      username: "admin rama",
+      password: "admin123",
+      role: "Super Admin"
+    },
+    {
+      nama: "Riana Destin",
+      username: "riana_editor",
+      password: "riana123",
+      role: "Admin"
+    },
+    {
+      nama: "Budi Pratama",
+      username: "budi_pratama",
+      password: "budi123",
+      role: "Admin"
     }
+  ];
 
-    if (username === registeredUser && password === registeredPass) {
-      localStorage.setItem("isUserLogin", "true");
-      localStorage.setItem("loginUser", username);
-      alert("Login berhasil!");
-      closeModal();
-      return;
-    }
-
-    loginError.textContent = "Username atau password salah!";
+  const akunLogin = akunAdmin.find(function(akun) {
+    return akun.username.toLowerCase() === username && akun.password === password;
   });
+
+  if (akunLogin) {
+    localStorage.setItem("currentAdmin", JSON.stringify(akunLogin));
+    window.location.href = "admin.html";
+  } else {
+    loginError.textContent = "Username atau password salah!";
+  }
+});
 
   goForgot.addEventListener("click", function(e) {
     e.preventDefault();

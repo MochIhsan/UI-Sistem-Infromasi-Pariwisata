@@ -284,25 +284,55 @@
   <script src="admin.js"></script>
 
 <script>
-  // Username admin yang sedang login
-  // Karena sekarang kamu login sebagai Ramadhani, username-nya adalah "admin rama"
-  const currentAdminUsername = "admin rama";
+  const currentAdmin = JSON.parse(localStorage.getItem("currentAdmin") || "null");
 
-  document.querySelectorAll(".adminm-row").forEach(function (row) {
-    const rowUsername = (row.dataset.username || "").toLowerCase().trim();
-    const loginUsername = currentAdminUsername.toLowerCase().trim();
+  // Jika belum login, kembalikan ke halaman login/index
+  if (!currentAdmin) {
+    window.location.href = "index.html";
+  }
 
-    const buttons = row.querySelectorAll(".adminm-act");
+  const currentAdminUsername = currentAdmin?.username || "";
+  const currentAdminRole = currentAdmin?.role || "";
 
-    // Jika baris admin bukan akun yang sedang login, maka tombol edit & hapus diblok
-    if (rowUsername !== loginUsername) {
+  // Update nama dan role di topbar
+  const adminNameEl = document.querySelector(".admin-user__name");
+  const adminRoleEl = document.querySelector(".admin-user__role");
+
+  if (adminNameEl) {
+    adminNameEl.textContent = currentAdmin.nama;
+  }
+
+  if (adminRoleEl) {
+    adminRoleEl.textContent = currentAdmin.role;
+  }
+
+  const isSuperAdmin = currentAdminRole === "Super Admin";
+
+  // Tombol Tambah Admin
+  const btnTambahAdmin = document.querySelector(".adm-btn[href='tambah-admin.html']");
+
+  if (!isSuperAdmin && btnTambahAdmin) {
+    btnTambahAdmin.classList.add("is-disabled");
+    btnTambahAdmin.removeAttribute("href");
+    btnTambahAdmin.setAttribute("title", "Akses ditolak. Hanya Super Admin yang dapat menambah admin.");
+
+    btnTambahAdmin.addEventListener("click", function(e) {
+      e.preventDefault();
+    });
+  }
+
+  // Tombol Edit dan Hapus
+  document.querySelectorAll(".adminm-row").forEach(function(row) {
+    const actionButtons = row.querySelectorAll(".adminm-act");
+
+    if (!isSuperAdmin) {
       row.classList.add("is-blocked");
 
-      buttons.forEach(function (btn) {
+      actionButtons.forEach(function(btn) {
         btn.disabled = true;
         btn.removeAttribute("onclick");
-        btn.setAttribute("title", "Aksi diblokir. Hanya akun yang sedang login yang dapat diedit atau dihapus.");
         btn.setAttribute("aria-disabled", "true");
+        btn.setAttribute("title", "Akses ditolak. Hanya Super Admin yang dapat mengedit atau menghapus admin.");
       });
     }
   });
