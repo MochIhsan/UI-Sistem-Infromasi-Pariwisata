@@ -4,12 +4,552 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manajemen Akomodasi - Admin</title>
+
   <link rel="stylesheet" href="style.css" />
 
- 
+  <style>
+    /* =====================================================
+       FIX KHUSUS ADMIN AKOMODASI
+       Supaya stats atas dan tabel bawah lurus kiri-kanan
+    ===================================================== */
+
+    .admin-akomodasi-page .admin-wrap,
+    .admin-akomodasi-page .admin-wrap--wide {
+      width: 100% !important;
+      max-width: none !important;
+      padding: 36px 48px 60px !important;
+      margin: 0 !important;
+    }
+
+    .admin-akomodasi-page .adm-head,
+    .admin-akomodasi-page .acmdm-stats,
+    .admin-akomodasi-page .acmdm-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    /* ================= HEAD ================= */
+
+    .admin-akomodasi-page .adm-head {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+      margin-bottom: 22px !important;
+    }
+
+    .admin-akomodasi-page .adm-title {
+      margin: 0 !important;
+      font-size: 26px !important;
+      font-weight: 900 !important;
+      color: #0f172a !important;
+    }
+
+    .admin-akomodasi-page .adm-sub {
+      margin: 6px 0 0 !important;
+      font-size: 14px !important;
+      color: #7a8aa0 !important;
+    }
+
+    .admin-akomodasi-page .adm-btn--primary {
+      min-height: 52px !important;
+      padding: 0 22px !important;
+      border-radius: 12px !important;
+      background: #1478ff !important;
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      box-shadow: 0 12px 24px rgba(20, 120, 255, 0.25) !important;
+    }
+
+    .admin-akomodasi-page .adm-btn__plus {
+      width: 24px !important;
+      height: 24px !important;
+      border-radius: 999px !important;
+      display: inline-grid !important;
+      place-items: center !important;
+      background: rgba(255, 255, 255, 0.18) !important;
+    }
+
+    /* ================= STAT CARD ================= */
+
+    .admin-akomodasi-page .acmdm-stats {
+      display: grid !important;
+      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      gap: 20px !important;
+      margin-top: 0 !important;
+      margin-bottom: 22px !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat {
+      min-height: 96px !important;
+      background: #ffffff !important;
+      border: 1px solid #eef3f8 !important;
+      border-radius: 18px !important;
+      padding: 18px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      box-shadow: 0 10px 22px rgba(12, 31, 60, 0.05) !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon,
+    .admin-akomodasi-page .acmdm-stat__icon1 {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 14px !important;
+      display: grid !important;
+      place-items: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon img,
+    .admin-akomodasi-page .acmdm-stat__icon1 img {
+      width: 26px !important;
+      height: 26px !important;
+      object-fit: contain !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon svg {
+      width: 24px !important;
+      height: 24px !important;
+      fill: none !important;
+      stroke-width: 2 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon--blue {
+      background: #eaf2ff !important;
+      color: #1b63d1 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon--green {
+      background: #eafff2 !important;
+      color: #138a4b !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon--purple {
+      background: #f1eaff !important;
+      color: #6a2bd9 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon--yellow {
+      background: #fff7dc !important;
+      color: #ffb000 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon--blue svg {
+      stroke: #1b63d1 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__icon--yellow svg {
+      fill: #ffb000 !important;
+      stroke: #ffb000 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__label {
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      color: #7a8aa0 !important;
+      text-transform: uppercase !important;
+      line-height: 1.25 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stat__value {
+      margin-top: 4px !important;
+      font-size: 18px !important;
+      font-weight: 900 !important;
+      color: #0f172a !important;
+    }
+
+    .admin-akomodasi-page .acmdm-avg-star {
+      color: #ffb000 !important;
+      margin-left: 5px !important;
+    }
+
+    /* ================= CARD TABLE ================= */
+
+    .admin-akomodasi-page .acmdm-card {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      border-radius: 18px !important;
+      background: #ffffff !important;
+      border: 1px solid #eef3f8 !important;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06) !important;
+    }
+
+    /* ================= TOOLBAR ================= */
+
+    .admin-akomodasi-page .acmdm-toolbar {
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) 260px !important;
+      gap: 14px !important;
+      align-items: center !important;
+      padding: 18px 28px !important;
+      border-bottom: 1px solid #eef3f8 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-search {
+      width: 100% !important;
+      min-width: 0 !important;
+      height: 52px !important;
+      display: flex !important;
+      align-items: center !important;
+      border: 1px solid #e6ecf2 !important;
+      border-radius: 14px !important;
+      background: #ffffff !important;
+      padding: 0 18px !important;
+    }
+
+    .admin-akomodasi-page .acmdm-search input {
+      width: 100% !important;
+      height: 100% !important;
+      border: none !important;
+      outline: none !important;
+      background: transparent !important;
+      font-size: 14px !important;
+      color: #15253a !important;
+    }
+
+    .admin-akomodasi-page .acmdm-search input::placeholder {
+      color: #8aa0b6 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-select {
+      width: 100% !important;
+      height: 52px !important;
+      border: 1px solid #e6ecf2 !important;
+      border-radius: 14px !important;
+      padding: 0 16px !important;
+      background: #ffffff !important;
+      color: #334155 !important;
+      font-size: 14px !important;
+      outline: none !important;
+    }
+
+    /* ================= TABLE AKOMODASI ================= */
+
+    .admin-akomodasi-page .acmdm-table {
+      width: 100% !important;
+      overflow-x: auto !important;
+    }
+
+    .admin-akomodasi-page .acmdm-thead,
+    .admin-akomodasi-page .acmdm-row {
+      display: grid !important;
+      grid-template-columns:
+        120px
+        minmax(360px, 1.8fr)
+        140px
+        170px
+        150px
+        130px
+        110px !important;
+      align-items: center !important;
+      column-gap: 16px !important;
+      min-width: 1280px !important;
+    }
+
+    .admin-akomodasi-page .acmdm-thead {
+      padding: 16px 28px !important;
+      background: #fbfdff !important;
+      border-bottom: 1px solid #eef3f8 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-row {
+      padding: 18px 28px !important;
+      background: #ffffff !important;
+      border-bottom: 1px solid #f1f5fa !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .admin-akomodasi-page .acmdm-row:hover {
+      background: #f8fbff !important;
+    }
+
+    .admin-akomodasi-page .acmdm-th {
+      font-size: 12px !important;
+      font-weight: 900 !important;
+      color: #7a8aa0 !important;
+      text-transform: uppercase !important;
+      white-space: nowrap !important;
+    }
+
+    .admin-akomodasi-page .acmdm-td {
+      min-width: 0 !important;
+      font-size: 14px !important;
+      color: #0f172a !important;
+    }
+
+    .admin-akomodasi-page .acmdm-th--right {
+      text-align: right !important;
+    }
+
+    /* ================= KOLOM AKOMODASI ================= */
+
+    .admin-akomodasi-page .acmdm-acco {
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      min-width: 0 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-thumb {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 12px !important;
+      object-fit: cover !important;
+      border: 1px solid #eef3f8 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-name {
+      font-size: 15px !important;
+      font-weight: 900 !important;
+      color: #0f172a !important;
+      line-height: 1.2 !important;
+      white-space: nowrap !important;
+    }
+
+    .admin-akomodasi-page .acmdm-muted {
+      margin-top: 4px !important;
+      font-size: 12px !important;
+      color: #7a8aa0 !important;
+      line-height: 1.3 !important;
+      white-space: nowrap !important;
+    }
+
+    /* ================= BADGE ================= */
+
+    .admin-akomodasi-page .acmdm-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-width: 86px !important;
+      padding: 8px 12px !important;
+      border-radius: 999px !important;
+      font-size: 12px !important;
+      font-weight: 900 !important;
+      line-height: 1 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-badge--hotel {
+      background: #eaf2ff !important;
+      color: #1b63d1 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-badge--villa {
+      background: #eafff2 !important;
+      color: #138a4b !important;
+    }
+
+    .admin-akomodasi-page .acmdm-badge--homestay {
+      background: #f1eaff !important;
+      color: #6a2bd9 !important;
+    }
+
+    /* ================= ISI KOLOM ================= */
+
+    .admin-akomodasi-page .acmdm-id {
+      font-weight: 900 !important;
+      color: #334155 !important;
+      white-space: nowrap !important;
+    }
+
+    .admin-akomodasi-page .acmdm-price {
+      font-size: 15px !important;
+      font-weight: 900 !important;
+      color: #0f172a !important;
+      white-space: nowrap !important;
+    }
+
+    .admin-akomodasi-page .acmdm-rating {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      white-space: nowrap !important;
+      font-weight: 900 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-stars {
+      color: #ffb000 !important;
+      letter-spacing: 1px !important;
+      font-size: 15px !important;
+      line-height: 1 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-rating__num {
+      color: #334155 !important;
+      font-size: 13px !important;
+      font-weight: 900 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-view {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      color: #71839b !important;
+      font-weight: 800 !important;
+      white-space: nowrap !important;
+    }
+
+    .admin-akomodasi-page .acmdm-eye {
+      width: 18px !important;
+      height: 18px !important;
+      display: inline-flex !important;
+      color: #8aa0b6 !important;
+    }
+
+    .admin-akomodasi-page .acmdm-eye svg {
+      width: 18px !important;
+      height: 18px !important;
+      fill: none !important;
+      stroke: currentColor !important;
+      stroke-width: 2 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+    }
+
+    /* ================= AKSI ================= */
+
+    .admin-akomodasi-page .acmdm-actions {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    .admin-akomodasi-page .newsadm-act {
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 12px !important;
+      display: inline-grid !important;
+      place-items: center !important;
+      border: 1px solid #e6ecf2 !important;
+      background: #ffffff !important;
+      cursor: pointer !important;
+    }
+
+    .admin-akomodasi-page .newsadm-act svg {
+      width: 18px !important;
+      height: 18px !important;
+      fill: none !important;
+      stroke-width: 2 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+    }
+
+    .admin-akomodasi-page .newsadm-act--edit svg {
+      stroke: #1478ff !important;
+    }
+
+    .admin-akomodasi-page .newsadm-act--del svg {
+      stroke: #ef4444 !important;
+    }
+
+    .admin-akomodasi-page .newsadm-act:hover {
+      background: #f8fbff !important;
+    }
+
+    /* ================= BOTTOM ================= */
+
+    .admin-akomodasi-page .newsadm-bottom {
+      min-width: 1280px !important;
+      width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 18px !important;
+      padding: 18px 28px !important;
+      border-top: 1px solid #f1f5fa !important;
+      background: #ffffff !important;
+    }
+
+    .admin-akomodasi-page .newsadm-footnote {
+      font-size: 13px !important;
+      color: #7a8aa0 !important;
+    }
+
+    .admin-akomodasi-page .newsadm-pagi {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+
+    .admin-akomodasi-page .newsadm-pagi__btn,
+    .admin-akomodasi-page .newsadm-pagi__num {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 10px !important;
+      border: 1px solid #e6ecf2 !important;
+      background: #ffffff !important;
+      color: #334155 !important;
+      font-weight: 800 !important;
+      cursor: pointer !important;
+    }
+
+    .admin-akomodasi-page .newsadm-pagi__num.is-active {
+      background: #1478ff !important;
+      color: #ffffff !important;
+      border-color: #1478ff !important;
+    }
+
+    .admin-akomodasi-page .newsadm-pagi__dots {
+      color: #94a3b8 !important;
+      padding: 0 2px !important;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 1280px) {
+      .admin-akomodasi-page .admin-wrap,
+      .admin-akomodasi-page .admin-wrap--wide {
+        padding: 28px 32px 50px !important;
+      }
+
+      .admin-akomodasi-page .acmdm-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .admin-akomodasi-page .adm-head {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+
+      .admin-akomodasi-page .adm-btn--primary {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      .admin-akomodasi-page .acmdm-toolbar {
+        grid-template-columns: 1fr !important;
+      }
+
+      .admin-akomodasi-page .acmdm-stats {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .admin-akomodasi-page .admin-wrap,
+      .admin-akomodasi-page .admin-wrap--wide {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+      }
+    }
+  </style>
 </head>
 
-<body class="admin-body">
+<body class="admin-body admin-akomodasi-page">
 
   <div class="admin-layout">
     <!-- SIDEBAR -->
@@ -19,7 +559,7 @@
           <img class="brand__logo" src="assets/logo.png" alt="Logo" />
         </div>
         <div class="admin-brand__text">
-          <div class="admin-brand__name">TourAdmin</div>
+          <div class="admin-brand__name">Dinas Pariwisata Kabupaten Bima</div>
         </div>
       </div>
 
@@ -176,7 +716,6 @@
             </div>
           </div>
 
-          <!-- AVERAGE BINTANG -->
           <div class="acmdm-stat">
             <div class="acmdm-stat__icon acmdm-stat__icon--yellow" aria-hidden="true">
               <svg viewBox="0 0 24 24">
@@ -198,8 +737,6 @@
           <!-- TOOLBAR -->
           <div class="acmdm-toolbar">
             <div class="acmdm-search">
-             
-
               <input type="text" id="staySearch" placeholder="Cari nama penginapan atau lokasi..." />
             </div>
 
@@ -468,11 +1005,11 @@
     /* =========================
        HITUNG AVERAGE BINTANG
     ========================= */
-    function updateAverageStars(){
+    function updateAverageStars() {
       const rows = document.querySelectorAll(".acmdm-row[data-rating]");
       const avgStarsValue = document.getElementById("avgStarsValue");
 
-      if(!avgStarsValue || rows.length === 0) return;
+      if (!avgStarsValue || rows.length === 0) return;
 
       let total = 0;
       let count = 0;
@@ -480,7 +1017,7 @@
       rows.forEach(row => {
         const rating = Number(row.dataset.rating);
 
-        if(!isNaN(rating) && rating > 0){
+        if (!isNaN(rating) && rating > 0) {
           total += rating;
           count++;
         }
@@ -503,13 +1040,13 @@
     const stayTypeFilter = document.getElementById("stayTypeFilter");
     const stayRows = document.querySelectorAll(".acmdm-row");
 
-    function filterAkomodasi(){
-      const keyword = staySearch.value.toLowerCase().trim();
-      const selectedType = stayTypeFilter.value.toLowerCase();
+    function filterAkomodasi() {
+      const keyword = staySearch ? staySearch.value.toLowerCase().trim() : "";
+      const selectedType = stayTypeFilter ? stayTypeFilter.value.toLowerCase() : "semua tipe";
 
       stayRows.forEach(row => {
         const rowText = row.textContent.toLowerCase();
-        const rowType = row.dataset.type.toLowerCase();
+        const rowType = (row.dataset.type || "").toLowerCase();
 
         const matchSearch = rowText.includes(keyword);
         const matchType = selectedType === "semua tipe" || rowType === selectedType;
@@ -518,11 +1055,11 @@
       });
     }
 
-    if(staySearch){
+    if (staySearch) {
       staySearch.addEventListener("input", filterAkomodasi);
     }
 
-    if(stayTypeFilter){
+    if (stayTypeFilter) {
       stayTypeFilter.addEventListener("change", filterAkomodasi);
     }
 
@@ -530,53 +1067,13 @@
        HAPUS ROW
     ========================= */
     document.querySelectorAll(".newsadm-act--del").forEach(button => {
-      button.addEventListener("click", function(){
+      button.addEventListener("click", function () {
         const row = this.closest(".acmdm-row");
 
-        if(confirm("Yakin ingin menghapus data akomodasi ini?")){
+        if (confirm("Yakin ingin menghapus data akomodasi ini?")) {
           row.remove();
           updateAverageStars();
         }
-      });
-    });
-
-    /* =========================
-       DROPDOWN ADMIN
-    ========================= */
-    const adminUserBtn = document.getElementById("adminUserBtn");
-    const adminDd = document.getElementById("adminDd");
-
-    if(adminUserBtn && adminDd){
-      adminUserBtn.addEventListener("click", function(e){
-        e.stopPropagation();
-        adminDd.classList.toggle("is-open");
-      });
-
-      document.addEventListener("click", function(){
-        adminDd.classList.remove("is-open");
-      });
-    }
-
-    /* =========================
-       LOGOUT
-    ========================= */
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    if(logoutBtn){
-      logoutBtn.addEventListener("click", function(e){
-        e.preventDefault();
-        alert("Berhasil logout!");
-        window.location.href = "index.html";
-      });
-    }
-
-    /* =========================
-       SIDEBAR DROPDOWN
-    ========================= */
-    document.querySelectorAll(".admin-nav__toggle").forEach(toggle => {
-      toggle.addEventListener("click", function(){
-        const group = this.closest(".admin-nav__group");
-        group.classList.toggle("open");
       });
     });
   </script>

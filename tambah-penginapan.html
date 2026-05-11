@@ -11,7 +11,7 @@
 
 <body class="admin-body">
   <div class="admin-layout">
-    <!-- SIDEBAR  -->
+
     <!-- SIDEBAR -->
     <aside class="admin-sidebar">
       <div class="admin-brand">
@@ -19,7 +19,7 @@
           <img class="brand__logo" src="assets/logo.png" alt="Logo" />
         </div>
         <div class="admin-brand__text">
-          <div class="admin-brand__name">TourAdmin</div>
+          <div class="admin-brand__name">Dinas Pariwisata Kabupaten Bima</div>
         </div>
       </div>
 
@@ -83,9 +83,11 @@
 
     <!-- MAIN -->
     <main class="admin-main">
-      <!-- TOPBAR (samakan) -->
+
+      <!-- TOPBAR -->
       <header class="admin-topbar">
         <div></div>
+
         <div class="admin-topbar__right">
           <div class="admin-user" id="adminUser">
             <div class="admin-user__text">
@@ -93,12 +95,11 @@
               <div class="admin-user__role">Super Admin</div>
             </div>
 
-            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin">
+            <button class="admin-user__avatar" id="adminUserBtn" aria-label="Menu admin" type="button">
               <span>👤</span>
             </button>
 
             <div class="admin-dd" id="adminDd">
-              
               <a href="#" class="admin-dd__item admin-dd__danger" id="logoutBtn">Logout</a>
             </div>
           </div>
@@ -106,13 +107,16 @@
       </header>
 
       <div class="admin-wrap admin-wrap--wide">
+
         <!-- PAGE HEADER -->
         <div class="ak-head">
           <div class="ak-head__left">
             <h1 class="ak-title">Tambah Penginapan Baru</h1>
           </div>
+
           <div class="ak-head__actions">
             <a class="ak-btn ak-btn--ghost" href="admin-akomodasi.html">Batal</a>
+
             <button class="ak-btn ak-btn--primary" id="btnSave" type="button">
               <span class="td-ic">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -135,19 +139,25 @@
           </div>
 
           <div class="ak-gallery">
-            <!-- main -->
+
+            <!-- FOTO UTAMA -->
             <div class="ak-gallery__main ak-drop" id="mainDrop">
               <input id="mainPhoto" type="file" accept="image/*" hidden />
+
               <div class="ak-drop__inner" id="mainDropInner">
                 <div class="ak-drop__icon">📷</div>
                 <div class="ak-drop__title">Upload Foto Utama</div>
                 <div class="ak-drop__sub">Rekomendasi: 1200×800px</div>
-                <button class="ak-btn ak-btn--mini" type="button" id="btnPickMain">Pilih Foto</button>
+
+                <button class="ak-btn ak-btn--mini" type="button" id="btnPickMain">
+                  Pilih Foto
+                </button>
               </div>
+
               <div class="ak-preview" id="mainPreview" aria-hidden="true"></div>
             </div>
 
-            <!-- thumbs -->
+            <!-- THUMBNAIL FOTO -->
             <div class="ak-gallery__thumbs">
               <button class="ak-thumb ak-thumb--add" type="button" data-slot="1">+</button>
               <button class="ak-thumb ak-thumb--add" type="button" data-slot="2">+</button>
@@ -161,11 +171,15 @@
           <div class="ak-err" id="errGallery"></div>
         </section>
 
-        <!-- GRID: Informasi Dasar + Harga & Penawaran -->
+        <!-- INFORMASI DASAR + HARGA -->
         <section class="ak-grid2">
+
+          <!-- INFORMASI DASAR -->
           <div class="ak-card">
             <div class="ak-card__head">
-              <div class="ak-card__ttl"><span class="ak-ic">ℹ️</span> Informasi Dasar</div>
+              <div class="ak-card__ttl">
+                <span class="ak-ic">ℹ️</span> Informasi Dasar
+              </div>
             </div>
 
             <div class="ak-form">
@@ -205,24 +219,38 @@
 
               <div class="ak-field">
                 <label class="ak-label">Alamat Lengkap</label>
-                <textarea class="ak-textarea" id="alamat" rows="4" placeholder="Jl. Pelabuhan Sape, Bima, NTB..."></textarea>
+                <textarea
+                  class="ak-textarea"
+                  id="alamat"
+                  rows="4"
+                  placeholder="Jl. Pelabuhan Sape, Bima, NTB..."></textarea>
                 <div class="ak-err" id="errAlamat"></div>
               </div>
             </div>
           </div>
 
+          <!-- HARGA & PENAWARAN -->
           <div class="ak-card">
             <div class="ak-card__head">
-              <div class="ak-card__ttl"><span class="ak-ic">🏷️</span> Harga & Penawaran</div>
+              <div class="ak-card__ttl">
+                <span class="ak-ic">🏷️</span> Harga & Penawaran
+              </div>
             </div>
 
             <div class="ak-form">
               <div class="ak-field">
                 <label class="ak-label">Harga mulai dari (IDR)</label>
+
                 <div class="ak-money">
                   <span class="ak-money__prefix">Rp</span>
-                  <input class="ak-input ak-money__input" id="harga" type="number" min="0" placeholder="300000" />
+                  <input
+                    class="ak-input ak-money__input"
+                    id="harga"
+                    type="number"
+                    min="0"
+                    placeholder="300000" />
                 </div>
+
                 <div class="ak-err" id="errHarga"></div>
               </div>
 
@@ -239,12 +267,15 @@
               </div>
             </div>
           </div>
+
         </section>
 
         <!-- FASILITAS UTAMA -->
         <section class="ak-card">
           <div class="ak-card__head">
-            <div class="ak-card__ttl"><span class="ak-ic">✨</span> Fasilitas Utama</div>
+            <div class="ak-card__ttl">
+              <span class="ak-ic">✨</span> Fasilitas Utama
+            </div>
           </div>
 
           <div class="ak-fac" id="facWrap">
@@ -252,30 +283,37 @@
               <div class="ak-fac__icon">📶</div>
               <div class="ak-fac__label">Free Wi-Fi</div>
             </button>
+
             <button class="ak-fac__item" type="button" data-val="ac">
               <div class="ak-fac__icon">❄️</div>
               <div class="ak-fac__label">AC</div>
             </button>
+
             <button class="ak-fac__item" type="button" data-val="pool">
               <div class="ak-fac__icon">🏊</div>
               <div class="ak-fac__label">Kolam Renang</div>
             </button>
+
             <button class="ak-fac__item" type="button" data-val="restaurant">
               <div class="ak-fac__icon">🍽️</div>
               <div class="ak-fac__label">Restoran</div>
             </button>
+
             <button class="ak-fac__item" type="button" data-val="parking">
               <div class="ak-fac__icon">🅿️</div>
               <div class="ak-fac__label">Parkir</div>
             </button>
+
             <button class="ak-fac__item" type="button" data-val="gym">
               <div class="ak-fac__icon">🏋️</div>
               <div class="ak-fac__label">Gym</div>
             </button>
+
             <button class="ak-fac__item" type="button" data-val="spa">
               <div class="ak-fac__icon">💆</div>
               <div class="ak-fac__label">Spa</div>
             </button>
+
             <button class="ak-fac__item" type="button" data-val="roomservice">
               <div class="ak-fac__icon">🛎️</div>
               <div class="ak-fac__label">Layanan Kamar</div>
@@ -283,78 +321,95 @@
           </div>
         </section>
 
-        <!-- GRID: Lokasi + Kebijakan -->
+        <!-- LOKASI + KEBIJAKAN -->
         <section class="ak-grid2">
-  <!-- Lokasi (samakan dengan tambah-event) -->
-  <div class="ak-card">
-    <div class="ak-card__head">
-      <div class="ak-card__ttl"><span class="ak-ic">📍</span> Lokasi</div>
-    </div>
 
-    <div class="ak-form">
-      <div class="ev-row2">
-        <div class="ev-field">
-          <label class="ev-label">Latitude</label>
-          <input class="ev-input" id="akomLat" type="text" placeholder="-8.589" value="-8.589" />
-        </div>
+          <!-- LOKASI -->
+          <div class="ak-card">
+            <div class="ak-card__head">
+              <div class="ak-card__ttl">
+                <span class="ak-ic">📍</span> Lokasi
+              </div>
+            </div>
 
-        <div class="ev-field">
-          <label class="ev-label">Longitude</label>
-          <input class="ev-input" id="akomLng" type="text" placeholder="119.444" value="119.444" />
-        </div>
-      </div>
+            <div class="ak-form">
+              <div class="ev-row2">
+                <div class="ev-field">
+                  <label class="ev-label">Latitude</label>
+                  <input
+                    class="ev-input"
+                    id="akomLat"
+                    type="text"
+                    placeholder="-8.589"
+                    value="-8.589" />
+                </div>
 
-      <div class="ev-field">
-        <label class="ev-label">Peta Lokasi</label>
+                <div class="ev-field">
+                  <label class="ev-label">Longitude</label>
+                  <input
+                    class="ev-input"
+                    id="akomLng"
+                    type="text"
+                    placeholder="119.444"
+                    value="119.444" />
+                </div>
+              </div>
 
-        <div class="ev-mapWrap">
-          <iframe
-            id="akomMapFrame"
-            title="Peta Lokasi"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=-8.589,119.444&z=13&output=embed">
-          </iframe>
+              <div class="ev-field">
+                <label class="ev-label">Peta Lokasi</label>
 
-          <div class="ev-mapOverlay" id="akomMapOverlay">
-            <div class="ev-mapOverlay__txt">Interactive Map Integration</div>
+                <div class="ev-mapWrap">
+                  <iframe
+                    id="akomMapFrame"
+                    title="Peta Lokasi"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=-8.589,119.444&z=13&output=embed">
+                  </iframe>
+
+                  <div class="ev-mapOverlay" id="akomMapOverlay">
+                    <div class="ev-mapOverlay__txt">Interactive Map Integration</div>
+                  </div>
+                </div>
+
+                <div class="ev-mapHint">
+                  Ubah latitude/longitude untuk memperbarui peta.
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="ev-mapHint">Ubah latitude/longitude untuk memperbarui peta.</div>
-      </div>
+          <!-- KEBIJAKAN -->
+          <div class="ak-card">
+            <div class="ak-card__head">
+              <div class="ak-card__ttl">
+                <span class="ak-ic">📄</span> Kebijakan Penginapan
+              </div>
+            </div>
 
-     
-    </div>
-  </div>
+            <div class="ak-form">
+              <div class="ak-row2">
+                <div class="ak-field">
+                  <label class="ak-label">Check-in Time</label>
+                  <input class="ak-input" id="checkin" type="time" value="14:00" />
+                </div>
 
-  <!-- Kebijakan (tetap) -->
-  <div class="ak-card">
-    <div class="ak-card__head">
-      <div class="ak-card__ttl"><span class="ak-ic">📄</span> Kebijakan Penginapan</div>
-    </div>
+                <div class="ak-field">
+                  <label class="ak-label">Check-out Time</label>
+                  <input class="ak-input" id="checkout" type="time" value="12:00" />
+                </div>
+              </div>
 
-    <div class="ak-form">
-      <div class="ak-row2">
-        <div class="ak-field">
-          <label class="ak-label">Check-in Time</label>
-          <input class="ak-input" id="checkin" type="time" value="14:00" />
-        </div>
-        <div class="ak-field">
-          <label class="ak-label">Check-out Time</label>
-          <input class="ak-input" id="checkout" type="time" value="12:00" />
-        </div>
-      </div>
-
-      <div class="ak-field">
-        <label class="ak-label">Peraturan Umum</label>
-        <textarea class="ak-textarea" id="rules" rows="5">- Dilarang Merokok di dalam kamar
+              <div class="ak-field">
+                <label class="ak-label">Peraturan Umum</label>
+                <textarea class="ak-textarea" id="rules" rows="5">- Dilarang Merokok di dalam kamar
 - Tidak diperbolehkan membawa hewan peliharaan
 - Anak-anak diperbolehkan menginap</textarea>
-      </div>
-    </div>
-  </div>
-</section>
+              </div>
+            </div>
+          </div>
+
+        </section>
 
         <footer class="ak-footer">
           © 2024 StayAdmin Management Suite. Semua Hak Dilindungi.
@@ -363,7 +418,10 @@
     </main>
   </div>
 
-   <!-- JS komodasi -->
+  <!-- JS global admin: dropdown sidebar, dropdown user, logout -->
+  <script src="admin.js"></script>
+
+  <!-- JS khusus tambah akomodasi -->
   <script src="tambah-akomodasi.js"></script>
 
 </body>
