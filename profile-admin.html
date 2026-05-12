@@ -20,35 +20,66 @@
         </div>
       </div>
 
-      <nav class="admin-nav">
-        <a class="admin-nav__item" href="admin.html">
-          <img class="admin-ic" src="logo/container72.svg" alt=""> Dashboard
-        </a>
-        <a class="admin-nav__item" href="admin-destinasi.html">
-          <img class="admin-ic" src="logo/container74.svg" alt=""> Destinasi
-        </a>
-        <a class="admin-nav__item" href="admin-event.html">
-          <img class="admin-ic" src="logo/container76.svg" alt=""> Event
-        </a>
-        <a class="admin-nav__item" href="admin-berita.html">
-          <img class="admin-ic" src="logo/container78.svg" alt=""> Berita
-        </a>
-        <a class="admin-nav__item" href="admin-akomodasi.html">
-          <img class="admin-ic" src="logo/container80.svg" alt=""> Akomodasi
-        </a>
-        <a class="admin-nav__item active" href="kelola-admin.html">
-          <img class="admin-ic" src="logo/container82.svg" alt=""> Kelola Admin
-        </a>
-      </a>
-        <a class="admin-nav__item" href="kelola-user.html">
-        <img class="admin-ic" src="logo/user.svg"></img> Kelola User
-      </a>
-      <a class="admin-nav__item" href="kelola-ulasan.html">
-        <img class="admin-ic" src="logo/ulasan.svg"></img> Kelola Ulasan
-      </a>
-      </nav>
-    </aside>
+    <nav class="admin-nav">
 
+  <!-- DASHBOARD -->
+  <a class="admin-nav__item" href="admin.html">
+    <img class="admin-ic" src="logo/containerdashboard.svg"> Dashboard
+  </a>
+
+  <!-- KONTEN WISATA -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container78.svg">
+        Konten Wisata
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item" href="admin-destinasi.html">Destinasi</a>
+      <a class="admin-subnav__item" href="admin-event.html">Event</a>
+      <a class="admin-subnav__item" href="admin-berita.html">Berita</a>
+      <a class="admin-subnav__item" href="admin-akomodasi.html">Akomodasi</a>
+    </div>
+  </div>
+
+  <!-- MANAJEMEN -->
+  <div class="admin-nav__group">
+    <button class="admin-nav__item admin-nav__toggle">
+      <span class="admin-nav__left">
+        <img class="admin-ic" src="logo/container82.svg">
+        Manajemen
+      </span>
+      <span class="admin-nav__caret">▾</span>
+    </button>
+
+    <div class="admin-subnav">
+      <a class="admin-subnav__item active" href="kelola-admin.html">Kelola Admin</a>
+      <a class="admin-subnav__item" href="kelola-user.html">Kelola User</a>
+      <a class="admin-subnav__item" href="kelola-ulasan.html">Kelola Ulasan</a>
+    </div>
+  </div>
+
+  <!-- ANALISIS -->
+   <div class="admin-nav__group">
+  <button class="admin-nav__item admin-nav__toggle" type="button">
+    <span class="admin-nav__left">
+      <img class="admin-ic" src="logo/statistik.svg" alt="">
+      Analisis
+    </span>
+    <span class="admin-nav__caret">▾</span>
+  </button>
+
+  <div class="admin-subnav">
+    <a class="admin-subnav__item" href="analisis-destinasi.html">Analisis Destinasi</a>
+    
+  </div>
+</div>
+
+</nav>
+    </aside>
     <!-- MAIN -->
     <main class="admin-main">
       <header class="admin-topbar">
@@ -256,5 +287,6 @@
     localStorage.setItem("site_last_page", window.location.pathname.split("/").pop() || "index.html");
   })();
 </script>
+<script src="admin.js"></script>
 </body>
 </html>
