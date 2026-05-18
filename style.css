@@ -1430,7 +1430,7 @@ body:not(.admin-body){
   padding:8px 16px;
 }
 /* =========================
-   POPULAR GRID (seperti gambar: 2 kolom, card besar dengan overlay)
+   POPULAR GRID 
 ========================= */
 .poplist{
   padding:10px 0 40px;
@@ -1445,7 +1445,7 @@ body:not(.admin-body){
 
 .pcard{
   position:relative;
-  height:200px; 
+  height:300px; 
   border-radius:12px;
   overflow:hidden;
   border:1px solid #e7eef6;
@@ -3920,7 +3920,7 @@ body:not(.admin-body){
 
 .destdetail__map iframe{
   width: 100%;
-  height: 260px;
+  height: 360px;
   border: 0;
   display: block;
 }
